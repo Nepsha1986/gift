@@ -1,0 +1,17 @@
+---
+import { getCollection } from "astro:content";
+
+const gifts = await getCollection("gifts");
+---
+
+<div>
+  {!!gifts &&
+    gifts.map((i) => (
+      <div>
+        <div>{i.data.title}</div>
+        <div>{i.data.price}</div>
+        <div>{i.data.description}</div>
+        <div>{i.data.thumbnail}</div>
+      </div>
+    ))}
+</div>
