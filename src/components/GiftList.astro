@@ -1,17 +1,13 @@
 ---
 import { getCollection } from "astro:content";
+import GiftCard from "@components/GiftCard";
 
 const gifts = await getCollection("gifts");
 ---
 
 <div>
-  {!!gifts &&
+  {!!gifts.length &&
     gifts.map((i) => (
-      <div>
-        <div>{i.data.title}</div>
-        <div>{i.data.price}</div>
-        <div>{i.data.description}</div>
-        <div>{i.data.thumbnail}</div>
-      </div>
+      <GiftCard title={i.data.title} thumbnail={i.data.thumbnail} description={i.data.description} />
     ))}
 </div>

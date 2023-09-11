@@ -1,8 +1,8 @@
 // @ts-ignore
-import { z, defineCollection } from 'astro:content';
+import { z, defineCollection } from "astro:content";
 
 const giftsCollection = defineCollection({
-  type: 'content',
+  type: "content",
   schema: z.object({
     title: z.string(),
     description: z.string(),
@@ -12,5 +12,5 @@ const giftsCollection = defineCollection({
 });
 
 export const collections = {
-  'gifts': giftsCollection,
+  gifts: giftsCollection,
 };
