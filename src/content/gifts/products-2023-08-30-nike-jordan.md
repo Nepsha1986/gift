@@ -4,7 +4,7 @@ description: >-
   It has survived not only five centuries, but also the leap into electronic
   typesetting.
 date: '2023-08-30T13:17:12+03:00'
-thumbnail: /assets/igm_1.webp
+thumbnail: /assets/img_1.webp
 price: 200.33
 ---
 ## Lorem Ipsum is simply dummy
