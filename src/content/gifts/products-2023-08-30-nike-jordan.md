@@ -5,7 +5,7 @@ description: >-
   typesetting.
 date: '2023-08-30T13:17:12+03:00'
 thumbnail: /assets/igm_1.webp
-price: '200.33'
+price: 200.33
 ---
 ## Lorem Ipsum is simply dummy
 
