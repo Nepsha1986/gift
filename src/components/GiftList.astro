@@ -5,9 +5,9 @@ import GiftCard from "@components/GiftCard";
 const gifts = await getCollection("gifts");
 ---
 
-<div>
+<div class="gifts">
   {!!gifts.length &&
     gifts.map((i) => (
-      <GiftCard title={i.data.title} thumbnail={i.data.thumbnail} description={i.data.description} />
+      <GiftCard title={i.data.title} thumbnail={i.data.thumbnail} description={i.data.description} slug={i.slug} />
     ))}
 </div>

@@ -1,0 +1,69 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+import { Image } from "astro:assets";
+
+export async function getStaticPaths() {
+  const giftsEntries = await getCollection("gifts");
+
+  return giftsEntries.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry }
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<Layout title="Blog">
+  <article class="article">
+    <header class="article__header">
+      <div class="article__imgWrap">
+        <Image class="article__img" src={entry.data.thumbnail} width="320" height="260" alt={entry.data.title} />
+      </div>
+
+      <div>
+        <h1 class="article__title">{entry.data.title}</h1>
+      </div>
+    </header>
+
+
+    <Content />
+  </article>
+</Layout>
+
+<style>
+    .article {
+      max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .article__date {
+        color: #8f8f8f;
+        font-size: 1.1rem;
+        font-style: italic;
+    }
+
+    .article__title {
+        font-size: 1.75rem;
+    }
+
+    .article__img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    .article__imgWrap {
+        border-radius: 4px;
+        overflow: hidden;
+        margin-bottom: 1rem;
+        max-height: 40vh;
+        width: 100%;
+    }
+
+    .article__header {
+        margin-bottom: 2rem;
+    }
+</style>
