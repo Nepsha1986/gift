@@ -1,4 +1,3 @@
-// @ts-ignore
 import { z, defineCollection } from "astro:content";
 
 const giftsCollection = defineCollection({
@@ -8,6 +7,7 @@ const giftsCollection = defineCollection({
     description: z.string(),
     thumbnail: z.string(),
     price: z.number(),
+    category: z.string().optional(),
   }),
 });
 

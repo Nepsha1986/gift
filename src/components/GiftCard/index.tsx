@@ -4,10 +4,10 @@ interface Props {
   title: string;
   description: string;
   thumbnail: string;
-  slug: string;
+  link: string;
 }
-const GiftCard: React.FC<Props> = ({ title, thumbnail, description, slug }) => (
-  <a href={`/gifts/${slug}`} className={styles.giftCard}>
+const GiftCard: React.FC<Props> = ({ title, thumbnail, description, link }) => (
+  <a href={link} className={styles.giftCard}>
     <div className={styles.giftCard__imgWrap}>
       <img className={styles.giftCard__img} src={thumbnail} alt={title} />
     </div>

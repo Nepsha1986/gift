@@ -6,6 +6,7 @@ description: >-
 date: '2023-08-30T13:17:12+03:00'
 thumbnail: /assets/img_1.webp
 price: 200.33
+category: "for-women"
 ---
 ## Lorem Ipsum is simply dummy
 
