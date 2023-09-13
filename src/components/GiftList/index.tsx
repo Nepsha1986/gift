@@ -27,7 +27,7 @@ const GiftList: React.FC<Props> = ({ category }) => {
             title={i.data.title}
             thumbnail={i.data.thumbnail}
             description={i.data.description}
-            link={getLink(i.slug, i.data?.category as Category)}
+            link={getLink(i.slug, category)}
           />
         ))}
     </div>
