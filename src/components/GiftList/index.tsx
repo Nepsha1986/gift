@@ -11,7 +11,7 @@ interface Props {
 }
 
 const GiftList: React.FC<Props> = ({ category }) => {
-  const filtered = category
+  const filtered = !!category
     ? gifts.filter((i) => i.data?.category === category)
     : gifts;
   const getLink = (slug: string, category?: Category): string =>
@@ -24,6 +24,7 @@ const GiftList: React.FC<Props> = ({ category }) => {
       {!!filtered.length &&
         filtered.map((i) => (
           <GiftCard
+            key={i.slug}
             title={i.data.title}
             thumbnail={i.data.thumbnail}
             description={i.data.description}
