@@ -8,9 +8,10 @@ const gifts = await getCollection("gifts");
 
 interface Props {
   category?: Category;
+  activeGiftSlug?: string;
 }
 
-const GiftList: React.FC<Props> = ({ category }) => {
+const GiftList: React.FC<Props> = ({ category, activeGiftSlug }) => {
   const filtered = !!category
     ? gifts.filter((i) => i.data?.category === category)
     : gifts;
@@ -29,6 +30,7 @@ const GiftList: React.FC<Props> = ({ category }) => {
             thumbnail={i.data.thumbnail}
             description={i.data.description}
             link={getLink(i.slug, category)}
+            active={i.slug === activeGiftSlug}
           />
         ))}
     </div>

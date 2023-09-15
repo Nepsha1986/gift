@@ -9,13 +9,24 @@ interface Props {
 const { title } = Astro.props;
 
 const pathname = new URL(Astro.request.url).pathname;
+const pathParts = pathname.split('/');
 
 let category;
+let activeGiftSlug;
 
 const isCategoryPage = pathname.split('/')[1] === 'gifts' && pathname.split('/').length === 4;
-if(isCategoryPage)  category = pathname.split('/')[2];
 
-const isGiftsPage = pathname.split('/')[1] === 'gifts' &&  3 >= pathname.split('/').length;
+
+if(isCategoryPage)  {
+	category = pathParts[2]
+	activeGiftSlug = pathParts[pathParts.length - 1];
+};
+
+const isGiftsPage = pathParts[1] === 'gifts' &&  3 >= pathParts.length;
+
+if(isGiftsPage)  {
+	activeGiftSlug = pathParts[pathParts.length - 1];
+};
 
 import '../styles/global.scss';
 ---
@@ -43,7 +54,7 @@ import '../styles/global.scss';
 
 			{(isCategoryPage || isGiftsPage) &&
 				<aside>
-					<GiftList category={category} />
+					<GiftList category={category} activeGiftSlug={activeGiftSlug} />
 				</aside>
 			}
 		</div>
