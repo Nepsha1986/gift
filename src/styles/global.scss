@@ -1,10 +1,12 @@
+@import "variables";
+
 body {
   min-height: 100vh;
 }
 
 a,
 a:hover {
-  color: #1aa9c2;
+  color: var(--c-primary);
   text-decoration: none;
 }
 
@@ -18,14 +20,14 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Montserrat", sans-serif;
-  color: #2d2d2d;
+  font-family: var(--font-primary);
+  color: var(--c-text);
 }
 
 p {
-  color: #2d2d2d;
+  color: var(--c-text);
 }
 
 html {
-  font-family: "Lato", sans-serif;
+  font-family: var(--font-primary);
 }
