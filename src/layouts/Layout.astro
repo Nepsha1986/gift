@@ -1,6 +1,7 @@
 ---
-import {ViewTransitions} from 'astro:transitions';
+import Navigation from '@components/Navigation';
 import GiftList from "@components/GiftList";
+import {ViewTransitions} from 'astro:transitions';
 interface Props {
 	title: string;
 }
@@ -9,8 +10,12 @@ const { title } = Astro.props;
 
 const pathname = new URL(Astro.request.url).pathname;
 
+let category;
+
 const isCategoryPage = pathname.split('/')[1] === 'gifts' && pathname.split('/').length === 4;
-const category = pathname.split('/')[2];
+if(isCategoryPage)  category = pathname.split('/')[2];
+
+const isGiftsPage = pathname.split('/')[1] === 'gifts' &&  3 >= pathname.split('/').length;
 
 import '../styles/global.scss';
 ---
@@ -32,11 +37,15 @@ import '../styles/global.scss';
 	</head>
 	<body>
 		<div class="app-container">
+			<Navigation currentPage={pathname}  />
+
 			<main><slot /></main>
 
-			<aside>
-				<GiftList category={isCategoryPage && category} />
-			</aside>
+			{(isCategoryPage || isGiftsPage) &&
+				<aside>
+					<GiftList category={category} />
+				</aside>
+			}
 		</div>
 	</body>
 </html>
@@ -54,6 +63,7 @@ import '../styles/global.scss';
 		padding: 3rem 10px;
 		margin: 0 auto;
 		display: flex;
+		justify-content: center;
 		gap: 10px;
 	}
 
