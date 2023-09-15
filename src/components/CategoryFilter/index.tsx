@@ -49,7 +49,7 @@ const CategoryFilter: React.FC<Props> = ({ activeCategory }) => {
         });
 
         return (
-          <a className={navItemClass} href={i[0]}>
+          <a key={i[0]} className={navItemClass} href={i[0]}>
             {i[1]}
           </a>
         );

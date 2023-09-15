@@ -10,8 +10,8 @@ import {
 
 import styles from "./styles.module.scss";
 
-const navItems: [string, string, React.ReactNode][] = [
-  ["", "Home", <FontAwesomeIcon icon={faHome} />],
+const navItems: [string, string | null, React.ReactNode][] = [
+  ["", null, <FontAwesomeIcon icon={faHome} />],
   ["gifts", "Gifts", <FontAwesomeIcon icon={faGift} />],
   ["about", "About", <FontAwesomeIcon icon={faAddressCard} />],
   ["contacts", "Contacts", <FontAwesomeIcon icon={faPhone} />],
@@ -34,7 +34,9 @@ const Navigation: React.FC<Props> = ({ currentPage }) => {
         return (
           <a key={i[0]} className={navItemClass} href={`/${i[0]}`}>
             <span className={styles.navigation__itemIcon}>{i[2]}</span>
-            <span className={styles.navigation__itemName}>{i[1]}</span>
+            {!!i[1] && (
+              <span className={styles.navigation__itemName}>{i[1]}</span>
+            )}
           </a>
         );
       })}
