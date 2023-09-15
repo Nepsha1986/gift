@@ -19,7 +19,7 @@ const GiftList: React.FC<Props> = ({ category }) => {
 
   return (
     <div>
-      <CategoryFilter />
+      <CategoryFilter activeCategory={category} />
 
       {!!filtered.length &&
         filtered.map((i) => (

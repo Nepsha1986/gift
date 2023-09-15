@@ -13,8 +13,8 @@ import styles from "./styles.module.scss";
 const navItems: [string, string, React.ReactNode][] = [
   ["", "Home", <FontAwesomeIcon icon={faHome} />],
   ["gifts", "Gifts", <FontAwesomeIcon icon={faGift} />],
-  ["about", "About", <FontAwesomeIcon icon={faPhone} />],
-  ["contacts", "Contacts", <FontAwesomeIcon icon={faAddressCard} />],
+  ["about", "About", <FontAwesomeIcon icon={faAddressCard} />],
+  ["contacts", "Contacts", <FontAwesomeIcon icon={faPhone} />],
 ];
 
 interface Props {

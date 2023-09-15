@@ -5,8 +5,6 @@ export const categories: [categoryUrl: Category, categoryName: string][] = [
   ["for-women", "For her"],
   ["for-children", "For children"],
   ["for-wife", "For wife"],
-  ["for-fathers", "For fathers"],
-  ["for-mothers", "For mothers"],
   ["for-husband", "For husband"],
   ["for-mothers", "For mothers"],
   ["for-fathers", "For fathers"],
