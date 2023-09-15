@@ -1,5 +1,7 @@
 ---
-import Layout from "../../layouts/Layout.astro";
+import Layout from "@layouts/Layout.astro";
+import GiftPage from "@components/GiftPage.astro";
+
 import { getCollection } from "astro:content";
 import { Image } from "astro:assets";
 
@@ -7,54 +9,9 @@ const giftsEntries = await getCollection("gifts")
 const { Content } = await giftsEntries[0].render();
 ---
 
-<Layout title="Blog">
-  <article class="article">
-    <header class="article__header">
-      <div class="article__imgWrap">
-        <Image class="article__img" src={giftsEntries[0].data.thumbnail} width="320" height="260" alt={giftsEntries[0].data.title} />
-      </div>
-
-      <div>
-        <h1 class="article__title">{giftsEntries[0].data.title}</h1>
-      </div>
-    </header>
-
-
-    <Content />
-  </article>
+<Layout title="Gifts">
+  <GiftPage title={giftsEntries[0].data.title}>
+    <Image class="img-contain" slot="thumbnail" src={giftsEntries[0].data.thumbnail} width="900" height="450" alt={giftsEntries[0].data.title} />
+    <Content slot="content" />
+  </GiftPage>
 </Layout>
-
-<style>
-    .article {
-        max-width: 800px;
-        margin: 0 auto;
-    }
-
-    .article__date {
-        color: #8f8f8f;
-        font-size: 1.1rem;
-        font-style: italic;
-    }
-
-    .article__title {
-        font-size: 1.75rem;
-    }
-
-    .article__img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-    }
-
-    .article__imgWrap {
-        border-radius: 4px;
-        overflow: hidden;
-        margin-bottom: 1rem;
-        max-height: 40vh;
-        width: 100%;
-    }
-
-    .article__header {
-        margin-bottom: 2rem;
-    }
-</style>

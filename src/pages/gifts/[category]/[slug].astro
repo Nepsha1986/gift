@@ -1,6 +1,7 @@
 ---
-import Layout from "../../../layouts/Layout.astro";
+import Layout from "@layouts/Layout.astro";
 import { getCollection } from "astro:content";
+import GiftPage from "@components/GiftPage.astro";
 import { Image } from "astro:assets";
 
 export async function getStaticPaths() {
@@ -17,53 +18,8 @@ const { Content } = await entry.render();
 ---
 
 <Layout title="Blog">
-  <article class="article">
-    <header class="article__header">
-      <div class="article__imgWrap">
-        <Image class="article__img" src={entry.data.thumbnail} width="320" height="260" alt={entry.data.title} />
-      </div>
-
-      <div>
-        <h1 class="article__title">{entry.data.title}</h1>
-      </div>
-    </header>
-
-
-    <Content />
-  </article>
+  <GiftPage title={entry.data.title}>
+    <Image class="img-contain" slot="thumbnail" src={entry.data.thumbnail} width="900" height="450" alt={entry.data.title} />
+    <Content slot="content" />
+  </GiftPage>
 </Layout>
-
-<style>
-    .article {
-      max-width: 800px;
-        margin: 0 auto;
-    }
-
-    .article__date {
-        color: #8f8f8f;
-        font-size: 1.1rem;
-        font-style: italic;
-    }
-
-    .article__title {
-        font-size: 1.75rem;
-    }
-
-    .article__img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-    }
-
-    .article__imgWrap {
-        border-radius: 4px;
-        overflow: hidden;
-        margin-bottom: 1rem;
-        max-height: 40vh;
-        width: 100%;
-    }
-
-    .article__header {
-        margin-bottom: 2rem;
-    }
-</style>
