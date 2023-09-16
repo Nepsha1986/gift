@@ -10,8 +10,20 @@ const { Content } = await giftsEntries[0].render();
 ---
 
 <Layout title="Gifts">
-	<GiftPage title={giftsEntries[0].data.title} category={giftsEntries[0].data.category} subtitle={giftsEntries[0].data.description} meta={giftsEntries[0].data?.meta}>
-		<Image class="img-contain" slot="thumbnail" src={giftsEntries[0].data.thumbnail} width="900" height="450" alt={giftsEntries[0].data.title} />
+	<GiftPage
+		title={giftsEntries[0].data.title}
+		category={giftsEntries[0].data.category}
+		subtitle={giftsEntries[0].data.description}
+		meta={giftsEntries[0].data?.meta}
+	>
+		<Image
+			class="img-cover"
+			slot="thumbnail"
+			src={giftsEntries[0].data.thumbnail}
+			width="900"
+			height="450"
+			alt={giftsEntries[0].data.title}
+		/>
 		<Content slot="content" />
 	</GiftPage>
 </Layout>

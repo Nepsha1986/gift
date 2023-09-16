@@ -26,7 +26,14 @@ const { Content } = await entry.render();
     subtitle={entry.data.description}
     meta={entry.data?.meta}
   >
-    <Image class="img-contain" slot="thumbnail" src={entry.data.thumbnail} width="900" height="450" alt={entry.data.title} />
+    <Image
+      class="img-cover"
+      slot="thumbnail"
+      src={entry.data.thumbnail}
+      width="900"
+      height="450"
+      alt={entry.data.title}
+    />
     <Content slot="content" />
   </GiftPage>
 </Layout>

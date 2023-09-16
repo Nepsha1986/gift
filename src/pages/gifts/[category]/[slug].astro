@@ -9,7 +9,7 @@ export async function getStaticPaths() {
   const giftsEntries = await getCollection("gifts");
 
   return giftsEntries.map((entry) => ({
-    params: { slug: entry.slug, category: entry.data?.category || 'all' },
+    params: { slug: entry.slug, category: entry.data?.category || "all" },
     props: { entry }
   }));
 }
@@ -19,8 +19,19 @@ const { Content } = await entry.render();
 ---
 
 <Layout title="Blog">
-  <GiftPage title={entry.data.title} category={toCategoryName(entry.data.category)} subtitle={entry.data.description} meta={entry.data?.meta}>
-    <Image class="img-contain" slot="thumbnail" src={entry.data.thumbnail} width="900" height="450" alt={entry.data.title} />
+  <GiftPage
+    title={entry.data.title}
+    category={toCategoryName(entry.data.category)}
+    subtitle={entry.data.description}
+    meta={entry.data?.meta}>
+    <Image
+      class="img-cover"
+      slot="thumbnail"
+      src={entry.data.thumbnail}
+      width="900"
+      height="450"
+      alt={entry.data.title}
+    />
     <Content slot="content" />
   </GiftPage>
 </Layout>
