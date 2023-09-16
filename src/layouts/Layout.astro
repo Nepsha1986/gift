@@ -21,13 +21,13 @@ const isCategoryPage = pathname.split('/')[1] === 'gifts' && pathname.split('/')
 if(isCategoryPage)  {
 	category = pathParts[2]
 	activeGiftSlug = pathParts[pathParts.length - 1];
-};
+}
 
 const isGiftsPage = pathParts[1] === 'gifts' &&  3 >= pathParts.length;
 
 if(isGiftsPage)  {
 	activeGiftSlug = pathParts[pathParts.length - 1];
-};
+}
 
 import '../styles/global.scss';
 ---

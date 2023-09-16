@@ -1,29 +1,80 @@
 ---
 import Layout from "@layouts/Layout.astro";
-import GiftPage from "@components/GiftPage.astro";
+import LinkButton from "@components/LinkButton.astro";
 
 import { getCollection } from "astro:content";
 import { Image } from "astro:assets";
 
-const giftsEntries = await getCollection("gifts")
-const { Content } = await giftsEntries[0].render();
+const giftsEntries = await getCollection("gifts");
+const featured = giftsEntries.filter(i => i.data.featured);
 ---
 
 <Layout title="Gifts">
-	<GiftPage
-		title={giftsEntries[0].data.title}
-		category={giftsEntries[0].data.category}
-		subtitle={giftsEntries[0].data.description}
-		meta={giftsEntries[0].data?.meta}
-	>
-		<Image
-			class="img-cover"
-			slot="thumbnail"
-			src={giftsEntries[0].data.thumbnail}
-			width="900"
-			height="450"
-			alt={giftsEntries[0].data.title}
-		/>
-		<Content slot="content" />
-	</GiftPage>
+	<div class="container">
+				<div class="card">
+					<h1>Gift Ideas 2023</h1>
+
+					<h2>Welcome to gift4you.co - Your Ultimate Gift Destination!</h2>
+
+					<p>Discovering the ideal gift that perfectly suits the recipient's personality, interests, and preferences can be a daunting task. That's where we come in. Our mission is to take the stress out of gift shopping by offering a wide range of thoughtful and unique gift ideas tailored to various recipients.</p>
+				</div>
+
+				<div class="giftsContainer">
+					<div class="gifts">
+						{ featured.map((i) => (
+							<a class="giftItem" href={`/gifts/${i.slug}`}>
+								<Image
+									src={i.data.thumbnail}
+									width="150"
+									height="150"
+									alt={i.data.title}
+								/>
+							</a>
+						))}
+					</div>
+
+					<LinkButton  link="/gifts" text='View all' />
+				</div>
+	</div>
+
 </Layout>
+
+<style lang="scss">
+	.container {
+		display: flex;
+		flex-flow: row wrap;
+		min-height: 80vh;
+		align-items: center;
+		justify-content: center;
+		gap: 15px;
+	}
+
+	.card {
+		padding: 15px;
+		border-radius: 5px;
+		max-width: 500px;
+		margin-bottom: 15px;
+	}
+
+	.giftsContainer {
+		text-align: center;
+	}
+
+	.gifts {
+		display: grid;
+		grid-template-columns: repeat(3, 150px);
+		grid-template-rows: repeat(3, 150px);
+		gap: 15px;
+		margin-bottom: 1rem;
+	}
+
+	.giftItem {
+		box-shadow: 0 5px 15px -5px rgba(0, 0, 0, 0.3);
+		transition: 0.3s;
+
+		&:hover {
+			box-shadow: 0 13px 21px -5px rgba(0, 0, 0, 0.3);
+			transform: scale(1.03);
+		}
+	}
+</style>

@@ -33,6 +33,7 @@ const giftsCollection = defineCollection({
         priceRange: z.string().optional(),
       })
       .optional(),
+    featured: z.boolean().optional().default(false),
   }),
 });
 

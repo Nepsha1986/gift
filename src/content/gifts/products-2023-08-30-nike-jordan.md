@@ -10,6 +10,7 @@ category: "for-women"
 meta:
     age: 10+
     priceRange: $100-$200
+featured: true
 ---
 ## Lorem Ipsum is simply dummy
 
