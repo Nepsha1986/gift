@@ -1,4 +1,5 @@
 ---
+import { removeTrailingSlash } from "@utils/removeTrailingSlash";
 import Navigation from '@components/Navigation';
 import GiftList from "@components/GiftList";
 import {ViewTransitions} from 'astro:transitions';
@@ -8,7 +9,7 @@ interface Props {
 
 const { title } = Astro.props;
 
-const pathname = new URL(Astro.request.url).pathname;
+const pathname = removeTrailingSlash(new URL(Astro.request.url).pathname);
 const pathParts = pathname.split('/');
 
 let category;
@@ -48,8 +49,6 @@ import '../styles/global.scss';
 	</head>
 	<body>
 		<div class="app-container">
-			{pathname}
-
 			<Navigation currentPage={pathname}  />
 
 			<main><slot /></main>
