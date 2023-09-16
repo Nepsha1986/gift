@@ -4,6 +4,7 @@ import GiftPage from "@components/GiftPage.astro";
 
 import { getCollection } from "astro:content";
 import { Image } from "astro:assets";
+import { toCategoryName } from "../../utils/toCategoryName";
 
 export async function getStaticPaths() {
   const giftsEntries = await getCollection("gifts");
@@ -19,7 +20,12 @@ const { Content } = await entry.render();
 ---
 
 <Layout title={entry.data.title}>
-  <GiftPage title={entry.data.title}>
+  <GiftPage
+    title={entry.data.title}
+    category={toCategoryName(entry.data.category)}
+    subtitle={entry.data.description}
+    meta={entry.data?.meta}
+  >
     <Image class="img-contain" slot="thumbnail" src={entry.data.thumbnail} width="900" height="450" alt={entry.data.title} />
     <Content slot="content" />
   </GiftPage>

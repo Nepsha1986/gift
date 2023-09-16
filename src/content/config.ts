@@ -27,6 +27,12 @@ const giftsCollection = defineCollection({
     thumbnail: z.string(),
     price: z.number(),
     category: GiftCategory.optional(),
+    meta: z
+      .object({
+        age: z.string().optional(),
+        priceRange: z.string().optional(),
+      })
+      .optional(),
   }),
 });
 

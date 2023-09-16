@@ -1,7 +1,14 @@
 :root {
-  --c-primary: #1aa9c2;
+  --c-primary: #157a8c;
+
+  --c-grey-lightest: #e0dede;
+  --c-grey-light: #a2a2a2;
+  --c-grey: #6b6b6b;
+  --c-grey-dark: #424242;
+  --c-grey-darkest: #262626;
+
   --font-primary: "Lato", sans-serif;
   --font-secondary: "Montserrat", sans-serif;
 
-  --c-text: #2d2d2d;
+  --c-text: var(--c-grey-darkest);
 }

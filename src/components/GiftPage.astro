@@ -1,11 +1,20 @@
 ---
+import { Category } from "../types/category";
+
+interface MetaInfo {
+	age: string,
+	priceRange: string,
+}
 interface Props {
 	thumbnail: string;
 	title: string;
+	subtitle: string;
 	content: any;
+	category?: Category;
+	meta?:MetaInfo;
 }
 
-const { thumbnail, title, content } = Astro.props;
+const { thumbnail, title, content, category, subtitle, meta} = Astro.props;
 ---
 
 <article class="article">
@@ -16,37 +25,56 @@ const { thumbnail, title, content } = Astro.props;
 
 		<div>
 			<h1 class="article__title">{title}</h1>
+			{ category && <p class="article__category">Category: {category}</p> }
+
+			<p class="article__subtitle">{subtitle}</p>
+
+			{ !!meta?.age && <p class="article__age"><span class="bold">Age: </span>{meta.age}</p>}
+			{ !!meta?.priceRange && <p class="article__age"><span class="bold">Price Range: </span>{meta?.priceRange}</p>}
 		</div>
 	</header>
 
 	<slot name="content"/>
 </article>
 
-<style>
+<style lang="scss">
 	.article {
 		max-width: 800px;
 		margin: 0 auto;
-	}
 
-	.article__date {
-		color: #8f8f8f;
-		font-size: 1.1rem;
-		font-style: italic;
-	}
+		&__title {
+			font-size: 1.75rem;
+		}
 
-	.article__title {
-		font-size: 1.75rem;
-	}
+		&__subtitle {
+			color: var(--c-grey-dark);
+			font-style: italic;
+		}
 
-	.article__imgWrap {
-		border-radius: 4px;
-		overflow: hidden;
-		margin-bottom: 1rem;
-		max-height: 40vh;
-		width: 100%;
-	}
+		&__category {
+			color: var(--c-grey);
+		}
 
-	.article__header {
-		margin-bottom: 2rem;
+		&__price,
+		&__age {
+			font-size: 0.9rem;
+			margin-bottom: 0.2rem;
+		}
+
+		&__imgWrap {
+			border-radius: 10px;
+			overflow: hidden;
+			margin-bottom: 1rem;
+			max-height: 40vh;
+			width: 100%;
+			max-width: 300px;
+			height: 300px;
+			margin-right: 15px;
+		}
+
+		&__header {
+			margin-bottom: 2rem;
+			display: flex;
+		}
 	}
 </style>
