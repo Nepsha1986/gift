@@ -8,7 +8,6 @@ category: "for-men"
 meta:
     age: 18+
     priceRange: $50-$100
-featured: true
 ---
 ## Grooming Precision
 

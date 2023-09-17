@@ -8,7 +8,6 @@ category: "for-women"
 meta:
   age: 12+
   priceRange: $100-$200
-featured: true
 ---
 ## Immerse in Pure Sound
 

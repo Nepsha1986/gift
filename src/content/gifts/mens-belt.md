@@ -8,7 +8,6 @@ category: "for-men"
 meta:
     age: 18+
     priceRange: $30-$50
-featured: true
 ---
 ## Define Your Style
 

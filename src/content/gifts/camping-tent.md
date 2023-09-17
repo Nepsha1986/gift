@@ -8,7 +8,6 @@ category: "for-men"
 meta:
     age: 18+
     priceRange: $100-$200
-featured: true
 ---
 ## Embrace the Great Outdoors
 

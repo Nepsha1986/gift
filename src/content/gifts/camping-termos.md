@@ -8,7 +8,6 @@ category: "for-men"
 meta:
     age: 12+
     priceRange: $20-$50
-featured: true
 ---
 ## Stay Hydrated Anywhere
 
