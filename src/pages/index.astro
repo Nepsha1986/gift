@@ -24,6 +24,7 @@ const featured = giftsEntries.filter(i => i.data.featured);
 						{ featured.map((i) => (
 							<a class="giftItem" href={`/gifts/${i.slug}`}>
 								<Image
+									class="img-cover"
 									src={i.data.thumbnail}
 									width="150"
 									height="150"
@@ -61,9 +62,10 @@ const featured = giftsEntries.filter(i => i.data.featured);
 	}
 
 	.gifts {
+		max-width: 480px;
 		display: grid;
-		grid-template-columns: repeat(3, 150px);
-		grid-template-rows: repeat(3, 150px);
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: repeat(3, 1fr);
 		gap: 15px;
 		margin-bottom: 1rem;
 	}
