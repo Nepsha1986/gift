@@ -8,7 +8,6 @@ category: "for-kids"
 meta:
     age: 3+
     priceRange: $30-$50
-featured: true
 ---
 ## Create Magical Adventures with a Kid's Tent
 
