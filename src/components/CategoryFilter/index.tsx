@@ -34,15 +34,6 @@ interface Props {
 const CategoryFilter: React.FC<Props> = ({ activeCategory }) => {
   return (
     <div className={styles.categoryFilter}>
-      <a
-        className={classNames(styles.categoryFilter__link, {
-          [styles["categoryFilter__link_active"]]: !activeCategory,
-        })}
-        href={`/gifts/${gifts[0].slug}`}
-      >
-        All
-      </a>
-
       {categoryLinks.map((i) => {
         const navItemClass = classNames(styles.categoryFilter__link, {
           [styles["categoryFilter__link_active"]]: activeCategory === i[2],

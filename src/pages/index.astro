@@ -22,7 +22,7 @@ const featured = giftsEntries.filter(i => i.data.featured);
 				<div class="giftsContainer">
 					<div class="gifts">
 						{ featured.map((i) => (
-							<a class="giftItem" href={`/gifts/${i.slug}`}>
+							<a class="giftItem" href={`/gifts/${i.data.category}/${i.slug}`}>
 								<Image
 									class="img-cover"
 									src={i.data.thumbnail}
@@ -33,8 +33,6 @@ const featured = giftsEntries.filter(i => i.data.featured);
 							</a>
 						))}
 					</div>
-
-					<LinkButton  link="/gifts" text='View all' />
 				</div>
 	</div>
 
