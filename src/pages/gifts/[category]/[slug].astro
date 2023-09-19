@@ -18,7 +18,7 @@ const { entry } = Astro.props;
 const { Content } = await entry.render();
 ---
 
-<Layout title="Blog">
+<Layout title={`Gift ideas: ${entry.data.title}`}>
   <GiftPage
     title={entry.data.title}
     category={toCategoryName(entry.data.category)}
