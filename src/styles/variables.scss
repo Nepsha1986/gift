@@ -1,5 +1,15 @@
 :root {
-  --c-primary: #157a8c;
+  --c-primary-lightest: #baf3ff;
+  --c-primary-light: #72d4e5;
+  --c-primary: #1b9bb2;
+  --c-primary-dark: #086f81;
+  --c-primary-darkest: #014b59;
+
+  --c-secondary-lightest: #fdc5ba;
+  --c-secondary-light: #e58271;
+  --c-secondary: #b2321b;
+  --c-secondary-dark: #7e1c0a;
+  --c-secondary-darkest: #520d01;
 
   --c-grey-lightest: #e0dede;
   --c-grey-light: #a2a2a2;
@@ -8,7 +18,7 @@
   --c-grey-darkest: #262626;
 
   --font-primary: "Lato", sans-serif;
-  --font-secondary: "Montserrat", sans-serif;
+  --font-secondary: "Lobster", cursive;
 
   --c-text: var(--c-grey-darkest);
 }
