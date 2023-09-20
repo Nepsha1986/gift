@@ -2,7 +2,7 @@
 title: Fishing Equipment
 description: Elevate their fishing adventures with high-quality fishing gear.
 date: '2023-09-17'
-thumbnail: /assets/fishing.jpeg
+thumbnail: /assets/fishing.webp
 price: 149.99
 category: "for-men"
 meta:

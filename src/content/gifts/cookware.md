@@ -2,7 +2,7 @@
 title: Cookware
 description: Elevate their culinary adventures with high-quality cookware.
 date: '2023-09-17'
-thumbnail: /assets/cookware.jpeg
+thumbnail: /assets/cookware.webp
 price: 199.99
 category: "for-women"
 meta:

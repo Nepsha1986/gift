@@ -23,8 +23,9 @@ const GiftList: React.FC<Props> = ({ category, activeGiftSlug }) => {
       <CategoryFilter activeCategory={category} />
 
       {!!filtered.length &&
-        filtered.map((i) => (
+        filtered.map((i, index) => (
           <GiftCard
+            index={index + 1}
             key={i.slug}
             title={i.data.title}
             thumbnail={i.data.thumbnail}

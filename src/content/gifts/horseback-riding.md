@@ -2,7 +2,7 @@
 title: Horseback Riding
 description: Gift them an unforgettable horseback riding adventure in the great outdoors.
 date: '2023-09-17'
-thumbnail: /assets/horseback_riding.jpeg
+thumbnail: /assets/horseback_riding.webp
 price: 129.99
 category: "for-women"
 meta:

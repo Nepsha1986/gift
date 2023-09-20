@@ -1,7 +1,9 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const giftsEntries = await getCollection("gifts");
-const firstGiftItem = giftsEntries.filter(i => i.data.category === 'for-women' );
+const firstGiftItem = giftsEntries.filter(
+  (i) => i.data.category === "for-women",
+);
 
 import classNames from "classnames";
 import {
@@ -16,7 +18,11 @@ import { getCollection } from "astro:content";
 
 const navItems: [string, string | null, React.ReactNode][] = [
   ["", null, <FontAwesomeIcon icon={faHome} />],
-  [`gifts/${firstGiftItem[0].data.category}/${firstGiftItem[0].slug}`, "Gifts", <FontAwesomeIcon icon={faGift} />],
+  [
+    `gifts/${firstGiftItem[0].data.category}/${firstGiftItem[0].slug}`,
+    "Gifts",
+    <FontAwesomeIcon icon={faGift} />,
+  ],
   ["about", "About", <FontAwesomeIcon icon={faAddressCard} />],
   ["contacts", "Contacts", <FontAwesomeIcon icon={faPhone} />],
 ];
