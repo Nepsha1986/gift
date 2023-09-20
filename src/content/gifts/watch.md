@@ -10,8 +10,6 @@ meta:
     priceRange: $100-$200
 featured: true
 ---
-## Timeless Elegance on Their Wrist
-
 Searching for a gift that blends style and functionality seamlessly? Look no further than a classic wristwatch. A wristwatch is more than a timekeeping device; it's a symbol of sophistication and punctuality.
 
 ## Why choose a wristwatch as a gift?

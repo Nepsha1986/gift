@@ -9,8 +9,6 @@ meta:
     age: 8+
     priceRange: $200-$500
 ---
-## Pedal into Adventure
-
 Looking for a gift that combines fitness, fun, and the great outdoors? Consider gifting a bicycle! Whether it's for a child, a friend, or a family member, a quality bicycle is a fantastic way to encourage outdoor adventures and a healthier lifestyle.
 
 ## Why choose a bicycle as a gift?

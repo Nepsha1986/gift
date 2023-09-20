@@ -9,8 +9,6 @@ meta:
     age: 18+
     priceRange: $200-$300
 ---
-## Adorn in Luxury
-
 Searching for a gift that exudes elegance and captures the essence of beauty? Consider gifting them exquisite jewelry. It's a timeless gesture that adds a touch of luxury and sophistication to any outfit.
 
 ## Why choose jewelry as a gift?

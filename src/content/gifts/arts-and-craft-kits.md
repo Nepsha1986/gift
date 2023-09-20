@@ -9,8 +9,6 @@ meta:
     age: 8+
     priceRange: $15-$50
 ---
-## Unleash Creativity with Craft Gifts
-
 Looking for a gift that ignites the spark of creativity and provides hours of artistic enjoyment? Craft gifts are the perfect choice! Whether you're shopping for a budding artist, a DIY enthusiast, or someone looking to explore their creative side, craft gifts are a delightful way to inspire and engage.
 
 ## Why choose craft gifts as a present?

@@ -9,8 +9,6 @@ meta:
     age: 18+
     priceRange: $20-$50
 ---
-## Carry with Style and Ease
-
 Looking for a gift that combines fashion, functionality, and everyday convenience? Consider gifting them a stylish wallet. It's a practical yet chic accessory that keeps their essentials organized and accessible.
 
 ## Why choose a wallet as a gift?

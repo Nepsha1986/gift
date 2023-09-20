@@ -9,8 +9,6 @@ meta:
     age: 18+
     priceRange: $100-$200
 ---
-## Embrace the Great Outdoors
-
 Looking for a gift that encourages outdoor exploration and adventure? Consider gifting them a durable camping tent. It's the key to unforgettable outdoor experiences and a cozy night under the stars.
 
 ## Why choose a camping tent as a gift?

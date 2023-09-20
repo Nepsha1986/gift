@@ -9,8 +9,6 @@ meta:
     age: 8+
     priceRange: $40-$100
 ---
-## Thrilling Adventures with Remote-Controlled Vehicles
-
 Looking for a gift that combines the thrill of speed, precision, and outdoor exploration? Remote-controlled vehicles are the perfect choice! Whether you're shopping for a young car enthusiast, a budding pilot, or a tech-savvy kid, these vehicles offer a world of exciting possibilities.
 
 ## Why choose remote-controlled vehicles as a gift?

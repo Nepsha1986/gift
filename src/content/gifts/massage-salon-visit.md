@@ -10,8 +10,6 @@ meta:
     priceRange: $50-$100
 featured: true
 ---
-## Tranquil Bliss Awaits
-
 Looking for a gift that pampers and revitalizes both the body and spirit? Consider gifting them a visit to a massage salon. It's an invitation to escape the everyday grind and embrace tranquility.
 
 ## Why choose a visit to a massage salon as a gift?

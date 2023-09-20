@@ -9,8 +9,6 @@ meta:
     age: 18+
     priceRange: $50-$100
 ---
-## Evoke Sensory Splendor
-
 Looking for a gift that's a feast for the senses and leaves a lingering trail of allure? Consider gifting them a captivating perfume. It's a luxurious and personal gesture that adds a touch of sophistication to their daily routine.
 
 ## Why choose perfume as a gift?

@@ -10,8 +10,6 @@ meta:
   priceRange: $70-$300
 featured: true
 ---
-## Unleash Musical Creativity
-
 Looking for a gift that can ignite a lifelong passion for music? Consider gifting them a classic acoustic guitar. Whether they're a seasoned musician or an aspiring strummer, a guitar is a timeless present that opens the door to endless musical possibilities.
 
 ## Why choose a guitar as a gift?

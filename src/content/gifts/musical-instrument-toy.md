@@ -9,8 +9,6 @@ meta:
     age: 3+
     priceRange: $20-$50
 ---
-## Explore the World of Music with Kid-Friendly Instruments
-
 Searching for a gift that introduces children to the magical world of music, rhythm, and self-expression? Musical instruments designed for kids are the perfect choice! Whether you're shopping for a budding musician, a music enthusiast, or a child looking to discover their artistic side, these instruments offer a delightful and educational experience.
 
 ## Why choose musical instruments for kids as a gift?

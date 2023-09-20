@@ -10,8 +10,6 @@ meta:
     priceRange: $200-$500
 featured: true
 ---
-## Cherish Moments Together
-
 Looking for a gift that promises cherished memories and quality time together? Consider gifting them a weekend getaway for two. It's the perfect escape from the daily grind and an opportunity to create lasting moments of togetherness.
 
 ## Why choose a weekend getaway for two as a gift?

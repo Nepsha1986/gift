@@ -9,8 +9,6 @@ meta:
     age: 18+
     priceRange: $100-$200
 ---
-## Cook Like a Pro
-
 Looking for a gift that transforms their kitchen into a culinary haven and inspires gourmet creations? Consider gifting them high-quality cookware. It's a practical yet elegant gesture that elevates their cooking experience.
 
 ## Why choose cookware as a gift?

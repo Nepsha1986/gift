@@ -10,8 +10,6 @@ meta:
     priceRange: $100-$150
 featured: true
 ---
-## Explore Nature from a New Perspective
-
 Looking for a gift that combines adventure, nature, and a dash of equestrian elegance? Consider gifting them a horseback riding experience. It's a chance to connect with the great outdoors while enjoying the timeless allure of horse riding.
 
 ## Why choose horseback riding as a gift?

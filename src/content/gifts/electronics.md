@@ -9,9 +9,6 @@ meta:
     age: 16+
     priceRange: $100-$500
 ---
-**Gift Idea: Electronics**
-
-**Description:**
 Embrace the future with the latest and greatest electronic gadgets and tech gifts. In this section, we present a curated collection of cutting-edge technology and innovative devices that will delight tech enthusiasts of all ages.
 
 **Product List:**

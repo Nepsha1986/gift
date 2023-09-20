@@ -10,8 +10,6 @@ meta:
     priceRange: $300-$500
 featured: true
 ---
-## Enter the World of Gaming
-
 Looking for a gift that immerses them in a world of excitement, adventure, and endless fun? Consider gifting them a cutting-edge game console. It's a gateway to thrilling gaming experiences and entertainment.
 
 ## Why choose a game console as a gift?

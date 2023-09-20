@@ -9,8 +9,6 @@ meta:
     age: 8+
     priceRange: $10-$30
 ---
-## Piece Together Happiness
-
 Looking for a gift that stimulates the mind, sparks creativity, and brings a sense of accomplishment? Consider gifting them a captivating puzzle. It's a relaxing yet mentally engaging activity that promises hours of joy.
 
 ## Why choose a puzzle as a gift?

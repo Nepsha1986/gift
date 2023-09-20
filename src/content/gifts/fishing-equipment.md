@@ -9,8 +9,6 @@ meta:
     age: 12+
     priceRange: $100-$200
 ---
-## Cast Your Cares Away
-
 Looking for a gift that connects them with nature, tranquility, and the thrill of the catch? Consider gifting them high-quality fishing equipment. It's a practical yet exciting gesture that enhances their fishing adventures.
 
 ## Why choose fishing equipment as a gift?
