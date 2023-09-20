@@ -2,7 +2,7 @@
 title: Game Console
 description: Gift them endless entertainment with a cutting-edge game console.
 date: '2023-09-17'
-thumbnail: /assets/joystick.jpeg
+thumbnail: /assets/joystick.webp
 price: 399.99
 category: "for-men"
 meta:

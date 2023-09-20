@@ -2,6 +2,7 @@ import * as React from "react";
 import styles from "./styles.module.scss";
 import classNames from "classnames";
 interface Props {
+  index: number;
   title: string;
   description: string;
   thumbnail: string;
@@ -9,6 +10,7 @@ interface Props {
   active: boolean;
 }
 const GiftCard: React.FC<Props> = ({
+  index,
   title,
   thumbnail,
   description,
@@ -26,7 +28,9 @@ const GiftCard: React.FC<Props> = ({
       </div>
 
       <div>
-        <h1 className={styles.giftCard__heading}>{title}</h1>
+        <h1 className={styles.giftCard__heading}>
+          {index}. {title}
+        </h1>
         <p className={styles.giftCard__desc}>{description}</p>
       </div>
     </a>
