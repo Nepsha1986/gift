@@ -10,8 +10,6 @@ meta:
     priceRange: $500-$1000
 featured: true
 ---
-## Sail into Luxury
-
 Searching for a gift that's the epitome of luxury, adventure, and sheer indulgence? Consider gifting them a private yacht trip. It's an escape to a world of opulence, where they can explore the open seas in style.
 
 ## Why choose a yacht trip as a gift?

@@ -9,8 +9,6 @@ meta:
   age: 12+
   priceRange: $100-$200
 ---
-## Immerse in Pure Sound
-
 Looking for a gift that will take their music listening experience to the next level? Consider gifting them a pair of high-quality headphones. Whether they're a music enthusiast, a gamer, or simply someone who enjoys audio content, headphones make for an exceptional present.
 
 ## Why choose headphones as a gift?

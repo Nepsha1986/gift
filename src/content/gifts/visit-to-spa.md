@@ -10,8 +10,6 @@ meta:
     priceRange: $100-$200
 featured: false
 ---
-## Indulge in Self-Care
-
 Looking for a gift that pampers and rejuvenates the body and soul? Consider gifting them a luxurious spa experience. It's a chance to escape the stresses of everyday life and indulge in ultimate relaxation.
 
 ## Why choose a visit to the spa as a gift?

@@ -9,8 +9,6 @@ meta:
     age: 6+
     priceRange: $30-$100
 ---
-## Inspire Creativity with Constructor Lego
-
 Looking for a gift that sparks imagination, fosters creativity, and teaches valuable engineering skills? Look no further than Constructor Lego sets. These versatile building blocks are the perfect gift for kids of all ages, offering hours of educational and entertaining fun.
 
 ## Why choose Constructor Lego as a gift for your child?

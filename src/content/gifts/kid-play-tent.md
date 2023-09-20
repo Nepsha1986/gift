@@ -9,8 +9,6 @@ meta:
     age: 3+
     priceRange: $30-$50
 ---
-## Create Magical Adventures with a Kid's Tent
-
 Looking for a gift that sparks imagination, provides a cozy hideaway, and encourages endless adventures? A kid's tent is the perfect choice! Whether you're shopping for a little explorer, a budding storyteller, or a child looking for their own special space, a kid's tent offers a world of imaginative possibilities.
 
 ## Why choose a kid's tent as a gift?

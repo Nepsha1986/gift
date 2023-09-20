@@ -9,8 +9,6 @@ meta:
     age: 18+
     priceRange: $50-$100
 ---
-## Grooming Precision
-
 Searching for a gift that combines practicality with grooming excellence? Consider gifting them a high-performance electric shaver. It's a versatile tool that elevates their grooming routine to a whole new level.
 
 ## Why choose an electric shaver as a gift?

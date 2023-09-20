@@ -9,9 +9,6 @@ meta:
     age: 1-5
     priceRange: $50-$100
 ---
-**Gift Idea: Kids Ride-On Cars and Push Toys**
-
-**Description:**
 Give your child the gift of adventure and imagination with these delightful kids' ride-on cars and push toys. In this section, we present a range of options designed to make playtime more enjoyable and interactive for your little ones.
 
 **Product List:**

@@ -9,8 +9,6 @@ meta:
     age: 16+
     priceRange: $100-$150
 ---
-## Unlock Thrills and Puzzles with an Escape Room Experience
-
 Looking for a gift that combines excitement, teamwork, and the thrill of solving puzzles? An escape room experience is the perfect choice! Whether you're shopping for an adventure-loving friend, a family looking for a unique outing, or a special someone seeking a memorable date, escape rooms offer an unforgettable adventure.
 
 ## Why choose an escape room experience as a gift?

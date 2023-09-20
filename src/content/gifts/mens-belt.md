@@ -9,8 +9,6 @@ meta:
     age: 18+
     priceRange: $30-$50
 ---
-## Define Your Style
-
 Searching for a gift that combines both fashion and functionality? Consider gifting them a classic men's belt. A belt is more than just an accessory; it's a finishing touch that adds sophistication to any outfit.
 
 ## Why choose a men's belt as a gift?

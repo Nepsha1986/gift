@@ -9,8 +9,6 @@ meta:
     age: 5+
     priceRange: $100-$200
 ---
-## Glide in Style with a Scooter
-
 Looking for a gift that combines style, mobility, and outdoor fun? Consider gifting a scooter! Whether it's for a child, a teenager, or an adult, a scooter is a fantastic way to enjoy the thrill of the ride while effortlessly getting around town.
 
 ## Why choose a scooter as a gift?

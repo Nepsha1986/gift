@@ -10,8 +10,6 @@ meta:
     priceRange: $200-$400
 featured: true
 ---
-## Embrace a Healthier Lifestyle
-
 Looking for a gift that promotes health, wellness, and an active lifestyle? Consider gifting them high-quality fitness equipment. It's a practical gesture that supports their journey to a healthier and fitter self.
 
 ## Why choose fitness equipment as a gift?

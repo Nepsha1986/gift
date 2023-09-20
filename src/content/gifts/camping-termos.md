@@ -9,8 +9,6 @@ meta:
     age: 12+
     priceRange: $20-$50
 ---
-## Stay Hydrated Anywhere
-
 Searching for a gift that combines practicality with outdoor adventure? Consider gifting them a dependable camping thermos. It's the key to staying hydrated and fueled during their wilderness explorations.
 
 ## Why choose a camping thermos as a gift?
