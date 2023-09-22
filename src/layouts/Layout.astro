@@ -17,15 +17,8 @@ let activeGiftSlug;
 
 const isCategoryPage = pathname.split('/')[1] === 'gifts' && pathname.split('/').length === 4;
 
-
 if(isCategoryPage)  {
 	category = pathParts[2]
-	activeGiftSlug = pathParts[pathParts.length - 1];
-}
-
-const isGiftsPage = pathParts[1] === 'gifts' &&  3 >= pathParts.length;
-
-if(isGiftsPage)  {
 	activeGiftSlug = pathParts[pathParts.length - 1];
 }
 
@@ -64,7 +57,7 @@ import '../styles/global.scss';
 
 			<main><slot /></main>
 
-			{(isCategoryPage || isGiftsPage) &&
+			{(isCategoryPage) &&
 				<aside>
 					<GiftList category={category} activeGiftSlug={activeGiftSlug} />
 				</aside>
