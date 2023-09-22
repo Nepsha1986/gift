@@ -2,7 +2,7 @@
 title: Tools Set
 description: Empower DIY enthusiasts with a versatile and high-quality tool set.
 date: '2023-09-18'
-thumbnail: /assets/tools_set.jpeg
+thumbnail: /assets/tools_set.webp
 price: 129.99
 category: "for-men"
 meta:

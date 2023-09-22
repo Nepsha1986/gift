@@ -2,7 +2,7 @@
 title: Wallet
 description: Gift them a stylish and functional wallet for everyday convenience.
 date: '2023-09-17'
-thumbnail: /assets/wallet.jpeg
+thumbnail: /assets/wallet.webp
 price: 49.99
 category: "for-men"
 meta:
