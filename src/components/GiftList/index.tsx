@@ -1,10 +1,11 @@
 import React from "react";
 import { getCollection } from "astro:content";
 import GiftCard from "@components/GiftCard";
-import CategoryFilter from "@components/CategoryFilter";
 import type { Category } from "../../types/category.ts";
 
 const gifts = await getCollection("gifts");
+
+import styles from "./styles.module.scss";
 
 interface Props {
   category?: Category;
@@ -19,9 +20,7 @@ const GiftList: React.FC<Props> = ({ category, activeGiftSlug }) => {
     category ? `/gifts/${category}/${slug}` : `/gifts/${slug}`;
 
   return (
-    <div>
-      <CategoryFilter activeCategory={category} />
-
+    <div className={styles.giftList}>
       {!!filtered.length &&
         filtered.map((i, index) => (
           <GiftCard

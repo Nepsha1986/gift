@@ -2,6 +2,7 @@
 import { removeTrailingSlash } from "@utils/removeTrailingSlash";
 import Navigation from '@components/Navigation';
 import GiftList from "@components/GiftList";
+import CategoryFilter from "@components/CategoryFilter";
 import {ViewTransitions} from 'astro:transitions';
 interface Props {
 	title: string;
@@ -59,7 +60,10 @@ import '../styles/global.scss';
 
 			{(isCategoryPage) &&
 				<aside>
-					<GiftList category={category} activeGiftSlug={activeGiftSlug} />
+					<div class="categoryItems">
+						<CategoryFilter activeCategory={category}  />
+						<GiftList category={category} activeGiftSlug={activeGiftSlug} />
+					</div>
 				</aside>
 			}
 		</div>
@@ -100,5 +104,10 @@ import '../styles/global.scss';
 		@media (min-width: 1200px) {
 			max-width: 400px;
 		}
+	}
+
+	.categoryItems {
+		position: sticky;
+		top: 10px;
 	}
 </style>
