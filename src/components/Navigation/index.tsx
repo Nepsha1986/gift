@@ -32,13 +32,15 @@ interface Props {
 }
 
 const Navigation: React.FC<Props> = ({ currentPage }) => {
-  const pageName = currentPage.split("/")[1];
+  const currentPageParent = currentPage.split("/")[1];
 
   return (
     <nav className={styles.navigation}>
       {navItems.map((i) => {
+        const navItemParent = i[0].split("/")[0];
         const navItemClass = classNames(styles.navigation__item, {
-          [styles["navigation__item_active"]]: pageName === i[0],
+          [styles["navigation__item_active"]]:
+            currentPageParent === navItemParent,
         });
 
         return (
