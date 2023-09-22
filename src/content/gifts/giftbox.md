@@ -2,14 +2,13 @@
 title: Kids' Gift Box
 description: Surprise and delight children with a themed gift box filled with fun and educational items.
 date: '2023-09-18'
-thumbnail: /assets/gift_box.jpeg
+thumbnail: /assets/gift_box.webp
 price: 59.99
 category: "for-kids"
 meta:
     age: 3+
     priceRange: $50-$70
 ---
-
 Looking for a thoughtful and exciting gift for children? Explore our Kids' Gift Boxes, carefully curated to bring joy, education, and endless hours of fun to young minds. Whether you're shopping for a birthday, holiday, or just to see a child's face light up, these themed gift boxes are sure to delight.
 
 ## Examples of Kids' Gift Box Themes

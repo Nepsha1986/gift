@@ -2,7 +2,7 @@
 title: Yacht Trip
 description: Gift them the ultimate luxury with a private yacht trip on the open seas.
 date: '2023-09-17'
-thumbnail: /assets/yacht.jpeg
+thumbnail: /assets/yacht.webp
 price: 799.99
 category: "for-women"
 meta:

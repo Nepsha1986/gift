@@ -2,7 +2,7 @@
 title: Car Accessories
 description: Upgrade your driving experience with these practical and stylish car accessories.
 date: '2023-09-19'
-thumbnail: /assets/wheel.jpeg
+thumbnail: /assets/wheel.webp
 price: 24.99
 category: "for-men"
 meta:

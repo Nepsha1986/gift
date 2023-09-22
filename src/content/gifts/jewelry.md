@@ -2,7 +2,7 @@
 title: Jewelry
 description: Gift them timeless elegance with exquisite jewelry pieces.
 date: '2023-09-17'
-thumbnail: /assets/jewelry.jpeg
+thumbnail: /assets/jewelry.webp
 price: 249.99
 category: "for-women"
 meta:
