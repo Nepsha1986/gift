@@ -16,9 +16,10 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const { Content } = await entry.render();
+const seoTitle = `Gift idea ${toCategoryName(entry.data.category).toLowerCase()} - ${entry.data.title}`;
 ---
 
-<Layout title={`Gift ideas: ${entry.data.title}`}>
+<Layout title={seoTitle}>
   <GiftPage
     title={entry.data.title}
     category={toCategoryName(entry.data.category)}
