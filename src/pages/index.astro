@@ -8,6 +8,8 @@ import { toCategoryName } from "../utils/toCategoryName";
 
 const giftsEntries = await getCollection("gifts");
 const featured = giftsEntries.filter(i => i.data.featured);
+const first = giftsEntries.find(i => i.data.category === 'for-women');
+const viewIdeasLink = `/gifts/${first.data.category}/${first.slug}`;
 ---
 
 <Layout title="Find the Perfect Presents for Every Occasion">
@@ -22,7 +24,7 @@ const featured = giftsEntries.filter(i => i.data.featured);
           thoughtful and unique gift ideas tailored to various recipients.</p>
       </div>
 
-      <LinkButton link={`/gifts/${featured[0].data.category}/${featured[0].slug}`} text="View gift ideas" />
+      <LinkButton link={viewIdeasLink} text="View gift ideas" />
     </div>
 
     {featured.map((i, index) => (
