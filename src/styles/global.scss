@@ -28,23 +28,3 @@ p {
 html {
   font-family: var(--font-primary);
 }
-
-mark {
-  background: none;
-  position: relative;
-  display: inline-block;
-  color: var(--c-text);
-
-  &:before {
-    transform: rotateY(10deg);
-    position: absolute;
-    bottom: 0.2em;
-    z-index: -1;
-    display: inline-block;
-    content: "";
-    width: calc(100% + 15px);
-    height: 0.25em;
-    left: -7px;
-    background: var(--c-secondary-lightest);
-  }
-}
