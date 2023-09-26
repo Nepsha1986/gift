@@ -8,7 +8,7 @@ import { toCategoryName } from "../utils/toCategoryName";
 
 const giftsEntries = await getCollection("gifts");
 const featured = giftsEntries.filter(i => i.data.featured);
-const first = giftsEntries.find(i => i.data.category === 'for-women');
+const first = giftsEntries.find(i => i.data.category === "for-women");
 const viewIdeasLink = `/gifts/${first.data.category}/${first.slug}`;
 ---
 
@@ -21,10 +21,8 @@ const viewIdeasLink = `/gifts/${first.data.category}/${first.slug}`;
         <h2 class="intro__subheading">Welcome to gift-idea.co!</h2>
 
         <p class="intro__text">Our mission is to take the stress out of gift shopping by offering a wide range of
-          thoughtful and unique gift ideas tailored to various recipients.</p>
+          <a href={viewIdeasLink}>thoughtful and unique gift ideas</a> tailored to various recipients.</p>
       </div>
-
-      <LinkButton link={viewIdeasLink} text="View gift ideas" />
     </div>
 
     {featured.map((i, index) => (
@@ -48,14 +46,16 @@ const viewIdeasLink = `/gifts/${first.data.category}/${first.slug}`;
 
 <style lang="scss">
 	.container {
-		@media (min-width: 600px) {
-			gap: 10px;
+		display: flex;
+		flex-flow: row wrap;
+		gap: 8px;
+		@media (min-width: 1000px) {
 			display: grid;
 			grid-template-columns: repeat(5, 1fr);
 			grid-template-rows: repeat(3, 1fr);
 			grid-template-areas:
 			"intro intro item2 item9 item10"
-			"intro intro item5 item1 item1"
+			"item3 item4 item5 item1 item1"
 			"item6 item7 item8 item1 item1";
 		}
 	}
@@ -66,24 +66,25 @@ const viewIdeasLink = `/gifts/${first.data.category}/${first.slug}`;
 		flex-direction: column;
 		justify-content: space-between;
 		align-items: flex-start;
-		background: #fff;
-		padding: 15px;
-		box-shadow: 0 5px 15px -5px rgba(0, 0, 0, 0.3);
-		margin-bottom: 10px;
+		padding: 5px 15px;
 
 		&__heading {
-			font-size: 3.2rem;
+			font-size: 2.6rem;
 			text-transform: uppercase;
 			color: var(--c-primary);
 		}
 
 		&__subheading {
-			font-size: 2.2rem;
+			font-size: 1.6rem;
 			color: var(--c-grey-dark);
 		}
 
 		&__text {
-			font-size: 1.15rem;
+			font-size: 1.1rem;
+
+			a {
+				color: var(--c-secondary);
+			}
 		}
 	}
 
@@ -94,7 +95,8 @@ const viewIdeasLink = `/gifts/${first.data.category}/${first.slug}`;
 		border: 3px solid #fff;
 		border-radius: 3px;
 		display: block;
-		margin-bottom: 10px;
+		flex-basis: 180px;
+		flex-grow: 1;
 
 		&__title {
 			font-size: 1.1rem;

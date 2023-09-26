@@ -6,6 +6,7 @@ thumbnail: /assets/perfume.jpeg
 category: "for-women"
 meta:
     age: 18+
+featured: true
 ---
 Looking for a gift that's a feast for the senses and leaves a lingering trail of allure? Consider gifting them a captivating perfume. It's a luxurious and personal gesture that adds a touch of sophistication to their daily routine.
 

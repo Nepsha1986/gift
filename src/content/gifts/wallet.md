@@ -6,6 +6,7 @@ thumbnail: /assets/wallet.webp
 category: "for-men"
 meta:
     age: 18+
+featured: true
 ---
 Looking for a gift that combines fashion, functionality, and everyday convenience? Consider gifting them a stylish wallet. It's a practical yet chic accessory that keeps their essentials organized and accessible.
 
