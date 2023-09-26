@@ -3,11 +3,9 @@ title: Remote-Controlled Vehicles
 description: Unleash excitement with remote-controlled cars, helicopters, and drones.
 date: '2023-09-18'
 thumbnail: /assets/drone.webp
-price: 59.99
 category: "for-kids"
 meta:
     age: 8+
-    priceRange: $40-$100
 ---
 Looking for a gift that combines the thrill of speed, precision, and outdoor exploration? Remote-controlled vehicles are the perfect choice! Whether you're shopping for a young car enthusiast, a budding pilot, or a tech-savvy kid, these vehicles offer a world of exciting possibilities.
 

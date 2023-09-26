@@ -3,11 +3,9 @@ title: Perfume
 description: Gift them a captivating fragrance to leave a lasting impression.
 date: '2023-09-17'
 thumbnail: /assets/perfume.jpeg
-price: 79.99
 category: "for-women"
 meta:
     age: 18+
-    priceRange: $50-$100
 ---
 Looking for a gift that's a feast for the senses and leaves a lingering trail of allure? Consider gifting them a captivating perfume. It's a luxurious and personal gesture that adds a touch of sophistication to their daily routine.
 

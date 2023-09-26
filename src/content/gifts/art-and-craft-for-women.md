@@ -3,11 +3,9 @@ title: Arts and Craft
 description: Unleash your creativity with these inspiring arts and craft supplies and kits.
 date: '2023-09-19'
 thumbnail: /assets/arts_and_craft.webp
-price: 34.99
 category: "for-women"
 meta:
     age: 18+
-    priceRange: $20-$50
 ---
 Let your artistic spirit flourish with our selection of arts and craft supplies and kits specially curated for women. Whether you're a seasoned artist or a creative soul looking to explore new hobbies, these tools and materials will inspire your imagination and bring your ideas to life.
 

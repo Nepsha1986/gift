@@ -3,11 +3,9 @@ title: Guitar
 description: Ignite their musical passion with a classic acoustic guitar.
 date: '2023-09-17'
 thumbnail: /assets/guitar.webp
-price: 249.99
 category: "for-men"
 meta:
   age: 10+
-  priceRange: $70-$300
 featured: true
 ---
 Looking for a gift that can ignite a lifelong passion for music? Consider gifting them a classic acoustic guitar. Whether they're a seasoned musician or an aspiring strummer, a guitar is a timeless present that opens the door to endless musical possibilities.

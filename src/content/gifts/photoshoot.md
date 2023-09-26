@@ -3,11 +3,9 @@ title: Photoshoot
 description: Celebrate beauty, confidence, and cherished memories with a professional photoshoot experience.
 date: '2023-09-18'
 thumbnail: /assets/photo_camera.webp
-price: 249.99
 category: "for-women"
 meta:
     age: 18+
-    priceRange: $200-$350
 ---
 Are you searching for a gift that encapsulates beauty, confidence, and timeless memories? Look no further than a professional photoshoot experience! Whether you're shopping for a loved one, a dear friend, or a special woman in your life, a photoshoot celebrates her unique essence and empowers her to shine like never before.
 

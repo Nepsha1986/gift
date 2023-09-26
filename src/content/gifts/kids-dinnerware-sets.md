@@ -3,11 +3,9 @@ title: Kids Dinnerware Sets
 description: Make mealtime fun and engaging with colorful and durable kids' dinnerware sets.
 date: '2023-09-18'
 thumbnail: /assets/kids_dinnerware_set.jpeg
-price: 29.99
 category: "for-kids"
 meta:
     age: 1+
-    priceRange: $20-$40
 ---
 Looking for a gift that turns everyday meals into exciting adventures for children? Kids' dinnerware sets are the perfect choice! Whether you're shopping for a picky eater, a toddler just starting solids, or a child who loves imaginative dining experiences, these colorful and durable sets add a delightful touch to mealtime.
 

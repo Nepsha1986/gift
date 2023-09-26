@@ -3,11 +3,9 @@ title: Scooter
 description: Gift the joy of mobility with a stylish scooter.
 date: '2023-09-18'
 thumbnail: /assets/scooter-for-kids.webp
-price: 129.99
 category: "for-kids"
 meta:
     age: 5+
-    priceRange: $100-$200
 ---
 Looking for a gift that combines style, mobility, and outdoor fun? Consider gifting a scooter! Whether it's for a child, a teenager, or an adult, a scooter is a fantastic way to enjoy the thrill of the ride while effortlessly getting around town.
 

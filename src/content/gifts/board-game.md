@@ -3,11 +3,9 @@ title: Board Game
 description: Gift them hours of fun and bonding with a captivating board game.
 date: '2023-09-17'
 thumbnail: /assets/monopoly.webp
-price: 29.99
 category: "for-teens"
 meta:
     age: 6+
-    priceRange: $20-$50
 ---
 Looking for a gift that fosters fun, laughter, and memorable moments? Consider gifting them a captivating board game. It's a fantastic way to bring friends and family together for hours of entertainment.
 

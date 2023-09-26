@@ -3,11 +3,9 @@ title: Ride-On Cars and Push Toys
 description: Spark your child's imagination with these fun and exciting ride-on cars and push toys.
 date: '2023-09-19'
 thumbnail: /assets/ride_on_cars.webp
-price: 79.99
 category: "for-kids"
 meta:
     age: 1-5
-    priceRange: $50-$100
 ---
 Give your child the gift of adventure and imagination with these delightful kids' ride-on cars and push toys. In this section, we present a range of options designed to make playtime more enjoyable and interactive for your little ones.
 

@@ -3,11 +3,9 @@ title: Portable Bluetooth Shower Speaker
 description: Elevate shower time with music and hands-free calls using a waterproof and portable Bluetooth speaker.
 date: '2023-09-18'
 thumbnail: /assets/shower_speaker.webp
-price: 29.99
 category: "for-men"
 meta:
     age: 18+
-    priceRange: $20-$40
 ---
 Looking for a gift that can turn a regular shower into a music-filled and hands-free experience? The Portable Bluetooth Shower Speaker is the answer! This waterproof and portable device allows men to enjoy their favorite tunes, podcasts, and even take calls while in the shower.
 

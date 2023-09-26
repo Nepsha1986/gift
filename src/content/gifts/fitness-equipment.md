@@ -3,11 +3,9 @@ title: Fitness Equipment
 description: Gift them the tools for a healthier lifestyle with high-quality fitness equipment.
 date: '2023-09-17'
 thumbnail: /assets/sport.jpeg
-price: 299.99
 category: "for-women"
 meta:
     age: 18+
-    priceRange: $200-$400
 featured: true
 ---
 Looking for a gift that promotes health, wellness, and an active lifestyle? Consider gifting them high-quality fitness equipment. It's a practical gesture that supports their journey to a healthier and fitter self.

@@ -3,11 +3,9 @@ title: Kitchen Small Appliances
 description: Elevate your culinary skills with these handy kitchen gadgets and small appliances.
 date: '2023-09-19'
 thumbnail: /assets/blender.webp
-price: 79.99
 category: "for-women"
 meta:
     age: 18+
-    priceRange: $50-$100
 ---
 Transform your kitchen into a culinary paradise with these innovative kitchen gadgets and small appliances. Whether you're a seasoned chef or a cooking enthusiast, these tools will help you create delicious meals and simplify your cooking process.
 

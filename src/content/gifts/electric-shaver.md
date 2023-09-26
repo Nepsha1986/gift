@@ -3,11 +3,9 @@ title: Electric Shaver
 description: Elevate their grooming routine with a high-performance electric shaver.
 date: '2023-09-17'
 thumbnail: /assets/electric_shaver.webp
-price: 89.99
 category: "for-men"
 meta:
     age: 18+
-    priceRange: $50-$100
 ---
 Searching for a gift that combines practicality with grooming excellence? Consider gifting them a high-performance electric shaver. It's a versatile tool that elevates their grooming routine to a whole new level.
 

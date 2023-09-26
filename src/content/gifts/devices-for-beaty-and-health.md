@@ -3,11 +3,9 @@ title: Devices for Beauty and Health
 description: Enhance your beauty and well-being with these innovative devices for women.
 date: '2023-09-19'
 thumbnail: /assets/hair_straightener.webp
-price: 149.99
 category: "for-women"
 meta:
     age: 18+
-    priceRange: $100-$200
 ---
 Empower women to look and feel their best with the latest beauty and health devices designed to enhance their well-being. In this section, we offer a selection of innovative tools and gadgets that promote self-care, confidence, and a healthier lifestyle.
 

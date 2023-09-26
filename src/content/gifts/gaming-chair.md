@@ -3,11 +3,9 @@ title: Gaming Chair
 description: Elevate gaming experiences with a comfortable and stylish gaming chair.
 date: '2023-09-18'
 thumbnail: /assets/office_chair.webp
-price: 249.99
 category: "for-teens"
 meta:
     age: 12+
-    priceRange: $200-$400
 ---
 On the hunt for a gift that enhances comfort, style, and gaming performance? A gaming chair is the ultimate choice! Whether you're shopping for a dedicated gamer, a streamer, or someone looking to elevate their home office, a gaming chair delivers support and luxury for extended gaming sessions.
 

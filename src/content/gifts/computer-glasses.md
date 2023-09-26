@@ -3,11 +3,9 @@ title: Computer Glasses
 description: Protect eyes and enhance comfort with stylish computer glasses.
 date: '2023-09-18'
 thumbnail: /assets/computer-glasses.webp
-price: 49.99
 category: "for-men"
 meta:
     age: 18+
-    priceRange: $30-$60
 ---
 Are you in search of the perfect gift for someone who spends hours in front of a computer screen? Consider the gift of comfort and eye protection with stylish computer glasses. Whether you're shopping for a tech enthusiast, a remote worker, or anyone who values their eye health, computer glasses are a thoughtful and practical choice.
 

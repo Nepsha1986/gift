@@ -3,11 +3,9 @@ title: Bicycle
 description: Gift the joy of outdoor adventures with a quality bicycle.
 date: '2023-09-18'
 thumbnail: /assets/bicycle_small.webp
-price: 299.99
 category: "for-kids"
 meta:
     age: 8+
-    priceRange: $200-$500
 ---
 Looking for a gift that combines fitness, fun, and the great outdoors? Consider gifting a bicycle! Whether it's for a child, a friend, or a family member, a quality bicycle is a fantastic way to encourage outdoor adventures and a healthier lifestyle.
 

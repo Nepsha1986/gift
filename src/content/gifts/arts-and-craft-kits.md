@@ -3,11 +3,9 @@ title: Arts & Craft Kits for Kids
 description: Spark creativity with the perfect craft gift.
 date: '2023-09-18'
 thumbnail: /assets/plastelin.webp
-price: 24.99
 category: "for-kids"
 meta:
     age: 8+
-    priceRange: $15-$50
 ---
 Looking for a gift that ignites the spark of creativity and provides hours of artistic enjoyment? Craft gifts are the perfect choice! Whether you're shopping for a budding artist, a DIY enthusiast, or someone looking to explore their creative side, craft gifts are a delightful way to inspire and engage.
 

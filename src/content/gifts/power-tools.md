@@ -3,11 +3,9 @@ title: Power Tools
 description: Get the job done efficiently with top-quality power tools for your DIY and construction needs.
 date: '2023-09-19'
 thumbnail: /assets/saw.jpeg
-price: 199.99
 category: "for-men"
 meta:
     age: 18+
-    priceRange: $100-$300
 ---
 Equip yourself with the power to tackle DIY projects and construction tasks with ease. Our selection of high-quality power tools will help you complete projects efficiently and with professional results. Whether you're a seasoned handywoman or just starting your DIY journey, these tools are essential for your toolbox.
 

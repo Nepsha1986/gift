@@ -3,11 +3,9 @@ title: On-Dash Camera
 description: Capture every journey with a reliable on-dash camera for safety and peace of mind.
 date: '2023-09-18'
 thumbnail: /assets/on_dash_camera.jpeg
-price: 89.99
 category: "for-women"
 meta:
     age: 18+
-    priceRange: $70-$100
 ---
 Looking for a gift that promotes safety, security, and unforgettable road trip memories? An on-dash camera is the perfect choice! Whether you're shopping for a frequent traveler, a new driver, or someone who simply values peace of mind on the road, an on-dash camera offers an extra layer of protection.
 

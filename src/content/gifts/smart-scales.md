@@ -3,11 +3,9 @@ title: Smart Scales
 description: Monitor health and fitness goals with precision using cutting-edge smart scales.
 date: '2023-09-18'
 thumbnail: /assets/smart_scales.webp
-price: 79.99
 category: "for-women"
 meta:
     age: 18+
-    priceRange: $50-$100
 ---
 Searching for a gift that promotes well-being, precision, and the pursuit of health and fitness? Smart scales are the answer! Whether you're shopping for a fitness fanatic, someone on a wellness journey, or anyone looking to monitor their health more closely, smart scales provide essential insights and motivation.
 

@@ -3,11 +3,9 @@ title: Visit to the Spa
 description: Gift them relaxation and rejuvenation with a luxurious spa experience.
 date: '2023-09-17'
 thumbnail: /assets/spa_visit.jpeg
-price: 149.99
 category: "for-women"
 meta:
     age: 18+
-    priceRange: $100-$200
 featured: false
 ---
 Looking for a gift that pampers and rejuvenates the body and soul? Consider gifting them a luxurious spa experience. It's a chance to escape the stresses of everyday life and indulge in ultimate relaxation.
