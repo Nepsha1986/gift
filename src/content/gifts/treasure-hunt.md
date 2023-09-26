@@ -3,11 +3,9 @@ title: Treasure Hunt
 description: Make gift-giving memorable and teach financial responsibility by creatively presenting money to kids.
 date: '2023-09-18'
 thumbnail: /assets/piggy_bank.jpeg
-price: 20.00
 category: "for-kids"
 meta:
     age: 5+
-    priceRange: Varies
 ---
 We understand that some parents may have concerns about giving money as a gift to children. While traditional gifts have their place, incorporating money into gift-giving can offer unique benefits:
 

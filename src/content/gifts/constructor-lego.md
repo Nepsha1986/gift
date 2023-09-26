@@ -3,11 +3,9 @@ title: Constructor Lego
 description: Inspire creativity and engineering skills with Constructor Lego sets.
 date: '2023-09-18'
 thumbnail: /assets/lego.webp
-price: 59.99
 category: "for-kids"
 meta:
     age: 6+
-    priceRange: $30-$100
 ---
 Looking for a gift that sparks imagination, fosters creativity, and teaches valuable engineering skills? Look no further than Constructor Lego sets. These versatile building blocks are the perfect gift for kids of all ages, offering hours of educational and entertaining fun.
 

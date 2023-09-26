@@ -14,7 +14,6 @@ const giftsCollection = defineCollection({
     title: z.string(),
     description: z.string(),
     thumbnail: z.string(),
-    price: z.number(),
     category: GiftCategory.optional(),
     meta: z
       .object({

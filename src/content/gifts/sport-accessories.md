@@ -3,11 +3,9 @@ title: Sport Accessories
 description: Gear up for active adventures with these sporty accessories for teenagers.
 date: '2023-09-19'
 thumbnail: /assets/football_ball.webp
-price: 59.99
 category: "for-teens"
 meta:
     age: 13-19
-    priceRange: $50-$100
 ---
 Get ready to hit the field, court, or track with these sporty accessories designed specifically for teenagers. Whether they're passionate about team sports, individual athletics, or just staying active, these items will make their sports adventures even more enjoyable.
 

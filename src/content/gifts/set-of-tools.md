@@ -3,11 +3,9 @@ title: Tools Set
 description: Empower DIY enthusiasts with a versatile and high-quality tool set.
 date: '2023-09-18'
 thumbnail: /assets/tools_set.webp
-price: 129.99
 category: "for-men"
 meta:
     age: 18+
-    priceRange: $100-$150
 ---
 Searching for a gift that fuels creativity, enables DIY projects, and empowers individuals to tackle household tasks with ease? A versatile tool set is the perfect choice! Whether you're shopping for a DIY enthusiast, a budding craftsman, or someone who enjoys fixing and building, a quality tool set equips them for success.
 

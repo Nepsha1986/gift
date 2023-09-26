@@ -4,10 +4,8 @@ description: Consider giving the gift of a furry friend to a responsible teenage
 date: '2023-09-19'
 thumbnail: /assets/bulldog.webp
 category: "for-teens"
-price: 100
 meta:
     age: 13-19
-    priceRange: $200-$350
 ---
 Bringing a pet into a teenager's life can be a truly special and life-changing gift. If you have a responsible and caring teenager who has been longing for a furry companion, consider the gift of a pet. Pets offer unconditional love, companionship, and valuable life lessons in responsibility and empathy.
 

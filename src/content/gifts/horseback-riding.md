@@ -3,11 +3,9 @@ title: Horseback Riding
 description: Gift them an unforgettable horseback riding adventure in the great outdoors.
 date: '2023-09-17'
 thumbnail: /assets/horseback_riding.webp
-price: 129.99
 category: "for-women"
 meta:
     age: 12+
-    priceRange: $100-$150
 featured: true
 ---
 Looking for a gift that combines adventure, nature, and a dash of equestrian elegance? Consider gifting them a horseback riding experience. It's a chance to connect with the great outdoors while enjoying the timeless allure of horse riding.

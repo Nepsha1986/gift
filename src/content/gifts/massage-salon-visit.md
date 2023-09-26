@@ -3,11 +3,9 @@ title: A Visit to a Massage Salon
 description: Gift them relaxation and rejuvenation with a soothing massage experience.
 date: '2023-09-17'
 thumbnail: /assets/massage.jpeg
-price: 79.99
 category: "for-women"
 meta:
     age: 18+
-    priceRange: $50-$100
 featured: true
 ---
 Looking for a gift that pampers and revitalizes both the body and spirit? Consider gifting them a visit to a massage salon. It's an invitation to escape the everyday grind and embrace tranquility.

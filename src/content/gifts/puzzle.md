@@ -3,11 +3,9 @@ title: Puzzle
 description: Gift them the joy of solving puzzles and unlocking creativity.
 date: '2023-09-17'
 thumbnail: /assets/puzzle.webp
-price: 19.99
 category: "for-kids"
 meta:
     age: 8+
-    priceRange: $10-$30
 ---
 Looking for a gift that stimulates the mind, sparks creativity, and brings a sense of accomplishment? Consider gifting them a captivating puzzle. It's a relaxing yet mentally engaging activity that promises hours of joy.
 

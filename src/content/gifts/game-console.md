@@ -3,11 +3,9 @@ title: Game Console
 description: Gift them endless entertainment with a cutting-edge game console.
 date: '2023-09-17'
 thumbnail: /assets/joystick.webp
-price: 399.99
 category: "for-men"
 meta:
     age: 12+
-    priceRange: $300-$500
 featured: true
 ---
 Looking for a gift that immerses them in a world of excitement, adventure, and endless fun? Consider gifting them a cutting-edge game console. It's a gateway to thrilling gaming experiences and entertainment.

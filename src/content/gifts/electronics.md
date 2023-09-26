@@ -3,11 +3,9 @@ title: Electronics
 description: Explore the latest gadgets and tech gifts for tech-savvy individuals.
 date: '2023-09-19'
 thumbnail: /assets/earphones.webp
-price: 199.99
 category: "for-teens"
 meta:
     age: 16+
-    priceRange: $100-$500
 ---
 Embrace the future with the latest and greatest electronic gadgets and tech gifts. In this section, we present a curated collection of cutting-edge technology and innovative devices that will delight tech enthusiasts of all ages.
 

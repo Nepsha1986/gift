@@ -3,11 +3,9 @@ title: Backpack
 description: Elevate their adventures with a versatile and stylish backpack.
 date: '2023-09-17'
 thumbnail: /assets/backpack.webp
-price: 79.99
 category: "for-men"
 meta:
     age: 12+
-    priceRange: $50-$100
 featured: true
 ---
 Searching for a gift that combines functionality with fashion? Consider gifting them a versatile backpack. A backpack is more than just a bag; it's a companion for their daily adventures.

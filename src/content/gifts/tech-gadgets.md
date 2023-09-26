@@ -3,11 +3,9 @@ title: Tech Gadgets
 description: Explore the latest and coolest tech gadgets tailored for men with a passion for technology.
 date: '2023-09-19'
 thumbnail: /assets/earbuds.webp
-price: 69.99
 category: "for-men"
 meta:
     age: 18+
-    priceRange: $60-$90
 ---
 For tech-savvy men who appreciate the power of innovation, there's a world of exciting gadgets to explore. Dive into our collection of the latest and coolest tech gadgets designed with men in mind. Whether it's enhancing productivity, entertainment, or convenience, these gifts will satisfy their tech cravings.
 

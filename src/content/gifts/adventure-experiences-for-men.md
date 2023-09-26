@@ -3,11 +3,9 @@ title: Adventure Experience
 description: Thrilling adventures and experiences for men with a passion for adrenaline.
 date: '2023-09-19'
 thumbnail: /assets/skydiving.webp
-price: 199.99
 category: "for-men"
 meta:
     age: 18+
-    priceRange: $150-$250
 ---
 For the men who crave excitement and live for adrenaline rushes, there's no better gift than a thrilling adventure experience. Explore our collection of heart-pounding and unforgettable adventures designed to satisfy the spirit of adventure. Whether it's soaring through the sky or conquering the great outdoors, these gifts promise unforgettable memories.
 

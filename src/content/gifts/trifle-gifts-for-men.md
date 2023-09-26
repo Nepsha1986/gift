@@ -3,11 +3,9 @@ title: Trifle Gifts
 description: Discover fun and quirky trifle gifts for the men in your life.
 date: '2023-09-19'
 thumbnail: /assets/rubik_cube.jpeg
-price: 9.99
 category: "for-men"
 meta:
     age: 18+
-    priceRange: Under $10
 ---
 Sometimes, the best gifts come in small packages. Explore our collection of delightful trifle gifts that are perfect for adding a touch of humor, nostalgia, or quirkiness to any occasion. Whether it's for a friend, family member, or colleague, these small gifts are sure to bring a smile to their face.
 

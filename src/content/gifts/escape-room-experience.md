@@ -3,11 +3,9 @@ title: Escape Room Experience
 description: Embark on an exhilarating adventure with an immersive escape room challenge.
 date: '2023-09-18'
 thumbnail: /assets/escape_room.webp
-price: 129.99
 category: "for-teens"
 meta:
     age: 16+
-    priceRange: $100-$150
 ---
 Looking for a gift that combines excitement, teamwork, and the thrill of solving puzzles? An escape room experience is the perfect choice! Whether you're shopping for an adventure-loving friend, a family looking for a unique outing, or a special someone seeking a memorable date, escape rooms offer an unforgettable adventure.
 

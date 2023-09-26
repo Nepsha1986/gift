@@ -3,11 +3,10 @@ title: Wallet
 description: Gift them a stylish and functional wallet for everyday convenience.
 date: '2023-09-17'
 thumbnail: /assets/wallet.webp
-price: 49.99
 category: "for-men"
 meta:
     age: 18+
-    priceRange: $20-$50
+featured: true
 ---
 Looking for a gift that combines fashion, functionality, and everyday convenience? Consider gifting them a stylish wallet. It's a practical yet chic accessory that keeps their essentials organized and accessible.
 

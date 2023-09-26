@@ -3,11 +3,9 @@ title: Fishing Equipment
 description: Elevate their fishing adventures with high-quality fishing gear.
 date: '2023-09-17'
 thumbnail: /assets/fishing.webp
-price: 149.99
 category: "for-men"
 meta:
     age: 12+
-    priceRange: $100-$200
 ---
 Looking for a gift that connects them with nature, tranquility, and the thrill of the catch? Consider gifting them high-quality fishing equipment. It's a practical yet exciting gesture that enhances their fishing adventures.
 

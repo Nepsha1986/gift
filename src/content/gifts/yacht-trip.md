@@ -3,11 +3,9 @@ title: Yacht Trip
 description: Gift them the ultimate luxury with a private yacht trip on the open seas.
 date: '2023-09-17'
 thumbnail: /assets/yacht.webp
-price: 799.99
 category: "for-women"
 meta:
     age: 18+
-    priceRange: $500-$1000
 ---
 Searching for a gift that's the epitome of luxury, adventure, and sheer indulgence? Consider gifting them a private yacht trip. It's an escape to a world of opulence, where they can explore the open seas in style.
 

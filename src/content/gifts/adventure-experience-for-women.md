@@ -3,11 +3,9 @@ title: Adventure Experience
 description: Thrilling adventures and experiences for women with a passion for adrenaline.
 date: '2023-09-19'
 thumbnail: /assets/hot_air_balloon.webp
-price: 199.99
 category: "for-women"
 meta:
   age: 18+
-  priceRange: $150-$250
 ---
 For women who crave excitement and thrive on adrenaline, there's no better gift than a thrilling adventure experience. Explore our collection of heart-pounding and unforgettable adventures tailored for women who seek the extraordinary. Whether it's soaring through the sky or conquering the great outdoors, these gifts promise unforgettable memories.
 

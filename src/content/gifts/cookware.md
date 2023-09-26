@@ -3,11 +3,9 @@ title: Cookware
 description: Elevate their culinary adventures with high-quality cookware.
 date: '2023-09-17'
 thumbnail: /assets/cookware.webp
-price: 199.99
 category: "for-women"
 meta:
     age: 18+
-    priceRange: $100-$200
 ---
 Looking for a gift that transforms their kitchen into a culinary haven and inspires gourmet creations? Consider gifting them high-quality cookware. It's a practical yet elegant gesture that elevates their cooking experience.
 

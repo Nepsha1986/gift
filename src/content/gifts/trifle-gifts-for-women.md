@@ -3,11 +3,9 @@ title: Trifle Gifts
 description: Discover charming and delightful trifle gifts to bring a smile to any woman's face.
 date: '2023-09-19'
 thumbnail: /assets/rubik_cube.jpeg
-price: 7.99
 category: "for-women"
 meta:
     age: 18+
-    priceRange: Under $10
 ---
 Sometimes, the most delightful gifts come in small packages. Explore our collection of charming trifle gifts designed to brighten any woman's day. Whether you're looking for a small gesture of appreciation or a fun surprise, these little gifts are sure to bring joy.
 

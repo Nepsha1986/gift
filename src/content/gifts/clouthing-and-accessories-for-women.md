@@ -3,11 +3,9 @@ title: Clothing and Accessories
 description: Elevate style and comfort with fashionable clothing and accessories gift ideas.
 date: '2023-09-19'
 thumbnail: /assets/hat.webp
-price: 39.99
 category: "for-women"
 meta:
     age: 18+
-    priceRange: $30-$50
 ---
 Fashion is a form of self-expression, and the right clothing and accessories can help anyone feel confident and stylish. Explore our curated collection of fashionable gift ideas that range from wardrobe essentials to statement pieces. These gifts are perfect for adding a touch of style to any outfit or personalizing one's look.
 

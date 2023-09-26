@@ -3,11 +3,9 @@ title: Fitness and Workout
 description: Elevate fitness routines with these essential workout and fitness gift ideas for men.
 date: '2023-09-19'
 thumbnail: /assets/dumbbell.webp
-price: 49.99
 category: "for-men"
 meta:
     age: 18+
-    priceRange: $40-$60
 ---
 For men committed to staying fit and pushing their physical limits, the right fitness tools and accessories can make all the difference. Explore our curated collection of essential fitness and workout gift ideas tailored for men. Whether it's strength training, cardio, or recovery, these gifts will help them achieve their fitness goals.
 
