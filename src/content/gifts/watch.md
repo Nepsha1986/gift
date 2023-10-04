@@ -2,7 +2,7 @@
 title: Wrist Watch
 description: Elevate their style and punctuality with a timeless wristwatch.
 date: '2023-09-17'
-thumbnail: /assets/wrist_watch.webp
+thumbnail: ../img/wrist_watch.webp
 category: "for-men"
 meta:
     age: 16+

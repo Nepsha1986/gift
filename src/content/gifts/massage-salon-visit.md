@@ -2,7 +2,7 @@
 title: A Visit to a Massage Salon
 description: Gift them relaxation and rejuvenation with a soothing massage experience.
 date: '2023-09-17'
-thumbnail: /assets/massage.jpeg
+thumbnail: ../img/massage.jpeg
 category: "for-women"
 meta:
     age: 18+

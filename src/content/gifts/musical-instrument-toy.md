@@ -2,7 +2,7 @@
 title: Musical Instruments for Kids
 description: Nurture musical talents with fun and educational instruments.
 date: '2023-09-18'
-thumbnail: /assets/xylophone.webp
+thumbnail: ../img/xylophone.webp
 category: "for-kids"
 meta:
     age: 3+

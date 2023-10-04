@@ -2,7 +2,7 @@
 title: Board Game
 description: Gift them hours of fun and bonding with a captivating board game.
 date: '2023-09-17'
-thumbnail: /assets/monopoly.webp
+thumbnail: ../img/monopoly.webp
 category: "for-teens"
 meta:
     age: 6+

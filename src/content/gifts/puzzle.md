@@ -2,7 +2,7 @@
 title: Puzzle
 description: Gift them the joy of solving puzzles and unlocking creativity.
 date: '2023-09-17'
-thumbnail: /assets/puzzle.webp
+thumbnail: ../img/puzzle.webp
 category: "for-kids"
 meta:
     age: 8+

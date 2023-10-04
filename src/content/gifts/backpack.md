@@ -2,7 +2,7 @@
 title: Backpack
 description: Elevate their adventures with a versatile and stylish backpack.
 date: '2023-09-17'
-thumbnail: /assets/backpack.webp
+thumbnail: ../img/backpack.webp
 category: "for-men"
 meta:
     age: 12+

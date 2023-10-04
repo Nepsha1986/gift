@@ -2,7 +2,7 @@
 title: Adventure Experience
 description: Thrilling adventures and experiences for women with a passion for adrenaline.
 date: '2023-09-19'
-thumbnail: /assets/hot_air_balloon.webp
+thumbnail: ../img/hot_air_balloon.webp
 category: "for-women"
 meta:
   age: 18+

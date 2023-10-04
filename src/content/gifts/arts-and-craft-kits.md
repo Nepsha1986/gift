@@ -2,7 +2,7 @@
 title: Arts & Craft Kits for Kids
 description: Spark creativity with the perfect craft gift.
 date: '2023-09-18'
-thumbnail: /assets/plastelin.webp
+thumbnail: ../img/plastelin.webp
 category: "for-kids"
 meta:
     age: 8+

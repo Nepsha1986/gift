@@ -2,7 +2,7 @@
 title: Kitchen Small Appliances
 description: Elevate your culinary skills with these handy kitchen gadgets and small appliances.
 date: '2023-09-19'
-thumbnail: /assets/blender.webp
+thumbnail: ../img/blender.webp
 category: "for-women"
 meta:
     age: 18+

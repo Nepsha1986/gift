@@ -2,7 +2,7 @@
 title: Escape Room Experience
 description: Embark on an exhilarating adventure with an immersive escape room challenge.
 date: '2023-09-18'
-thumbnail: /assets/escape_room.webp
+thumbnail: ../img/escape_room.webp
 category: "for-teens"
 meta:
     age: 16+

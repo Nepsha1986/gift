@@ -2,7 +2,7 @@
 title: Bicycle
 description: Gift the joy of outdoor adventures with a quality bicycle.
 date: '2023-09-18'
-thumbnail: /assets/bicycle_small.webp
+thumbnail: ../img/bicycle_small.webp
 category: "for-kids"
 meta:
     age: 8+

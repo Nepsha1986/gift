@@ -2,7 +2,7 @@
 title: Constructor Lego
 description: Inspire creativity and engineering skills with Constructor Lego sets.
 date: '2023-09-18'
-thumbnail: /assets/lego.webp
+thumbnail: ../img/lego.webp
 category: "for-kids"
 meta:
     age: 6+

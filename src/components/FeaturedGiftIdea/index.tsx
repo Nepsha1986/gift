@@ -14,7 +14,7 @@ interface Props {
 }
 const FeaturedGiftIdea = ({ title, category, slug, children }: Props) => {
   return (
-    <a className={styles.giftItem} href={`/${GIFTS_URL}/${category}/${slug}`}>
+    <a className={styles.giftItem} href={`${GIFTS_URL}/${category}/${slug}`}>
       {children}
 
       <div className={styles.giftItem__info}>

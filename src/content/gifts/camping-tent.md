@@ -2,7 +2,7 @@
 title: Camping Tent
 description: Elevate their outdoor adventures with a reliable camping tent.
 date: '2023-09-17'
-thumbnail: /assets/camping_tent.webp
+thumbnail: ../img/camping_tent.webp
 category: "for-men"
 meta:
     age: 18+

@@ -2,7 +2,7 @@
 title: Cookware
 description: Elevate their culinary adventures with high-quality cookware.
 date: '2023-09-17'
-thumbnail: /assets/cookware.webp
+thumbnail: ../img/cookware.webp
 category: "for-women"
 meta:
     age: 18+

@@ -2,7 +2,7 @@
 title: Headphones
 description: Elevate their music experience with high-quality headphones.
 date: '2023-09-17'
-thumbnail: /assets/headphones.webp
+thumbnail: ../img/headphones.webp
 category: "for-women"
 meta:
   age: 12+

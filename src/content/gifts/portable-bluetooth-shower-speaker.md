@@ -2,7 +2,7 @@
 title: Portable Bluetooth Shower Speaker
 description: Elevate shower time with music and hands-free calls using a waterproof and portable Bluetooth speaker.
 date: '2023-09-18'
-thumbnail: /assets/shower_speaker.webp
+thumbnail: ../img/shower_speaker.webp
 category: "for-men"
 meta:
     age: 18+

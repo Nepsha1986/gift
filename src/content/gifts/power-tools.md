@@ -2,7 +2,7 @@
 title: Power Tools
 description: Get the job done efficiently with top-quality power tools for your DIY and construction needs.
 date: '2023-09-19'
-thumbnail: /assets/saw.jpeg
+thumbnail: ../img/saw.jpeg
 category: "for-men"
 meta:
     age: 18+

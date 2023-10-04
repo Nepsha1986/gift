@@ -10,10 +10,12 @@ const GiftCategory = z.union([
 
 const giftsCollection = defineCollection({
   type: "content",
-  schema: z.object({
+  schema: ({ image }) => z.object({
     title: z.string(),
     description: z.string(),
-    thumbnail: z.string(),
+    thumbnail: image().refine((img) => img.width >= 400, {
+      message: "Thumbnail image must be at least 400 pixels wide!",
+    }),
     category: GiftCategory.optional(),
     meta: z
       .object({

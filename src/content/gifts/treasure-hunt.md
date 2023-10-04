@@ -2,7 +2,7 @@
 title: Treasure Hunt
 description: Make gift-giving memorable and teach financial responsibility by creatively presenting money to kids.
 date: '2023-09-18'
-thumbnail: /assets/piggy_bank.jpeg
+thumbnail: ../img/piggy_bank.jpeg
 category: "for-kids"
 meta:
     age: 5+

@@ -2,7 +2,7 @@
 title: Fitness and Workout
 description: Elevate fitness routines with these essential workout and fitness gift ideas for men.
 date: '2023-09-19'
-thumbnail: /assets/dumbbell.webp
+thumbnail: ../img/dumbbell.webp
 category: "for-men"
 meta:
     age: 18+

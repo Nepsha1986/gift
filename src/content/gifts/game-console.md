@@ -2,7 +2,7 @@
 title: Game Console
 description: Gift them endless entertainment with a cutting-edge game console.
 date: '2023-09-17'
-thumbnail: /assets/joystick.webp
+thumbnail: ../img/joystick.webp
 category: "for-men"
 meta:
     age: 12+

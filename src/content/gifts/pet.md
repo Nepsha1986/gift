@@ -2,7 +2,7 @@
 title: A Pet
 description: Consider giving the gift of a furry friend to a responsible teenager.
 date: '2023-09-19'
-thumbnail: /assets/bulldog.webp
+thumbnail: ../img/bulldog.webp
 category: "for-teens"
 meta:
     age: 13-19
