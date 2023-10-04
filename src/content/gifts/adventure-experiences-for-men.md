@@ -2,7 +2,7 @@
 title: Adventure Experience
 description: Thrilling adventures and experiences for men with a passion for adrenaline.
 date: '2023-09-19'
-thumbnail: /assets/skydiving.webp
+thumbnail: ../img/skydiving.webp
 category: "for-men"
 meta:
     age: 18+

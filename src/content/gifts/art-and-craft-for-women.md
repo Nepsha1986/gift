@@ -2,7 +2,7 @@
 title: Arts and Craft
 description: Unleash your creativity with these inspiring arts and craft supplies and kits.
 date: '2023-09-19'
-thumbnail: /assets/arts_and_craft.webp
+thumbnail: ../img/arts_and_craft.webp
 category: "for-women"
 meta:
     age: 18+

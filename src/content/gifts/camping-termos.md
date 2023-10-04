@@ -2,7 +2,7 @@
 title: Camping Thermos
 description: Keep their adventure fueled with a reliable camping thermos.
 date: '2023-09-17'
-thumbnail: /assets/thermos.webp
+thumbnail: ../img/thermos.webp
 category: "for-men"
 meta:
     age: 12+

@@ -2,7 +2,7 @@
 title: Ride-On Cars and Push Toys
 description: Spark your child's imagination with these fun and exciting ride-on cars and push toys.
 date: '2023-09-19'
-thumbnail: /assets/ride_on_cars.webp
+thumbnail: ../img/ride_on_cars.webp
 category: "for-kids"
 meta:
     age: 1-5

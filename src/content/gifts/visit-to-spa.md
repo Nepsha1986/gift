@@ -2,7 +2,7 @@
 title: Visit to the Spa
 description: Gift them relaxation and rejuvenation with a luxurious spa experience.
 date: '2023-09-17'
-thumbnail: /assets/spa_visit.jpeg
+thumbnail: ../img/spa_visit.jpeg
 category: "for-women"
 meta:
     age: 18+

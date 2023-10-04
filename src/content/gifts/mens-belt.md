@@ -2,7 +2,7 @@
 title: Men's Belt
 description: Elevate their style and complete their look with a timeless men's belt.
 date: '2023-09-17'
-thumbnail: /assets/mens_belt.webp
+thumbnail: ../img/mens_belt.webp
 category: "for-men"
 meta:
     age: 18+

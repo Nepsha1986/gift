@@ -2,7 +2,7 @@
 title: Gaming Chair
 description: Elevate gaming experiences with a comfortable and stylish gaming chair.
 date: '2023-09-18'
-thumbnail: /assets/office_chair.webp
+thumbnail: ../img/office_chair.webp
 category: "for-teens"
 meta:
     age: 12+

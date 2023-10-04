@@ -2,7 +2,7 @@
 title: Photoshoot
 description: Celebrate beauty, confidence, and cherished memories with a professional photoshoot experience.
 date: '2023-09-18'
-thumbnail: /assets/photo_camera.webp
+thumbnail: ../img/photo_camera.webp
 category: "for-women"
 meta:
     age: 18+

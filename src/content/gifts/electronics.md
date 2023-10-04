@@ -2,7 +2,7 @@
 title: Electronics
 description: Explore the latest gadgets and tech gifts for tech-savvy individuals.
 date: '2023-09-19'
-thumbnail: /assets/earphones.webp
+thumbnail: ../img/earphones.webp
 category: "for-teens"
 meta:
     age: 16+

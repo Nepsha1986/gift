@@ -2,7 +2,7 @@
 title: Electric Shaver
 description: Elevate their grooming routine with a high-performance electric shaver.
 date: '2023-09-17'
-thumbnail: /assets/electric_shaver.webp
+thumbnail: ../img/electric_shaver.webp
 category: "for-men"
 meta:
     age: 18+

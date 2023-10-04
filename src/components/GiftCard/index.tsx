@@ -1,18 +1,19 @@
 import * as React from "react";
+import { Image } from "astro:assets";
 import styles from "./styles.module.scss";
 import classNames from "classnames";
 interface Props {
   index: number;
   title: string;
   description: string;
-  thumbnail: string;
+  children: React.ReactNode;
   link: string;
   active: boolean;
 }
 const GiftCard: React.FC<Props> = ({
   index,
   title,
-  thumbnail,
+  children,
   description,
   link,
   active,
@@ -24,7 +25,7 @@ const GiftCard: React.FC<Props> = ({
   return (
     <a href={link} className={className}>
       <div className={styles.giftCard__imgWrap}>
-        <img className={styles.giftCard__img} src={thumbnail} alt={title} />
+        {children}
       </div>
 
       <div>

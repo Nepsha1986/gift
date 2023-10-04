@@ -2,7 +2,7 @@
 title: Gardening Tools
 description: Explore essential gardening tools and accessories for green-thumbed enthusiasts.
 date: '2023-09-19'
-thumbnail: /assets/garden_gloves.webp
+thumbnail: ../img/garden_gloves.webp
 category: "for-men"
 meta:
     age: 18+

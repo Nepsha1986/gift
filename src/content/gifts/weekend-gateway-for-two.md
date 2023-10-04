@@ -2,7 +2,7 @@
 title: Weekend Getaway for Two
 description: Gift them an unforgettable escape with a weekend getaway for two.
 date: '2023-09-17'
-thumbnail: /assets/trip_to_europe.webp
+thumbnail: ../img/trip_to_europe.webp
 category: "for-women"
 meta:
     age: 18+

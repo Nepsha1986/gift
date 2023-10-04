@@ -2,7 +2,7 @@
 title: Guitar
 description: Ignite their musical passion with a classic acoustic guitar.
 date: '2023-09-17'
-thumbnail: /assets/guitar.webp
+thumbnail: ../img/guitar.webp
 category: "for-men"
 meta:
   age: 10+

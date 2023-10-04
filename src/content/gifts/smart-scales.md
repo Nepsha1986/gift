@@ -2,7 +2,7 @@
 title: Smart Scales
 description: Monitor health and fitness goals with precision using cutting-edge smart scales.
 date: '2023-09-18'
-thumbnail: /assets/smart_scales.webp
+thumbnail: ../img/smart_scales.webp
 category: "for-women"
 meta:
     age: 18+

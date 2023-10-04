@@ -2,7 +2,7 @@
 title: Fitness Equipment
 description: Gift them the tools for a healthier lifestyle with high-quality fitness equipment.
 date: '2023-09-17'
-thumbnail: /assets/sport.jpeg
+thumbnail: ../img/sport.jpeg
 category: "for-women"
 meta:
     age: 18+

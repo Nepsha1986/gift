@@ -2,7 +2,7 @@
 title: Kids Dinnerware Sets
 description: Make mealtime fun and engaging with colorful and durable kids' dinnerware sets.
 date: '2023-09-18'
-thumbnail: /assets/kids_dinnerware_set.jpeg
+thumbnail: ../img/kids_dinnerware_set.jpeg
 category: "for-kids"
 meta:
     age: 1+

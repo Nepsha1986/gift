@@ -2,7 +2,7 @@
 title: BBQ and Accessories
 description: Elevate outdoor cooking with these BBQ tools and accessories gift ideas.
 date: '2023-09-19'
-thumbnail: /assets/bbq.webp
+thumbnail: ../img/bbq.webp
 category: "for-men"
 meta:
     age: 18+

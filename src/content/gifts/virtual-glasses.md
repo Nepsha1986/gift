@@ -2,7 +2,7 @@
 title: Virtual Reality Glasses
 description: Dive into immersive worlds with the gift of virtual reality glasses.
 date: '2023-09-18'
-thumbnail: /assets/vr.webp
+thumbnail: ../img/vr.webp
 category: "for-teens"
 meta:
     age: 10+
