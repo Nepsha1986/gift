@@ -10,21 +10,22 @@ const GiftCategory = z.union([
 
 const giftsCollection = defineCollection({
   type: "content",
-  schema: ({ image }) => z.object({
-    title: z.string(),
-    description: z.string(),
-    thumbnail: image().refine((img) => img.width >= 400, {
-      message: "Thumbnail image must be at least 400 pixels wide!",
+  schema: ({ image }) =>
+    z.object({
+      title: z.string(),
+      description: z.string(),
+      thumbnail: image().refine((img) => img.width >= 400, {
+        message: "Thumbnail image must be at least 400 pixels wide!",
+      }),
+      category: GiftCategory.optional(),
+      meta: z
+        .object({
+          age: z.string().optional(),
+          priceRange: z.string().optional(),
+        })
+        .optional(),
+      featured: z.boolean().optional().default(false),
     }),
-    category: GiftCategory.optional(),
-    meta: z
-      .object({
-        age: z.string().optional(),
-        priceRange: z.string().optional(),
-      })
-      .optional(),
-    featured: z.boolean().optional().default(false),
-  }),
 });
 
 export const collections = {

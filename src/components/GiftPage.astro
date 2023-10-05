@@ -52,7 +52,6 @@ const { thumbnail, title, content, category, subtitle, meta} = Astro.props;
 			color: var(--c-secondary);
 		}
 
-		&__price,
 		&__age {
 			font-size: 0.9rem;
 			margin-bottom: 0.2rem;
@@ -64,14 +63,19 @@ const { thumbnail, title, content, category, subtitle, meta} = Astro.props;
 			margin-bottom: 1rem;
 			max-height: 40vh;
 			width: 100%;
-			max-width: 300px;
-			height: 300px;
 			margin-right: 15px;
+
+			@media (min-width: 600px ) {
+				max-width: 300px;
+			}
 		}
 
 		&__header {
 			margin-bottom: 2rem;
-			display: flex;
+
+			@media (min-width: 600px) {
+				display: flex;
+			}
 		}
 	}
 </style>

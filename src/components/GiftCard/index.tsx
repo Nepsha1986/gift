@@ -24,9 +24,7 @@ const GiftCard: React.FC<Props> = ({
 
   return (
     <a href={link} className={className}>
-      <div className={styles.giftCard__imgWrap}>
-        {children}
-      </div>
+      <div className={styles.giftCard__imgWrap}>{children}</div>
 
       <div>
         <h1 className={styles.giftCard__heading}>

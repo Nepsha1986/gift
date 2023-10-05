@@ -4,7 +4,7 @@ import type { Category } from "../../types/category.ts";
 
 import styles from "./styles.module.scss";
 
-const GIFTS_URL = '/gifts';
+const GIFTS_URL = "/gifts";
 
 interface Props {
   title: string;
