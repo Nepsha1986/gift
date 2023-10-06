@@ -15,16 +15,19 @@ import {
 
 import styles from "./styles.module.scss";
 import { getCollection } from "astro:content";
+import { getLangFromUrl, useTranslatedPath, useTranslations } from "@i18n/utils.ts";
+import type { NavTranslationStrings } from "@i18n/ui.ts";
+import LangSwitcher from "./LangSwitcher";
 
-const navItems: [string, string | null, React.ReactNode][] = [
+const navItems: [string, NavTranslationStrings | null, React.ReactNode][] = [
   ["", null, <FontAwesomeIcon icon={faHome} />],
   [
     `gifts/${firstGiftItem[0].data.category}/${firstGiftItem[0].slug}`,
-    "Gifts",
+    "nav.gifts",
     <FontAwesomeIcon icon={faGift} />,
   ],
-  ["about", "About", <FontAwesomeIcon icon={faAddressCard} />],
-  ["contacts", "Contacts", <FontAwesomeIcon icon={faPhone} />],
+  ["about", "nav.about", <FontAwesomeIcon icon={faAddressCard} />],
+  ["contacts", "nav.contacts", <FontAwesomeIcon icon={faPhone} />],
 ];
 
 interface Props {
@@ -33,6 +36,9 @@ interface Props {
 
 const Navigation: React.FC<Props> = ({ currentPage }) => {
   const currentPageParent = currentPage.split("/")[1];
+  const lang = getLangFromUrl(currentPage);
+  const t = useTranslations(lang);
+  const translatePath = useTranslatedPath(lang);
 
   return (
     <nav className={styles.navigation}>
@@ -44,14 +50,24 @@ const Navigation: React.FC<Props> = ({ currentPage }) => {
         });
 
         return (
-          <a key={i[0]} className={navItemClass} href={`/${i[0]}`}>
+          <a key={i[0]} className={navItemClass} href={translatePath(`/${i[0]}`)}>
             <span className={styles.navigation__itemIcon}>{i[2]}</span>
             {!!i[1] && (
-              <span className={styles.navigation__itemName}>{i[1]}</span>
+              <span className={styles.navigation__itemName}>{t(i[1])}</span>
             )}
           </a>
         );
       })}
+      <LangSwitcher languages={[
+        {
+          lang: 'en',
+          path: '/',
+        },
+        {
+          lang: 'ru',
+          path: '/ru',
+        }
+      ]}/>
     </nav>
   );
 };
