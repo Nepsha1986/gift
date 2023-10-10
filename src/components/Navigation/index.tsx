@@ -15,14 +15,21 @@ import {
 
 import styles from "./styles.module.scss";
 import { getCollection } from "astro:content";
-import { getCleanSlug, getLangFromUrl, useTranslatedPath, useTranslations } from "@i18n/utils.ts";
+import {
+  getCleanSlug,
+  getLangFromUrl,
+  useTranslatedPath,
+  useTranslations,
+} from "@i18n/utils.ts";
 import type { NavTranslationStrings } from "@i18n/ui.ts";
 import LangSwitcher from "./LangSwitcher";
 
 const navItems: [string, NavTranslationStrings | null, React.ReactNode][] = [
   ["", null, <FontAwesomeIcon icon={faHome} />],
   [
-    `gifts/${firstGiftItem[0].data.category}/${getCleanSlug(firstGiftItem[0].slug)}`,
+    `gifts/${firstGiftItem[0].data.category}/${getCleanSlug(
+      firstGiftItem[0].slug,
+    )}`,
     "nav.gifts",
     <FontAwesomeIcon icon={faGift} />,
   ],
@@ -50,7 +57,11 @@ const Navigation: React.FC<Props> = ({ currentPage }) => {
         });
 
         return (
-          <a key={i[0]} className={navItemClass} href={translatePath(`/${i[0]}`)}>
+          <a
+            key={i[0]}
+            className={navItemClass}
+            href={translatePath(`/${i[0]}`)}
+          >
             <span className={styles.navigation__itemIcon}>{i[2]}</span>
             {!!i[1] && (
               <span className={styles.navigation__itemName}>{t(i[1])}</span>
@@ -58,16 +69,18 @@ const Navigation: React.FC<Props> = ({ currentPage }) => {
           </a>
         );
       })}
-      <LangSwitcher languages={[
-        {
-          lang: 'en',
-          path: '/',
-        },
-        {
-          lang: 'ru',
-          path: '/ru',
-        }
-      ]}/>
+      <LangSwitcher
+        languages={[
+          {
+            lang: "en",
+            path: "/",
+          },
+          {
+            lang: "ru",
+            path: "/ru",
+          },
+        ]}
+      />
     </nav>
   );
 };

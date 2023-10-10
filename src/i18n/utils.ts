@@ -13,7 +13,7 @@ export function getLangFromSlug(slug: string) {
 }
 
 export function getCleanSlug(slug: string): string {
-  return slug.split('/').slice(-1)[0];
+  return slug.split("/").slice(-1)[0];
 }
 
 export function useTranslations(lang: keyof typeof ui) {
