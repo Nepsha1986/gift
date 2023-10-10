@@ -6,6 +6,16 @@ export function getLangFromUrl(url: string) {
   return defaultLang;
 }
 
+export function getLangFromSlug(slug: string) {
+  const lang = slug.split("/")[0];
+  if (lang in ui) return lang as keyof typeof ui;
+  return defaultLang;
+}
+
+export function getCleanSlug(slug: string): string {
+  return slug.split('/').slice(-1)[0];
+}
+
 export function useTranslations(lang: keyof typeof ui) {
   return function t(key: keyof (typeof ui)[typeof defaultLang]) {
     return ui[lang][key] || ui[defaultLang][key];

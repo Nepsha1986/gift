@@ -15,14 +15,14 @@ import {
 
 import styles from "./styles.module.scss";
 import { getCollection } from "astro:content";
-import { getLangFromUrl, useTranslatedPath, useTranslations } from "@i18n/utils.ts";
+import { getCleanSlug, getLangFromUrl, useTranslatedPath, useTranslations } from "@i18n/utils.ts";
 import type { NavTranslationStrings } from "@i18n/ui.ts";
 import LangSwitcher from "./LangSwitcher";
 
 const navItems: [string, NavTranslationStrings | null, React.ReactNode][] = [
   ["", null, <FontAwesomeIcon icon={faHome} />],
   [
-    `gifts/${firstGiftItem[0].data.category}/${firstGiftItem[0].slug}`,
+    `gifts/${firstGiftItem[0].data.category}/${getCleanSlug(firstGiftItem[0].slug)}`,
     "nav.gifts",
     <FontAwesomeIcon icon={faGift} />,
   ],

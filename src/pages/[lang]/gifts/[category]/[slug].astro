@@ -1,0 +1,40 @@
+---
+import Layout from "@layouts/Layout.astro";
+import { getCollection } from "astro:content";
+import GiftPage from "@components/GiftPage.astro";
+import { Image } from "astro:assets";
+import { toCategoryName } from "@utils/toCategoryName";
+
+export async function getStaticPaths() {
+  const giftsEntries = await getCollection("gifts");
+
+
+
+  return giftsEntries.map((entry) => ({
+    params: { lang: entry.slug.split('/')[0], slug: entry.slug.split('/')[1], category: entry.data?.category },
+    props: { entry }
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+const seoTitle = `Gift idea ${toCategoryName(entry.data.category).toLowerCase()} - ${entry.data.title}`;
+---
+
+<Layout title={seoTitle} isCategoryPage={true}>
+  <GiftPage
+    title={entry.data.title}
+    category={toCategoryName(entry.data.category)}
+    subtitle={entry.data.description}
+    meta={entry.data?.meta}>
+    <Image
+      class="img-cover"
+      slot="thumbnail"
+      src={entry.data.thumbnail}
+      width="400"
+      height="400"
+      alt={entry.data.title}
+    />
+    <Content slot="content" />
+  </GiftPage>
+</Layout>

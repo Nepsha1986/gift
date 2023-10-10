@@ -4,17 +4,15 @@ import type { Category } from "../../types/category.ts";
 
 import styles from "./styles.module.scss";
 
-const GIFTS_URL = "/gifts";
-
 interface Props {
   title: string;
-  slug: string;
+  link: string;
   category: Category;
   children: React.ReactNode;
 }
-const FeaturedGiftIdea = ({ title, category, slug, children }: Props) => {
+const FeaturedGiftIdea = ({ title, category, link, children }: Props) => {
   return (
-    <a className={styles.giftItem} href={`${GIFTS_URL}/${category}/${slug}`}>
+    <a className={styles.giftItem} href={link}>
       {children}
 
       <div className={styles.giftItem__info}>

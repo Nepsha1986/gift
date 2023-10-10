@@ -6,17 +6,16 @@ import CategoryFilter from "@components/CategoryFilter";
 import {ViewTransitions} from 'astro:transitions';
 interface Props {
 	title: string;
+	isCategoryPage: boolean;
 }
 
-const { title } = Astro.props;
+const { title, isCategoryPage } = Astro.props;
 
-const pathname = removeTrailingSlash(new URL(Astro.request.url).pathname);
+const pathname = removeTrailingSlash(Astro.url.pathname);
 const pathParts = pathname.split('/');
 
 let category;
 let activeGiftSlug;
-
-const isCategoryPage = pathname.split('/')[1] === 'gifts' && pathname.split('/').length === 4;
 
 if(isCategoryPage)  {
 	category = pathParts[2]

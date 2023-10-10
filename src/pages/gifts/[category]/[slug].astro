@@ -9,7 +9,7 @@ export async function getStaticPaths() {
   const giftsEntries = await getCollection("gifts");
 
   return giftsEntries.map((entry) => ({
-    params: { slug: entry.slug, category: entry.data?.category },
+    params: { slug: entry.slug.split('/')[1], category: entry.data?.category },
     props: { entry }
   }));
 }
@@ -19,7 +19,7 @@ const { Content } = await entry.render();
 const seoTitle = `Gift idea ${toCategoryName(entry.data.category).toLowerCase()} - ${entry.data.title}`;
 ---
 
-<Layout title={seoTitle}>
+<Layout title={seoTitle} isCategoryPage={true}>
   <GiftPage
     title={entry.data.title}
     category={toCategoryName(entry.data.category)}
