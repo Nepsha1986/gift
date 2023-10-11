@@ -1,6 +1,6 @@
 import React from "react";
 import { toCategoryName } from "@utils/toCategoryName.ts";
-import type { Category } from "../../types/category.ts";
+import type { Category } from "../../../types/category.ts";
 
 import styles from "./styles.module.scss";
 

@@ -1,9 +1,9 @@
 ---
 import { getCollection } from "astro:content";
 import { Image } from "astro:assets";
-import { Category } from "../types/category.ts";
-import GiftCard from "@components/GiftCard";
-import { getCleanSlug, getLangFromSlug, getLangFromUrl, useTranslatedPath } from "../i18n/utils";
+import { Category } from "../../types/category.ts";
+import GiftCard from "../react/GiftCard";
+import { getCleanSlug, getLangFromSlug, getLangFromUrl, useTranslatedPath } from "../../i18n/utils";
 
 const { category, activeGiftSlug }: { category: Category, activeGiftSlug: string } = Astro.props;
 const lang = getLangFromUrl(Astro.url.pathname);

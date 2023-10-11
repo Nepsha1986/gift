@@ -25,16 +25,16 @@ import type { NavTranslationStrings } from "@i18n/ui.ts";
 import LangSwitcher from "./LangSwitcher";
 
 const navItems: [string, NavTranslationStrings | null, React.ReactNode][] = [
-  ["", null, <FontAwesomeIcon icon={faHome} />],
+  ["/", null, <FontAwesomeIcon icon={faHome} />],
   [
-    `gifts/${firstGiftItem[0].data.category}/${getCleanSlug(
+    `/gifts/${firstGiftItem[0].data.category}/${getCleanSlug(
       firstGiftItem[0].slug,
     )}`,
     "nav.gifts",
     <FontAwesomeIcon icon={faGift} />,
   ],
-  ["about", "nav.about", <FontAwesomeIcon icon={faAddressCard} />],
-  ["contacts", "nav.contacts", <FontAwesomeIcon icon={faPhone} />],
+  ["/about", "nav.about", <FontAwesomeIcon icon={faAddressCard} />],
+  ["/contacts", "nav.contacts", <FontAwesomeIcon icon={faPhone} />],
 ];
 
 interface Props {
@@ -60,7 +60,7 @@ const Navigation: React.FC<Props> = ({ currentPage }) => {
           <a
             key={i[0]}
             className={navItemClass}
-            href={translatePath(`/${i[0]}`)}
+            href={translatePath(`${i[0]}`)}
           >
             <span className={styles.navigation__itemIcon}>{i[2]}</span>
             {!!i[1] && (
