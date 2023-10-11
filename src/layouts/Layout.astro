@@ -2,7 +2,7 @@
 import { removeTrailingSlash } from "@utils/removeTrailingSlash";
 import Navigation from '@components/Navigation';
 import GiftList from "@components/GiftList.astro";
-import CategoryFilter from "@components/CategoryFilter";
+import CategoryFilter from "@astroComponents/CategoryFilter.astro";
 import {ViewTransitions} from 'astro:transitions';
 interface Props {
 	title: string;
@@ -19,7 +19,7 @@ let category;
 let activeGiftSlug;
 
 if(isCategoryPage)  {
-	category = pathParts[2]
+	category = lang === 'en' ? pathParts[2] : pathParts[3]
 	activeGiftSlug = pathParts[pathParts.length - 1];
 }
 

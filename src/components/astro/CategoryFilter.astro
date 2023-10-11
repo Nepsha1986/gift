@@ -1,0 +1,68 @@
+---
+import { getCollection } from 'astro:content';
+import { categories } from './categoryItems.ts';
+import { getCleanSlug, getLangFromUrl, useTranslatedPath } from '@i18n/utils.ts';
+
+const gifts = await getCollection('gifts');
+const lang = getLangFromUrl(Astro.url.pathname);
+
+const generateLinks = () => {
+  let links = [];
+
+  categories.forEach((item) => {
+    const firstItem = gifts.find((i) => i.data.category?.includes(item[0]));
+
+    if (!!firstItem) {
+      const firstItemSlug = firstItem?.slug;
+      const translatePath = useTranslatedPath(lang);
+
+      const link = translatePath(`/gifts/${item[0]}/${getCleanSlug(firstItemSlug)}`);
+      const category = item[0];
+
+      links.push([link, item[1], category]);
+      }
+    });
+
+  return links;
+  };
+
+const categoryLinks = generateLinks();
+
+const { activeCategory } = Astro.props;
+---
+
+<div class='.categoryFilter'>
+  {categoryLinks.map((i) => {
+    const navItemClass = activeCategory === i[2] ? 'categoryFilter__link_active' : '';
+
+    return (
+      <a class={`categoryFilter__link ${navItemClass}`} href={i[0]}>
+        {i[1]}
+      </a>
+    );
+  })}
+</div>
+
+<style lang="scss">
+	.categoryFilter {
+		margin-bottom: 0.5rem;
+		max-height: 150px;
+		display: flex;
+		flex-flow: row wrap;
+
+		&__link {
+			text-align: center;
+			display: inline-block;
+			border: 1px solid #fff;
+			border-radius: 2px;
+			margin-right: 5px;
+			font-size: 0.85rem;
+			padding: 0.2rem 10px;
+			margin-bottom: 5px;
+		}
+
+		&__link_active {
+			background: #fff;
+		}
+	}
+</style>
