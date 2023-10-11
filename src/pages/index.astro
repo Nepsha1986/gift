@@ -6,9 +6,10 @@ import FeaturedGiftIdea from "@reactComponents/FeaturedGiftIdea";
 import { getLangFromSlug, getCleanSlug } from "../i18n/utils";
 
 const giftsEntries = await getCollection("gifts");
+const engPosts = giftsEntries.filter(i => getLangFromSlug(i.slug) === 'en');
+const featured = engPosts.filter(i => i.data.featured);
 
-const featured = giftsEntries.filter(i => getLangFromSlug(i.slug) === 'en').filter(i => i.data.featured);
-const first = featured.find(i => i.data.category === "for-women");
+const first = engPosts.find(i => i.data.category === "for-women");
 const viewIdeasLink = `/gifts/${first.data.category}/${getCleanSlug(first.slug)}`;
 ---
 
