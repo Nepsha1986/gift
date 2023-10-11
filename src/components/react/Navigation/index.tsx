@@ -22,7 +22,6 @@ import {
   useTranslations,
 } from "@i18n/utils.ts";
 import type { NavTranslationStrings } from "@i18n/ui.ts";
-import LangSwitcher from "./LangSwitcher";
 
 const navItems: [string, NavTranslationStrings | null, React.ReactNode][] = [
   ["/", null, <FontAwesomeIcon icon={faHome} />],
@@ -69,18 +68,6 @@ const Navigation: React.FC<Props> = ({ currentPage }) => {
           </a>
         );
       })}
-      <LangSwitcher
-        languages={[
-          {
-            lang: "en",
-            path: "/",
-          },
-          {
-            lang: "ru",
-            path: "/ru",
-          },
-        ]}
-      />
     </nav>
   );
 };

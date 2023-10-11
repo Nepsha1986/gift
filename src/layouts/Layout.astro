@@ -25,6 +25,7 @@ if(isCategoryPage)  {
 
 import '../styles/global.scss';
 import { getLangFromUrl } from "../i18n/utils";
+import LangSwitcher from "@reactComponents/LangSwitcher";
 ---
 
 <!doctype html>
@@ -58,6 +59,7 @@ import { getLangFromUrl } from "../i18n/utils";
 	<body>
 		<div class="app-container">
 			<Navigation currentPage={pathname}  />
+			<LangSwitcher activeLang={lang} />
 
 			<main><slot /></main>
 
