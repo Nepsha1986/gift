@@ -4,12 +4,14 @@ import { getCollection } from "astro:content";
 import GiftPage from "@astroComponents/GiftPage.astro";
 import { Image } from "astro:assets";
 import { toCategoryName } from "@utils/toCategoryName";
+import { getCleanSlug, getLangFromSlug } from "@i18n/utils";
 
 export async function getStaticPaths() {
   const giftsEntries = await getCollection("gifts");
+  const filtered = giftsEntries.filter(i => getLangFromSlug(i.slug) === 'en')
 
-  return giftsEntries.map((entry) => ({
-    params: { slug: entry.slug.split('/')[1], category: entry.data?.category },
+  return filtered.map((entry) => ({
+    params: { slug: getCleanSlug(entry.slug), category: entry.data?.category },
     props: { entry }
   }));
 }
