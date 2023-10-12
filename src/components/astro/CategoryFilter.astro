@@ -1,25 +1,27 @@
 ---
 import { getCollection } from 'astro:content';
-import { categories } from './categoryItems.ts';
-import { getCleanSlug, getLangFromUrl, useTranslatedPath } from '@i18n/utils.ts';
+import { getCleanSlug, getLangFromUrl, useTranslatedPath, useTranslations } from '@i18n/utils.ts';
+import { Category } from "../../types/category";
 
 const gifts = await getCollection('gifts');
 const lang = getLangFromUrl(Astro.url.pathname);
 
-const generateLinks = () => {
-  let links = [];
+const categories: Category[] = [ "for-women", "for-men", "for-kids", "for-teens"];
+const t = useTranslations(lang);
 
-  categories.forEach((item) => {
-    const firstItem = gifts.find((i) => i.data.category?.includes(item[0]));
+const generateLinks = () => {
+  let links: [string, Category][] = [];
+
+  categories.forEach((category) => {
+    const firstItem = gifts.find((i) => i.data.category?.includes(category));
 
     if (!!firstItem) {
       const firstItemSlug = firstItem?.slug;
       const translatePath = useTranslatedPath(lang);
 
-      const link = translatePath(`/gifts/${item[0]}/${getCleanSlug(firstItemSlug)}`);
-      const category = item[0];
+      const link = translatePath(`/gifts/${category}/${getCleanSlug(firstItemSlug)}`);
 
-      links.push([link, item[1], category]);
+      links.push([link, category]);
       }
     });
 
@@ -33,11 +35,12 @@ const { activeCategory } = Astro.props;
 
 <div class='.categoryFilter'>
   {categoryLinks.map((i) => {
-    const navItemClass = activeCategory === i[2] ? 'categoryFilter__link_active' : '';
+    const navItemClass = activeCategory === i[1] ? 'categoryFilter__link_active' : '';
 
     return (
       <a class={`categoryFilter__link ${navItemClass}`} href={i[0]}>
-        {i[1]}
+        <!--TODO: FIX!!!-->
+        {t(i[1])}
       </a>
     );
   })}

@@ -21,7 +21,7 @@ import {
   useTranslatedPath,
   useTranslations,
 } from "@i18n/utils.ts";
-import type { NavTranslationStrings } from "@i18n/ui.ts";
+import type { NavTranslationStrings } from "@i18n/translations/navigation.ts";
 
 const navItems: [string, NavTranslationStrings | null, React.ReactNode][] = [
   ["/", null, <FontAwesomeIcon icon={faHome} />],

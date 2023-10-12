@@ -1,6 +1,9 @@
 ---
 import { Category } from "../../types/category";
+import { getLangFromUrl, useTranslations } from "@i18n/utils";
 
+const lang = getLangFromUrl(Astro.url.pathname);
+const t = useTranslations(lang);
 interface MetaInfo {
 	age: string,
 	priceRange: string,
@@ -25,12 +28,11 @@ const { thumbnail, title, content, category, subtitle, meta} = Astro.props;
 
 		<div>
 			<h1 class="article__title">{title}</h1>
-			{ category && <p class="article__category">Category: {category}</p> }
+			{ category && <p class="article__category">{t("s.category")}: {category}</p> }
 
 			<p class="article__subtitle">{subtitle}</p>
 
-			{ !!meta?.age && <p class="article__age"><span class="bold">Age: </span>{meta.age}</p>}
-			{ !!meta?.priceRange && <p class="article__age"><span class="bold">Price Range: </span>{meta?.priceRange}</p>}
+			{ !!meta?.age && <p class="article__age"><span class="bold">{t("s.age")}: </span>{meta.age}</p>}
 		</div>
 	</header>
 

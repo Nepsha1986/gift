@@ -1,3 +1,9 @@
+import nav, { type NavTranslationStrings } from "./translations/navigation.ts";
+import categories, {
+  type CategoriesTranslationStrings,
+} from "./translations/categories.ts";
+import shared, { type SharedStrings } from "@i18n/translations/shared.ts";
+
 export const showDefaultLang = false;
 export const languages = {
   en: "English",
@@ -6,20 +12,23 @@ export const languages = {
 
 export const defaultLang = "en";
 
-export type NavTranslationStrings = "nav.gifts" | "nav.about" | "nav.contacts";
+export type AppTranslationStrings =
+  | NavTranslationStrings
+  | CategoriesTranslationStrings
+  | SharedStrings;
 
 export const ui: Record<
   keyof typeof languages,
-  Record<NavTranslationStrings, string>
+  Record<AppTranslationStrings, string>
 > = {
   en: {
-    "nav.gifts": "Gifts",
-    "nav.about": "About",
-    "nav.contacts": "Contacts",
+    ...nav.en,
+    ...categories.en,
+    ...shared.en,
   },
   ru: {
-    "nav.gifts": "Идеи",
-    "nav.about": "O нас",
-    "nav.contacts": "Контакты",
+    ...nav.ru,
+    ...categories.ru,
+    ...shared.ru,
   },
 };
