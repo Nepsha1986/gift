@@ -1,17 +1,20 @@
 import React from "react";
-import styles from "./styles.module.scss";
 import classNames from "classnames";
+import gbFlag from "@public/assets/GB.svg";
+import ruFlag from "@public/assets/RU.svg";
+
+import styles from "./styles.module.scss";
 
 const languages = {
   en: {
     path: "/",
     label: "English",
-    image: "http://purecatamphetamine.github.io/country-flag-icons/3x2/GB.svg",
+    image: gbFlag.src,
   },
   ru: {
     path: "/ru",
     label: "Русский",
-    image: "http://purecatamphetamine.github.io/country-flag-icons/3x2/RU.svg",
+    image: ruFlag.src,
   },
 };
 
