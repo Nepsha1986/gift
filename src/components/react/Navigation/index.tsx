@@ -1,10 +1,6 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-const giftsEntries = await getCollection("gifts");
-const firstGiftItem = giftsEntries.filter(
-  (i) => i.data.category === "for-women",
-);
-
+import { getCollection } from "astro:content";
 import classNames from "classnames";
 import {
   faHome,
@@ -13,15 +9,21 @@ import {
   faAddressCard,
 } from "@fortawesome/free-solid-svg-icons";
 
-import styles from "./styles.module.scss";
-import { getCollection } from "astro:content";
 import {
   getCleanSlug,
   getLangFromUrl,
   useTranslatedPath,
   useTranslations,
 } from "@i18n/utils.ts";
+
 import type { NavTranslationStrings } from "@i18n/translations/navigation.ts";
+
+const giftsEntries = await getCollection("gifts");
+const firstGiftItem = giftsEntries.filter(
+  (i) => i.data.category === "for-women",
+);
+
+import styles from "./styles.module.scss";
 
 const navItems: [string, NavTranslationStrings | null, React.ReactNode][] = [
   ["/", null, <FontAwesomeIcon icon={faHome} />],
@@ -40,16 +42,21 @@ interface Props {
   currentPage: string;
 }
 
+const getParentFromUrl = (url: string) => {
+  const lang = getLangFromUrl(url);
+  return lang === "en" ? url.split("/")[1] : url.split("/")[2];
+};
+
 const Navigation: React.FC<Props> = ({ currentPage }) => {
-  const currentPageParent = currentPage.split("/")[1];
   const lang = getLangFromUrl(currentPage);
+  const currentPageParent = getParentFromUrl(currentPage);
   const t = useTranslations(lang);
   const translatePath = useTranslatedPath(lang);
 
   return (
     <nav className={styles.navigation}>
       {navItems.map((i) => {
-        const navItemParent = i[0].split("/")[0];
+        const navItemParent = getParentFromUrl(i[0]);
         const navItemClass = classNames(styles.navigation__item, {
           [styles["navigation__item_active"]]:
             currentPageParent === navItemParent,
