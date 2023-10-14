@@ -1,0 +1,83 @@
+---
+import { Category } from "../../types/category";
+import { getLangFromUrl, useTranslations } from "@i18n/utils";
+
+const lang = getLangFromUrl(Astro.url.pathname);
+const t = useTranslations(lang);
+interface MetaInfo {
+	age: string,
+	priceRange: string,
+}
+interface Props {
+	thumbnail: string;
+	title: string;
+	subtitle: string;
+	content: any;
+	category?: Category;
+	meta?:MetaInfo;
+}
+
+const { thumbnail, title, content, category, subtitle, meta} = Astro.props;
+---
+
+<article class="article">
+	<header class="article__header">
+		<div class="article__imgWrap">
+			<slot name="thumbnail" class="article__img"/>
+		</div>
+
+		<div>
+			<h1 class="article__title">{title}</h1>
+			{ category && <p class="article__category">{t("s.category")}: {category}</p> }
+
+			<p class="article__subtitle">{subtitle}</p>
+
+			{ !!meta?.age && <p class="article__age"><span class="bold">{t("s.age")}: </span>{meta.age}</p>}
+		</div>
+	</header>
+
+	<slot name="content"/>
+</article>
+
+<style lang="scss">
+	.article {
+		&__title {
+			font-size: 1.75rem;
+		}
+
+		&__subtitle {
+			color: var(--c-grey-dark);
+			font-style: italic;
+		}
+
+		&__category {
+			color: var(--c-secondary);
+		}
+
+		&__age {
+			font-size: 0.9rem;
+			margin-bottom: 0.2rem;
+		}
+
+		&__imgWrap {
+			border-radius: 10px;
+			overflow: hidden;
+			margin-bottom: 1rem;
+			max-height: 40vh;
+			width: 100%;
+			margin-right: 15px;
+
+			@media (min-width: 600px ) {
+				max-width: 300px;
+			}
+		}
+
+		&__header {
+			margin-bottom: 2rem;
+
+			@media (min-width: 600px) {
+				display: flex;
+			}
+		}
+	}
+</style>

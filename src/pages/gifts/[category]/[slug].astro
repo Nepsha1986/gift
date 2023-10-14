@@ -1,15 +1,17 @@
 ---
 import Layout from "@layouts/Layout.astro";
 import { getCollection } from "astro:content";
-import GiftPage from "@components/GiftPage.astro";
+import GiftPage from "@astroComponents/GiftPage.astro";
 import { Image } from "astro:assets";
 import { toCategoryName } from "@utils/toCategoryName";
+import { getCleanSlug, getLangFromSlug } from "@i18n/utils";
 
 export async function getStaticPaths() {
   const giftsEntries = await getCollection("gifts");
+  const filtered = giftsEntries.filter(i => getLangFromSlug(i.slug) === 'en')
 
-  return giftsEntries.map((entry) => ({
-    params: { slug: entry.slug, category: entry.data?.category },
+  return filtered.map((entry) => ({
+    params: { slug: getCleanSlug(entry.slug), category: entry.data?.category },
     props: { entry }
   }));
 }
@@ -19,7 +21,7 @@ const { Content } = await entry.render();
 const seoTitle = `Gift idea ${toCategoryName(entry.data.category).toLowerCase()} - ${entry.data.title}`;
 ---
 
-<Layout title={seoTitle}>
+<Layout title={seoTitle} isCategoryPage={true}>
   <GiftPage
     title={entry.data.title}
     category={toCategoryName(entry.data.category)}

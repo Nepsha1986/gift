@@ -2,12 +2,15 @@
 import Layout from "@layouts/Layout.astro";
 import { getCollection } from "astro:content";
 import { Image } from "astro:assets";
-import FeaturedGiftIdea from "src/components/FeaturedGiftIdea";
+import FeaturedGiftIdea from "@reactComponents/FeaturedGiftIdea";
+import { getLangFromSlug, getCleanSlug } from "../i18n/utils";
 
 const giftsEntries = await getCollection("gifts");
-const featured = giftsEntries.filter(i => i.data.featured);
-const first = giftsEntries.find(i => i.data.category === "for-women");
-const viewIdeasLink = `/gifts/${first.data.category}/${first.slug}`;
+const engPosts = giftsEntries.filter(i => getLangFromSlug(i.slug) === 'en');
+const featured = engPosts.filter(i => i.data.featured);
+
+const first = engPosts.find(i => i.data.category === "for-women");
+const viewIdeasLink = `/gifts/${first.data.category}/${getCleanSlug(first.slug)}`;
 ---
 
 <Layout title="Find the Perfect Presents for Every Occasion">
@@ -25,7 +28,7 @@ const viewIdeasLink = `/gifts/${first.data.category}/${first.slug}`;
 
     {featured.map((i, index) => (
       <div class={`gridItem gridItem_${index}`}>
-        <FeaturedGiftIdea title={i.data.title} slug={i.slug} category={i.data.category}  >
+        <FeaturedGiftIdea title={i.data.title} link={`gifts/${i.data.category}/${getCleanSlug(i.slug)}`} category={i.data.category}  >
           <Image
             class="img-cover"
             src={i.data.thumbnail}

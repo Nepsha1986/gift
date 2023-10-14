@@ -3,9 +3,13 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
+      "@public/*": ["public/*"],
       "@components/*": ["src/components/*"],
       "@layouts/*": ["src/layouts/*"],
-      "@utils/*": ["src/utils/*"]
+      "@utils/*": ["src/utils/*"],
+      "@i18n/*": ["src/i18n/*"],
+      "@astroComponents/*": ["src/components/astro/*"],
+      "@reactComponents/*": ["src/components/react/*"]
     },
     "jsx": "react-jsx",
     "jsxImportSource": "react",

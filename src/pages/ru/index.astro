@@ -1,0 +1,102 @@
+---
+import Layout from "@layouts/Layout.astro";
+import { getCollection } from "astro:content";
+import { Image } from "astro:assets";
+import FeaturedGiftIdea from "src/components/react/FeaturedGiftIdea";
+import { getCleanSlug, getLangFromSlug, useTranslations } from "../../i18n/utils";
+
+const lang = 'ru';
+
+const giftsEntries = await getCollection("gifts");
+const featured = giftsEntries.filter(i => i.data.featured && (getLangFromSlug(i.slug) === lang));
+const first = giftsEntries.find(i => i.data.category === "for-women");
+const viewIdeasLink = `${lang}/gifts/${first.data.category}/${first.slug.split('/')[1]}`;
+
+const t = useTranslations(lang);
+---
+
+<Layout title="Найдите идеальные подарки для любого случая">
+  <div class="container">
+    <div class="intro">
+      <div>
+        <h1 class="intro__heading">Идеи подарков 2023</h1>
+
+        <h2 class="intro__subheading">Добро пожаловать на gift-idea.co!</h2>
+
+        <p class="intro__text">Наша миссия - убрать стресс из процесса поиска подарков, предлагая широкий выбор
+          <a href={viewIdeasLink}>заботливых и уникальных идей для подарков</a>, подходящих для разных получателей.
+        </p>
+      </div>
+    </div>
+
+    {featured.map((i, index) => (
+      <div class={`gridItem gridItem_${index}`}>
+        <FeaturedGiftIdea title={i.data.title} link={`${lang}/gifts/${i.data.category}/${getCleanSlug(i.slug)}`} category={t(i.data.category)}  >
+          <Image
+            class="img-cover"
+            src={i.data.thumbnail}
+            width="400"
+            height="400"
+            alt={i.data.title}
+          />
+        </FeaturedGiftIdea>
+      </div>
+    ))}
+  </div>
+</Layout>
+
+<style lang="scss">
+	.container {
+		display: flex;
+		flex-flow: row wrap;
+		gap: 8px;
+
+		@media (min-width: 1000px) {
+			display: grid;
+			grid-template-columns: repeat(5, 1fr);
+			grid-template-rows: repeat(3, 1fr);
+			grid-template-areas:
+			"intro intro item2 item9 item10"
+			"item3 item4 item5 item1 item1"
+			"item6 item7 item8 item1 item1";
+		}
+	}
+
+  .gridItem {
+      display: flex;
+      flex-basis: 180px;
+      flex-grow: 1;
+
+	  &_1 {
+		  grid-area: item1;
+	  }
+  }
+
+	.intro {
+		grid-area: intro;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: flex-start;
+		padding: 5px 15px;
+
+		&__heading {
+			font-size: 2.6rem;
+			text-transform: uppercase;
+			color: var(--c-primary);
+		}
+
+		&__subheading {
+			font-size: 1.6rem;
+			color: var(--c-grey-dark);
+		}
+
+		&__text {
+			font-size: 1.1rem;
+
+			a {
+				color: var(--c-secondary);
+			}
+		}
+	}
+</style>
