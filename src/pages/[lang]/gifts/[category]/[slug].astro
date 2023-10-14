@@ -3,7 +3,6 @@ import Layout from "@layouts/Layout.astro";
 import { getCollection } from "astro:content";
 import GiftPage from "@astroComponents/GiftPage.astro";
 import { Image } from "astro:assets";
-import { toCategoryName } from "@utils/toCategoryName";
 import { getLangFromSlug, getCleanSlug, getLangFromUrl, useTranslations } from "@i18n/utils";
 
 const lang = getLangFromUrl(Astro.url.pathname);
