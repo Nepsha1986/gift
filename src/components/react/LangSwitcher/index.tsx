@@ -4,22 +4,21 @@ import gbFlag from "@public/assets/GB.svg";
 import ruFlag from "@public/assets/RU.svg";
 
 import styles from "./styles.module.scss";
+import { getLangFromUrl, useTranslatedPath } from "@i18n/utils.ts";
 
 const languages = {
   en: {
-    path: "/",
     label: "English",
     image: gbFlag.src,
   },
   ru: {
-    path: "/ru",
     label: "Русский",
     image: ruFlag.src,
   },
 };
 
 interface Props {
-  activeLang: keyof typeof languages;
+  pathname: string;
 }
 
 const LangSwitcherItem = ({
@@ -50,7 +49,13 @@ const LangSwitcherItem = ({
   );
 };
 
-const LangSwitcher = ({ activeLang }: Props) => {
+const LangSwitcher = ({ pathname }: Props) => {
+  const activeLang = getLangFromUrl(pathname);
+  const path =
+    activeLang === "en"
+      ? pathname
+      : "/" + pathname.split("/").slice(2).join("/");
+
   return (
     <div className={styles.langSwitcher}>
       <LangSwitcherItem
@@ -62,10 +67,14 @@ const LangSwitcher = ({ activeLang }: Props) => {
       <ul className={styles.langSwitcher__list}>
         {Object.keys(languages).map((langCode) => {
           if (langCode === activeLang) return null;
+          const translatePath = useTranslatedPath(
+            langCode as keyof typeof languages,
+          );
+
           return (
             <li key={langCode} className={styles.langSwitcher__item}>
               <LangSwitcherItem
-                link={languages[langCode as keyof typeof languages].path}
+                link={translatePath(path)}
                 label={languages[langCode as keyof typeof languages].label}
                 imageSrc={languages[langCode as keyof typeof languages].image}
               />
