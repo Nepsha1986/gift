@@ -1,14 +1,12 @@
 ---
 import Layout from "@layouts/Layout.astro";
 import { getCollection } from "astro:content";
-import { Image } from "astro:assets";
-import FeaturedGiftIdea from "@reactComponents/FeaturedGiftIdea";
 import { getLangFromSlug, getCleanSlug } from "../i18n/utils";
+import gift from "@public/assets/secretlondon_red_present.svg";
+import CategoryLinks from "@astroComponents/CategoryLinks.astro";
 
 const giftsEntries = await getCollection("gifts");
-const engPosts = giftsEntries.filter(i => getLangFromSlug(i.slug) === 'en');
-const featured = engPosts.filter(i => i.data.featured);
-
+const engPosts = giftsEntries.filter(i => getLangFromSlug(i.slug) === "en");
 const first = engPosts.find(i => i.data.category === "for-women");
 const viewIdeasLink = `/gifts/${first.data.category}/${getCleanSlug(first.slug)}`;
 ---
@@ -26,74 +24,40 @@ const viewIdeasLink = `/gifts/${first.data.category}/${getCleanSlug(first.slug)}
       </div>
     </div>
 
-    {featured.map((i, index) => (
-      <div class={`gridItem gridItem_${index}`}>
-        <FeaturedGiftIdea title={i.data.title} link={`gifts/${i.data.category}/${getCleanSlug(i.slug)}`} category={i.data.category}  >
-          <Image
-            class="img-cover"
-            src={i.data.thumbnail}
-            width="400"
-            height="400"
-            alt={i.data.title}
-          />
-        </FeaturedGiftIdea>
-      </div>
-    ))}
-  </div>
+    <div class="img-wrap">
+      <img src={gift.src} />
+    </div>
+
+    <CategoryLinks />
 </Layout>
 
 <style lang="scss">
-	.container {
-		display: flex;
-		flex-flow: row wrap;
-		gap: 8px;
-
-		@media (min-width: 1000px) {
-			display: grid;
-			grid-template-columns: repeat(5, 1fr);
-			grid-template-rows: repeat(3, 1fr);
-			grid-template-areas:
-			"intro intro item2 item9 item10"
-			"item3 item4 item5 item1 item1"
-			"item6 item7 item8 item1 item1";
-		}
-	}
-
-  .gridItem {
-      display: flex;
-      flex-basis: 180px;
-      flex-grow: 1;
-
-	  &_1 {
-		  grid-area: item1;
-	  }
-  }
-
 	.intro {
-		grid-area: intro;
-		display: flex;
-		flex-direction: column;
-		justify-content: space-between;
-		align-items: flex-start;
-		padding: 5px 15px;
+		text-align: center;
 
 		&__heading {
-			font-size: 2.6rem;
-			text-transform: uppercase;
-			color: var(--c-primary);
+			font-size: 3rem;
 		}
 
 		&__subheading {
-			font-size: 1.6rem;
-			color: var(--c-grey-dark);
+			font-size: 2.2rem;
 		}
 
 		&__text {
-			font-size: 1.1rem;
+			color: var(--c-grey-dark);
+			font-size: 1.2rem;
+			max-width: 600px;
+			margin: 0 auto 30px;
 
 			a {
 				color: var(--c-secondary);
 			}
 		}
+	}
+
+	.img-wrap {
+		max-width: 46vh;
+		width: 100%;
+		margin: 0 auto 30px;
 	}
 </style>
