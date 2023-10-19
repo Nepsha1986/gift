@@ -1,0 +1,34 @@
+---
+import { getCollection } from "astro:content";
+import LinkButton from "@astroComponents/LinkButton.astro";
+import { getLangFromUrl, useTranslations, getLangFromSlug, useTranslatedPath, getCleanSlug } from "@i18n/utils";
+import { Category } from "../../types/category";
+
+const gifts = await getCollection("gifts");
+
+const lang = getLangFromUrl(Astro.url.pathname);
+const t = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
+const categories: Category[] = ["for-women", "for-men", "for-kids", "for-teens"];
+
+const getFirstItemLink = (category: Category): string => {
+  const filteredByLang = gifts.filter(i => getLangFromSlug(i.slug) === lang);
+  const firstItem = filteredByLang.find((i) => i.data.category?.includes(category));
+
+  return translatePath(`/gifts/${category}/${getCleanSlug(firstItem.slug)}`);
+};
+---
+
+<div class="category-links">
+  {categories.map(i =>
+    <LinkButton text={t(i)} link={getFirstItemLink(i)} />)}
+</div>
+
+<style lang="scss">
+	.category-links {
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: center;
+		gap: 10px;
+	}
+</style>

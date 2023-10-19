@@ -1,23 +1,38 @@
 ---
+import classNames from "classnames";
 interface Props {
   link: string;
   text: string;
+  color?: "primary" | "secondary";
 }
 
-const { link, text } = Astro.props;
+const { link, text, color = "primary" } = Astro.props;
+
+const className = classNames("linkButton", {
+  [`linkButton_${color}`]: true
+});
 ---
 
-<a class="linkButton" href={link}>{text}</a>
+<a class={className} href={link}>{text}</a>
 
 <style lang="scss">
 	.linkButton {
 		display: inline-block;
-		padding: 10px 35px;
-		font-size: 1.1rem;
-		background: var(--c-primary);
+		padding: 7px 25px;
+		font-size: 0.85rem;
+		text-transform: uppercase;
 		color: #fff;
 		border-radius: 3px;
 		transition: 0.3s opacity;
+		font-weight: bold;
+
+		&_primary {
+			background: var(--c-primary);
+		}
+
+		&_secondary {
+			background: var(--c-secondary);
+		}
 
 		&:hover {
 			opacity: 0.8;
