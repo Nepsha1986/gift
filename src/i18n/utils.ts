@@ -18,7 +18,8 @@ export function getCleanSlug(slug: string): string {
 
 export function useTranslations(lang: keyof typeof ui) {
   return function t(key: keyof (typeof ui)[typeof defaultLang]) {
-    return ui[lang][key] !== "" || ui[defaultLang][key];
+    // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
+    return ui[lang][key] ? ui[lang][key] : ui[defaultLang][key];
   };
 }
 
