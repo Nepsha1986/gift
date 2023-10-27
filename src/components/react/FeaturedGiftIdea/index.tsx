@@ -10,7 +10,12 @@ interface Props {
   category: Category;
   children: React.ReactNode;
 }
-const FeaturedGiftIdea = ({ title, category, link, children }: Props) => {
+const FeaturedGiftIdea: React.FC<Props> = ({
+  title,
+  category,
+  link,
+  children,
+}) => {
   return (
     <a className={styles.giftItem} href={link}>
       {children}

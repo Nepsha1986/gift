@@ -1,7 +1,7 @@
 import * as React from "react";
-import { Image } from "astro:assets";
-import styles from "./styles.module.scss";
 import classNames from "classnames";
+
+import styles from "./styles.module.scss";
 interface Props {
   index: number;
   title: string;
@@ -19,7 +19,7 @@ const GiftCard: React.FC<Props> = ({
   active,
 }) => {
   const className = classNames(styles.giftCard, {
-    [styles["giftCard_active"]]: active,
+    [styles.giftCard_active]: active,
   });
 
   return (

@@ -1,4 +1,4 @@
-import { languages } from "@i18n/ui.ts";
+import { type languages } from "@i18n/ui.ts";
 
 export type SeoStrings = "seo.description" | "seo.keywords";
 const seo: Record<keyof typeof languages, Record<SeoStrings, string>> = {

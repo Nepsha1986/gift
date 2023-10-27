@@ -21,19 +21,14 @@ interface Props {
   pathname: string;
 }
 
-const LangSwitcherItem = ({
-  link,
-  imageSrc,
-  label,
-  active = false,
-}: {
+const LangSwitcherItem: React.FC<{
   imageSrc: string;
   label: string;
   link?: string;
   active?: boolean;
-}) => {
+}> = ({ link, imageSrc, label, active = false }) => {
   const className = classNames(styles.langSwitcherItem, {
-    [styles["langSwitcherItem_active"]]: active,
+    [styles.langSwitcherItem_active]: active,
   });
 
   return (
@@ -49,7 +44,7 @@ const LangSwitcherItem = ({
   );
 };
 
-const LangSwitcher = ({ pathname }: Props) => {
+const LangSwitcher: React.FC<Props> = ({ pathname }) => {
   const activeLang = getLangFromUrl(pathname);
   const path =
     activeLang === "en"
