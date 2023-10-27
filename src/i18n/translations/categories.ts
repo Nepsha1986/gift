@@ -1,4 +1,4 @@
-import { languages } from "@i18n/ui.ts";
+import { type languages } from "@i18n/ui.ts";
 import type { Category } from "../../types/category.ts";
 
 export type CategoriesTranslationStrings = Category;

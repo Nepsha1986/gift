@@ -18,31 +18,37 @@ import {
 
 import type { NavTranslationStrings } from "@i18n/translations/navigation.ts";
 
+import styles from "./styles.module.scss";
+
 const giftsEntries = await getCollection("gifts");
 const firstGiftItem = giftsEntries.filter(
   (i) => i.data.category === "for-women",
 );
 
-import styles from "./styles.module.scss";
-
-const navItems: [string, NavTranslationStrings | null, React.ReactNode][] = [
-  ["/", null, <FontAwesomeIcon icon={faHome} />],
+const navItems: Array<
+  [string, NavTranslationStrings | undefined, React.ReactNode]
+> = [
+  ["/", undefined, <FontAwesomeIcon key="homepage" icon={faHome} />],
   [
     `/gifts/${firstGiftItem[0].data.category}/${getCleanSlug(
       firstGiftItem[0].slug,
     )}`,
     "nav.gifts",
-    <FontAwesomeIcon icon={faGift} />,
+    <FontAwesomeIcon key="gift_page" icon={faGift} />,
   ],
-  ["/about", "nav.about", <FontAwesomeIcon icon={faAddressCard} />],
-  ["/contacts", "nav.contacts", <FontAwesomeIcon icon={faPhone} />],
+  ["/about", "nav.about", <FontAwesomeIcon key="about" icon={faAddressCard} />],
+  [
+    "/contacts",
+    "nav.contacts",
+    <FontAwesomeIcon key="contact" icon={faPhone} />,
+  ],
 ];
 
 interface Props {
   currentPage: string;
 }
 
-const getParentFromUrl = (url: string) => {
+const getParentFromUrl = (url: string): string => {
   const lang = getLangFromUrl(url);
   return lang === "en" ? url.split("/")[1] : url.split("/")[2];
 };
@@ -58,8 +64,7 @@ const Navigation: React.FC<Props> = ({ currentPage }) => {
       {navItems.map((i) => {
         const navItemParent = getParentFromUrl(i[0]);
         const navItemClass = classNames(styles.navigation__item, {
-          [styles["navigation__item_active"]]:
-            currentPageParent === navItemParent,
+          [styles.navigation__item_active]: currentPageParent === navItemParent,
         });
 
         return (
@@ -69,7 +74,7 @@ const Navigation: React.FC<Props> = ({ currentPage }) => {
             href={translatePath(`${i[0]}`)}
           >
             <span className={styles.navigation__itemIcon}>{i[2]}</span>
-            {!!i[1] && (
+            {i[1] !== undefined && (
               <span className={styles.navigation__itemName}>{t(i[1])}</span>
             )}
           </a>

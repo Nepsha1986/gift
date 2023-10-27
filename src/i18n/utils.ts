@@ -1,12 +1,12 @@
 import { ui, defaultLang, showDefaultLang } from "./ui";
 
-export function getLangFromUrl(url: string) {
+export function getLangFromUrl(url: string): keyof typeof ui {
   const lang = url.split("/")[1];
   if (lang in ui) return lang as keyof typeof ui;
   return defaultLang;
 }
 
-export function getLangFromSlug(slug: string) {
+export function getLangFromSlug(slug: string): keyof typeof ui {
   const lang = slug.split("/")[0];
   if (lang in ui) return lang as keyof typeof ui;
   return defaultLang;
@@ -18,7 +18,8 @@ export function getCleanSlug(slug: string): string {
 
 export function useTranslations(lang: keyof typeof ui) {
   return function t(key: keyof (typeof ui)[typeof defaultLang]) {
-    return ui[lang][key] || ui[defaultLang][key];
+    // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
+    return ui[lang][key] ? ui[lang][key] : ui[defaultLang][key];
   };
 }
 

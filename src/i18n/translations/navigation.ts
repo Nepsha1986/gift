@@ -1,4 +1,4 @@
-import { languages } from "@i18n/ui.ts";
+import { type languages } from "@i18n/ui.ts";
 
 export type NavTranslationStrings = "nav.gifts" | "nav.about" | "nav.contacts";
 
