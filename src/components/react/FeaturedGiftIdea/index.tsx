@@ -1,20 +1,20 @@
-import React from 'react'
-import { toCategoryName } from '@utils/toCategoryName.ts'
-import type { Category } from '../../../types/category.ts'
+import React from "react";
+import { toCategoryName } from "@utils/toCategoryName.ts";
+import type { Category } from "../../../types/category.ts";
 
-import styles from './styles.module.scss'
+import styles from "./styles.module.scss";
 
 interface Props {
-  title: string
-  link: string
-  category: Category
-  children: React.ReactNode
+  title: string;
+  link: string;
+  category: Category;
+  children: React.ReactNode;
 }
 const FeaturedGiftIdea: React.FC<Props> = ({
   title,
   category,
   link,
-  children
+  children,
 }) => {
   return (
     <a className={styles.giftItem} href={link}>
@@ -27,7 +27,7 @@ const FeaturedGiftIdea: React.FC<Props> = ({
         {toCategoryName(category)}
       </div>
     </a>
-  )
-}
+  );
+};
 
-export default FeaturedGiftIdea
+export default FeaturedGiftIdea;

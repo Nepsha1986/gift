@@ -1,14 +1,14 @@
-import * as React from 'react'
-import classNames from 'classnames'
+import * as React from "react";
+import classNames from "classnames";
 
-import styles from './styles.module.scss'
+import styles from "./styles.module.scss";
 interface Props {
-  index: number
-  title: string
-  description: string
-  children: React.ReactNode
-  link: string
-  active: boolean
+  index: number;
+  title: string;
+  description: string;
+  children: React.ReactNode;
+  link: string;
+  active: boolean;
 }
 const GiftCard: React.FC<Props> = ({
   index,
@@ -16,11 +16,11 @@ const GiftCard: React.FC<Props> = ({
   children,
   description,
   link,
-  active
+  active,
 }) => {
   const className = classNames(styles.giftCard, {
-    [styles.giftCard_active]: active
-  })
+    [styles.giftCard_active]: active,
+  });
 
   return (
     <a href={link} className={className}>
@@ -33,7 +33,7 @@ const GiftCard: React.FC<Props> = ({
         <p className={styles.giftCard__desc}>{description}</p>
       </div>
     </a>
-  )
-}
+  );
+};
 
-export default GiftCard
+export default GiftCard;
