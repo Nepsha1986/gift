@@ -1,1 +1,2 @@
-export const removeTrailingSlash = (path: string) => path.replace(/\/$/, "");
+export const removeTrailingSlash = (path: string): string =>
+  path.replace(/\/$/, '')
