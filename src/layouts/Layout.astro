@@ -49,11 +49,6 @@ if (isCategoryPage) {
   {isProd && (
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JWTCBEGBVB"></script>
     <script>
-      declare global {
-        interface Window {
-          dataLayer: any[];
-        }
-      }
       window.dataLayer = window.dataLayer || [];
 
       function gtag() {
