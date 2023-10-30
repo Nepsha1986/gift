@@ -49,8 +49,7 @@ interface Props {
 }
 
 const getParentFromUrl = (url: string): string => {
-  const lang = getLangFromUrl(url);
-  return lang === "en" ? url.split("/")[1] : url.split("/")[2];
+  return url.split("/")[2];
 };
 
 const Navigation: React.FC<Props> = ({ currentPage }) => {
@@ -62,7 +61,7 @@ const Navigation: React.FC<Props> = ({ currentPage }) => {
   return (
     <nav className={styles.navigation}>
       {navItems.map((i) => {
-        const navItemParent = getParentFromUrl(i[0]);
+        const navItemParent = i[0].split("/")[1];
         const navItemClass = classNames(styles.navigation__item, {
           [styles.navigation__item_active]: currentPageParent === navItemParent,
         });
