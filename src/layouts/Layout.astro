@@ -20,13 +20,14 @@ const lang = getLangFromUrl(Astro.url.pathname);
 const t = useTranslations(lang);
 
 const pathname = removeTrailingSlash(Astro.url.pathname);
+console.log(pathname);
 const pathParts = pathname.split("/");
 
 let category;
 let activeGiftSlug;
 
 if (isCategoryPage) {
-  category = lang === "en" ? pathParts[2] : pathParts[3];
+  category = pathParts[3];
   activeGiftSlug = pathParts[pathParts.length - 1];
 }
 ---

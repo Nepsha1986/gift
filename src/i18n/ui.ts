@@ -5,7 +5,7 @@ import categories, {
 import shared, { type SharedStrings } from "@i18n/translations/shared.ts";
 import seo, { type SeoStrings } from "@i18n/translations/seo.ts";
 
-export const showDefaultLang = false;
+export const showDefaultLang = true;
 export const languages = {
   en: "English",
   ru: "Русский",
