@@ -9,6 +9,7 @@ export const showDefaultLang = true;
 export const languages = {
   en: "English",
   ru: "Русский",
+  uk: "Українська",
 };
 
 export const defaultLang = "en";
@@ -34,5 +35,11 @@ export const ui: Record<
     ...nav.ru,
     ...categories.ru,
     ...shared.ru,
+  },
+  uk: {
+    ...seo.uk,
+    ...nav.uk,
+    ...categories.uk,
+    ...shared.uk,
   },
 };

@@ -16,6 +16,11 @@ const nav: Record<
     "nav.about": "O нас",
     "nav.contacts": "Контакты",
   },
+  uk: {
+    "nav.gifts": "Подарунки",
+    "nav.about": "Про нас",
+    "nav.contacts": "Контакти",
+  },
 };
 
 export default nav;
