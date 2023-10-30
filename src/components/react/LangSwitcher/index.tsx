@@ -2,6 +2,7 @@ import React from "react";
 import classNames from "classnames";
 import gbFlag from "@public/assets/GB.svg";
 import ruFlag from "@public/assets/RU.svg";
+import uaFlag from "@public/assets/UA.svg";
 
 import styles from "./styles.module.scss";
 import { getLangFromUrl, useTranslatedPath } from "@i18n/utils.ts";
@@ -14,6 +15,10 @@ const languages = {
   ru: {
     label: "Русский",
     image: ruFlag.src,
+  },
+  uk: {
+    label: "Українська",
+    image: uaFlag.src,
   },
 };
 

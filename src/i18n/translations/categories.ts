@@ -8,7 +8,7 @@ const categories: Record<
   Record<CategoriesTranslationStrings, string>
 > = {
   en: {
-    "for-women": "for woman",
+    "for-women": "for women",
     "for-men": "for men",
     "for-kids": "for kids",
     "for-teens": "for teens",
@@ -18,6 +18,12 @@ const categories: Record<
     "for-men": "для мужчин",
     "for-kids": "для детей",
     "for-teens": "для подростков",
+  },
+  uk: {
+    "for-women": "для жінок",
+    "for-men": "для чоловіків",
+    "for-kids": "для дітей",
+    "for-teens": "для підлітків",
   },
 };
 
