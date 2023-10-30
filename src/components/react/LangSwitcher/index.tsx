@@ -46,10 +46,7 @@ const LangSwitcherItem: React.FC<{
 
 const LangSwitcher: React.FC<Props> = ({ pathname }) => {
   const activeLang = getLangFromUrl(pathname);
-  const path =
-    activeLang === "en"
-      ? pathname
-      : "/" + pathname.split("/").slice(2).join("/");
+  const path = "/" + pathname.split("/").slice(2).join("/");
 
   return (
     <div className={styles.langSwitcher}>
@@ -62,6 +59,7 @@ const LangSwitcher: React.FC<Props> = ({ pathname }) => {
       <ul className={styles.langSwitcher__list}>
         {Object.keys(languages).map((langCode) => {
           if (langCode === activeLang) return null;
+
           const translatePath = useTranslatedPath(
             langCode as keyof typeof languages,
           );
