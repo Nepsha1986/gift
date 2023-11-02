@@ -11,6 +11,11 @@ const shared: Record<keyof typeof languages, Record<SharedStrings, string>> = {
     "s.category": "категория",
     "s.age": "возраст",
   },
+  uk: {
+    "s.gift_idea": "ідея подарунка",
+    "s.category": "категорія",
+    "s.age": "вік",
+  },
 };
 
 export default shared;

@@ -2,6 +2,7 @@ import React from "react";
 import classNames from "classnames";
 import gbFlag from "@public/assets/GB.svg";
 import ruFlag from "@public/assets/RU.svg";
+import uaFlag from "@public/assets/UA.svg";
 
 import styles from "./styles.module.scss";
 import { getLangFromUrl, useTranslatedPath } from "@i18n/utils.ts";
@@ -14,6 +15,10 @@ const languages = {
   ru: {
     label: "Русский",
     image: ruFlag.src,
+  },
+  uk: {
+    label: "Українська",
+    image: uaFlag.src,
   },
 };
 
@@ -46,10 +51,7 @@ const LangSwitcherItem: React.FC<{
 
 const LangSwitcher: React.FC<Props> = ({ pathname }) => {
   const activeLang = getLangFromUrl(pathname);
-  const path =
-    activeLang === "en"
-      ? pathname
-      : "/" + pathname.split("/").slice(2).join("/");
+  const path = "/" + pathname.split("/").slice(2).join("/");
 
   return (
     <div className={styles.langSwitcher}>
@@ -62,6 +64,7 @@ const LangSwitcher: React.FC<Props> = ({ pathname }) => {
       <ul className={styles.langSwitcher__list}>
         {Object.keys(languages).map((langCode) => {
           if (langCode === activeLang) return null;
+
           const translatePath = useTranslatedPath(
             langCode as keyof typeof languages,
           );

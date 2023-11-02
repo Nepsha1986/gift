@@ -1,4 +1,4 @@
-import { ui, defaultLang, showDefaultLang } from "./ui";
+import { ui, defaultLang } from "./ui";
 
 export function getLangFromUrl(url: string): keyof typeof ui {
   const lang = url.split("/")[1];
@@ -19,14 +19,12 @@ export function getCleanSlug(slug: string): string {
 export function useTranslations(lang: keyof typeof ui) {
   return function t(key: keyof (typeof ui)[typeof defaultLang]) {
     // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
-    return ui[lang][key] ? ui[lang][key] : ui[defaultLang][key];
+    return ui[lang][key] || ui[defaultLang][key];
   };
 }
 
 export function useTranslatedPath(lang: keyof typeof ui) {
   return function translatePath(path: string, l: string = lang) {
-    return !showDefaultLang && l === defaultLang
-      ? path
-      : `/${l}${path !== "/" ? path : ""}`;
+    return `/${l}${path !== "/" ? path : ""}`;
   };
 }
