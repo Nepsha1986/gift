@@ -1,8 +1,10 @@
 import React, { useState } from "react";
-import Map from "@reactComponents/Map";
-import Dialog from "@reactComponents/Dialog";
 
-const ViewStoresFlow = () => {
+import Dialog from "@reactComponents/Dialog";
+import ProductTable from "@reactComponents/ProductTable";
+import Button from "@reactComponents/Button";
+
+const ViewStoresFlow: React.FC = () => {
   const [isDialogVisible, setDialogVisible] = useState(false);
 
   return (
@@ -13,16 +15,16 @@ const ViewStoresFlow = () => {
           setDialogVisible(false);
         }}
       >
-        <Map />
+        <ProductTable />
       </Dialog>
 
-      <button
+      <Button
         onClick={() => {
           setDialogVisible(true);
         }}
-      >
-        View stores
-      </button>
+        color="primary"
+        text="View stores"
+      />
     </div>
   );
 };

@@ -5,6 +5,7 @@
     "paths": {
       "@public/*": ["public/*"],
       "@components/*": ["src/components/*"],
+      "@services/*": ["src/services/*"],
       "@layouts/*": ["src/layouts/*"],
       "@utils/*": ["src/utils/*"],
       "@i18n/*": ["src/i18n/*"],

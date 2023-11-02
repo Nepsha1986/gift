@@ -1,14 +1,13 @@
-import { type ReactNode, useEffect, useRef, useState } from "react";
+import React, { type ReactNode, useEffect, useRef } from "react";
+import Button from "@reactComponents/Button";
 
-const Dialog = ({
-  open,
-  children,
-  onClickClose,
-}: {
+import styles from "./styles.module.scss";
+
+const Dialog: React.FC<{
   open: boolean;
   children: ReactNode;
   onClickClose: () => void;
-}) => {
+}> = ({ open, children, onClickClose }) => {
   const dialogRef = useRef<HTMLDialogElement>(null);
 
   useEffect(() => {
@@ -20,10 +19,10 @@ const Dialog = ({
   }, [open]);
 
   return (
-    <dialog ref={dialogRef}>
+    <dialog className={styles.dialog} ref={dialogRef}>
       {children}
 
-      <button onClick={onClickClose}>Close</button>
+      <Button onClick={onClickClose} color="primary" text="Close" />
     </dialog>
   );
 };
