@@ -4,19 +4,25 @@ import Dialog from "@reactComponents/Dialog";
 import ProductTable from "@reactComponents/ProductTable";
 import Button from "@reactComponents/Button";
 
-const ViewStoresFlow: React.FC = () => {
+interface Props {
+  ideaName: string;
+}
+
+const ViewStoresFlow: React.FC<Props> = ({ ideaName }) => {
   const [isDialogVisible, setDialogVisible] = useState(false);
 
   return (
     <div>
-      <Dialog
-        open={isDialogVisible}
-        onClickClose={() => {
-          setDialogVisible(false);
-        }}
-      >
-        <ProductTable />
-      </Dialog>
+      {isDialogVisible && (
+        <Dialog
+          open={isDialogVisible}
+          onClickClose={() => {
+            setDialogVisible(false);
+          }}
+        >
+          <ProductTable ideaName={ideaName} />
+        </Dialog>
+      )}
 
       <Button
         onClick={() => {

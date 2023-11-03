@@ -1,7 +1,6 @@
 ---
 import { Category } from "../../types/category";
 import { getLangFromUrl, useTranslations } from "@i18n/utils";
-import ViewStoresFlow from "../react/ViewStoresFlow";
 
 const lang = getLangFromUrl(Astro.url.pathname);
 const t = useTranslations(lang);
@@ -38,8 +37,6 @@ const { thumbnail, title, content, category, subtitle, meta} = Astro.props;
 	</header>
 
 	<slot name="content"/>
-
-	<ViewStoresFlow client:load />
 </article>
 
 <style lang="scss">

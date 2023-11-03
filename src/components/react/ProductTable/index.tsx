@@ -1,21 +1,32 @@
 import React, { useEffect, useState } from "react";
-import productService, { type ProductDTO } from "@services/products.service.ts";
+import ideasService, { type IdeaDto } from "@services/ideasService.ts";
 
-const ProductTable: React.FC = () => {
-  const [products, setProducts] = useState<ProductDTO[]>([]);
+interface Props {
+  ideaName: string;
+}
+
+const ProductTable: React.FC<Props> = ({ ideaName }) => {
+  const [idea, setIdea] = useState<IdeaDto>({} as IdeaDto);
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
+
   useEffect(() => {
-    productService
-      .getAll()
+    setLoading(true);
+    ideasService
+      .get(ideaName)
       .then((res) => {
-        setProducts(res);
+        setIdea(res);
       })
       .catch((e) => {
         setError(true);
+      })
+      .finally(() => {
+        setLoading(false);
       });
   }, []);
 
-  if (error) return <div>Error!</div>;
+  if (error) return <div>Error! Please try again later.</div>;
+  if (loading) return <div>Loading...</div>;
 
   return (
     <div>
@@ -25,24 +36,32 @@ const ProductTable: React.FC = () => {
           "Within the list, you'll find a handpicked assortment of gift ideas, each complete with a name, description, and product links. This provides you with a convenient way to browse and discover the ideal gift for any occasion. Enjoy your gift-hunting experience!"
         }
       </p>
-      <table>
-        <thead>
-          <tr>
-            <th>Title</th>
-            <th>Description</th>
-            <th>Link</th>
-          </tr>
-        </thead>
-        <tbody>
-          {products.map((item, index) => (
-            <tr key={item.id}>
-              <td>{item.title}</td>
-              <td>{item.description}</td>
-              <td>{item.link}</td>
+
+      {Object.keys(idea).includes("products") ? (
+        <table>
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Description</th>
+              <th>Link</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {idea.products.map((item, index) => (
+              <tr key={item.title}>
+                <td>{item.title}</td>
+                <td>{item.description}</td>
+                <td>{item.link}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      ) : (
+        <p>
+          Sorry, Currently there are no products in the list, we are working on
+          this feature....
+        </p>
+      )}
     </div>
   );
 };

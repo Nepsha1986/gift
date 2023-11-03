@@ -2,6 +2,7 @@
 import Layout from "@layouts/Layout.astro";
 import { getCollection } from "astro:content";
 import GiftPage from "@astroComponents/GiftPage.astro";
+import ViewStoresFlow from "@reactComponents/ViewStoresFlow";
 import { Image } from "astro:assets";
 import { getLangFromSlug, getCleanSlug, getLangFromUrl, useTranslations } from "@i18n/utils";
 
@@ -27,7 +28,8 @@ const seoTitle = `${t("s.gift_idea")} ${t(entry.data.category)} - ${entry.data.t
     title={entry.data.title}
     category={t(entry.data.category)}
     subtitle={entry.data.description}
-    meta={entry.data?.meta}>
+    meta={entry.data?.meta}
+  >
     <Image
       class="img-cover"
       slot="thumbnail"
@@ -38,4 +40,6 @@ const seoTitle = `${t("s.gift_idea")} ${t(entry.data.category)} - ${entry.data.t
     />
     <Content slot="content" />
   </GiftPage>
+
+  <ViewStoresFlow ideaName={getCleanSlug(entry.slug)}  client:load />
 </Layout>
