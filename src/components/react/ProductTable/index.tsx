@@ -49,6 +49,7 @@ const ProductTable: React.FC<Props> = ({ ideaName }) => {
               </tr>
             </thead>
             <tbody>
+              {/* @ts-expect-error resolves es-lint conflict */}
               {idea.products.map((item, index) => (
                 <tr key={item.title}>
                   <td>{item.title}</td>
