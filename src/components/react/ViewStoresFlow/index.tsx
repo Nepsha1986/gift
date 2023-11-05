@@ -5,10 +5,10 @@ import ProductTable from "@reactComponents/ProductTable";
 import Button from "@reactComponents/Button";
 
 interface Props {
-  ideaName: string;
+  refId: string;
 }
 
-const ViewStoresFlow: React.FC<Props> = ({ ideaName }) => {
+const ViewStoresFlow: React.FC<Props> = ({ refId }) => {
   const [isDialogVisible, setDialogVisible] = useState(false);
 
   return (
@@ -20,7 +20,7 @@ const ViewStoresFlow: React.FC<Props> = ({ ideaName }) => {
             setDialogVisible(false);
           }}
         >
-          <ProductTable ideaName={ideaName} />
+          <ProductTable refId={refId} />
         </Dialog>
       )}
 

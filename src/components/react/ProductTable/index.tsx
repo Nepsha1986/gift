@@ -2,10 +2,10 @@ import React, { useEffect, useState } from "react";
 import ideasService, { type IdeaDto } from "@services/ideasService.ts";
 
 interface Props {
-  ideaName: string;
+  refId: string;
 }
 
-const ProductTable: React.FC<Props> = ({ ideaName }) => {
+const ProductTable: React.FC<Props> = ({ refId }) => {
   const [idea, setIdea] = useState<IdeaDto>();
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
@@ -13,7 +13,7 @@ const ProductTable: React.FC<Props> = ({ ideaName }) => {
   useEffect(() => {
     setLoading(true);
     ideasService
-      .get(ideaName)
+      .get(refId)
       .then((res) => {
         setIdea(res);
       })

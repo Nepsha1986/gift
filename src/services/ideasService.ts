@@ -15,7 +15,7 @@ export interface IdeaDto {
 }
 interface IdeasService {
   getAll: () => Promise<IdeaDto[]>;
-  get: (name: string) => Promise<IdeaDto>;
+  get: (refID: string) => Promise<IdeaDto>;
 }
 
 const ideasService: IdeasService = {
@@ -25,8 +25,8 @@ const ideasService: IdeasService = {
     return data;
   },
 
-  get: async function (name: string) {
-    const { data } = await giftsAPI.get(`/ideas/${name}`);
+  get: async function (refID: string) {
+    const { data } = await giftsAPI.get(`/ideas/${refID}`);
 
     return data;
   },
