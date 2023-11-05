@@ -20,13 +20,13 @@ interface IdeasService {
 
 const ideasService: IdeasService = {
   getAll: async () => {
-    const { data } = await giftsAPI.get("api/ideas");
+    const { data } = await giftsAPI.get("api/v1/ideas");
 
     return data;
   },
 
   get: async function (refID: string) {
-    const { data } = await giftsAPI.get(`api/ideas/${refID}`);
+    const { data } = await giftsAPI.get(`api/v1/ideas/${refID}`);
 
     return data;
   },
