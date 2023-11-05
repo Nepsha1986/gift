@@ -1,0 +1,9 @@
+.dialog {
+  border: none;
+  border-radius: 3px;
+  max-width: 600px;
+
+  &::backdrop {
+    background: rgba(0, 0, 0, 0.45);
+  }
+}
