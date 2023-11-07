@@ -1,0 +1,35 @@
+---
+import AdminPanel from "../features/AdminPanel";
+
+import { getCollection } from "astro:content";
+const giftsEntries = await getCollection("gifts");
+
+const pages: IdeaPage[] = giftsEntries.filter(i => !!i.data._ref_id).map(i => ({
+  title: i.data.title,
+  _ref_id: i.data._ref_id
+}));
+
+import "../styles/global.scss";
+import { IdeaPage } from "../features/AdminPanel/types/IdeaPage";
+---
+
+<!doctype html>
+<html lang='en'>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Lobster&display=swap"
+      rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-reboot@4.5.6/reboot.min.css" rel="stylesheet">
+</head>
+<body>
+  <div style={{padding: '1rem'}}>
+
+    <AdminPanel pages={pages} client:load />
+  </div>
+</body>
+</html>

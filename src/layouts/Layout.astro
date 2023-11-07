@@ -20,7 +20,6 @@ const lang = getLangFromUrl(Astro.url.pathname);
 const t = useTranslations(lang);
 
 const pathname = removeTrailingSlash(Astro.url.pathname);
-console.log(pathname);
 const pathParts = pathname.split("/");
 
 let category;

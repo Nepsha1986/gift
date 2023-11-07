@@ -1,0 +1,15 @@
+.select {
+  margin-bottom: 0.5rem;
+
+  &__label {
+    display: block;
+    font-size: 0.75rem;
+    margin-bottom: 0.2rem;
+  }
+
+  &__select {
+    border: 1px solid #eee;
+    padding: 0.5rem;
+    width: 100%;
+  }
+}

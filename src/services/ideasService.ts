@@ -7,15 +7,14 @@ export interface Product {
 }
 
 export interface IdeaDto {
-  id: string;
-  name: string;
-  locale: string;
-  lang: string;
+  _id: string;
+  _ref_id: string;
   products: Product[];
 }
 interface IdeasService {
   getAll: () => Promise<IdeaDto[]>;
   get: (refID: string) => Promise<IdeaDto>;
+  add: (idea: Omit<IdeaDto, "_id">) => Promise<void>;
 }
 
 const ideasService: IdeasService = {
@@ -25,10 +24,14 @@ const ideasService: IdeasService = {
     return data;
   },
 
-  get: async function (refID: string) {
+  get: async (refID: string) => {
     const { data } = await giftsAPI.get(`api/v1/ideas/${refID}`);
 
     return data;
+  },
+
+  add: async (idea) => {
+    return await giftsAPI.post("api/v1/ideas", idea);
   },
 };
 
