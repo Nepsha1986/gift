@@ -28,6 +28,12 @@
     line-height: 1;
   }
 
+  &_disabled {
+    pointer-events: none;
+    background: var(--c-grey-lightest);
+    opacity: 0.7;
+  }
+
   &:hover {
     opacity: 0.8;
   }
