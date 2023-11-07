@@ -9,23 +9,31 @@ export interface Product {
 export interface IdeaDto {
   _id: string;
   _ref_id: string;
+  locale: string;
   products: Product[];
 }
+
+type IdeasReqParams = {
+  _ref_id?: string;
+  locale?: string;
+};
 interface IdeasService {
-  getAll: () => Promise<IdeaDto[]>;
-  get: (refID: string) => Promise<IdeaDto>;
+  getAll: (params?: IdeasReqParams) => Promise<IdeaDto[]>;
+  get: (id: string) => Promise<IdeaDto>;
   add: (idea: Omit<IdeaDto, "_id">) => Promise<void>;
 }
 
 const ideasService: IdeasService = {
-  getAll: async () => {
-    const { data } = await giftsAPI.get("api/v1/ideas");
+  getAll: async (params) => {
+    const { data } = await giftsAPI.get("api/v1/ideas", {
+      params,
+    });
 
     return data;
   },
 
-  get: async (refID: string) => {
-    const { data } = await giftsAPI.get(`api/v1/ideas/${refID}`);
+  get: async (id: string) => {
+    const { data } = await giftsAPI.get(`api/v1/ideas/${id}`);
 
     return data;
   },

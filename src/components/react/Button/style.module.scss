@@ -10,12 +10,22 @@
   cursor: pointer;
   border: none;
 
+  &_default {
+    color: var(--c-grey-dark);
+    background: var(--c-grey-lightest);
+  }
+
   &_primary {
     background: var(--c-primary);
   }
 
   &_secondary {
     background: var(--c-secondary);
+  }
+
+  &_iconOnly {
+    padding: 0.5rem;
+    line-height: 1;
   }
 
   &:hover {

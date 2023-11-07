@@ -29,7 +29,7 @@ const ViewStoresFlow: React.FC<Props> = ({ refId }) => {
           setDialogVisible(true);
         }}
         color="primary"
-        text="View stores"
+        children="View stores"
       />
     </div>
   );
