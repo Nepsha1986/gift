@@ -1,16 +1,19 @@
 ---
+import { getLangFromSlug } from "../i18n/utils";
+import { getCollection } from "astro:content";
+
+import { IdeaPage } from "../features/AdminPanel/types/IdeaPage";
 import AdminPanel from "../features/AdminPanel";
 
-import { getCollection } from "astro:content";
 const giftsEntries = await getCollection("gifts");
+const engPosts = giftsEntries.filter(i => getLangFromSlug(i.slug) === "en");
 
-const pages: IdeaPage[] = giftsEntries.filter(i => !!i.data.refId).map(i => ({
+const pages: IdeaPage[] = engPosts.filter(i => !!i.data.refId).map(i => ({
   title: i.data.title,
   refId: i.data.refId
 }));
 
 import "../styles/global.scss";
-import { IdeaPage } from "../features/AdminPanel/types/IdeaPage";
 ---
 
 <!doctype html>

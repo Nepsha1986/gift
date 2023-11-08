@@ -1,6 +1,6 @@
 ---
 title: Настольная игра
-refId: board-game_ru
+refId: board-game
 description: Подарите им часы веселья и укрепления отношений с захватывающей настольной игрой.
 date: '2023-09-17'
 thumbnail: ../../img/monopoly.webp
