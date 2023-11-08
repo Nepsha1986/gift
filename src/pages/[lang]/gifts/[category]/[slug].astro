@@ -5,7 +5,6 @@ import GiftPage from "@astroComponents/GiftPage.astro";
 import ViewStoresFlow from "@reactComponents/ViewStoresFlow";
 import { Image } from "astro:assets";
 import { getLangFromSlug, getCleanSlug, getLangFromUrl, useTranslations } from "@i18n/utils";
-import { getBERefId } from "../../../../utils/utils";
 
 const lang = getLangFromUrl(Astro.url.pathname);
 const t = useTranslations(lang);
@@ -42,5 +41,5 @@ const seoTitle = `${t("s.gift_idea")} ${t(entry.data.category)} - ${entry.data.t
     <Content slot="content" />
   </GiftPage>
 
-  { !!entry.data?._ref_id &&  <ViewStoresFlow refId={getBERefId(entry.data._ref_id, 'usa')}  client:load />}
+  { !!entry.data?.refId &&  <ViewStoresFlow refId={entry.data.refId}  client:load />}
 </Layout>

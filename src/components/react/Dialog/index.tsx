@@ -1,13 +1,16 @@
 import React, { type ReactNode, useEffect, useRef } from "react";
 import Button from "@reactComponents/Button";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faClose } from "@fortawesome/free-solid-svg-icons";
 import styles from "./styles.module.scss";
 
 const Dialog: React.FC<{
   open: boolean;
   children: ReactNode;
+  heading?: string;
   onClickClose: () => void;
-}> = ({ open, children, onClickClose }) => {
+}> = ({ open, children, onClickClose, heading }) => {
   const dialogRef = useRef<HTMLDialogElement>(null);
 
   useEffect(() => {
@@ -20,9 +23,19 @@ const Dialog: React.FC<{
 
   return (
     <dialog className={styles.dialog} ref={dialogRef}>
-      {children}
+      <header className={styles.dialog__header}>
+        {heading !== undefined && (
+          <h3 style={{ marginBottom: 0 }}>{heading}</h3>
+        )}
 
-      <Button onClick={onClickClose} color="primary" text="Close" />
+        <div className={styles.dialog__closeBtn}>
+          <Button onClick={onClickClose} iconOnly>
+            <FontAwesomeIcon key="gift_page" icon={faClose} />
+          </Button>
+        </div>
+      </header>
+
+      <div className={styles.dialog__main}>{children}</div>
     </dialog>
   );
 };

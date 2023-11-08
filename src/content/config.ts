@@ -12,7 +12,7 @@ const giftsCollection = defineCollection({
   type: "content",
   schema: ({ image }) =>
     z.object({
-      _ref_id: z.string().optional(),
+      refId: z.string().optional(),
       title: z.string(),
       description: z.string(),
       thumbnail: image().refine((img) => img.width >= 400, {
