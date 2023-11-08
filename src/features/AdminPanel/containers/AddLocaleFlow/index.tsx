@@ -18,9 +18,7 @@ const AddLocaleFlow: React.FC<Props> = ({ pageRef, onSuccess }) => {
   const [active, setActive] = useState(false);
   const [formSubmitError, setFormSubmitError] = useState<string>();
 
-  const [locale, setLocale] = useState<string>(
-    `${getLangFromPageRef(pageRef)}-US`,
-  );
+  const [locale, setLocale] = useState<string>(`en-US`);
 
   const handleSubmit = (): void => {
     IdeasService.add({
@@ -66,12 +64,16 @@ const AddLocaleFlow: React.FC<Props> = ({ pageRef, onSuccess }) => {
                   value={locale}
                   options={[
                     {
-                      value: `${getLangFromPageRef(pageRef)}-US`,
-                      label: "USA",
+                      value: `en-US`,
+                      label: "USA (english)",
                     },
                     {
-                      value: `${getLangFromPageRef(pageRef)}-UA`,
-                      label: "Ukraine",
+                      value: `uk-UA`,
+                      label: "Ukraine (українська)",
+                    },
+                    {
+                      value: `ru-UA`,
+                      label: "Ukraine (русский)",
                     },
                   ]}
                 ></Select>

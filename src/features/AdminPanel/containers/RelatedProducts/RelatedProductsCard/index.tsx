@@ -38,7 +38,7 @@ const RelatedProductsCard: React.FC<Props> = ({
   };
 
   return (
-    <Card header={getCountry(locale)}>
+    <Card header={locale}>
       <RelatedProductsTable
         relatedProducts={products}
         onChange={(products) => {
