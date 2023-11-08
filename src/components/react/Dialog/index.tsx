@@ -24,7 +24,9 @@ const Dialog: React.FC<{
   return (
     <dialog className={styles.dialog} ref={dialogRef}>
       <header className={styles.dialog__header}>
-        {!!heading && <h3 style={{ marginBottom: 0 }}>{heading}</h3>}
+        {heading !== undefined && (
+          <h3 style={{ marginBottom: 0 }}>{heading}</h3>
+        )}
 
         <div className={styles.dialog__closeBtn}>
           <Button onClick={onClickClose} iconOnly>

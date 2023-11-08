@@ -14,7 +14,7 @@ interface Props {
   options: Option[];
 }
 
-const Select = ({ name, value, onChange, label, options }: Props) => {
+const Select: React.FC<Props> = ({ name, value, onChange, label, options }) => {
   return (
     <div className={styles.select}>
       <label className={styles.select__label} htmlFor={name}>

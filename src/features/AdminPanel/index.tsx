@@ -1,7 +1,6 @@
 import React from "react";
 
 import RelatedProducts from "./containers/RelatedProducts";
-import AddLocale from "./containers/AddLocaleFlow";
 import type { IdeaPage } from "./types/IdeaPage.ts";
 
 interface Props {

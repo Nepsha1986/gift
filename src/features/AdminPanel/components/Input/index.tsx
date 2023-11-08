@@ -7,7 +7,7 @@ interface Props {
   value: string;
   onChange: (val: string) => void;
 }
-const Input = ({ name, value, onChange, label }: Props) => {
+const Input: React.FC<Props> = ({ name, value, onChange, label }) => {
   return (
     <div className={styles.input}>
       <label className={styles.input__label} htmlFor={name}>

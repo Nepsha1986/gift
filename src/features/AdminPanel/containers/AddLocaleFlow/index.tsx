@@ -10,8 +10,8 @@ interface Props {
   pageRef: string;
   onSuccess: () => void;
 }
-const getLangFromPageRef = (ref: string) => {
-  return ref.split("_").slice(-1);
+const getLangFromPageRef = (ref: string): string => {
+  return ref.split("_").slice(-1).toString();
 };
 
 const AddLocaleFlow: React.FC<Props> = ({ pageRef, onSuccess }) => {
@@ -22,10 +22,10 @@ const AddLocaleFlow: React.FC<Props> = ({ pageRef, onSuccess }) => {
     `${getLangFromPageRef(pageRef)}-US`,
   );
 
-  const handleSubmit = () => {
+  const handleSubmit = (): void => {
     IdeasService.add({
-      locale: locale,
-      _ref_id: pageRef,
+      locale,
+      refId: pageRef,
       products: [],
     })
       .then(() => {
@@ -53,14 +53,9 @@ const AddLocaleFlow: React.FC<Props> = ({ pageRef, onSuccess }) => {
           ) : (
             <div>
               <p>
-                After submitting the form, a new block of related products for{" "}
-                <span style={{ color: "red" }}>"{pageRef}"</span> page will be
-                added. Please note that currently you are adding a products
-                block for{" "}
-                <span style={{ color: "red" }}>
-                  "{getLangFromPageRef(pageRef)}"
-                </span>{" "}
-                language.
+                {`After submitting the form, a new block of related products for "${pageRef}" page will be added. Please note that currently you are adding a products block for "${getLangFromPageRef(
+                  pageRef,
+                )}" language`}
               </p>
 
               <form>
@@ -92,11 +87,12 @@ const AddLocaleFlow: React.FC<Props> = ({ pageRef, onSuccess }) => {
 
       <Button
         color="primary"
-        children="Add Locale"
         onClick={() => {
           setActive(true);
         }}
-      />
+      >
+        Add Locale
+      </Button>
     </>
   );
 };

@@ -13,14 +13,15 @@ export interface IdeaDto {
   products: Product[];
 }
 
-type IdeasReqParams = {
+interface IdeasReqParams {
   _ref_id?: string;
   locale?: string;
-};
+}
 interface IdeasService {
   getAll: (params?: IdeasReqParams) => Promise<IdeaDto[]>;
   get: (id: string) => Promise<IdeaDto>;
   add: (idea: Omit<IdeaDto, "_id">) => Promise<void>;
+  update: (id: string, idea: Omit<IdeaDto, "_id">) => Promise<IdeaDto>;
 }
 
 const ideasService: IdeasService = {
@@ -39,7 +40,11 @@ const ideasService: IdeasService = {
   },
 
   add: async (idea) => {
-    return await giftsAPI.post("api/v1/ideas", idea);
+    await giftsAPI.post("api/v1/ideas", idea);
+  },
+
+  update: async (id, data) => {
+    return await giftsAPI.put(`api/v1/ideas/${id}`, data);
   },
 };
 

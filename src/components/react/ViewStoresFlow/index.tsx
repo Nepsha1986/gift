@@ -29,8 +29,9 @@ const ViewStoresFlow: React.FC<Props> = ({ refId }) => {
           setDialogVisible(true);
         }}
         color="primary"
-        children="View stores"
-      />
+      >
+        View stores
+      </Button>
     </div>
   );
 };

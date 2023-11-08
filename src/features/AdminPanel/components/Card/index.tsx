@@ -10,7 +10,9 @@ const Card: React.FC<Props> = ({ header, footer, children }) => {
     <div className={styles.card}>
       <header className={styles.card__header}>{header}</header>
       <div className={styles.card__main}>{children}</div>
-      {footer && <footer className={styles.card__footer}>{footer}</footer>}
+      {footer !== undefined && (
+        <footer className={styles.card__footer}>{footer}</footer>
+      )}
     </div>
   );
 };
