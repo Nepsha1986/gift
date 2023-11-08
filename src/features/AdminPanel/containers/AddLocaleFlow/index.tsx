@@ -4,7 +4,7 @@ import Button from "@reactComponents/Button";
 import Dialog from "@reactComponents/Dialog";
 
 import IdeasService from "@services/ideasService.ts";
-import Select from "../../components/Select";
+import Select from "../../../../components/react/Select";
 
 interface Props {
   pageRef: string;

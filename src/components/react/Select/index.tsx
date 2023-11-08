@@ -4,6 +4,7 @@ import styles from "./styles.module.scss";
 interface Option {
   value: string;
   label: string;
+  disabled?: boolean;
 }
 
 interface Props {
@@ -30,7 +31,11 @@ const Select: React.FC<Props> = ({ name, value, onChange, label, options }) => {
         className={styles.select__select}
       >
         {options.map((option, index) => (
-          <option key={index} value={option.value}>
+          <option
+            key={index}
+            value={option.value}
+            disabled={option.disabled ?? false}
+          >
             {option.label}
           </option>
         ))}

@@ -1,70 +1,139 @@
-import React, { useEffect, useState } from "react";
-import ideasService, { type IdeaDto } from "@services/ideasService.ts";
+import React, { useMemo, useState } from "react";
+import ideasService from "@services/ideasService.ts";
+import { useQuery } from "@tanstack/react-query";
+import Select from "@reactComponents/Select";
+import {
+  getLocale,
+  locales,
+  type SupportedCountries,
+  type SupportedLanguages,
+} from "../../../types/Locale.ts";
 
 interface Props {
   refId: string;
 }
 
 const ProductTable: React.FC<Props> = ({ refId }) => {
-  const [idea, setIdea] = useState<IdeaDto>();
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(false);
+  const [countryCode, setCountryCode] = useState<SupportedCountries | "">("");
+  const [language, setLanguage] = useState<SupportedLanguages>();
 
-  useEffect(() => {
-    setLoading(true);
-    ideasService
-      .get(refId)
-      .then((res) => {
-        setIdea(res);
-      })
-      .catch((e) => {
-        setError(true);
-      })
-      .finally(() => {
-        setLoading(false);
-      });
-  }, []);
+  const languageOptions = useMemo(() => {
+    if (countryCode) {
+      return [
+        {
+          value: "",
+          label: "Choose your language",
+          disabled: true,
+        },
+        ...locales[countryCode].map((code) => ({
+          value: code,
+          label: code,
+        })),
+      ];
+    }
 
-  if (error) return <div>Error! Please try again later.</div>;
-  if (loading) return <div>Loading...</div>;
+    return [];
+  }, [countryCode]);
+
+  const {
+    data: idea,
+    isError,
+    isLoading,
+    isFetched,
+  } = useQuery({
+    enabled: !!countryCode && !!language,
+    queryKey: ["getRelatedProducts", refId, language, countryCode],
+    queryFn: async () =>
+      await ideasService.getRelatedProducts(
+        getLocale(
+          language as SupportedLanguages,
+          countryCode as SupportedCountries,
+        ),
+        refId,
+      ),
+  });
+
+  if (isError) return <div>Error! Please try again later.</div>;
+  if (isLoading) return <div>Loading...</div>;
 
   return (
     <div>
-      {/* @ts-expect-error resolves es-lint conflict */}
-      {Object.keys(idea).includes("products") ? (
+      {!isFetched && (
         <div>
-          <h2>Happy gift-hunting!</h2>
-          <p>
-            {
-              "Within the list, you'll find a handpicked assortment of gift ideas, each complete with a name, description, and product links. This provides you with a convenient way to browse and discover the ideal gift for any occasion. Enjoy your gift-hunting experience!"
-            }
-          </p>
+          <Select
+            name="Country"
+            label="Country"
+            value={countryCode || ""}
+            options={[
+              {
+                value: "",
+                label: "Choose your location",
+                disabled: true,
+              },
+              {
+                value: "US",
+                label: "USA",
+              },
+              {
+                value: "UA",
+                label: "Ukraine",
+              },
+            ]}
+            onChange={(val) => {
+              setCountryCode(val as SupportedCountries);
+            }}
+          />
 
-          <table>
-            <thead>
-              <tr>
-                <th>Title</th>
-                <th>Description</th>
-                <th>Link</th>
-              </tr>
-            </thead>
-            <tbody>
-              {/* @ts-expect-error resolves es-lint conflict */}
-              {idea.products.map((item, index) => (
-                <tr key={item.title}>
-                  <td>{item.title}</td>
-                  <td>{item.description}</td>
-                  <td>{item.link}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+          {countryCode && (
+            <Select
+              name="Language"
+              label="Language"
+              value={language ?? ""}
+              options={languageOptions}
+              onChange={(val) => {
+                setLanguage(val as SupportedLanguages);
+              }}
+            />
+          )}
         </div>
-      ) : (
-        <p>
-          We are sorry, but currently there are no products in the list. We are
-          working on adding this feature, and it will be available soon.
-        </p>
+      )}
+
+      {isFetched && (
+        <div>
+          {idea?.products?.length ? (
+            <div>
+              <p>
+                {
+                  "Within the list, you'll find a handpicked assortment of gift ideas, each complete with a name, description, and product links. This provides you with a convenient way to browse and discover the ideal gift for any occasion. Enjoy your gift-hunting experience!"
+                }
+              </p>
+
+              <table>
+                <thead>
+                  <tr>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Link</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {idea?.products?.map((item, index) => (
+                    <tr key={item.title}>
+                      <td>{item.title}</td>
+                      <td>{item.description}</td>
+                      <td>{item.link}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          ) : (
+            <p>
+              We are sorry, but currently there are no products in the list. We
+              are working on adding this feature, and it will be available soon.
+            </p>
+          )}
+        </div>
       )}
     </div>
   );

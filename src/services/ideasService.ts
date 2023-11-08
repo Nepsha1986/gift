@@ -18,6 +18,7 @@ interface IdeasReqParams {
   locale?: string;
 }
 interface IdeasService {
+  getRelatedProducts: (locale: string, refId: string) => Promise<IdeaDto>;
   getAll: (params?: IdeasReqParams) => Promise<IdeaDto[]>;
   get: (id: string) => Promise<IdeaDto>;
   add: (idea: Omit<IdeaDto, "_id">) => Promise<void>;
@@ -45,6 +46,11 @@ const ideasService: IdeasService = {
 
   update: async (id, data) => {
     return await giftsAPI.put(`api/v1/ideas/${id}`, data);
+  },
+
+  getRelatedProducts: async (locale, refId) => {
+    const { data } = await giftsAPI.get(`api/v1/ideas/${locale}/${refId}`);
+    return data;
   },
 };
 

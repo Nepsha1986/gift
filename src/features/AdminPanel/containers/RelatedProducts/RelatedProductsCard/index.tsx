@@ -26,7 +26,7 @@ const RelatedProductsCard: React.FC<Props> = ({
     try {
       await IdeasService.update(_id, {
         locale,
-        refId: refId,
+        refId,
         products: updatedProducts,
       });
 

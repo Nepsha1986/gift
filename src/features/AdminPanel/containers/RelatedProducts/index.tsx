@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import type { IdeaDto } from "@services/ideasService.ts";
 import IdeasService from "@services/ideasService.ts";
 import type { IdeaPage } from "../../types/IdeaPage.ts";
-import Select from "../../components/Select";
+import Select from "../../../../components/react/Select";
 import AddLocale from "../AddLocaleFlow";
 import RelatedProductsCard from "./RelatedProductsCard";
 
@@ -21,7 +21,7 @@ const RelatedProducts: React.FC<Props> = ({ availablePages }) => {
     setLoading(true);
 
     try {
-      const items = await IdeasService.getAll({ refId: refId });
+      const items = await IdeasService.getAll({ refId });
 
       setIdeas(items);
     } catch (e) {
@@ -62,8 +62,8 @@ const RelatedProducts: React.FC<Props> = ({ availablePages }) => {
         ideas?.map((i) => (
           <RelatedProductsCard
             key={i._id}
-            refId={i.refId}
             _id={i._id}
+            refId={i.refId}
             products={i.products}
             locale={i.locale}
           />
