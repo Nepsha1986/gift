@@ -8,13 +8,13 @@ export interface Product {
 
 export interface IdeaDto {
   _id: string;
-  _ref_id: string;
+  refId: string;
   locale: string;
   products: Product[];
 }
 
 interface IdeasReqParams {
-  _ref_id?: string;
+  refId?: string;
   locale?: string;
 }
 interface IdeasService {

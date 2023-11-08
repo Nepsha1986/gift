@@ -1,4 +1,4 @@
 export interface IdeaPage {
-  _ref_id: string;
+  refId: string;
   title: string;
 }

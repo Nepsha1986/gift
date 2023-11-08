@@ -11,7 +11,7 @@ interface Props {
 }
 
 const RelatedProducts: React.FC<Props> = ({ availablePages }) => {
-  const [refId, setRefId] = useState<string>(availablePages[0]._ref_id);
+  const [refId, setRefId] = useState<string>(availablePages[0].refId);
 
   const [ideas, setIdeas] = useState<IdeaDto[]>([]);
   const [error, setError] = useState(false);
@@ -21,7 +21,7 @@ const RelatedProducts: React.FC<Props> = ({ availablePages }) => {
     setLoading(true);
 
     try {
-      const items = await IdeasService.getAll({ _ref_id: refId });
+      const items = await IdeasService.getAll({ refId: refId });
 
       setIdeas(items);
     } catch (e) {
@@ -42,13 +42,13 @@ const RelatedProducts: React.FC<Props> = ({ availablePages }) => {
 
       <div style={{ maxWidth: "400px" }}>
         <Select
-          name="_ref_id"
+          name="refId"
           label="Select page"
           onChange={setRefId}
           value={refId}
           options={availablePages.map((i) => ({
-            value: i._ref_id,
-            label: `${i.title} (${i._ref_id})`,
+            value: i.refId,
+            label: `${i.title} (${i.refId})`,
           }))}
         />
       </div>

@@ -1,6 +1,6 @@
 ---
 title: Board Game
-_ref_id: board-game_en
+refId: board-game_en
 description: Gift them hours of fun and bonding with a captivating board game.
 date: '2023-09-17'
 thumbnail: ../../img/monopoly.webp

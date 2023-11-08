@@ -42,5 +42,5 @@ const seoTitle = `${t("s.gift_idea")} ${t(entry.data.category)} - ${entry.data.t
     <Content slot="content" />
   </GiftPage>
 
-  { !!entry.data?._ref_id &&  <ViewStoresFlow refId={getBERefId(entry.data._ref_id, 'usa')}  client:load />}
+  { !!entry.data?.refId &&  <ViewStoresFlow refId={getBERefId(entry.data.refId, 'usa')}  client:load />}
 </Layout>

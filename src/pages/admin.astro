@@ -4,9 +4,9 @@ import AdminPanel from "../features/AdminPanel";
 import { getCollection } from "astro:content";
 const giftsEntries = await getCollection("gifts");
 
-const pages: IdeaPage[] = giftsEntries.filter(i => !!i.data._ref_id).map(i => ({
+const pages: IdeaPage[] = giftsEntries.filter(i => !!i.data.refId).map(i => ({
   title: i.data.title,
-  _ref_id: i.data._ref_id
+  refId: i.data.refId
 }));
 
 import "../styles/global.scss";
