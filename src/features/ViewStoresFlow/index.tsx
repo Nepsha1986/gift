@@ -1,9 +1,10 @@
 import React, { useState } from "react";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 import Dialog from "@reactComponents/Dialog";
-import ProductTable from "@reactComponents/ProductTable";
 import Button from "@reactComponents/Button";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+
+import ProductTable from "./containers/ProductTable";
 
 const queryClient = new QueryClient();
 

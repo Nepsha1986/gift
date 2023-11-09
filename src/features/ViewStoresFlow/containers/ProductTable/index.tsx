@@ -7,7 +7,7 @@ import {
   locales,
   type SupportedCountries,
   type SupportedLanguages,
-} from "../../../types/Locale.ts";
+} from "../../../../types/Locale.ts";
 
 interface Props {
   refId: string;
