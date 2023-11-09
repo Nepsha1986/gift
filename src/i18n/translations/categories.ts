@@ -1,12 +1,9 @@
-import { type languages } from "@i18n/ui.ts";
 import type { Category } from "../../types/category.ts";
+import type { Translations } from "@i18n/ui.ts";
 
 export type CategoriesTranslationStrings = Category;
 
-const categories: Record<
-  keyof typeof languages,
-  Record<CategoriesTranslationStrings, string>
-> = {
+const categories: Translations<CategoriesTranslationStrings> = {
   en: {
     "for-women": "for women",
     "for-men": "for men",

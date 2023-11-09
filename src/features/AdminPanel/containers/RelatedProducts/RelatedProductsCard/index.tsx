@@ -11,8 +11,6 @@ interface Props {
   locale: string;
   products: Product[];
 }
-
-const getCountry = (locale: string): string => locale.split("-")[1];
 const RelatedProductsCard: React.FC<Props> = ({
   _id,
   refId,

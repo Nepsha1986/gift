@@ -1,5 +1,5 @@
+import type { SupportedLanguages } from "@i18n/ui.ts";
 export type SupportedCountries = "US" | "UA";
-export type SupportedLanguages = "en" | "ru" | "uk";
 
 export type SupportedLocales = Record<SupportedCountries, SupportedLanguages[]>;
 

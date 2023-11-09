@@ -5,9 +5,10 @@ import GiftPage from "@astroComponents/GiftPage.astro";
 import ViewStoresFlow from "src/features/ViewStoresFlow";
 import { Image } from "astro:assets";
 import { getLangFromSlug, getCleanSlug, getLangFromUrl, useTranslations } from "@i18n/utils";
+import { ui } from "@i18n/ui";
 
 const lang = getLangFromUrl(Astro.url.pathname);
-const t = useTranslations(lang);
+const t = useTranslations(lang, ui);
 
 export async function getStaticPaths() {
   const giftsEntries = await getCollection("gifts");
@@ -41,5 +42,5 @@ const seoTitle = `${t("s.gift_idea")} ${t(entry.data.category)} - ${entry.data.t
     <Content slot="content" />
   </GiftPage>
 
-  { !!entry.data?.refId &&  <ViewStoresFlow refId={entry.data.refId}  client:load />}
+  { !!entry.data?.refId &&  <ViewStoresFlow refId={entry.data.refId} lang={lang} client:load />}
 </Layout>

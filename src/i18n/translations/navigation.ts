@@ -1,11 +1,8 @@
-import { type languages } from "@i18n/ui.ts";
+import { type Translations } from "@i18n/ui.ts";
 
 export type NavTranslationStrings = "nav.gifts" | "nav.about" | "nav.contacts";
 
-const nav: Record<
-  keyof typeof languages,
-  Record<NavTranslationStrings, string>
-> = {
+const nav: Translations<NavTranslationStrings> = {
   en: {
     "nav.gifts": "Gifts",
     "nav.about": "About",

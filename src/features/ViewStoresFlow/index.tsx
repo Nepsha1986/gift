@@ -5,14 +5,19 @@ import Dialog from "@reactComponents/Dialog";
 import Button from "@reactComponents/Button";
 
 import ProductTable from "./containers/ProductTable";
+import { useTranslations } from "@i18n/utils.ts";
+import type { SupportedLanguages } from "@i18n/ui.ts";
+import all from "./i18n/translations.ts";
 
 const queryClient = new QueryClient();
 
 interface Props {
+  lang: SupportedLanguages;
   refId: string;
 }
 
-const ViewStoresFlow: React.FC<Props> = ({ refId }) => {
+const ViewStoresFlow: React.FC<Props> = ({ refId, lang }) => {
+  const t = useTranslations(lang, all);
   const [isDialogVisible, setDialogVisible] = useState(false);
 
   return (
@@ -35,7 +40,7 @@ const ViewStoresFlow: React.FC<Props> = ({ refId }) => {
         }}
         color="primary"
       >
-        View stores
+        {t("btn.related_products")}
       </Button>
     </QueryClientProvider>
   );

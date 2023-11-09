@@ -1,25 +1,23 @@
-import { ui, defaultLang } from "./ui";
+import { type ui, type SupportedLanguages, type Translations } from "./ui";
 
-export function getLangFromUrl(url: string): keyof typeof ui {
-  const lang = url.split("/")[1];
-  if (lang in ui) return lang as keyof typeof ui;
-  return defaultLang;
+export function getLangFromUrl(url: string): SupportedLanguages {
+  return url.split("/")[1] as SupportedLanguages;
 }
 
-export function getLangFromSlug(slug: string): keyof typeof ui {
-  const lang = slug.split("/")[0];
-  if (lang in ui) return lang as keyof typeof ui;
-  return defaultLang;
+export function getLangFromSlug(slug: string): SupportedLanguages {
+  return slug.split("/")[0] as SupportedLanguages;
 }
 
 export function getCleanSlug(slug: string): string {
   return slug.split("/").slice(-1)[0];
 }
 
-export function useTranslations(lang: keyof typeof ui) {
-  return function t(key: keyof (typeof ui)[typeof defaultLang]) {
-    // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
-    return ui[lang][key] || ui[defaultLang][key];
+export function useTranslations<T extends string>(
+  lang: SupportedLanguages,
+  translations: Translations<T>,
+) {
+  return function t(key: T): string {
+    return translations[lang][key];
   };
 }
 

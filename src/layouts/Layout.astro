@@ -4,10 +4,12 @@ import Navigation from "@reactComponents/Navigation";
 import GiftList from "@astroComponents/GiftList.astro";
 import CategoryFilter from "@astroComponents/CategoryFilter.astro";
 import { ViewTransitions } from "astro:transitions";
-import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import { getLangFromUrl, useTranslations } from "@i18n/utils";
+import { ui } from "@i18n/ui";
 import LangSwitcher from "@reactComponents/LangSwitcher";
 
 import "../styles/global.scss";
+
 interface Props {
   title: string;
   isCategoryPage: boolean;
@@ -17,7 +19,7 @@ const isProd = import.meta.env.PROD;
 
 const { title, isCategoryPage } = Astro.props;
 const lang = getLangFromUrl(Astro.url.pathname);
-const t = useTranslations(lang);
+const t = useTranslations(lang, ui);
 
 const pathname = removeTrailingSlash(Astro.url.pathname);
 const pathParts = pathname.split("/");
