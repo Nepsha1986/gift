@@ -1,4 +1,4 @@
-import { type ui, type SupportedLanguages, type Translations } from "./ui";
+import { type SupportedLanguages, type Translations, defaultLang } from "./ui";
 
 export function getLangFromUrl(url: string): SupportedLanguages {
   return url.split("/")[1] as SupportedLanguages;
@@ -17,11 +17,11 @@ export function useTranslations<T extends string>(
   translations: Translations<T>,
 ) {
   return function t(key: T): string {
-    return translations[lang][key];
+    return translations[lang][key] || translations[defaultLang][key];
   };
 }
 
-export function useTranslatedPath(lang: keyof typeof ui) {
+export function useTranslatedPath(lang: SupportedLanguages) {
   return function translatePath(path: string, l: string = lang) {
     return `/${l}${path !== "/" ? path : ""}`;
   };
