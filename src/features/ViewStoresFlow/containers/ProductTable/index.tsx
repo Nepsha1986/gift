@@ -18,7 +18,7 @@ interface Props {
 
 const ProductTable: React.FC<Props> = ({ refId }) => {
   const { lang } = useAstroContext();
-  const t = useTranslations(lang, i18n);
+  const t = useTranslations(lang as SupportedLanguages, i18n);
   const [countryCode, setCountryCode] = useState<SupportedCountries | "">("");
   const [language, setLanguage] = useState<SupportedLanguages>();
 
