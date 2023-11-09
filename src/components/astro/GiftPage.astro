@@ -1,9 +1,10 @@
 ---
 import { Category } from "../../types/category";
 import { getLangFromUrl, useTranslations } from "@i18n/utils";
+import { ui } from "@i18n/ui";
 
 const lang = getLangFromUrl(Astro.url.pathname);
-const t = useTranslations(lang);
+const t = useTranslations(lang, ui);
 interface MetaInfo {
 	age: string,
 	priceRange: string,

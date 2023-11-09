@@ -2,12 +2,13 @@
 import { getCollection } from "astro:content";
 import { getCleanSlug, getLangFromUrl, useTranslatedPath, useTranslations } from "@i18n/utils.ts";
 import { Category } from "../../types/category";
+import { ui } from "../../i18n/ui";
 
 const gifts = await getCollection("gifts");
 const lang = getLangFromUrl(Astro.url.pathname);
 
 const categories: Category[] = ["for-women", "for-men", "for-kids", "for-teens"];
-const t = useTranslations(lang);
+const t = useTranslations(lang, ui);
 
 const generateLinks = () => {
   let links: [string, Category][] = [];

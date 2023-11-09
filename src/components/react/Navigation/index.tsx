@@ -16,6 +16,8 @@ import {
   useTranslations,
 } from "@i18n/utils.ts";
 
+import { ui } from "@i18n/ui.ts";
+
 import type { NavTranslationStrings } from "@i18n/translations/navigation.ts";
 
 import styles from "./styles.module.scss";
@@ -55,7 +57,7 @@ const getParentFromUrl = (url: string): string => {
 const Navigation: React.FC<Props> = ({ currentPage }) => {
   const lang = getLangFromUrl(currentPage);
   const currentPageParent = getParentFromUrl(currentPage);
-  const t = useTranslations(lang);
+  const t = useTranslations(lang, ui);
   const translatePath = useTranslatedPath(lang);
 
   return (

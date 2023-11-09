@@ -1,7 +1,7 @@
-import { type languages } from "@i18n/ui.ts";
+import { type Translations } from "@i18n/ui.ts";
 
 export type SeoStrings = "seo.description" | "seo.keywords";
-const seo: Record<keyof typeof languages, Record<SeoStrings, string>> = {
+const seo: Translations<SeoStrings> = {
   en: {
     "seo.description":
       "Discover thoughtful gift ideas for every occasion and recipient at our Gift Idea Hub. Explore our curated gift guides and tips to make gift-giving a breeze.",

@@ -1,6 +1,7 @@
-import { type languages } from "@i18n/ui.ts";
+import type { Translations } from "@i18n/ui.ts";
 export type SharedStrings = "s.category" | "s.age" | "s.gift_idea";
-const shared: Record<keyof typeof languages, Record<SharedStrings, string>> = {
+
+const shared: Translations<SharedStrings> = {
   en: {
     "s.gift_idea": "gift idea",
     "s.category": "category",

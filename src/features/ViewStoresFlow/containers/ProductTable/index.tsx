@@ -6,14 +6,19 @@ import {
   getLocale,
   locales,
   type SupportedCountries,
-  type SupportedLanguages,
-} from "../../../types/Locale.ts";
+} from "../../../../types/Locale.ts";
+import { useTranslations } from "@i18n/utils.ts";
+import { useAstroContext } from "../../context/astroContext.tsx";
+import type { SupportedLanguages } from "@i18n/ui.ts";
+import i18n from "./i18n.ts";
 
 interface Props {
   refId: string;
 }
 
 const ProductTable: React.FC<Props> = ({ refId }) => {
+  const { lang } = useAstroContext();
+  const t = useTranslations(lang as SupportedLanguages, i18n);
   const [countryCode, setCountryCode] = useState<SupportedCountries | "">("");
   const [language, setLanguage] = useState<SupportedLanguages>();
 
@@ -22,7 +27,7 @@ const ProductTable: React.FC<Props> = ({ refId }) => {
       return [
         {
           value: "",
-          label: "Choose your language",
+          label: t("label.choose_language"),
           disabled: true,
         },
         ...locales[countryCode].map((code) => ({
@@ -61,13 +66,13 @@ const ProductTable: React.FC<Props> = ({ refId }) => {
       {!isFetched && (
         <div>
           <Select
-            name="Country"
-            label="Country"
+            name="country"
+            label={t("label.country")}
             value={countryCode || ""}
             options={[
               {
                 value: "",
-                label: "Choose your location",
+                label: t("label.choose_location"),
                 disabled: true,
               },
               {
@@ -86,8 +91,8 @@ const ProductTable: React.FC<Props> = ({ refId }) => {
 
           {countryCode && (
             <Select
-              name="Language"
-              label="Language"
+              name="language"
+              label={t("label.language")}
               value={language ?? ""}
               options={languageOptions}
               onChange={(val) => {

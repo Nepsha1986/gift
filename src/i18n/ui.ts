@@ -5,14 +5,19 @@ import categories, {
 import shared, { type SharedStrings } from "@i18n/translations/shared.ts";
 import seo, { type SeoStrings } from "@i18n/translations/seo.ts";
 
-export const showDefaultLang = true;
-export const languages = {
+export type SupportedLanguages = "en" | "ru" | "uk";
+export const defaultLang = "en";
+
+export type Translations<T extends string> = Record<
+  SupportedLanguages,
+  Record<T, string>
+>;
+
+export const languages: Record<SupportedLanguages, string> = {
   en: "English",
   ru: "Русский",
   uk: "Українська",
 };
-
-export const defaultLang = "en";
 
 export type AppTranslationStrings =
   | NavTranslationStrings
@@ -20,10 +25,7 @@ export type AppTranslationStrings =
   | SharedStrings
   | SeoStrings;
 
-export const ui: Record<
-  keyof typeof languages,
-  Record<AppTranslationStrings, string>
-> = {
+export const ui: Translations<AppTranslationStrings> = {
   en: {
     ...seo.en,
     ...nav.en,

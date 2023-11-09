@@ -10,8 +10,6 @@ const lang = "uk";
 const giftsEntries = await getCollection("gifts");
 const first = giftsEntries.find(i => i.data.category === "for-women");
 const viewIdeasLink = `${lang}/gifts/${first.data.category}/${getCleanSlug(first.slug)}`;
-
-const t = useTranslations(lang);
 ---
 
 <Layout title="Знайдіть ідеальні подарунки для будь-якого випадку">
