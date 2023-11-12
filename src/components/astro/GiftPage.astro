@@ -1,13 +1,19 @@
 ---
-import { Category } from "../../types/category";
+import { Category } from "@src/types/category";
 import { getLangFromUrl, useTranslations } from "@i18n/utils";
 import { ui } from "@i18n/ui";
+import { formatDate } from "@utils/formatDate";
 
 const lang = getLangFromUrl(Astro.url.pathname);
 const t = useTranslations(lang, ui);
 interface MetaInfo {
 	age: string,
 	priceRange: string,
+}
+
+type Author = {
+	fullName: string;
+	link: string;
 }
 interface Props {
 	thumbnail: string;
@@ -16,9 +22,11 @@ interface Props {
 	content: any;
 	category?: Category;
 	meta?:MetaInfo;
+	author?: Author;
+	date?: string;
 }
 
-const { thumbnail, title, content, category, subtitle, meta} = Astro.props;
+const { thumbnail, title, content, category, subtitle, meta, author, date} = Astro.props;
 ---
 
 <article class="article">
@@ -29,8 +37,12 @@ const { thumbnail, title, content, category, subtitle, meta} = Astro.props;
 
 		<div>
 			<h1 class="article__title">{title}</h1>
-			{ category && <p class="article__category">{t("s.category")}: {category}</p> }
-
+			{ category && <p class="article__category">{category}</p> }
+			{ author &&
+				<div class="article__authorBlock">
+				  <address class="article__author">By <a rel="author" href={author.link}>{ author.fullName }</a>, </address><span>{ formatDate(date) }</span>
+				</div>
+			}
 			<p class="article__subtitle">{subtitle}</p>
 
 			{ !!meta?.age && <p class="article__age"><span class="bold">{t("s.age")}: </span>{meta.age}</p>}
@@ -44,6 +56,7 @@ const { thumbnail, title, content, category, subtitle, meta} = Astro.props;
 	.article {
 		&__title {
 			font-size: 1.75rem;
+			margin-bottom: 0;
 		}
 
 		&__subtitle {
@@ -51,8 +64,22 @@ const { thumbnail, title, content, category, subtitle, meta} = Astro.props;
 			font-style: italic;
 		}
 
+		&__authorBlock {
+			font-style: italic;
+			margin-bottom: 1rem;
+		}
+
+		&__author {
+			font-style: italic;
+			display: inline;
+		}
+
 		&__category {
 			color: var(--c-secondary);
+			font-style: italic;
+			&:first-letter {
+				text-transform: uppercase;
+			}
 		}
 
 		&__age {

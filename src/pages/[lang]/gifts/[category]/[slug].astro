@@ -2,6 +2,7 @@
 import Layout from "@layouts/Layout.astro";
 import { getCollection } from "astro:content";
 import GiftPage from "@astroComponents/GiftPage.astro";
+import AIPostBanner from '@reactComponents/AIPostBanner';
 import ViewStoresFlow from "src/features/ViewStoresFlow";
 import { Image } from "astro:assets";
 import { getLangFromSlug, getCleanSlug, getLangFromUrl, useTranslations } from "@i18n/utils";
@@ -30,6 +31,8 @@ const seoTitle = `${t("s.gift_idea")} ${t(entry.data.category)} - ${entry.data.t
     category={t(entry.data.category)}
     subtitle={entry.data.description}
     meta={entry.data?.meta}
+    author={entry.data?.author}
+    date={entry.data?.date}
   >
     <Image
       class="img-cover"
@@ -43,4 +46,6 @@ const seoTitle = `${t("s.gift_idea")} ${t(entry.data.category)} - ${entry.data.t
   </GiftPage>
 
   { !!entry.data?.refId &&  <ViewStoresFlow refId={entry.data.refId} lang={lang} client:load />}
+
+  { !entry.data?.author && <AIPostBanner lang={lang} />}
 </Layout>

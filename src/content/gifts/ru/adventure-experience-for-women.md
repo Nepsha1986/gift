@@ -1,6 +1,9 @@
 ---
 title: Приключенческий опыт
 description: Увлекательные приключения и впечатления для женщин с страстью к адреналину.
+author:
+  fullName: 'Alex Nepsha'
+  link: 'https://www.linkedin.com/in/alex-nepsha-851a23115/'
 date: '2023-09-19'
 thumbnail: ../../img/hot_air_balloon.webp
 category: "for-women"
