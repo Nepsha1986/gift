@@ -1,16 +1,20 @@
 import React, { useMemo, useState } from "react";
-import ideasService from "@services/ideasService.ts";
 import { useQuery } from "@tanstack/react-query";
+
+import ideasService from "@services/ideasService.ts";
 import Select from "@reactComponents/Select";
 import {
   getLocale,
   locales,
   type SupportedCountries,
-} from "../../../../types/Locale.ts";
+} from "@src/types/Locale.ts";
 import { useTranslations } from "@i18n/utils.ts";
-import { useAstroContext } from "../../context/astroContext.tsx";
 import type { SupportedLanguages } from "@i18n/ui.ts";
+
 import i18n from "./i18n.ts";
+
+import { useAstroContext } from "../../context/astroContext.tsx";
+import RelatedProduct from "@src/features/ViewStoresFlow/components/RelatedProduct";
 
 interface Props {
   refId: string;
@@ -106,37 +110,18 @@ const ProductTable: React.FC<Props> = ({ refId }) => {
       {isFetched && (
         <div>
           {idea?.products?.length ? (
-            <div>
-              <p>
-                {
-                  "Within the list, you'll find a handpicked assortment of gift ideas, each complete with a name, description, and product links. This provides you with a convenient way to browse and discover the ideal gift for any occasion. Enjoy your gift-hunting experience!"
-                }
-              </p>
-
-              <table>
-                <thead>
-                  <tr>
-                    <th>Title</th>
-                    <th>Description</th>
-                    <th>Link</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {idea?.products?.map((item, index) => (
-                    <tr key={item.title}>
-                      <td>{item.title}</td>
-                      <td>{item.description}</td>
-                      <td>{item.link}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
+            <>
+              {idea?.products?.map((item, index) => (
+                <RelatedProduct
+                  key={item.title}
+                  link={item.link}
+                  title={item.title}
+                  description={item.description}
+                />
+              ))}
+            </>
           ) : (
-            <p>
-              We are sorry, but currently there are no products in the list. We
-              are working on adding this feature, and it will be available soon.
-            </p>
+            <p>{t("m.no_related_products")}</p>
           )}
         </div>
       )}
