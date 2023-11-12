@@ -1,6 +1,9 @@
 ---
 title: Adventure Experience
 description: Thrilling adventures and experiences for women with a passion for adrenaline.
+author:
+  fullName: 'Alex Nepsha'
+  link: 'https://www.linkedin.com/in/alex-nepsha-851a23115/'
 date: '2023-09-19'
 thumbnail: ../../img/hot_air_balloon.webp
 category: "for-women"
