@@ -1,7 +1,12 @@
 import React from "react";
+import { Auth0Provider } from "@auth0/auth0-react";
 
-import RelatedProducts from "./containers/RelatedProducts";
+import App from "./app.tsx";
+
 import type { IdeaPage } from "./types/IdeaPage.ts";
+
+const authDomain = import.meta.env.PUBLIC_AUTH0_DOMAIN;
+const authClientId = import.meta.env.PUBLIC_AUTH0_CLIENT_ID;
 
 interface Props {
   pages: IdeaPage[];
@@ -9,9 +14,15 @@ interface Props {
 
 const AdminPanel: React.FC<Props> = ({ pages }: Props) => {
   return (
-    <div style={{ maxWidth: "1300px", margin: "0 auto" }}>
-      <RelatedProducts availablePages={pages} />
-    </div>
+    <Auth0Provider
+      domain={authDomain}
+      clientId={authClientId}
+      authorizationParams={{
+        redirect_uri: window.location.href,
+      }}
+    >
+      <App pages={pages} />
+    </Auth0Provider>
   );
 };
 
