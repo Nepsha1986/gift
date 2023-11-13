@@ -2,7 +2,7 @@ name: main
 on:
   pull_request:
     branches:
-      - master
+      - main
 jobs:
   linter:
     runs-on: ubuntu-latest
