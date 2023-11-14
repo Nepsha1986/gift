@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import styles from "./styles.module.scss";
 
-const Navigation = () => (
+const Navigation: React.FC = () => (
   <ul className={styles.navigation}>
     <li className={styles.navigation__listItem}>
       <NavLink className={styles.navigation__link} end to="/admin">
