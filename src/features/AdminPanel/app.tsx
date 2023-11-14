@@ -1,28 +1,41 @@
-import React, { useEffect } from "react";
-import { useAuth0 } from "@auth0/auth0-react";
+import React from "react";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-import RelatedProducts from "./containers/RelatedProducts";
+import RelatedProducts from "./pages/RelatedProducts";
+import Overview from "./pages/Overview";
+
 import Dashboard from "./layouts/Dashboard";
 
 import { type IdeaPage } from "./types/IdeaPage.ts";
+import ProtectedRoute from "./containers/ProtectedRoute";
 interface Props {
   pages: IdeaPage[];
 }
 
 const App: React.FC<Props> = ({ pages }) => {
-  const { isAuthenticated, isLoading, loginWithRedirect } = useAuth0();
+  const router = createBrowserRouter([
+    {
+      path: "/admin",
+      element: (
+        <ProtectedRoute>
+          <Dashboard />
+        </ProtectedRoute>
+      ),
+      children: [
+        {
+          index: true,
+          element: <Overview />,
+        },
 
-  useEffect(() => {
-    if (!isAuthenticated && !isLoading) void loginWithRedirect();
-  }, [isAuthenticated, isLoading]);
+        {
+          path: "/admin/related-products",
+          element: <RelatedProducts availablePages={pages} />,
+        },
+      ],
+    },
+  ]);
 
-  if (isLoading || !isAuthenticated) return null;
-
-  return (
-    <Dashboard>
-      <RelatedProducts availablePages={pages} />
-    </Dashboard>
-  );
+  return <RouterProvider router={router} />;
 };
 
 export default App;

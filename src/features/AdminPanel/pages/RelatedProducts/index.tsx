@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import type { IdeaDto } from "@services/ideasService.ts";
 import IdeasService from "@services/ideasService.ts";
 import type { IdeaPage } from "../../types/IdeaPage.ts";
-import Select from "../../../../components/react/Select";
-import AddLocale from "../AddLocaleFlow";
+import Select from "@reactComponents/Select";
+import AddLocale from "../../containers/AddLocaleFlow";
 import RelatedProductsCard from "./RelatedProductsCard";
 
 interface Props {

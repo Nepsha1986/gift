@@ -1,4 +1,4 @@
-import React from "react";
+import React, { StrictMode } from "react";
 import { Auth0Provider } from "@auth0/auth0-react";
 
 import App from "./app.tsx";
@@ -14,15 +14,17 @@ interface Props {
 
 const AdminPanel: React.FC<Props> = ({ pages }: Props) => {
   return (
-    <Auth0Provider
-      domain={authDomain}
-      clientId={authClientId}
-      authorizationParams={{
-        redirect_uri: window.location.href,
-      }}
-    >
-      <App pages={pages} />
-    </Auth0Provider>
+    <StrictMode>
+      <Auth0Provider
+        domain={authDomain}
+        clientId={authClientId}
+        authorizationParams={{
+          redirect_uri: window.location.href,
+        }}
+      >
+        <App pages={pages} />
+      </Auth0Provider>
+    </StrictMode>
   );
 };
 
