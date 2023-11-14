@@ -7,13 +7,19 @@ import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { useMutation } from "@tanstack/react-query";
 import ProductsService from "@services/productsService.ts";
 import Select from "@reactComponents/Select";
+import { useAstroContext } from "@src/features/AdminPanel/context/astroContext.tsx";
 
-const AddProduct = () => {
+interface Props {
+  onSuccess: () => void;
+}
+const AddProduct: React.FC<Props> = ({ onSuccess }) => {
+  const { ideaPages } = useAstroContext();
   const { mutate } = useMutation({
     mutationFn: ProductsService.add,
     onSuccess: () => {
       setAddOpen(false);
       cleanForm();
+      onSuccess();
     },
   });
   const [addOpen, setAddOpen] = useState(false);
@@ -22,7 +28,10 @@ const AddProduct = () => {
   const [description, setDescription] = useState("");
   const [link, setLink] = useState("");
   const [locale, setLocale] = useState("en-US");
-  const [refId, setRefId] = useState("");
+  // TODO: revisit
+  const [refId, setRefId] = useState(
+    ideaPages?.length ? ideaPages[0].refId : "",
+  );
   const handleAddProduct = (): void => {
     mutate({
       title,
@@ -81,7 +90,19 @@ const AddProduct = () => {
                 label: "Ukraine (русский)",
               },
             ]}
-          ></Select>
+          />
+          <Select
+            name="refId"
+            label="Select page"
+            onChange={setRefId}
+            value={refId}
+            options={
+              ideaPages?.map((i) => ({
+                value: i.refId,
+                label: `${i.title} (${i.refId})`,
+              })) || []
+            }
+          />
 
           <Button onClick={handleAddProduct}>Add product</Button>
         </form>

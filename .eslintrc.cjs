@@ -28,6 +28,7 @@ module.exports = {
     "prettier/prettier": "error",
     "@typescript-eslint/strict-boolean-expressions": 0,
     "@typescript-eslint/no-misused-promises": 0,
+    "@typescript-eslint/prefer-nullish-coalescing": 0,
   },
   settings: {
     react: {

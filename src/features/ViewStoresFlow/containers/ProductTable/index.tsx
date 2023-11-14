@@ -1,7 +1,7 @@
 import React, { useMemo, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 
-import ideasService from "@services/ideasService.ts";
+import ProductsService from "@services/productsService.ts";
 import Select from "@reactComponents/Select";
 import {
   getLocale,
@@ -45,7 +45,7 @@ const ProductTable: React.FC<Props> = ({ refId }) => {
   }, [countryCode]);
 
   const {
-    data: idea,
+    data: products,
     isError,
     isLoading,
     isFetched,
@@ -53,13 +53,13 @@ const ProductTable: React.FC<Props> = ({ refId }) => {
     enabled: !!countryCode && !!language,
     queryKey: ["getRelatedProducts", refId, language, countryCode],
     queryFn: async () =>
-      await ideasService.getRelatedProducts(
-        getLocale(
+      await ProductsService.getAll({
+        refId,
+        locale: getLocale(
           language as SupportedLanguages,
           countryCode as SupportedCountries,
         ),
-        refId,
-      ),
+      }),
   });
 
   if (isError) return <div>Error! Please try again later.</div>;
@@ -109,9 +109,9 @@ const ProductTable: React.FC<Props> = ({ refId }) => {
 
       {isFetched && (
         <div>
-          {idea?.products?.length ? (
+          {products?.length ? (
             <>
-              {idea?.products?.map((item, index) => (
+              {products?.map((item, index) => (
                 <RelatedProduct
                   key={item.title}
                   link={item.link}

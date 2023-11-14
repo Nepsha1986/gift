@@ -9,15 +9,17 @@ import ProductsService from "@services/productsService.ts";
 
 interface Props {
   id: string;
+  onSuccess: () => void;
 }
 
-const RemoveProduct: React.FC<Props> = ({ id }) => {
+const RemoveProduct: React.FC<Props> = ({ id, onSuccess }) => {
   const [isOpened, setIsOpened] = useState(false);
   const { mutate: remove } = useMutation({
     mutationKey: ["removeItem", id],
-    mutationFn: () => {
-      return ProductsService.delete(id);
+    mutationFn: async () => {
+      await ProductsService.delete(id);
     },
+    onSuccess,
   });
 
   return (

@@ -3,15 +3,20 @@ import { useQuery } from "@tanstack/react-query";
 
 import ProductsService from "@services/productsService.ts";
 import RemoveProduct from "../RemoveProduct";
+import AddProduct from "@src/features/AdminPanel/pages/Products/containers/AddProduct";
 const ProductsTable: React.FC = () => {
-  const { data: products, isLoading } = useQuery({
+  const {
+    data: products,
+    isLoading,
+    refetch,
+  } = useQuery({
     queryKey: ["getProducts"],
     queryFn: async () => {
       return await ProductsService.getAll();
     },
   });
 
-  if(isLoading) return <div>Loading...</div>;
+  if (isLoading) return <div>Loading...</div>;
 
   return (
     <div>
@@ -45,7 +50,7 @@ const ProductsTable: React.FC = () => {
                   <td>{product.locale}</td>
                   <td>{product.refId || "-"}</td>
                   <td>
-                    <RemoveProduct id={product._id} />
+                    <RemoveProduct id={product._id} onSuccess={refetch} />
                   </td>
                 </tr>
               );
@@ -53,6 +58,8 @@ const ProductsTable: React.FC = () => {
           </tbody>
         </table>
       )}
+
+      <AddProduct onSuccess={refetch} />
     </div>
   );
 };

@@ -28,10 +28,10 @@ const productsService: ProductsService = {
     return data;
   },
   add: async (product) => {
-    return await giftsAPI.post("api/v1/products", product);
+    await giftsAPI.post("api/v1/products", product);
   },
   delete: async (id) => {
-    return await giftsAPI.delete(`api/v1/products/${id}`);
+    await giftsAPI.delete(`api/v1/products/${id}`);
   },
 };
 
