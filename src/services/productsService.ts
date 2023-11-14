@@ -16,6 +16,7 @@ interface ProductsReqParams {
 interface ProductsService {
   getAll: (params?: ProductsReqParams) => Promise<ProductDto[]>;
   add: (product: Omit<ProductDto, "_id">) => Promise<void>;
+  delete: (id: string) => Promise<void>;
 }
 
 const productsService: ProductsService = {
@@ -27,7 +28,10 @@ const productsService: ProductsService = {
     return data;
   },
   add: async (product) => {
-    await giftsAPI.post("api/v1/products", product);
+    return await giftsAPI.post("api/v1/products", product);
+  },
+  delete: async (id) => {
+    return await giftsAPI.delete(`api/v1/products/${id}`);
   },
 };
 
