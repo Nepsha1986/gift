@@ -4,5 +4,5 @@ import sitemap from "@astrojs/sitemap";
 
 export default defineConfig({
   site: "https://gift-idea.co",
-  integrations: [react(), sitemap()]
+  integrations: [react(), sitemap()],
 });

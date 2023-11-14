@@ -1,8 +1,8 @@
 import React from "react";
-import { useAuth0 } from "@auth0/auth0-react";
 import { Outlet } from "react-router-dom";
 
-import Navigation from "../Navigation";
+import Navigation from "./Navigation";
+import UserBlock from "./UserBlock";
 
 import Logo from "@src/assets/logo.svg";
 import styles from "./styles.module.scss";
@@ -12,7 +12,6 @@ interface Props {
 }
 
 const Dashboard: React.FC<Props> = ({ children }) => {
-  const { user, logout } = useAuth0();
   return (
     <div className={styles.dashboard}>
       <header className={styles.dashboard__header}>
@@ -20,20 +19,7 @@ const Dashboard: React.FC<Props> = ({ children }) => {
           <img src={Logo.src} alt="Logo" />
         </a>
 
-        <div style={{ color: "#fff" }}>
-          Hello, {user?.name}
-          <button
-            onClick={() => {
-              void logout({
-                logoutParams: {
-                  returnTo: window.location.origin,
-                },
-              });
-            }}
-          >
-            Logout
-          </button>
-        </div>
+        <UserBlock />
       </header>
 
       <div className={styles.dashboard__flexContainer}>
