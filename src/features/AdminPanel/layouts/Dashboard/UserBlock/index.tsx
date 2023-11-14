@@ -8,7 +8,7 @@ import styles from "./styles.module.scss";
 const UserBlock: React.FC = () => {
   const { user, logout } = useAuth0();
 
-  const handleLogout = () => {
+  const handleLogout = (): void => {
     void logout({
       logoutParams: {
         returnTo: window.location.origin,
