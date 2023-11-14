@@ -23,6 +23,11 @@
     background: var(--c-secondary);
   }
 
+  &_transparent {
+    background: transparent;
+    color: var(--c-grey);
+  }
+
   &_iconOnly {
     padding: 0.5rem;
     line-height: 1;
