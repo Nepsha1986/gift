@@ -30,8 +30,9 @@ const Navigation: React.FC = () => (
     <NavItem
       to="/admin/related-products"
       icon={faBagShopping}
-      label="Products"
+      label="Related products"
     />
+    <NavItem to="/admin/products" icon={faBagShopping} label="Products" />
   </ul>
 );
 

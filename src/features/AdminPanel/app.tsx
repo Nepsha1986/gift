@@ -3,6 +3,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import RelatedProducts from "./pages/RelatedProducts";
 import Overview from "./pages/Overview";
+import Products from "./pages/Products";
 
 import Dashboard from "./layouts/Dashboard";
 
@@ -30,6 +31,10 @@ const App: React.FC<Props> = ({ pages }) => {
         {
           path: "/admin/related-products",
           element: <RelatedProducts availablePages={pages} />,
+        },
+        {
+          path: "/admin/products",
+          element: <Products availablePages={pages} />,
         },
       ],
     },
