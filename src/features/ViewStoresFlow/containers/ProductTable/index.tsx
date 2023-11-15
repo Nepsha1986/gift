@@ -44,12 +44,7 @@ const ProductTable: React.FC<Props> = ({ refId }) => {
     return [];
   }, [countryCode]);
 
-  const {
-    data: products,
-    isError,
-    isLoading,
-    isFetched,
-  } = useQuery({
+  const { data, isError, isLoading, isFetched } = useQuery({
     enabled: !!countryCode && !!language,
     queryKey: ["getRelatedProducts", refId, language, countryCode],
     queryFn: async () =>
@@ -109,9 +104,9 @@ const ProductTable: React.FC<Props> = ({ refId }) => {
 
       {isFetched && (
         <div>
-          {products?.length ? (
+          {data?.items?.length ? (
             <>
-              {products?.map((item, index) => (
+              {data.items?.map((item, index) => (
                 <RelatedProduct
                   key={item.title}
                   link={item.link}
