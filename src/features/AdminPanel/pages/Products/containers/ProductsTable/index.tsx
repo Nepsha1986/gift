@@ -2,9 +2,11 @@ import React, { useEffect, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 
 import ProductsService from "@services/productsService.ts";
-import RemoveProduct from "../RemoveProduct";
-import AddProduct from "@src/features/AdminPanel/pages/Products/containers/AddProduct";
 import Pagination from "@reactComponents/Pagination";
+
+import RemoveProduct from "../RemoveProduct";
+import AddProduct from "../AddProduct";
+import EditProduct from "../EditProduct";
 const ProductsTable: React.FC = () => {
   const [page, setPage] = useState<number>(1);
 
@@ -54,11 +56,14 @@ const ProductsTable: React.FC = () => {
                     <td>{product.locale}</td>
                     <td>{product.refId || "-"}</td>
                     <td>
-                      <RemoveProduct
-                        id={product._id}
-                        onSuccess={refetch}
-                        productName={product.title}
-                      />
+                      <div style={{ display: "flex" }}>
+                        <RemoveProduct
+                          id={product._id}
+                          onSuccess={refetch}
+                          productName={product.title}
+                        />
+                        <EditProduct id={product._id} onSuccess={refetch} />
+                      </div>
                     </td>
                   </tr>
                 );

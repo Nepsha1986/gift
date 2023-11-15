@@ -8,6 +8,7 @@ interface Props {
   color?: "primary" | "secondary" | "default" | "transparent" | "danger";
   iconOnly?: boolean;
   disabled?: boolean;
+  style?: React.CSSProperties;
 }
 const Button: React.FC<Props> = ({
   children,
@@ -15,6 +16,7 @@ const Button: React.FC<Props> = ({
   color = "default",
   iconOnly,
   disabled = false,
+  style,
 }) => {
   const className = classNames(styles.button, {
     [styles.button_disabled]: disabled,
@@ -22,7 +24,7 @@ const Button: React.FC<Props> = ({
     [styles[`button_${color}`]]: color,
   });
   return (
-    <button type="button" onClick={onClick} className={className}>
+    <button type="button" onClick={onClick} className={className} style={style}>
       {children}
     </button>
   );
