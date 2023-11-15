@@ -23,6 +23,10 @@
     background: var(--c-secondary);
   }
 
+  &_danger {
+    background: var(--c-danger);
+  }
+
   &_transparent {
     background: transparent;
     color: var(--c-grey);

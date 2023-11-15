@@ -9,10 +9,11 @@ import ProductsService from "@services/productsService.ts";
 
 interface Props {
   id: string;
+  productName: string;
   onSuccess: () => void;
 }
 
-const RemoveProduct: React.FC<Props> = ({ id, onSuccess }) => {
+const RemoveProduct: React.FC<Props> = ({ id, productName, onSuccess }) => {
   const [isOpened, setIsOpened] = useState(false);
   const { mutate: remove } = useMutation({
     mutationKey: ["removeItem", id],
@@ -25,14 +26,31 @@ const RemoveProduct: React.FC<Props> = ({ id, onSuccess }) => {
   return (
     <div>
       <Dialog
-        heading="Remove product"
+        heading="Delete product"
         open={isOpened}
         onClickClose={() => {
           setIsOpened(false);
         }}
+        footer={
+          <>
+            <Button
+              color="transparent"
+              onClick={() => {
+                setIsOpened(false);
+              }}
+            >
+              Cancel
+            </Button>
+            <Button color="danger" onClick={remove}>
+              Ok
+            </Button>
+          </>
+        }
       >
-        Remove Item?
-        <Button onClick={remove}>Remove</Button>
+        <p>
+          Are you sure you want to delete{" "}
+          <strong>&quot;{productName}&quot;</strong> ?
+        </p>
       </Dialog>
 
       <Button
