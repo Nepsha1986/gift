@@ -9,13 +9,13 @@ import ProductsService from "@services/productsService.ts";
 import Select from "@reactComponents/Select";
 import Button from "@reactComponents/Button";
 
-type FormFields = {
+interface FormFields {
   title: string;
   description: string;
   link: string;
   locale: string;
   refId: string;
-};
+}
 interface Props {
   id?: string;
   handleSubmit: (formData: FormFields) => void;
@@ -29,8 +29,8 @@ const ProductForm: React.FC<Props> = ({ id, handleSubmit }) => {
     isSuccess,
   } = useQuery({
     queryKey: ["getProduct", id],
-    queryFn: () => {
-      return ProductsService.get(id as string);
+    queryFn: async () => {
+      return await ProductsService.get(id as string);
     },
     enabled: !!id,
     refetchOnMount: "always",

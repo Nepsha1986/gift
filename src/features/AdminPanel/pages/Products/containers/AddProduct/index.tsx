@@ -21,7 +21,7 @@ const AddProduct: React.FC<Props> = ({ onSuccess }) => {
   });
   const [addOpen, setAddOpen] = useState(false);
   // TODO: review
-  const handleAddProduct = (data: any) => {
+  const handleAddProduct = (data: any): void => {
     mutate({ ...data });
   };
 

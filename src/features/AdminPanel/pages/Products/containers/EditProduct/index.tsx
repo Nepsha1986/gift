@@ -18,8 +18,8 @@ const EditProduct: React.FC<Props> = ({ id, onSuccess }) => {
 
   const { mutate } = useMutation({
     mutationKey: ["updateProduct", id],
-    mutationFn: (data: Omit<ProductDto, "_id">) => {
-      return ProductsService.update(id, data);
+    mutationFn: async (data: Omit<ProductDto, "_id">) => {
+      return await ProductsService.update(id, data);
     },
     onSuccess: () => {
       setIsOpened(false);
