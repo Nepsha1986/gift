@@ -1,4 +1,5 @@
 import { giftsAPI } from "./api.ts";
+import type { PageableRes, PaginatedParams } from "@src/types/api.ts";
 
 export interface ProductDto {
   _id: string;
@@ -9,12 +10,12 @@ export interface ProductDto {
   locale: string;
 }
 
-interface ProductsReqParams {
+interface Params extends PaginatedParams {
   refId?: string;
   locale?: string;
 }
 interface ProductsService {
-  getAll: (params?: ProductsReqParams) => Promise<ProductDto[]>;
+  getAll: (params?: Params) => Promise<PageableRes<ProductDto>>;
   add: (product: Omit<ProductDto, "_id">) => Promise<void>;
   delete: (id: string) => Promise<void>;
 }
