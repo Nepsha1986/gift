@@ -16,7 +16,7 @@ const ProductsTable: React.FC = () => {
   });
 
   useEffect(() => {
-    refetch();
+    void refetch();
   }, [page]);
 
   if (isLoading) return <div>Loading...</div>;

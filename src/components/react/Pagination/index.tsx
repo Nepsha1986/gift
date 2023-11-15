@@ -12,6 +12,7 @@ const Pagination: React.FC<PaginationProps> = ({
   totalPages,
   onPageChange,
 }) => {
+  // eslint-disable-next-line
   const renderPageNumbers = () => {
     const pageNumbers = [];
 
@@ -22,7 +23,9 @@ const Pagination: React.FC<PaginationProps> = ({
           className={`${styles.pageItem} ${
             i === currentPage ? styles.pageItem_active : ""
           }`}
-          onClick={() => onPageChange(i)}
+          onClick={() => {
+            onPageChange(i);
+          }}
         >
           {i}
         </li>,
