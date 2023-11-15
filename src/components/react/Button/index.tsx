@@ -5,7 +5,7 @@ import styles from "./style.module.scss";
 interface Props {
   children: React.ReactNode;
   onClick?: () => void;
-  color?: "primary" | "secondary" | "default" | "transparent";
+  color?: "primary" | "secondary" | "default" | "transparent" | "danger";
   iconOnly?: boolean;
   disabled?: boolean;
 }

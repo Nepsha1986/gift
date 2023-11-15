@@ -54,7 +54,11 @@ const ProductsTable: React.FC = () => {
                     <td>{product.locale}</td>
                     <td>{product.refId || "-"}</td>
                     <td>
-                      <RemoveProduct id={product._id} onSuccess={refetch} />
+                      <RemoveProduct
+                        id={product._id}
+                        onSuccess={refetch}
+                        productName={product.title}
+                      />
                     </td>
                   </tr>
                 );

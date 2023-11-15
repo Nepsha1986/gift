@@ -9,8 +9,9 @@ const Dialog: React.FC<{
   open: boolean;
   children: ReactNode;
   heading?: string;
+  footer?: React.ReactNode | React.ReactNode[];
   onClickClose: () => void;
-}> = ({ open, children, onClickClose, heading }) => {
+}> = ({ open, children, onClickClose, heading, footer }) => {
   const dialogRef = useRef<HTMLDialogElement>(null);
 
   useEffect(() => {
@@ -34,6 +35,8 @@ const Dialog: React.FC<{
       </header>
 
       <div className={styles.dialog__main}>{children}</div>
+
+      {footer && <footer className={styles.dialog__footer}>{footer}</footer>}
     </dialog>
   );
 };
