@@ -18,6 +18,8 @@
   }
 
   &__nav {
+    position: sticky;
+    top: 0;
     width: 280px;
     padding: 2rem 1rem;
   }

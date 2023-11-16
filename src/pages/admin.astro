@@ -8,9 +8,10 @@ import AdminPanel from "../features/AdminPanel";
 const giftsEntries = await getCollection("gifts");
 const engPosts = giftsEntries.filter(i => getLangFromSlug(i.slug) === "en");
 
-const pages: IdeaPage[] = engPosts.filter(i => !!i.data.refId).map(i => ({
+const pages: IdeaPage[] = giftsEntries.map(i => ({
   title: i.data.title,
-  refId: i.data.refId
+  refId: i.data.refId,
+  slug: i.slug,
 }));
 
 import "../styles/global.scss";

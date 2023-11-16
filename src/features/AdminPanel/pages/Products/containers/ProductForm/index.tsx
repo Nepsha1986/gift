@@ -54,6 +54,14 @@ const ProductForm: React.FC<Props> = ({ id, handleSubmit }) => {
     ideaPages?.length ? ideaPages[0].refId : "",
   );
 
+  const refIdOptions =
+    ideaPages
+      ?.filter((i) => !!i.refId)
+      .map((i) => ({
+        value: i.refId,
+        label: `${i.title} (${i.refId})`,
+      })) || [];
+
   if (isLoading) return <div>Loading...</div>;
 
   return (
@@ -67,8 +75,8 @@ const ProductForm: React.FC<Props> = ({ id, handleSubmit }) => {
       />
       <Input name="link" label="Link" value={link} onChange={setLink} />
       <Select
-        name="country"
-        label="Choose country"
+        name="region"
+        label="Choose region"
         onChange={setLocale}
         value={locale}
         options={[
@@ -91,12 +99,7 @@ const ProductForm: React.FC<Props> = ({ id, handleSubmit }) => {
         label="Select page"
         onChange={setRefId}
         value={refId}
-        options={
-          ideaPages?.map((i) => ({
-            value: i.refId,
-            label: `${i.title} (${i.refId})`,
-          })) || []
-        }
+        options={refIdOptions}
       />
 
       <Button

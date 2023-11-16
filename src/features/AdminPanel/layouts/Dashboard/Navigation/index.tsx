@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faChartSimple,
   faBagShopping,
+  faPencil,
   type IconDefinition,
 } from "@fortawesome/free-solid-svg-icons";
 
@@ -27,6 +28,7 @@ const NavItem: React.FC<NavItemProps> = ({ to, label, icon }) => (
 const Navigation: React.FC = () => (
   <ul className={styles.navigation}>
     <NavItem to="/admin" icon={faChartSimple} label="Overview" />
+    <NavItem to="/admin/posts" icon={faPencil} label="Posts" />
     <NavItem to="/admin/products" icon={faBagShopping} label="Products" />
   </ul>
 );
