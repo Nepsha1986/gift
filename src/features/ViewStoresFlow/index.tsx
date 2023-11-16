@@ -8,7 +8,7 @@ import {
 import Dialog from "@reactComponents/Dialog";
 import Button from "@reactComponents/Button";
 
-import ProductTable from "./containers/ProductTable";
+import ProductList from "./containers/ProductList";
 import { useTranslations } from "@i18n/utils.ts";
 import all from "./i18n/translations.ts";
 
@@ -38,8 +38,18 @@ const ViewStoresFlow: React.FC<AstroContextProps> = ({
             onClickClose={() => {
               setDialogVisible(false);
             }}
+            footer={
+              <Button
+                color="default"
+                onClick={() => {
+                  setDialogVisible(false);
+                }}
+              >
+                Close
+              </Button>
+            }
           >
-            <ProductTable refId={refId} />
+            <ProductList refId={refId} />
           </Dialog>
         )}
 

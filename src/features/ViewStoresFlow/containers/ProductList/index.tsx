@@ -9,11 +9,13 @@ import i18n from "./i18n.ts";
 
 import { useAstroContext } from "../../context/astroContext.tsx";
 
+import styles from "./styles.module.scss";
+
 interface Props {
   refId: string;
 }
 
-const ProductTable: React.FC<Props> = ({ refId }) => {
+const ProductList: React.FC<Props> = ({ refId }) => {
   const { lang, locale } = useAstroContext();
   const t = useTranslations(lang as SupportedLanguages, i18n);
 
@@ -31,15 +33,17 @@ const ProductTable: React.FC<Props> = ({ refId }) => {
   if (!data?.items?.length) return <p>{t("m.no_related_products")}</p>;
 
   return (
-    <ul style={{ listStyle: "none", padding: 0, fontSize: "0.85rem" }}>
+    <ul className={styles.productList}>
       {data.items?.map((item, index) => (
-        <li key={item._id} style={{ marginBottom: "3px" }}>
-          {index + 1}. <a href={item.link}>{item.title}</a> ({item.description}
-          ).
+        <li key={item._id} className={styles.productList__item}>
+          <p style={{ marginBottom: 0 }}>
+            <span>{index + 1}.</span> <a href={item.link}>{item.title}</a> (
+            {<span>{item.description}</span>}).
+          </p>
         </li>
       ))}
     </ul>
   );
 };
 
-export default ProductTable;
+export default ProductList;

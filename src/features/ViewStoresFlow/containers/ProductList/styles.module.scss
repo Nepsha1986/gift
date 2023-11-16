@@ -1,0 +1,9 @@
+.productList {
+  list-style: none;
+  padding: 0;
+  font-size: 0.85rem;
+
+  &__item {
+    margin-bottom: 3px;
+  }
+}
