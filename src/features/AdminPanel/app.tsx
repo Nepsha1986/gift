@@ -2,6 +2,7 @@ import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import Overview from "./pages/Overview";
+import Posts from "./pages/Posts";
 import Products from "./pages/Products";
 
 import Dashboard from "./layouts/Dashboard";
@@ -25,6 +26,10 @@ const App: React.FC<Props> = ({ pages }) => {
         {
           index: true,
           element: <Overview />,
+        },
+        {
+          path: "/admin/posts",
+          element: <Posts />,
         },
         {
           path: "/admin/products",
