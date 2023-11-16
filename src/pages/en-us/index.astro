@@ -1,12 +1,12 @@
 ---
-import Layout from "../../layouts/Layout.astro";
+import Layout from "@layouts/Layout.astro";
 import { getCollection } from "astro:content";
-import { getLangFromSlug, getCleanSlug, useTranslatedPath, getLangFromUrl } from "@i18n/utils";
-import gift from "../../../public/assets/secretlondon_red_present.svg";
+import { getLangFromSlug, getCleanSlug, useTranslatedPath, getLocaleFromUrl } from "@i18n/utils";
+import gift from "@public/assets/secretlondon_red_present.svg";
 import CategoryLinks from "@astroComponents/CategoryLinks.astro";
 
-const lang = getLangFromUrl(Astro.url.pathname);
-const translatePath = useTranslatedPath(lang);
+const locale = getLocaleFromUrl(Astro.url.pathname);
+const translatePath = useTranslatedPath(locale);
 
 const giftsEntries = await getCollection("gifts");
 const engPosts = giftsEntries.filter(i => getLangFromSlug(i.slug) === "en");

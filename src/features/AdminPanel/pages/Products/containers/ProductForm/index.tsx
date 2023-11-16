@@ -49,7 +49,7 @@ const ProductForm: React.FC<Props> = ({ id, handleSubmit }) => {
   const [title, setTitle] = useState<FormFields["title"]>("");
   const [description, setDescription] = useState<FormFields["description"]>("");
   const [link, setLink] = useState<FormFields["link"]>("");
-  const [locale, setLocale] = useState<FormFields["locale"]>("en-US");
+  const [locale, setLocale] = useState<FormFields["locale"]>("en-us");
   const [refId, setRefId] = useState<FormFields["refId"]>(
     ideaPages?.length ? ideaPages[0].refId : "",
   );
@@ -81,15 +81,15 @@ const ProductForm: React.FC<Props> = ({ id, handleSubmit }) => {
         value={locale}
         options={[
           {
-            value: `en-US`,
+            value: `en-us`,
             label: "USA (english)",
           },
           {
-            value: `uk-UA`,
+            value: `uk-ua`,
             label: "Ukraine (українська)",
           },
           {
-            value: `ru-UA`,
+            value: `ru-ua`,
             label: "Ukraine (русский)",
           },
         ]}

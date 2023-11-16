@@ -3,11 +3,12 @@ import { getCollection } from "astro:content";
 import { Image } from "astro:assets";
 import { Category } from "../../types/category.ts";
 import GiftCard from "../react/GiftCard";
-import { getCleanSlug, getLangFromSlug, getLangFromUrl, useTranslatedPath } from "../../i18n/utils";
+import { getCleanSlug, getLangFromSlug, getLangFromUrl, getLocaleFromUrl, useTranslatedPath } from "../../i18n/utils";
 
 const { category, activeGiftSlug }: { category: Category, activeGiftSlug: string } = Astro.props;
+const locale = getLocaleFromUrl(Astro.url.pathname);
 const lang = getLangFromUrl(Astro.url.pathname);
-const translatePath = useTranslatedPath(lang);
+const translatePath = useTranslatedPath(locale);
 
 let gifts = await getCollection("gifts");
 let filtered = gifts.filter((i) => i.data?.category === category).filter(i => getLangFromSlug(i.slug) === lang);

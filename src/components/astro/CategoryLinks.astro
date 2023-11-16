@@ -1,15 +1,17 @@
 ---
 import { getCollection } from "astro:content";
 import LinkButton from "@astroComponents/LinkButton.astro";
-import { getLangFromUrl, useTranslations, getLangFromSlug, useTranslatedPath, getCleanSlug } from "@i18n/utils";
-import { Category } from "../../types/category";
+import { getLangFromUrl, useTranslations, getLangFromSlug, useTranslatedPath, getCleanSlug, getLocaleFromUrl } from "@i18n/utils";
+import { Category } from "@src/types/category";
 import { ui } from "@i18n/ui";
 
 const gifts = await getCollection("gifts");
 
 const lang = getLangFromUrl(Astro.url.pathname);
+const locale = getLocaleFromUrl(Astro.url.pathname);
+
 const t = useTranslations(lang, ui);
-const translatePath = useTranslatedPath(lang);
+const translatePath = useTranslatedPath(locale);
 const categories: Category[] = ["for-women", "for-men", "for-kids", "for-teens"];
 
 const getFirstItemLink = (category: Category): string => {

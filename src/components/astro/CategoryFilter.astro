@@ -1,11 +1,12 @@
 ---
 import { getCollection } from "astro:content";
-import { getCleanSlug, getLangFromUrl, useTranslatedPath, useTranslations } from "@i18n/utils.ts";
-import { Category } from "../../types/category";
-import { ui } from "../../i18n/ui";
+import { getCleanSlug, useTranslatedPath, useTranslations, getLocaleFromUrl, getLangFromUrl } from "@i18n/utils.ts";
+import { ui } from "@i18n/ui";
+import { Category } from "@src/types/category";
 
 const gifts = await getCollection("gifts");
 const lang = getLangFromUrl(Astro.url.pathname);
+const locale = getLocaleFromUrl(Astro.url.pathname);
 
 const categories: Category[] = ["for-women", "for-men", "for-kids", "for-teens"];
 const t = useTranslations(lang, ui);
@@ -18,7 +19,7 @@ const generateLinks = () => {
 
     if (!!firstItem) {
       const firstItemSlug = firstItem?.slug;
-      const translatePath = useTranslatedPath(lang);
+      const translatePath = useTranslatedPath(locale);
 
       const link = translatePath(`/gifts/${category}/${getCleanSlug(firstItemSlug)}`);
 

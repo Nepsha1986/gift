@@ -1,9 +1,10 @@
 import { createContext, useContext } from "react";
-import type { SupportedLanguages } from "@i18n/ui.ts";
+import type { SupportedLanguages, SupportedLocales } from "@i18n/ui.ts";
 
 export interface AstroContextProps {
   refId: string;
   lang: SupportedLanguages;
+  locale: SupportedLocales;
 }
 
 export const AstroContext = createContext<Partial<AstroContextProps>>({});

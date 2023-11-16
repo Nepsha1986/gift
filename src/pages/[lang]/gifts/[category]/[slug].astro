@@ -5,17 +5,19 @@ import GiftPage from "@astroComponents/GiftPage.astro";
 import AIPostBanner from '@reactComponents/AIPostBanner';
 import ViewStoresFlow from "src/features/ViewStoresFlow";
 import { Image } from "astro:assets";
-import { getLangFromSlug, getCleanSlug, getLangFromUrl, useTranslations } from "@i18n/utils";
+import { getLocaleFromUrl, getCleanSlug, getLangFromUrl, useTranslations, getLocaleFromSlug } from "@i18n/utils";
 import { ui } from "@i18n/ui";
 
 const lang = getLangFromUrl(Astro.url.pathname);
+const locale = getLocaleFromUrl(Astro.url.pathname);
+
 const t = useTranslations(lang, ui);
 
 export async function getStaticPaths() {
   const giftsEntries = await getCollection("gifts");
 
   return giftsEntries.map((entry) => ({
-    params: { lang: getLangFromSlug(entry.slug), slug: getCleanSlug(entry.slug), category: entry.data?.category },
+    params: { lang: getLocaleFromSlug(entry.slug), slug: getCleanSlug(entry.slug), category: entry.data?.category },
     props: { entry }
   }));
 }
@@ -45,7 +47,7 @@ const seoTitle = `${t("s.gift_idea")} ${t(entry.data.category)} - ${entry.data.t
     <Content slot="content" />
   </GiftPage>
 
-  { !!entry.data?.refId &&  <ViewStoresFlow refId={entry.data.refId} lang={lang} client:load />}
+  { !!entry.data?.refId &&  <ViewStoresFlow refId={entry.data.refId} lang={lang} locale={locale} client:load />}
 
   { !entry.data?.author && <AIPostBanner lang={lang} />}
 </Layout>

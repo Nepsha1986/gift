@@ -12,6 +12,7 @@ import {
 import {
   getCleanSlug,
   getLangFromUrl,
+  getLocaleFromUrl,
   useTranslatedPath,
   useTranslations,
 } from "@i18n/utils.ts";
@@ -55,10 +56,11 @@ const getParentFromUrl = (url: string): string => {
 };
 
 const Navigation: React.FC<Props> = ({ currentPage }) => {
+  const locale = getLocaleFromUrl(currentPage);
   const lang = getLangFromUrl(currentPage);
   const currentPageParent = getParentFromUrl(currentPage);
   const t = useTranslations(lang, ui);
-  const translatePath = useTranslatedPath(lang);
+  const translatePath = useTranslatedPath(locale);
 
   return (
     <nav className={styles.navigation}>

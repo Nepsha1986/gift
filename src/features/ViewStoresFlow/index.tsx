@@ -8,13 +8,17 @@ import {
 import Dialog from "@reactComponents/Dialog";
 import Button from "@reactComponents/Button";
 
-import ProductTable from "./containers/ProductTable";
+import ProductList from "./containers/ProductList";
 import { useTranslations } from "@i18n/utils.ts";
 import all from "./i18n/translations.ts";
 
 const queryClient = new QueryClient();
 
-const ViewStoresFlow: React.FC<AstroContextProps> = ({ refId, lang }) => {
+const ViewStoresFlow: React.FC<AstroContextProps> = ({
+  refId,
+  lang,
+  locale,
+}) => {
   const t = useTranslations(lang, all);
   const [isDialogVisible, setDialogVisible] = useState(false);
 
@@ -24,6 +28,7 @@ const ViewStoresFlow: React.FC<AstroContextProps> = ({ refId, lang }) => {
         value={{
           lang,
           refId,
+          locale,
         }}
       >
         {isDialogVisible && (
@@ -33,8 +38,18 @@ const ViewStoresFlow: React.FC<AstroContextProps> = ({ refId, lang }) => {
             onClickClose={() => {
               setDialogVisible(false);
             }}
+            footer={
+              <Button
+                color="default"
+                onClick={() => {
+                  setDialogVisible(false);
+                }}
+              >
+                Close
+              </Button>
+            }
           >
-            <ProductTable refId={refId} />
+            <ProductList refId={refId} />
           </Dialog>
         )}
 

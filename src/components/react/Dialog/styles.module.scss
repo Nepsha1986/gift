@@ -25,6 +25,7 @@
 
   &__main {
     padding: 1rem;
+    min-height: clamp(250px, 20vw, 380px);
   }
 
   &::backdrop {
