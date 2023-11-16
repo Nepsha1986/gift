@@ -81,15 +81,15 @@ const ProductForm: React.FC<Props> = ({ id, handleSubmit }) => {
         value={locale}
         options={[
           {
-            value: `en-US`,
+            value: `en-us`,
             label: "USA (english)",
           },
           {
-            value: `uk-UA`,
+            value: `uk-ua`,
             label: "Ukraine (українська)",
           },
           {
-            value: `ru-UA`,
+            value: `ru-ua`,
             label: "Ukraine (русский)",
           },
         ]}
