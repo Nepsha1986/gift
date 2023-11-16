@@ -17,7 +17,7 @@ const ProductTable: React.FC<Props> = ({ refId }) => {
   const { lang, locale } = useAstroContext();
   const t = useTranslations(lang as SupportedLanguages, i18n);
 
-  const { data, isError, isLoading, isFetched } = useQuery({
+  const { data, isError, isLoading } = useQuery({
     queryKey: ["getRelatedProducts", refId, locale],
     queryFn: async () =>
       await ProductsService.getAll({
@@ -28,13 +28,14 @@ const ProductTable: React.FC<Props> = ({ refId }) => {
 
   if (isError) return <div>Error! Please try again later.</div>;
   if (isLoading) return <div>Loading...</div>;
-  if(!data?.items?.length) return <p>{t("m.no_related_products")}</p>;
+  if (!data?.items?.length) return <p>{t("m.no_related_products")}</p>;
 
   return (
-    <ul style={{listStyle: "none", padding: 0, fontSize: '0.85rem'}}>
+    <ul style={{ listStyle: "none", padding: 0, fontSize: "0.85rem" }}>
       {data.items?.map((item, index) => (
-        <li style={{marginBottom: '3px'}}>
-          {index + 1}. <a href={item.link}>{item.title}</a> ({item.description}).
+        <li key={item._id} style={{ marginBottom: "3px" }}>
+          {index + 1}. <a href={item.link}>{item.title}</a> ({item.description}
+          ).
         </li>
       ))}
     </ul>

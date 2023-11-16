@@ -12,7 +12,6 @@ import {
 import {
   getCleanSlug,
   getLangFromUrl,
-  getLocaleFromSlug,
   getLocaleFromUrl,
   useTranslatedPath,
   useTranslations,
