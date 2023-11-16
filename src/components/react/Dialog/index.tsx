@@ -29,7 +29,7 @@ const Dialog: React.FC<{
 
         <div className={styles.dialog__closeBtn}>
           <Button onClick={onClickClose} iconOnly>
-            <FontAwesomeIcon key="gift_page" icon={faClose} />
+            <FontAwesomeIcon icon={faClose} />
           </Button>
         </div>
       </header>

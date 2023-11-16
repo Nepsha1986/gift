@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import React from "react";
 import { useQuery } from "@tanstack/react-query";
 
 import ProductsService from "@services/productsService.ts";
@@ -8,7 +8,6 @@ import type { SupportedLanguages } from "@i18n/ui.ts";
 import i18n from "./i18n.ts";
 
 import { useAstroContext } from "../../context/astroContext.tsx";
-import RelatedProduct from "@src/features/ViewStoresFlow/components/RelatedProduct";
 
 interface Props {
   refId: string;
@@ -29,24 +28,16 @@ const ProductTable: React.FC<Props> = ({ refId }) => {
 
   if (isError) return <div>Error! Please try again later.</div>;
   if (isLoading) return <div>Loading...</div>;
+  if(!data?.items?.length) return <p>{t("m.no_related_products")}</p>;
 
   return (
-    <div>
-      {data?.items?.length ? (
-        <>
-          {data.items?.map((item, index) => (
-            <RelatedProduct
-              key={item.title}
-              link={item.link}
-              title={item.title}
-              description={item.description}
-            />
-          ))}
-        </>
-      ) : (
-        <p>{t("m.no_related_products")}</p>
-      )}
-    </div>
+    <ul style={{listStyle: "none", padding: 0, fontSize: '0.85rem'}}>
+      {data.items?.map((item, index) => (
+        <li style={{marginBottom: '3px'}}>
+          {index + 1}. <a href={item.link}>{item.title}</a> ({item.description}).
+        </li>
+      ))}
+    </ul>
   );
 };
 
