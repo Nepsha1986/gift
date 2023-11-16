@@ -6,18 +6,14 @@ import shared, { type SharedStrings } from "@i18n/translations/shared.ts";
 import seo, { type SeoStrings } from "@i18n/translations/seo.ts";
 
 export type SupportedLanguages = "en" | "ru" | "uk";
+export type SupportedLocales = "en-us" | "uk-ua" | "ru-ua";
+
 export const defaultLang = "en";
 
 export type Translations<T extends string> = Record<
   SupportedLanguages,
   Record<T, string>
 >;
-
-export const languages: Record<SupportedLanguages, string> = {
-  en: "English",
-  ru: "Русский",
-  uk: "Українська",
-};
 
 export type AppTranslationStrings =
   | NavTranslationStrings

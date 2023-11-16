@@ -14,7 +14,11 @@ import all from "./i18n/translations.ts";
 
 const queryClient = new QueryClient();
 
-const ViewStoresFlow: React.FC<AstroContextProps> = ({ refId, lang }) => {
+const ViewStoresFlow: React.FC<AstroContextProps> = ({
+  refId,
+  lang,
+  locale,
+}) => {
   const t = useTranslations(lang, all);
   const [isDialogVisible, setDialogVisible] = useState(false);
 
@@ -24,6 +28,7 @@ const ViewStoresFlow: React.FC<AstroContextProps> = ({ refId, lang }) => {
         value={{
           lang,
           refId,
+          locale,
         }}
       >
         {isDialogVisible && (

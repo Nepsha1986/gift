@@ -1,24 +1,27 @@
 import React from "react";
 import classNames from "classnames";
-import gbFlag from "@public/assets/GB.svg";
-import ruFlag from "@public/assets/RU.svg";
-import uaFlag from "@public/assets/UA.svg";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGlobe } from "@fortawesome/free-solid-svg-icons";
+
+import { getLocaleFromUrl, useTranslatedPath } from "@i18n/utils.ts";
+import type { SupportedLocales } from "@i18n/ui.ts";
 
 import styles from "./styles.module.scss";
-import { getLangFromUrl, useTranslatedPath } from "@i18n/utils.ts";
 
-const languages = {
-  en: {
-    label: "English",
-    image: gbFlag.src,
+const locales: Record<
+  SupportedLocales,
+  {
+    label: string;
+  }
+> = {
+  "en-us": {
+    label: "United States - English",
   },
-  ru: {
-    label: "Русский",
-    image: ruFlag.src,
+  "ru-ua": {
+    label: "Украина - Русский",
   },
-  uk: {
-    label: "Українська",
-    image: uaFlag.src,
+  "uk-ua": {
+    label: "Україна - Українська",
   },
 };
 
@@ -27,54 +30,45 @@ interface Props {
 }
 
 const LangSwitcherItem: React.FC<{
-  imageSrc: string;
   label: string;
   link?: string;
   active?: boolean;
-}> = ({ link, imageSrc, label, active = false }) => {
+}> = ({ link, label, active = false }) => {
   const className = classNames(styles.langSwitcherItem, {
     [styles.langSwitcherItem_active]: active,
   });
 
   return (
     <a href={link} className={className}>
-      <img
-        src={imageSrc}
-        alt={label}
-        className={styles.langSwitcherItem__flag}
-      />
-
       <span className={styles.langSwitcherItem__label}>{label}</span>
+      {active && (
+        <span className={styles.langSwitcherItem__icon}>
+          <FontAwesomeIcon size="sm" icon={faGlobe} />
+        </span>
+      )}
     </a>
   );
 };
 
 const LangSwitcher: React.FC<Props> = ({ pathname }) => {
-  const activeLang = getLangFromUrl(pathname);
+  const activeLocale = getLocaleFromUrl(pathname);
   const path = "/" + pathname.split("/").slice(2).join("/");
 
   return (
     <div className={styles.langSwitcher}>
-      <LangSwitcherItem
-        active
-        label={languages[activeLang].label}
-        imageSrc={languages[activeLang].image}
-      />
+      <LangSwitcherItem active label={locales[activeLocale].label} />
 
       <ul className={styles.langSwitcher__list}>
-        {Object.keys(languages).map((langCode) => {
-          if (langCode === activeLang) return null;
+        {Object.keys(locales).map((i) => {
+          if (i === activeLocale) return null;
 
-          const translatePath = useTranslatedPath(
-            langCode as keyof typeof languages,
-          );
+          const translatePath = useTranslatedPath(i as keyof typeof locales);
 
           return (
-            <li key={langCode} className={styles.langSwitcher__item}>
+            <li key={i} className={styles.langSwitcher__item}>
               <LangSwitcherItem
                 link={translatePath(path)}
-                label={languages[langCode as keyof typeof languages].label}
-                imageSrc={languages[langCode as keyof typeof languages].image}
+                label={locales[i as keyof typeof locales].label}
               />
             </li>
           );
