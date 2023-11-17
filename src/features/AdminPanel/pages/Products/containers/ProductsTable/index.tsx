@@ -39,9 +39,8 @@ const ProductsTable: React.FC = () => {
               <tr>
                 <th>Product</th>
                 <th>Description</th>
-                <th>Link</th>
-                <th>Locale</th>
                 <th>Ref ID</th>
+                <th>Locale</th>
                 <th></th>
               </tr>
             </thead>
@@ -52,9 +51,10 @@ const ProductsTable: React.FC = () => {
                   <tr key={product._id}>
                     <td>{product.title}</td>
                     <td>{product.description}</td>
-                    <td>{product.link}</td>
+                    <td style={{ whiteSpace: "nowrap" }}>
+                      {product.refId || "-"}
+                    </td>
                     <td>{product.locale}</td>
-                    <td>{product.refId || "-"}</td>
                     <td>
                       <div style={{ display: "flex" }}>
                         <RemoveProduct

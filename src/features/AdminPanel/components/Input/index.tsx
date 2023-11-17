@@ -6,8 +6,15 @@ interface Props {
   label: string;
   value: string;
   onChange: (val: string) => void;
+  placeholder?: string;
 }
-const Input: React.FC<Props> = ({ name, value, onChange, label }) => {
+const Input: React.FC<Props> = ({
+  name,
+  value,
+  onChange,
+  label,
+  placeholder,
+}) => {
   return (
     <div className={styles.input}>
       <label className={styles.input__label} htmlFor={name}>
@@ -23,6 +30,7 @@ const Input: React.FC<Props> = ({ name, value, onChange, label }) => {
         }}
         value={value}
         className={styles.input__input}
+        placeholder={placeholder}
       />
     </div>
   );
