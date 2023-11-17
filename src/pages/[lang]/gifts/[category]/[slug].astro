@@ -3,7 +3,7 @@ import Layout from "@layouts/Layout.astro";
 import { getCollection } from "astro:content";
 import GiftPage from "@astroComponents/GiftPage.astro";
 import AIPostBanner from '@reactComponents/AIPostBanner';
-import ViewStoresFlow from "src/features/ViewStoresFlow";
+import RelatedProducts from "src/features/RelatedProducts";
 import { Image } from "astro:assets";
 import { getLocaleFromUrl, getCleanSlug, getLangFromUrl, useTranslations, getLocaleFromSlug } from "@i18n/utils";
 import { ui } from "@i18n/ui";
@@ -47,7 +47,7 @@ const seoTitle = `${t("s.gift_idea")} ${t(entry.data.category)} - ${entry.data.t
     <Content slot="content" />
   </GiftPage>
 
-  { !!entry.data?.refId &&  <ViewStoresFlow refId={entry.data.refId} lang={lang} locale={locale} client:load />}
+  { !!entry.data?.refId &&  <RelatedProducts refId={entry.data.refId} lang={lang} locale={locale} client:load />}
 
   { !entry.data?.author && <AIPostBanner lang={lang} />}
 </Layout>
