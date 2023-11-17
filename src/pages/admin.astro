@@ -1,17 +1,16 @@
 ---
-import { getLangFromSlug } from "../i18n/utils";
 import { getCollection } from "astro:content";
 
 import { IdeaPage } from "../features/AdminPanel/types/IdeaPage";
 import AdminPanel from "../features/AdminPanel";
 
 const giftsEntries = await getCollection("gifts");
-const engPosts = giftsEntries.filter(i => getLangFromSlug(i.slug) === "en");
 
 const pages: IdeaPage[] = giftsEntries.map(i => ({
   title: i.data.title,
   refId: i.data.refId,
   slug: i.slug,
+  category: i.data.category,
 }));
 
 import "../styles/global.scss";
