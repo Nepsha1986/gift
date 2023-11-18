@@ -4,6 +4,8 @@ description: Підніміть їх пригоди на новий рівень
 date: '2023-09-17'
 thumbnail: ../../img/backpack.webp
 category: "for-men"
+modules:
+  - RelatedProducts
 meta:
   age: 12+
 featured: true
