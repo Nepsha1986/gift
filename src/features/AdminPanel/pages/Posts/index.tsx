@@ -45,7 +45,7 @@ const Posts: React.FC = () => {
 
   return (
     <div>
-      <h1>Posts</h1>
+      <h1>Ideas</h1>
 
       <div
         style={{

@@ -77,7 +77,9 @@ const ProductsTable: React.FC = () => {
               {data.items?.map((product, index) => {
                 return (
                   <tr key={product._id}>
-                    <td>{product.title}</td>
+                    <td>
+                      <strong>{product.title}</strong>
+                    </td>
                     <td>{product.description}</td>
                     <td style={{ whiteSpace: "nowrap" }}>
                       {product.refId || "-"}

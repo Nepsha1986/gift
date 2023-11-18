@@ -12,5 +12,5 @@ export interface PaginatedParams {
 }
 
 export interface SearchableParams {
-  search: string;
+  search?: string;
 }
