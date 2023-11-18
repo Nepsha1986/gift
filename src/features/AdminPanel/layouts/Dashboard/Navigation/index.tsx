@@ -28,7 +28,7 @@ const NavItem: React.FC<NavItemProps> = ({ to, label, icon }) => (
 const Navigation: React.FC = () => (
   <ul className={styles.navigation}>
     <NavItem to="/admin" icon={faChartSimple} label="Overview" />
-    <NavItem to="/admin/posts" icon={faPencil} label="Posts" />
+    <NavItem to="/admin/posts" icon={faPencil} label="Ideas" />
     <NavItem to="/admin/products" icon={faBagShopping} label="Products" />
   </ul>
 );
