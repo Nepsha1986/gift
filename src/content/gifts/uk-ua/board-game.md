@@ -1,6 +1,5 @@
 ---
 title: Настільна гра
-refId: board-game
 description: Подаруйте їм години веселощів та зміцнення стосунків захопливою настільною грою.
 date: '2023-09-17'
 thumbnail: ../../img/monopoly.webp

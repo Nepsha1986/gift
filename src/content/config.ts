@@ -12,7 +12,6 @@ const giftsCollection = defineCollection({
   type: "content",
   schema: ({ image }) =>
     z.object({
-      refId: z.string().optional(),
       title: z.string(),
       description: z.string(),
       thumbnail: image().refine((img) => img.width >= 400, {
@@ -33,6 +32,7 @@ const giftsCollection = defineCollection({
         })
         .optional(),
       featured: z.boolean().optional().default(false),
+      modules: z.array(z.string()).optional(),
     }),
 });
 

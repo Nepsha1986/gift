@@ -1,10 +1,12 @@
 ---
 title: Board Game
-refId: board-game
 description: Gift them hours of fun and bonding with a captivating board game.
 date: '2023-09-17'
 thumbnail: ../../img/monopoly.webp
 category: "for-teens"
+modules:
+  - RelatedProducts
+  - Ads
 meta:
     age: 6+
 ---
