@@ -4,6 +4,8 @@ description: Elevate their adventures with a versatile and stylish backpack.
 date: '2023-09-17'
 thumbnail: ../../img/backpack.webp
 category: "for-men"
+modules:
+  - RelatedProducts
 meta:
     age: 12+
 featured: true
