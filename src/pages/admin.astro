@@ -1,16 +1,16 @@
 ---
 import { getCollection } from "astro:content";
 
-import { IdeaPage } from "../features/AdminPanel/types/IdeaPage";
+import { IdeaPage, ModuleName } from "../features/AdminPanel/types/IdeaPage";
 import AdminPanel from "../features/AdminPanel";
 
 const giftsEntries = await getCollection("gifts");
 
 const pages: IdeaPage[] = giftsEntries.map(i => ({
   title: i.data.title,
-  refId: i.data.refId,
   slug: i.slug,
   category: i.data.category,
+  modules: i.data.modules as ModuleName[] || [],
 }));
 
 import "../styles/global.scss";
@@ -20,6 +20,7 @@ import "../styles/global.scss";
 <html lang='en'>
 <head>
   <meta charset="UTF-8" />
+  <meta name="robots" content="noindex">
   <meta name="viewport" content="width=device-width" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com">

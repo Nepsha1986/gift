@@ -28,7 +28,7 @@ const Dialog: React.FC<{
         {!!heading && <h3 style={{ marginBottom: 0 }}>{heading}</h3>}
 
         <div className={styles.dialog__closeBtn}>
-          <Button onClick={onClickClose} iconOnly>
+          <Button onClick={onClickClose} iconOnly color="transparent">
             <FontAwesomeIcon icon={faClose} />
           </Button>
         </div>

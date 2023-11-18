@@ -8,6 +8,8 @@ import ProductsService from "@services/productsService.ts";
 
 import Select from "@reactComponents/Select";
 import Button from "@reactComponents/Button";
+import { getCleanSlug, getLocaleFromSlug } from "@i18n/utils.ts";
+import type { ModuleName } from "@src/features/AdminPanel/types/IdeaPage.ts";
 
 interface FormFields {
   title: string;
@@ -50,17 +52,22 @@ const ProductForm: React.FC<Props> = ({ id, handleSubmit }) => {
   const [description, setDescription] = useState<FormFields["description"]>("");
   const [link, setLink] = useState<FormFields["link"]>("");
   const [locale, setLocale] = useState<FormFields["locale"]>("en-us");
-  const [refId, setRefId] = useState<FormFields["refId"]>(
-    ideaPages?.length ? ideaPages[0].refId : "",
-  );
+  const [refId, setRefId] = useState<FormFields["refId"]>("");
 
-  const refIdOptions =
-    ideaPages
-      ?.filter((i) => !!i.refId)
+  const refIdOptions = [
+    {
+      value: "",
+      label: "-",
+    },
+    ...(ideaPages
+      ?.filter((i) => getLocaleFromSlug(i.slug) === "en-us")
+      // @ts-expect-error TODO: Revisit
+      .filter((i) => i.modules.includes("RelatedProducts" as ModuleName))
       .map((i) => ({
-        value: i.refId,
-        label: `${i.title} (${i.refId})`,
-      })) || [];
+        value: getCleanSlug(i.slug),
+        label: `${getCleanSlug(i.slug)} (${i.title})`,
+      })) || []),
+  ];
 
   if (isLoading) return <div>Loading...</div>;
 
@@ -96,7 +103,7 @@ const ProductForm: React.FC<Props> = ({ id, handleSubmit }) => {
       />
       <Select
         name="refId"
-        label="Select page"
+        label="Reference ID"
         onChange={setRefId}
         value={refId}
         options={refIdOptions}

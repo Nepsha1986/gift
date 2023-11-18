@@ -10,7 +10,7 @@ import Input from "@src/features/AdminPanel/components/Input";
 import Button from "@reactComponents/Button";
 import type { Category } from "@src/types/category.ts";
 
-const PROJECT_GITHUB_REPO = "https://github.com/Nepsha1986/gift;";
+const PROJECT_GITHUB_REPO = "https://github.com/Nepsha1986/gift";
 
 const Posts: React.FC = () => {
   const { ideaPages } = useAstroContext();
@@ -35,7 +35,7 @@ const Posts: React.FC = () => {
       filteredPages = filteredPages?.filter(
         (i) =>
           i.title.toLowerCase().includes(search.toLowerCase()) ||
-          i?.refId?.toLowerCase()?.includes(search.toLowerCase()),
+          getCleanSlug(i.slug).includes(search.toLowerCase()),
       );
     }
 
@@ -114,6 +114,14 @@ const Posts: React.FC = () => {
                 label: "For women",
                 value: "for-women",
               },
+              {
+                label: "For teems",
+                value: "for-teens",
+              },
+              {
+                label: "For kids",
+                value: "for-kids",
+              },
             ]}
           />
         </div>
@@ -125,10 +133,11 @@ const Posts: React.FC = () => {
         <table>
           <thead>
             <tr>
-              <th>Title ( RefID )</th>
+              <th>Title</th>
+              <th>RefID / Slug</th>
               <th>Category</th>
-              <th>Slug</th>
               <th>Locale</th>
+              <th>Modules</th>
               <th>Actions</th>
             </tr>
           </thead>
@@ -138,12 +147,13 @@ const Posts: React.FC = () => {
               <tr key={index}>
                 <td>
                   <strong>
-                    {index + 1}. {page.title} {page.refId && `(${page.refId})`}
+                    {index + 1}. {page.title}
                   </strong>
                 </td>
+                <td>{getCleanSlug(page.slug)}</td>
                 <td>{page.category}</td>
-                <td>{page.slug}</td>
                 <td>{getLocaleFromSlug(page.slug)}</td>
+                <td>{page.modules.join(", ")}</td>
                 <td>
                   <div style={{ display: "flex" }}>
                     <Button

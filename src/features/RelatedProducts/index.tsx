@@ -14,7 +14,7 @@ import all from "./i18n/translations.ts";
 
 const queryClient = new QueryClient();
 
-const ViewStoresFlow: React.FC<AstroContextProps> = ({
+const RelatedProducts: React.FC<AstroContextProps> = ({
   refId,
   lang,
   locale,
@@ -66,4 +66,4 @@ const ViewStoresFlow: React.FC<AstroContextProps> = ({
   );
 };
 
-export default ViewStoresFlow;
+export default RelatedProducts;
