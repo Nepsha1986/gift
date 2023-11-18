@@ -7,24 +7,52 @@ import Pagination from "@reactComponents/Pagination";
 import RemoveProduct from "../RemoveProduct";
 import AddProduct from "../AddProduct";
 import EditProduct from "../EditProduct";
+
+import Search from "@src/features/AdminPanel/components/Search";
+import LocaleSelect from "@src/features/AdminPanel/components/LocaleSelect";
+import { type SupportedLocales } from "@i18n/ui.ts";
 const ProductsTable: React.FC = () => {
   const [page, setPage] = useState<number>(1);
+  const [search, setSearch] = useState("");
+  const [locale, setLocale] = useState<SupportedLocales | "">("");
 
   const { data, isLoading, refetch } = useQuery({
     queryKey: ["getProducts"],
     queryFn: async () => {
-      return await ProductsService.getAll({ page });
+      return await ProductsService.getAll({
+        page,
+        locale: locale || undefined,
+        search: search || undefined,
+      });
     },
   });
 
   useEffect(() => {
     void refetch();
-  }, [page]);
+  }, [page, search, locale]);
 
   if (isLoading) return <div>Loading...</div>;
 
   return (
     <div>
+      <div style={{ maxWidth: "450px", display: "flex", gap: "10px" }}>
+        <Search
+          value={search}
+          onChange={(val) => {
+            setPage(1);
+            setSearch(val);
+          }}
+        />
+
+        <LocaleSelect
+          value={locale}
+          onChange={(val) => {
+            setPage(1);
+            setLocale(val);
+          }}
+        />
+      </div>
+
       {!data?.items?.length && (
         <p>
           At the moment, there are no products available. You can add related

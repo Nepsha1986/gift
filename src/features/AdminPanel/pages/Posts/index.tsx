@@ -6,17 +6,18 @@ import { useAstroContext } from "@src/features/AdminPanel/context/astroContext.t
 import Select from "@reactComponents/Select";
 import type { SupportedLocales } from "@i18n/ui.ts";
 import { getCleanSlug, getLocaleFromSlug } from "@i18n/utils.ts";
-import Input from "@src/features/AdminPanel/components/Input";
 import Button from "@reactComponents/Button";
 import type { Category } from "@src/types/category.ts";
+import Search from "@src/features/AdminPanel/components/Search";
+import LocaleSelect from "@src/features/AdminPanel/components/LocaleSelect";
 
 const PROJECT_GITHUB_REPO = "https://github.com/Nepsha1986/gift";
 
 const Posts: React.FC = () => {
   const { ideaPages } = useAstroContext();
-  const [locale, setLocale] = useState<SupportedLocales>();
-  const [category, setCategory] = useState<Category>();
-  const [search, setSearch] = useState<string>();
+  const [locale, setLocale] = useState<SupportedLocales | "">("");
+  const [category, setCategory] = useState<Category | "">("");
+  const [search, setSearch] = useState<string>("");
 
   const filtered = useMemo(() => {
     let filteredPages = ideaPages;
@@ -55,42 +56,11 @@ const Posts: React.FC = () => {
         }}
       >
         <div style={{ flexGrow: 1 }}>
-          <Input
-            name="searchByName"
-            value={search as string}
-            label="Search by title | refId"
-            onChange={setSearch}
-            placeholder="Search"
-          />
+          <Search value={search} onChange={setSearch} />
         </div>
 
         <div style={{ flexGrow: 1 }}>
-          <Select
-            label="Locale"
-            name="locale"
-            value={locale as string}
-            onChange={(val) => {
-              setLocale(val as SupportedLocales);
-            }}
-            options={[
-              {
-                label: "All",
-                value: "",
-              },
-              {
-                label: "English - United States",
-                value: "en-us",
-              },
-              {
-                label: "Ukrainian - Ukraine",
-                value: "uk-ua",
-              },
-              {
-                label: "Russian - Ukraine",
-                value: "ru-ua",
-              },
-            ]}
-          />
+          <LocaleSelect value={locale} onChange={setLocale} />
         </div>
 
         <div style={{ flexGrow: 1 }}>
