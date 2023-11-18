@@ -5,7 +5,7 @@ interface Props {
   name: string;
   label: string;
   value: string;
-  onChange: (val: string) => void;
+  onChange?: (val: string) => void;
   placeholder?: string;
 }
 const Input: React.FC<Props> = ({
@@ -26,7 +26,7 @@ const Input: React.FC<Props> = ({
         type="text"
         name={name}
         onChange={(event) => {
-          onChange(event.target.value);
+          onChange && onChange(event.target.value);
         }}
         value={value}
         className={styles.input__input}

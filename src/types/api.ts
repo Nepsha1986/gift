@@ -10,3 +10,7 @@ export interface PaginatedParams {
   page?: number;
   pageSize?: number;
 }
+
+export interface SearchableParams {
+  search: string;
+}
