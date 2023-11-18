@@ -28,7 +28,6 @@ const giftsCollection = defineCollection({
       meta: z
         .object({
           age: z.string().optional(),
-          priceRange: z.string().optional(),
         })
         .optional(),
       featured: z.boolean().optional().default(false),
