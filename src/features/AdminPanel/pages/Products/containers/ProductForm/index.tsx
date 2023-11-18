@@ -52,22 +52,22 @@ const ProductForm: React.FC<Props> = ({ id, handleSubmit }) => {
   const [description, setDescription] = useState<FormFields["description"]>("");
   const [link, setLink] = useState<FormFields["link"]>("");
   const [locale, setLocale] = useState<FormFields["locale"]>("en-us");
-  const [refId, setRefId] = useState<FormFields["refId"]>('');
+  const [refId, setRefId] = useState<FormFields["refId"]>("");
 
-  const refIdOptions =
-    [{
-      value: '',
-      label: '-',
+  const refIdOptions = [
+    {
+      value: "",
+      label: "-",
     },
-    ...ideaPages
-        ?.filter((i) => getLocaleFromSlug(i.slug) === "en-us")
-        // @ts-ignore TODO: Revisit
-        .filter((i) => i.modules.includes("RelatedProducts" as ModuleName))
-        .map((i) => ({
-          value: getCleanSlug(i.slug),
-          label: `${getCleanSlug(i.slug)} (${i.title})`,
-        })) || []
-    ];
+    ...(ideaPages
+      ?.filter((i) => getLocaleFromSlug(i.slug) === "en-us")
+      // @ts-expect-error TODO: Revisit
+      .filter((i) => i.modules.includes("RelatedProducts" as ModuleName))
+      .map((i) => ({
+        value: getCleanSlug(i.slug),
+        label: `${getCleanSlug(i.slug)} (${i.title})`,
+      })) || []),
+  ];
 
   if (isLoading) return <div>Loading...</div>;
 
