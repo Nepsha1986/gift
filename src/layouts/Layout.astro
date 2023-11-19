@@ -1,6 +1,7 @@
 ---
 import { removeTrailingSlash } from "@utils/removeTrailingSlash";
 import Navigation from "@reactComponents/Navigation";
+import LogoDark from "@reactComponents/LogoDark";
 import GiftList from "@astroComponents/GiftList.astro";
 import CategoryFilter from "@astroComponents/CategoryFilter.astro";
 import { ViewTransitions } from "astro:transitions";
@@ -9,7 +10,6 @@ import { ui } from "@i18n/ui";
 import LangSwitcher from "@reactComponents/LangSwitcher";
 
 import "../styles/global.scss";
-import Logo from "../assets/logo-dark.svg";
 
 interface Props {
 	title: string;
@@ -72,7 +72,7 @@ if (isCategoryPage) {
   <header class="header">
     <div class="header__container">
       <div class="header__logo">
-        <img src={Logo.src} alt="Logo"/>
+        <LogoDark />
       </div>
 
       <div class="header__nav">
