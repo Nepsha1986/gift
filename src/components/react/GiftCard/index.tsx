@@ -27,9 +27,9 @@ const GiftCard: React.FC<Props> = ({
       <div className={styles.giftCard__imgWrap}>{children}</div>
 
       <div>
-        <h1 className={styles.giftCard__heading}>
+        <h2 className={styles.giftCard__heading}>
           {index}. {title}
-        </h1>
+        </h2>
         <p className={styles.giftCard__desc}>{description}</p>
       </div>
     </a>

@@ -1,13 +1,6 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { getCollection } from "astro:content";
 import classNames from "classnames";
-import {
-  faHome,
-  faGift,
-  faPhone,
-  faAddressCard,
-} from "@fortawesome/free-solid-svg-icons";
 
 import {
   getCleanSlug,
@@ -28,23 +21,16 @@ const firstGiftItem = giftsEntries.filter(
   (i) => i.data.category === "for-women",
 );
 
-const navItems: Array<
-  [string, NavTranslationStrings | undefined, React.ReactNode]
-> = [
-  ["/", undefined, <FontAwesomeIcon key="homepage" icon={faHome} />],
+const navItems: Array<[string, NavTranslationStrings]> = [
+  ["/", "nav.homepage"],
   [
     `/gifts/${firstGiftItem[0].data.category}/${getCleanSlug(
       firstGiftItem[0].slug,
     )}`,
     "nav.gifts",
-    <FontAwesomeIcon key="gift_page" icon={faGift} />,
   ],
-  ["/about", "nav.about", <FontAwesomeIcon key="about" icon={faAddressCard} />],
-  [
-    "/contacts",
-    "nav.contacts",
-    <FontAwesomeIcon key="contact" icon={faPhone} />,
-  ],
+  ["/about", "nav.about"],
+  ["/contacts", "nav.contacts"],
 ];
 
 interface Props {
@@ -76,10 +62,7 @@ const Navigation: React.FC<Props> = ({ currentPage }) => {
             className={navItemClass}
             href={translatePath(`${i[0]}`)}
           >
-            <span className={styles.navigation__itemIcon}>{i[2]}</span>
-            {i[1] !== undefined && (
-              <span className={styles.navigation__itemName}>{t(i[1])}</span>
-            )}
+            {t(i[1])}
           </a>
         );
       })}
