@@ -125,6 +125,7 @@ if (isCategoryPage) {
 		&__container {
 			padding: .5rem 15px;
 			display: flex;
+      flex-flow: row wrap;
 			justify-content: space-between;
 			align-items: center;
 			max-width: 1300px;
@@ -141,6 +142,13 @@ if (isCategoryPage) {
         transform: scale(1.04);
       }
 		}
+
+    &__nav {
+      @media screen and (max-width: 800px) {
+        order: 1;
+        width: 100%;
+      }
+    }
 	}
 
 	.app-container {
