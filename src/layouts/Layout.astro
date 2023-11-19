@@ -10,6 +10,7 @@ import { ui } from "@i18n/ui";
 import LangSwitcher from "@reactComponents/LangSwitcher";
 
 import "../styles/global.scss";
+import { getLocaleFromUrl } from "../i18n/utils";
 
 interface Props {
 	title: string;
@@ -18,11 +19,14 @@ interface Props {
 
 const isProd = import.meta.env.PROD;
 
+const URL = Astro.url.pathname;
+
 const {title, isCategoryPage} = Astro.props;
-const lang = getLangFromUrl(Astro.url.pathname);
+const lang = getLangFromUrl(URL);
+const locale = getLocaleFromUrl(URL);
 const t = useTranslations(lang, ui);
 
-const pathname = removeTrailingSlash(Astro.url.pathname);
+const pathname = removeTrailingSlash(URL);
 const pathParts = pathname.split("/");
 
 let category;
@@ -71,9 +75,9 @@ if (isCategoryPage) {
 <div>
   <header class="header">
     <div class="header__container">
-      <div class="header__logo">
+      <a class="header__logo" href={`/${locale}`}>
         <LogoDark />
-      </div>
+      </a>
 
       <div class="header__nav">
         <Navigation currentPage={pathname}/>
@@ -128,14 +132,21 @@ if (isCategoryPage) {
 		}
 
 		&__logo {
+      display: block;
 			width: 165px;
+      transition: 0.3s transform;
+      cursor: pointer;
+
+      &:hover {
+        transform: scale(1.04);
+      }
 		}
 	}
 
 	.app-container {
 		max-width: 1160px;
     min-height: calc(100vh - 135px);
-		padding: 15px;
+		padding: 2rem 15px 15px;
 		margin: 0 auto;
 		display: flex;
 		flex-flow: row wrap;
