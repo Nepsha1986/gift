@@ -4,7 +4,7 @@ import { Outlet } from "react-router-dom";
 import Navigation from "./Navigation";
 import UserBlock from "./UserBlock";
 
-import Logo from "@src/assets/logo.svg";
+import LogoLight from "@reactComponents/LogoLight";
 import styles from "./styles.module.scss";
 
 interface Props {
@@ -16,7 +16,7 @@ const Dashboard: React.FC<Props> = ({ children }) => {
     <div className={styles.dashboard}>
       <header className={styles.dashboard__header}>
         <a className={styles.dashboard__logo} href="/">
-          <img src={Logo.src} alt="Logo" />
+          <LogoLight />
         </a>
 
         <UserBlock />
