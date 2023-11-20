@@ -27,7 +27,7 @@ const Form: React.FC = () => {
     mutationKey: ["sendMessage"],
     mutationFn: async () => {
       return await axios.post(
-        "/en-us",
+        "/",
         new URLSearchParams({
           name,
           email,
