@@ -1,0 +1,13 @@
+.text {
+  &_default {
+    color: var(--c-grey-darkest);
+  }
+
+  &_danger {
+    color: var(--c-danger);
+  }
+
+  &_success {
+    color: var(--c-success);
+  }
+}
