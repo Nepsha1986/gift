@@ -18,6 +18,7 @@ const ContactForm: React.FC = () => {
         name,
         email,
         message,
+        "form-name": "contact",
       }).toString(),
     })
       .then(() => {
