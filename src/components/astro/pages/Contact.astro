@@ -1,0 +1,47 @@
+---
+import Layout from 'src/layouts/Layout.astro';
+import { getLangFromUrl, useTranslations } from "@i18n/utils";
+import translations from "./translations";
+
+import ContactForm from "@reactComponents/ContactForm";
+const lang = getLangFromUrl(Astro.url.pathname);
+const t = useTranslations(lang, translations)
+---
+
+<Layout title={t("page.title")}>
+  <div class="formBlock">
+    <h1 class="formBlock__title">{t("page.heading")}</h1>
+
+    <div class="formBlock__container">
+      <h2>{t("form.title")}</h2>
+
+      <p>{t("form.subtitle")}</p>
+
+      <ContactForm client:load lang={lang} />
+    </div>
+  </div>
+
+</Layout>
+
+<style lang="scss">
+	.formBlock {
+		height: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-flow: column;
+
+    &__title {
+      margin-bottom: 2rem;
+    }
+
+		&__container {
+			background: #fff;
+			width: 100%;
+			max-width: clamp(400px, 60%, 900px);
+			padding: 2rem 1rem;
+			box-shadow: 0 5px 15px -5px rgba(0, 0, 0, 0.3);
+
+		}
+	}
+</style>
