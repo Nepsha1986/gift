@@ -1,6 +1,10 @@
 ---
 import Layout from "@layouts/Layout.astro";
 import { useTranslatedPath, getLocaleFromUrl } from "@i18n/utils";
+import { getImage } from "astro:assets";
+import background from "@public/assets/bg-1.png";
+
+const bg = await getImage({src: background, format: 'png'})
 
 const locale = getLocaleFromUrl(Astro.url.pathname);
 const translatePath = useTranslatedPath(locale);
@@ -23,26 +27,12 @@ const viewIdeasLink = translatePath("/gifts/for-women/adventure-experience-for-w
       </div>
     </div>
   </section>
+  <div class="bg" style={`background-image: url(${bg.src});`}></div>
 </Layout>
 
 <style lang="scss">
 	.intro {
 		height: 100%;
-
-		&::after {
-			display: block;
-			content: '';
-			top: 0;
-			right: 0;
-			position: absolute;
-			width: 100vh;
-			height: 100vh;
-			background-image: url('./public/assets/bg-1.png');
-			background-position: top right;
-			background-repeat: no-repeat;
-			background-size: contain;
-			z-index: -1;
-		}
 
 		&__container {
 			max-width: 1300px;
@@ -72,4 +62,16 @@ const viewIdeasLink = translatePath("/gifts/for-women/adventure-experience-for-w
 			}
 		}
 	}
+
+  .bg {
+    top: 0;
+    right: 0;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-position: top right;
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: -1;
+  }
 </style>
