@@ -1,6 +1,7 @@
-import { type SupportedLocales } from "@i18n/ui.ts";
-import Select from "@reactComponents/Select";
 import React from "react";
+
+import { type SupportedLocales } from "@i18n/ui.ts";
+import { Select } from "src/common";
 
 interface LocaleSelectProps {
   value: SupportedLocales | "";

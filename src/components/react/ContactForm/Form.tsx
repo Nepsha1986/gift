@@ -2,10 +2,7 @@ import React, { useState } from "react";
 import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
 
-import Button from "@reactComponents/Button";
-import Input from "@reactComponents/Input";
-import TextArea from "@reactComponents/TextArea";
-import Text from "@reactComponents/Text";
+import { Button, Input, Text, TextArea } from "@src/common";
 
 import styles from "./styles.module.scss";
 

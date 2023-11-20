@@ -5,8 +5,8 @@ import {
   type AstroContextProps,
   AstroContext,
 } from "./context/astroContext.tsx";
-import Dialog from "@reactComponents/Dialog";
-import Button from "@reactComponents/Button";
+
+import { Dialog, Button } from "src/common";
 
 import ProductList from "./containers/ProductList";
 import { useTranslations } from "@i18n/utils.ts";

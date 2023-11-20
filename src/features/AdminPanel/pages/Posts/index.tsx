@@ -3,10 +3,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEdit, faEye } from "@fortawesome/free-solid-svg-icons";
 
 import { useAstroContext } from "@src/features/AdminPanel/context/astroContext.tsx";
-import Select from "@reactComponents/Select";
 import type { SupportedLocales } from "@i18n/ui.ts";
 import { getCleanSlug, getLocaleFromSlug } from "@i18n/utils.ts";
-import Button from "@reactComponents/Button";
+import { Button, Select } from "src/common";
 import type { Category } from "@src/types/category.ts";
 import Search from "@src/features/AdminPanel/components/Search";
 import LocaleSelect from "@src/features/AdminPanel/components/LocaleSelect";

@@ -3,8 +3,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { useMutation } from "@tanstack/react-query";
 
-import Button from "@reactComponents/Button";
-import Dialog from "@reactComponents/Dialog";
+import { Button, Dialog } from "src/common";
+
 import ProductsService from "@services/productsService.ts";
 import ProductForm from "../ProductForm";
 

@@ -4,9 +4,7 @@ import { useQuery } from "@tanstack/react-query";
 import { useAstroContext } from "@src/features/AdminPanel/context/astroContext.tsx";
 import ProductsService from "@services/productsService.ts";
 
-import Input from "@reactComponents/Input";
-import Select from "@reactComponents/Select";
-import Button from "@reactComponents/Button";
+import { Input, Select, Button } from "src/common";
 
 import { getCleanSlug, getLocaleFromSlug } from "@i18n/utils.ts";
 import type { ModuleName } from "@src/features/AdminPanel/types/IdeaPage.ts";
