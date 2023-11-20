@@ -30,16 +30,17 @@ const ContactForm: React.FC = () => {
 
   return (
     <div>
-      <input type="hidden" name="contact" value="contact" />
+      <input type="hidden" name="contact" value="name" />
+
+      <form name="contact" data-netlify="true" hidden>
+        <input type="text" name="name" />
+        <input type="text" name="email" />
+        <input type="text" name="message" />
+      </form>
 
       <form className={styles.contactForm} name="contact" data-netlify="true">
-        <Input name="name" label="Name" value={name} onChange={setName}></Input>
-        <Input
-          name="email"
-          label="Email"
-          value={email}
-          onChange={setEmail}
-        ></Input>
+        <Input name="name" label="Name" value={name} onChange={setName} />
+        <Input name="email" label="Email" value={email} onChange={setEmail} />
 
         <TextArea
           name="message"
