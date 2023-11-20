@@ -11,7 +11,7 @@ const ContactForm: React.FC = () => {
   const [message, setMessage] = useState("");
 
   const handleSend = (): void => {
-    fetch("/", {
+    fetch("/en-us", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: new URLSearchParams({
