@@ -2,7 +2,7 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 
-import Banner from "@reactComponents/Banner";
+import Banner from "src/common/Banner";
 import translations from "./translations.ts";
 import { useTranslations } from "@i18n/utils.ts";
 import type { SupportedLanguages } from "@i18n/ui.ts";

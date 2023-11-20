@@ -1,10 +1,9 @@
 import React, { useState } from "react";
+import { useMutation } from "@tanstack/react-query";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 
-import Button from "@reactComponents/Button";
-import Dialog from "@reactComponents/Dialog";
-import { useMutation } from "@tanstack/react-query";
+import { Button, Dialog } from "src/common";
 import ProductsService from "@services/productsService.ts";
 
 interface Props {

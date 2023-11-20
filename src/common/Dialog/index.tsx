@@ -1,8 +1,9 @@
 import React, { type ReactNode, useEffect, useRef } from "react";
-import Button from "@reactComponents/Button";
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClose } from "@fortawesome/free-solid-svg-icons";
+
+import { Button } from "src/common";
+
 import styles from "./styles.module.scss";
 
 const Dialog: React.FC<{

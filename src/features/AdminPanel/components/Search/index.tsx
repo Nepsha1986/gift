@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDebounce } from "usehooks-ts";
 
-import Input from "src/components/react/Input";
+import { Input } from "src/common";
 
 interface SearchProps {
   value: string;

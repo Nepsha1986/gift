@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 
 import ProductsService from "@services/productsService.ts";
-import Pagination from "@reactComponents/Pagination";
+import { Pagination } from "src/common";
 
 import RemoveProduct from "../RemoveProduct";
 import AddProduct from "../AddProduct";

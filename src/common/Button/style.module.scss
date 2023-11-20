@@ -39,8 +39,7 @@
 
   &_disabled {
     pointer-events: none;
-    background: var(--c-grey-lightest);
-    opacity: 0.7;
+    opacity: 0.5;
   }
 
   &:hover {
