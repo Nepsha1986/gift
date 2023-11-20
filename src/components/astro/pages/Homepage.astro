@@ -1,0 +1,75 @@
+---
+import Layout from "@layouts/Layout.astro";
+import { useTranslatedPath, getLocaleFromUrl } from "@i18n/utils";
+
+const locale = getLocaleFromUrl(Astro.url.pathname);
+const translatePath = useTranslatedPath(locale);
+
+const viewIdeasLink = translatePath("/gifts/for-women/adventure-experience-for-women");
+---
+
+<Layout title="Find the Perfect Presents for Every Occasion">
+  <section class="intro">
+    <div class="intro__container">
+      <div style={{marginBottom: '7rem'}}>
+        <h1 class="intro__heading">Gift Ideas 2023</h1>
+
+        <h2 class="intro__subheading">Welcome to gift-idea.co!</h2>
+
+        <p class="intro__text">Our mission is to take the stress out of gift shopping by offering a wide range of
+          <a href={viewIdeasLink}><strong>thoughtful and unique gift ideas</strong></a> tailored to various recipients.</p>
+
+        <a href={viewIdeasLink}>VIEW IDEAS</a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style lang="scss">
+	.intro {
+		height: 100%;
+
+		&::after {
+			display: block;
+			content: '';
+			top: 0;
+			right: 0;
+			position: absolute;
+			width: 100vh;
+			height: 100vh;
+			background-image: url('./public/assets/bg-1.png');
+			background-position: top right;
+			background-repeat: no-repeat;
+			background-size: contain;
+			z-index: -1;
+		}
+
+		&__container {
+			max-width: 1300px;
+			height: 100%;
+			padding: 2rem 15px;
+			margin: 0 auto;
+			display: flex;
+			align-items: center;
+		}
+
+		&__heading {
+			font-size: clamp(2rem, 5vw, 4rem);
+		}
+
+		&__subheading {
+			font-size: clamp(1.6rem, 4vw, 3.2rem);
+		}
+
+		&__text {
+			color: var(--c-grey-dark);
+			font-size: 1.2rem;
+			max-width: 600px;
+			margin: 0 auto 30px;
+
+			a {
+				color: var(--c-secondary);
+			}
+		}
+	}
+</style>
