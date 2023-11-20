@@ -1,28 +1,63 @@
-import React, { useRef } from 'react';
+import React, { useState } from "react";
 import Button from "@reactComponents/Button";
+import Input from "@reactComponents/Input";
+import TextArea from "@reactComponents/TextArea";
 
-import styles from './styles.module.scss';
+import styles from "./styles.module.scss";
 
-const ContactForm = () => {
-	const formRef: React.Ref<HTMLFormElement> = useRef(null);
+const ContactForm: React.FC = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
 
-	const handleSend = () => {
-		formRef.current && formRef.current.submit()
-	}
+  const handleSend = (): void => {
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams({
+        name,
+        email,
+        message,
+      }).toString(),
+    })
+      .then(() => {
+        console.log("Form successfully submitted");
+      })
+      .catch((error) => {
+        alert(error);
+      });
+  };
 
-	return (
-		<form className={styles.contactForm} name="contact" method="POST" data-netlify="true" ref={formRef}>
-			<p>
-				<label>Name <input type="text" name="name" /></label>
-			</p>
-			<p>
-				<label>Email <input type="email" name="email" /></label>
-			</p>
-			<p>
-				<Button color='primary' onClick={handleSend}>Send</Button>
-			</p>
-		</form>
-	)
-}
+  return (
+    <div>
+      <input type="hidden" name="contact" value="contact" />
+
+      <form className={styles.contactForm} name="contact" data-netlify="true">
+        <Input name="name" label="Name" value={name} onChange={setName}></Input>
+        <Input
+          name="email"
+          label="Email"
+          value={email}
+          onChange={setEmail}
+        ></Input>
+
+        <TextArea
+          name="message"
+          value={message}
+          onChange={setMessage}
+          label="Message"
+        />
+
+        <Button
+          style={{ marginTop: "2rem" }}
+          color="primary"
+          onClick={handleSend}
+        >
+          Send
+        </Button>
+      </form>
+    </div>
+  );
+};
 
 export default ContactForm;

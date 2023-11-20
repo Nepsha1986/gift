@@ -5,14 +5,39 @@ import ContactForm from "@reactComponents/ContactForm";
 ---
 
 <Layout title="Contacts">
-  <div style={{textAlign: 'center'}}>
-    <h1>Have a question or need assistance?</h1>
+  <div class="formBlock">
+    <h1 style={{marginBottom: '2rem'}}>Have a question or need assistance?</h1>
 
-    <p>Feel free to reach out to us via email <a href="mailto:nepsha1986@gmail.com">nepsha1986@gmail.com</a></p>
+    <div class="formBlock__container">
+      <h2>Send us a message</h2>
+      <div>
+        <p>We'll do our best to respond to your inquiries promptly. Your feedback and inquiries are important to us!</p>
+      </div>
 
-    <p>We'll do our best to respond to your inquiries promptly. Your feedback and inquiries are important to us!</p>
+      <div>
+        <ContactForm client:load />
+      </div>
+    </div>
   </div>
 
-
-  <ContactForm client:load />
 </Layout>
+
+<style lang="scss">
+  .formBlock {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+
+
+    &__container {
+      background: #fff;
+      width: 100%;
+      max-width: clamp(400px, 60%, 900px);
+      padding: 2rem 1rem;
+      box-shadow: 0 5px 15px -5px rgba(0, 0, 0, 0.3);
+
+    }
+  }
+</style>
