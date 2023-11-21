@@ -1,12 +1,7 @@
 ---
-import { removeTrailingSlash } from "@utils/removeTrailingSlash";
-
-import GiftList from "@astroComponents/GiftList.astro";
 import Head from "./Head.astro";
 import Header from "./Header.astro";
 import Footer from "./Footer.astro";
-
-import CategoryFilter from "@astroComponents/CategoryFilter.astro";
 
 import { getLangFromUrl, useTranslations, getLocaleFromUrl } from "@i18n/utils";
 import { ui } from "@i18n/ui";
@@ -15,48 +10,41 @@ import "../styles/global.scss";
 
 interface Props {
 	title: string;
-	isCategoryPage: boolean;
+	isLanding: boolean;
 }
 
 const URL = Astro.url.pathname;
 
-const {title, isCategoryPage} = Astro.props;
+const {title, isLanding} = Astro.props;
 const lang = getLangFromUrl(URL);
 const locale = getLocaleFromUrl(URL);
 const t = useTranslations(lang, ui);
 
-const pathname = removeTrailingSlash(URL);
-const pathParts = pathname.split("/");
-
-let category;
-let activeGiftSlug;
-
-if (isCategoryPage) {
-	category = pathParts[3];
-	activeGiftSlug = pathParts[pathParts.length - 1];
-}
+const hasSidebar = !!Astro.slots.has('sidebar');
 ---
 
 <!doctype html>
 <html lang={lang}>
 <Head title={title}/>
 <body>
-<Header />
-<div class="app-container">
+<Header/>
+{isLanding ?
   <main>
     <slot/>
-  </main>
+  </main> : (
+    <div class:list={['app', {app_hasSidebar: hasSidebar}]}>
+      <main class="app__main">
+        <slot/>
+      </main>
 
-	{(isCategoryPage) &&
-    <aside>
-      <div class="categoryItems">
-        <CategoryFilter activeCategory={category}/>
-        <GiftList category={category} activeGiftSlug={activeGiftSlug}/>
-      </div>
-    </aside>
-	}
-</div>
-<Footer />
+			{hasSidebar && (
+        <aside class="app__sidebar">
+          <slot name='sidebar'/>
+        </aside>
+			)}
+    </div>
+	)}
+<Footer/>
 </body>
 </html>
 
@@ -68,33 +56,33 @@ if (isCategoryPage) {
 		background-size: cover;
 	}
 
-	.app-container {
+	.app {
+		$this: &;
+
 		max-width: 1160px;
 		min-height: calc(100vh - 135px);
 		padding: 2rem 15px 15px;
 		margin: 0 auto;
-		display: flex;
-		flex-flow: row wrap;
-		gap: 10px;
-	}
 
-	main {
-		flex-basis: 650px;
-		width: 100%;
-		flex-grow: 1;
-	}
+		&_hasSidebar {
+			display: flex;
+			flex-flow: row wrap;
+			gap: 10px;
 
-	aside {
-		padding: 0 1rem;
-		width: 100%;
+			#{$this}__main {
+				flex-basis: 650px;
+				width: 100%;
+				flex-grow: 1;
+			}
 
-		@media (min-width: 1200px) {
-			max-width: 400px;
+			#{$this}__sidebar {
+				padding: 0 1rem;
+				width: 100%;
+
+				@media (min-width: 1200px) {
+					max-width: 400px;
+				}
+			}
 		}
-	}
-
-	.categoryItems {
-		position: sticky;
-		top: 10px;
 	}
 </style>

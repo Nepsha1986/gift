@@ -1,18 +1,30 @@
 ---
-import Layout from "@layouts/Layout.astro";
 import { getCollection } from "astro:content";
+import Layout from "@layouts/Layout.astro";
+
 import GiftPage from "@astroComponents/GiftPage.astro";
 import AIPostBanner from '@reactComponents/AIPostBanner';
+import CategoryFilter from "@astroComponents/CategoryFilter.astro";
+import GiftList from "@astroComponents/GiftList.astro";
+
 import RelatedProducts from "src/features/RelatedProducts";
 import Ads from "src/features/Ads";
+
 import { Image } from "astro:assets";
 import { getLocaleFromUrl, getCleanSlug, getLangFromUrl, useTranslations, getLocaleFromSlug } from "@i18n/utils";
 import { ui } from "@i18n/ui";
 
-const lang = getLangFromUrl(Astro.url.pathname);
-const locale = getLocaleFromUrl(Astro.url.pathname);
+import { removeTrailingSlash } from "@utils/removeTrailingSlash";
 
+const URL = Astro.url.pathname;
+const lang = getLangFromUrl(URL);
+const locale = getLocaleFromUrl(URL);
 const t = useTranslations(lang, ui);
+
+const pathname = removeTrailingSlash(URL);
+const pathParts = pathname.split("/");
+const category = pathParts[3];
+const activeGiftSlug = pathParts[pathParts.length - 1];
 
 export async function getStaticPaths() {
   const giftsEntries = await getCollection("gifts");
@@ -28,7 +40,7 @@ const { Content } = await entry.render();
 const seoTitle = `${t("s.gift_idea")} ${t(entry.data.category)} - ${entry.data.title}`;
 ---
 
-<Layout title={seoTitle} isCategoryPage={true}>
+<Layout title={seoTitle}>
   <GiftPage
     title={entry.data.title}
     category={t(entry.data.category)}
@@ -47,11 +59,22 @@ const seoTitle = `${t("s.gift_idea")} ${t(entry.data.category)} - ${entry.data.t
     />
 
     { entry.data?.modules?.includes('Ads') &&  <div slot="ads"><Ads /></div>}
-
     <Content slot="content" />
   </GiftPage>
+
+  <div class="categoryItems" slot="sidebar">
+    <CategoryFilter activeCategory={category}/>
+    <GiftList category={category} activeGiftSlug={activeGiftSlug}/>
+  </div>
 
   { entry.data?.modules?.includes('RelatedProducts') &&  <RelatedProducts refId={getCleanSlug(entry.slug)} lang={lang} locale={locale} client:load />}
 
   { !entry.data?.author && <AIPostBanner lang={lang} />}
 </Layout>
+
+<style lang="scss">
+  .categoryItems {
+    position: sticky;
+    top: 10px;
+  }
+</style>
