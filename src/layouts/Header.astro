@@ -1,0 +1,61 @@
+---
+import { getLocaleFromUrl } from "../i18n/utils";
+import { removeTrailingSlash } from "../utils/removeTrailingSlash";
+
+import LangSwitcher from "../components/react/LangSwitcher";
+import Navigation from "../components/react/Navigation";
+import LogoDark from "../components/react/LogoDark";
+
+const URL = Astro.url.pathname;
+
+const locale = getLocaleFromUrl(URL);
+const pathname = removeTrailingSlash(URL);
+---
+
+<header class="header">
+  <div class="header__container">
+    <a class="header__logo" href={`/${locale}`}>
+      <LogoDark/>
+    </a>
+
+    <div class="header__nav">
+      <Navigation currentPage={pathname}/>
+    </div>
+
+    <div class="header__rigthSlot">
+      <LangSwitcher pathname={pathname}/>
+    </div>
+  </div>
+</header>
+
+<style lang="scss">
+	.header {
+		&__container {
+			padding: .5rem 15px;
+			display: flex;
+			flex-flow: row wrap;
+			justify-content: space-between;
+			align-items: center;
+			max-width: 1300px;
+			margin: 0 auto;
+		}
+
+		&__logo {
+			display: block;
+			width: 165px;
+			transition: 0.3s transform;
+			cursor: pointer;
+
+			&:hover {
+				transform: scale(1.04);
+			}
+		}
+
+		&__nav {
+			@media screen and (max-width: 800px) {
+				order: 1;
+				width: 100%;
+			}
+		}
+	}
+</style>
