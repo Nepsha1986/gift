@@ -1,0 +1,46 @@
+---
+import { getLangFromUrl,getLocaleFromUrl,useTranslations } from "../i18n/utils";
+import { ui } from "../i18n/ui";
+import { ViewTransitions } from "astro:transitions";
+
+const isProd = import.meta.env.PROD;
+const URL = Astro.url.pathname;
+
+const lang = getLangFromUrl(URL);
+const locale = getLocaleFromUrl(URL);
+const t = useTranslations(lang, ui);
+
+const {title} = Astro.props;
+---
+
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="description" content={t("seo.description")}/>
+  <meta name="viewport" content="width=device-width"/>
+  <meta name="keywords" content={t("seo.keywords")}>
+  <link rel="sitemap" href="/sitemap-index.xml"/>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@500&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
+    rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-reboot@4.5.6/reboot.min.css" rel="stylesheet">
+	{isProd && (
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-JWTCBEGBVB"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+
+			function gtag() {
+				window.dataLayer.push(arguments);
+			}
+
+			gtag("js", new Date());
+
+			gtag("config", "G-JWTCBEGBVB");
+			</script>
+	)}
+  <meta name="generator" content={Astro.generator}/>
+  <title>{`Gift Ideas Hub: ${title}`}</title>
+  <ViewTransitions/>
+</head>

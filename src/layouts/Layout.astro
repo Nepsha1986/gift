@@ -1,23 +1,22 @@
 ---
 import { removeTrailingSlash } from "@utils/removeTrailingSlash";
-import Navigation from "@reactComponents/Navigation";
-import LogoDark from "@reactComponents/LogoDark";
+
 import GiftList from "@astroComponents/GiftList.astro";
+import Head from "./Head.astro";
+import Header from "./Header.astro";
+import Footer from "./Footer.astro";
+
 import CategoryFilter from "@astroComponents/CategoryFilter.astro";
-import { ViewTransitions } from "astro:transitions";
-import { getLangFromUrl, useTranslations } from "@i18n/utils";
+
+import { getLangFromUrl, useTranslations, getLocaleFromUrl } from "@i18n/utils";
 import { ui } from "@i18n/ui";
-import LangSwitcher from "@reactComponents/LangSwitcher";
 
 import "../styles/global.scss";
-import { getLocaleFromUrl } from "../i18n/utils";
 
 interface Props {
 	title: string;
 	isCategoryPage: boolean;
 }
-
-const isProd = import.meta.env.PROD;
 
 const URL = Astro.url.pathname;
 
@@ -40,76 +39,24 @@ if (isCategoryPage) {
 
 <!doctype html>
 <html lang={lang}>
-<head>
-  <meta charset="UTF-8"/>
-  <meta name="description" content={t("seo.description")}/>
-  <meta name="viewport" content="width=device-width"/>
-  <meta name="keywords" content={t("seo.keywords")}>
-  <link rel="sitemap" href="/sitemap-index.xml"/>
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@500&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
-    rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-reboot@4.5.6/reboot.min.css" rel="stylesheet">
-	{isProd && (
-		<script async src="https://www.googletagmanager.com/gtag/js?id=G-JWTCBEGBVB"></script>
-		<script>
-			window.dataLayer = window.dataLayer || [];
-
-			function gtag() {
-				window.dataLayer.push(arguments);
-			}
-
-			gtag("js", new Date());
-
-			gtag("config", "G-JWTCBEGBVB");
-			</script>
-	)}
-  <meta name="generator" content={Astro.generator}/>
-  <title>{`Gift Ideas Hub: ${title}`}</title>
-  <ViewTransitions/>
-</head>
+<Head title={title}/>
 <body>
-<div>
-  <header class="header">
-    <div class="header__container">
-      <a class="header__logo" href={`/${locale}`}>
-        <LogoDark />
-      </a>
+<Header />
+<div class="app-container">
+  <main>
+    <slot/>
+  </main>
 
-      <div class="header__nav">
-        <Navigation currentPage={pathname}/>
+	{(isCategoryPage) &&
+    <aside>
+      <div class="categoryItems">
+        <CategoryFilter activeCategory={category}/>
+        <GiftList category={category} activeGiftSlug={activeGiftSlug}/>
       </div>
-
-      <div class="header__rigthSlot">
-        <LangSwitcher pathname={pathname}/>
-      </div>
-    </div>
-  </header>
-
-  <div class="app-container">
-    <main>
-      <slot/>
-    </main>
-
-		{(isCategoryPage) &&
-      <aside>
-        <div class="categoryItems">
-          <CategoryFilter activeCategory={category}/>
-          <GiftList category={category} activeGiftSlug={activeGiftSlug}/>
-        </div>
-      </aside>
-		}
-  </div>
-
-  <footer class="footer">
-    <div class="footer__container">
-      © 2023, GiftIdea. All Rights Reserved.
-    </div>
-  </footer>
+    </aside>
+	}
 </div>
+<Footer />
 </body>
 </html>
 
@@ -121,39 +68,9 @@ if (isCategoryPage) {
 		background-size: cover;
 	}
 
-	.header {
-		&__container {
-			padding: .5rem 15px;
-			display: flex;
-      flex-flow: row wrap;
-			justify-content: space-between;
-			align-items: center;
-			max-width: 1300px;
-			margin: 0 auto;
-		}
-
-		&__logo {
-      display: block;
-			width: 165px;
-      transition: 0.3s transform;
-      cursor: pointer;
-
-      &:hover {
-        transform: scale(1.04);
-      }
-		}
-
-    &__nav {
-      @media screen and (max-width: 800px) {
-        order: 1;
-        width: 100%;
-      }
-    }
-	}
-
 	.app-container {
 		max-width: 1160px;
-    min-height: calc(100vh - 135px);
+		min-height: calc(100vh - 135px);
 		padding: 2rem 15px 15px;
 		margin: 0 auto;
 		display: flex;
@@ -180,17 +97,4 @@ if (isCategoryPage) {
 		position: sticky;
 		top: 10px;
 	}
-
-  .footer {
-    &__container {
-      font-size: 0.9rem;
-      font-weight: 300;
-      padding: 1.25rem 15px 0.75rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      max-width: 1300px;
-      margin: 0 auto;
-    }
-  }
 </style>
