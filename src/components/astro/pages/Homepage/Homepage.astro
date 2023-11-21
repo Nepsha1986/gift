@@ -17,7 +17,7 @@ const t = useTranslations(lang, translations)
 const viewIdeasLink = translatePath("/gifts/for-women/adventure-experience-for-women");
 ---
 
-<Layout title={t('page.title')}>
+<Layout title={t('page.title')} isLanding={true}>
   <section class="intro">
     <div class="intro__container">
       <div style={{marginBottom: '7rem'}}>
@@ -48,7 +48,7 @@ const viewIdeasLink = translatePath("/gifts/for-women/adventure-experience-for-w
 
 <style lang="scss">
 	.intro {
-		height: 100%;
+		height: calc(100vh - 82px);
 
 		&__container {
 			max-width: 1300px;
