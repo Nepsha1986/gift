@@ -37,7 +37,12 @@ const viewIdeasLink = translatePath("/gifts/for-women/adventure-experience-for-w
 
 <style is:global>
   .intro__text a {
-    color: var(--c-secondary);
+    color: var(--c-secondary-light);
+    transition: .3s;
+
+    &:hover {
+      color: var(--c-secondary);
+    }
   }
 </style>
 
