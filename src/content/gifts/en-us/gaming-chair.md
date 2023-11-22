@@ -6,6 +6,7 @@ thumbnail: ../../img/office_chair.webp
 category: "for-teens"
 meta:
     age: 12+
+featured: true
 ---
 On the hunt for a gift that enhances comfort, style, and gaming performance? A gaming chair is the ultimate choice! Whether you're shopping for a dedicated gamer, a streamer, or someone looking to elevate their home office, a gaming chair delivers support and luxury for extended gaming sessions.
 

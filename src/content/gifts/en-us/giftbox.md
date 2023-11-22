@@ -6,6 +6,7 @@ thumbnail: ../../img/gift_box.webp
 category: "for-kids"
 meta:
     age: 3+
+featured: true
 ---
 Looking for a thoughtful and exciting gift for children? Explore our Kids' Gift Boxes, carefully curated to bring joy, education, and endless hours of fun to young minds. Whether you're shopping for a birthday, holiday, or just to see a child's face light up, these themed gift boxes are sure to delight.
 

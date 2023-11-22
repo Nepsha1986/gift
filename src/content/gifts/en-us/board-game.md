@@ -9,6 +9,7 @@ modules:
   - Ads
 meta:
     age: 6+
+featured: true
 ---
 Looking for a gift that fosters fun, laughter, and memorable moments? Consider gifting them a captivating board game. It's a fantastic way to bring friends and family together for hours of entertainment.
 
