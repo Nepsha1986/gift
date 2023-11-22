@@ -6,6 +6,7 @@ thumbnail: ../../img/plastelin.webp
 category: "for-kids"
 meta:
     age: 8+
+featured: true
 ---
 Looking for a gift that ignites the spark of creativity and provides hours of artistic enjoyment? Craft gifts are the perfect choice! Whether you're shopping for a budding artist, a DIY enthusiast, or someone looking to explore their creative side, craft gifts are a delightful way to inspire and engage.
 

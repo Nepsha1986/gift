@@ -6,6 +6,7 @@ thumbnail: ../../img/bulldog.webp
 category: "for-teens"
 meta:
     age: 13-19
+featured: true
 ---
 Bringing a pet into a teenager's life can be a truly special and life-changing gift. If you have a responsible and caring teenager who has been longing for a furry companion, consider the gift of a pet. Pets offer unconditional love, companionship, and valuable life lessons in responsibility and empathy.
 

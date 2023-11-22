@@ -1,0 +1,21 @@
+.categorySwitcher {
+  display: flex;
+  max-width: 600px;
+  margin: 0 auto 1rem;
+  position: relative;
+
+  &__activeIndicator {
+    position: absolute;
+    bottom: 0;
+    height: 2px;
+    background: var(--c-secondary);
+    transition: 0.3s linear;
+  }
+}
+
+.switcher {
+  width: 100%;
+  text-align: center;
+  cursor: pointer;
+  padding: 5px 10px;
+}

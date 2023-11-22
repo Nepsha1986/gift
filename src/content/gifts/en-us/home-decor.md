@@ -6,6 +6,7 @@ thumbnail: ../../img/photo_frame.webp
 category: "for-women"
 meta:
     age: 18+
+featured: true
 ---
 Transform your living spaces into havens of style and comfort with our curated collection of home decor items. Whether you're redecorating your home or searching for the perfect gift, these stylish pieces will add personality and charm to any room.
 

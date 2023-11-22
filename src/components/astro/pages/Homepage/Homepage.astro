@@ -1,9 +1,11 @@
 ---
+import { getCollection } from "astro:content";
 import Layout from "@layouts/Layout.astro";
-import { useTranslatedPath, getLocaleFromUrl, getLangFromUrl, useTranslations } from "@i18n/utils";
-import { getImage } from "astro:assets";
+import { useTranslatedPath, getLocaleFromUrl, getLangFromUrl, useTranslations, getLocaleFromSlug } from "@i18n/utils";
+import { getImage, Image } from "astro:assets";
 import translations from "./translations";
 import background from "@public/assets/bg-1.png";
+import FeaturedIdeas from "src/components/react/FeaturedIdeas";
 
 const URL = Astro.url.pathname;
 const bg = await getImage({src: background, format: 'png'})
@@ -12,7 +14,9 @@ const locale = getLocaleFromUrl(URL);
 const lang = getLangFromUrl(URL);
 const translatePath = useTranslatedPath(locale);
 
-const t = useTranslations(lang, translations)
+const t = useTranslations(lang, translations);
+const giftsEntries = await getCollection("gifts");
+const featured = giftsEntries.filter(i => getLocaleFromSlug(i.slug) === locale).filter(i => !!i.data?.featured);
 
 const viewIdeasLink = translatePath("/gifts/for-women/adventure-experience-for-women");
 ---
@@ -33,6 +37,15 @@ const viewIdeasLink = translatePath("/gifts/for-women/adventure-experience-for-w
   </section>
 
   <div class="bg" style={`background-image: url(${bg.src});`}></div>
+
+  <FeaturedIdeas client:load lang={lang} locale={locale} featured={featured.map(i => ({
+    description: i.data.description,
+    link: i.slug,
+    slug: i.slug,
+    title: i.data.title,
+    category: i.data.category,
+    imgSrc: i.data.thumbnail.src
+  }))} />
 </Layout>
 
 <style is:global>

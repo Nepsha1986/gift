@@ -8,7 +8,7 @@ interface Props {
   description: string;
   children: React.ReactNode;
   link: string;
-  active: boolean;
+  active?: boolean;
 }
 const GiftCard: React.FC<Props> = ({
   index,

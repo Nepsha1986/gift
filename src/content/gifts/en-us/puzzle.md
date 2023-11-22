@@ -6,6 +6,7 @@ thumbnail: ../../img/puzzle.webp
 category: "for-kids"
 meta:
     age: 8+
+featured: true
 ---
 Looking for a gift that stimulates the mind, sparks creativity, and brings a sense of accomplishment? Consider gifting them a captivating puzzle. It's a relaxing yet mentally engaging activity that promises hours of joy.
 

@@ -6,6 +6,7 @@ thumbnail: ../../img/bicycle_small.webp
 category: "for-kids"
 meta:
     age: 8+
+featured: true
 ---
 Looking for a gift that combines fitness, fun, and the great outdoors? Consider gifting a bicycle! Whether it's for a child, a friend, or a family member, a quality bicycle is a fantastic way to encourage outdoor adventures and a healthier lifestyle.
 

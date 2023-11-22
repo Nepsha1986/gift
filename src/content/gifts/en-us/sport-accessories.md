@@ -6,6 +6,7 @@ thumbnail: ../../img/football_ball.webp
 category: "for-teens"
 meta:
     age: 13-19
+featured: true
 ---
 Get ready to hit the field, court, or track with these sporty accessories designed specifically for teenagers. Whether they're passionate about team sports, individual athletics, or just staying active, these items will make their sports adventures even more enjoyable.
 
