@@ -4,17 +4,12 @@ import classNames from "classnames";
 import { type Category } from "@src/types/category.ts";
 import styles from "./styles.module.scss";
 
-const Switcher = ({
-  category,
-  label,
-  active,
-  onClick,
-}: {
+const Switcher: React.FC<{
   category: Category;
-  label: String;
+  label: string;
   active: boolean;
   onClick: (category: Category) => void;
-}) => {
+}> = ({ category, label, active, onClick }) => {
   const className = classNames(styles.switcher, {
     [styles.switcher_active]: active,
   });

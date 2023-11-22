@@ -1,8 +1,16 @@
 import React, { useState } from "react";
-import GiftCard from "@reactComponents/GiftCard";
 
+import GiftCard from "@reactComponents/GiftCard";
 import type { Category } from "@src/types/category.ts";
 import CategorySwitcher from "./CategorySwitcher";
+
+import { type SupportedLanguages, type SupportedLocales } from "@i18n/ui.ts";
+import {
+  getCleanSlug,
+  useTranslatedPath,
+  useTranslations,
+} from "@i18n/utils.ts";
+import translations from "./translations.ts";
 
 import styles from "./styles.module.scss";
 
@@ -15,22 +23,30 @@ interface Idea {
   imgSrc: string;
 }
 
-type FeatureIdeasProps = {
+interface FeaturedIdeasProps {
+  lang: SupportedLanguages;
+  locale: SupportedLocales;
   featured: Idea[];
-};
-const FeatureIdeas: React.FC<FeatureIdeasProps> = ({ featured }) => {
+}
+
+const FeaturedIdeas: React.FC<FeaturedIdeasProps> = ({
+  featured,
+  lang,
+  locale,
+}) => {
   const [activeCategory, setActiveCategory] = useState<Category>("for-women");
   const visible = featured.filter((i) => i.category === activeCategory);
+
+  const translatePath = useTranslatedPath(locale);
+  const t = useTranslations(lang as SupportedLanguages, translations);
 
   return (
     <section className={styles.featured}>
       <div className={styles.featured__container}>
         <header className={styles.featured__header}>
-          <h1 className={styles.featured__heading}>Featured</h1>
+          <h1 className={styles.featured__heading}>{t("section.heading")}</h1>
           <p className={styles.featured__subheading}>
-            If you need the greatest collection of HTML templates for your
-            business, please visit TooCSS Blog. If you need to have a contact
-            form PHP script, go to our contact page for more information.
+            {t("section.subheading")}
           </p>
         </header>
 
@@ -43,15 +59,17 @@ const FeatureIdeas: React.FC<FeatureIdeasProps> = ({ featured }) => {
           <div className={styles.featuredIdeas}>
             {!!visible.length &&
               visible.map((i, index) => (
-                <div className={styles.featuredIdeas__item}>
+                <div className={styles.featuredIdeas__item} key={i.slug}>
                   <GiftCard
                     index={index + 1}
                     key={i.slug}
                     title={i.title}
                     description={i.description}
-                    link={i.link}
+                    link={translatePath(
+                      `/gifts/${i.category}/${getCleanSlug(i.slug)}`,
+                    )}
                   >
-                    {/*TODO: Review. THINK HOW TO OPTIMIZE?*/}
+                    {/* TODO: Review. THINK HOW TO OPTIMIZE? */}
                     <img
                       src={i.imgSrc}
                       alt={i.title}
@@ -68,4 +86,4 @@ const FeatureIdeas: React.FC<FeatureIdeasProps> = ({ featured }) => {
   );
 };
 
-export default FeatureIdeas;
+export default FeaturedIdeas;
