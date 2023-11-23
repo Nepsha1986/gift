@@ -11,6 +11,7 @@ import {
   useTranslations,
 } from "@i18n/utils.ts";
 import translations from "./translations.ts";
+import categories from "@i18n/translations/categories.ts";
 
 import styles from "./styles.module.scss";
 
@@ -38,19 +39,42 @@ const FeaturedIdeas: React.FC<FeaturedIdeasProps> = ({
   const visible = featured.filter((i) => i.category === activeCategory);
 
   const translatePath = useTranslatedPath(locale);
-  const t = useTranslations(lang as SupportedLanguages, translations);
+
+  const t = useTranslations(lang, translations);
+  const t2 = useTranslations(lang, categories);
+
+  const items: Array<{ category: Category; label: string }> = [
+    {
+      category: "for-women",
+      label: t2("for-women"),
+    },
+    {
+      category: "for-men",
+      label: t2("for-men"),
+    },
+    {
+      category: "for-teens",
+      label: t2("for-teens"),
+    },
+    {
+      category: "for-kids",
+      label: t2("for-kids"),
+    },
+  ];
 
   return (
     <section className={styles.featured}>
       <div className={styles.featured__container}>
         <header className={styles.featured__header}>
           <h1 className={styles.featured__heading}>{t("section.heading")}</h1>
-          <p className={styles.featured__subheading}>
-            {t("section.subheading")}
-          </p>
+          <div
+            className={styles.featured__subheading}
+            dangerouslySetInnerHTML={{ __html: t("section.subheading") }}
+          />
         </header>
 
         <CategorySwitcher
+          items={items}
           activeCategory={activeCategory}
           onClickCategory={setActiveCategory}
         />

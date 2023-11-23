@@ -5,29 +5,13 @@ import Switcher from "./Switcher.tsx";
 import styles from "./styles.module.scss";
 
 interface CategorySwitcherProps {
+  items: Array<{ category: Category; label: string }>;
   activeCategory: Category;
   onClickCategory: (category: Category) => void;
 }
 
-const items: Array<{ category: Category; label: string }> = [
-  {
-    category: "for-women",
-    label: "For women",
-  },
-  {
-    category: "for-men",
-    label: "For men",
-  },
-  {
-    category: "for-teens",
-    label: "For teems",
-  },
-  {
-    category: "for-kids",
-    label: "For kids",
-  },
-];
 const CategorySwitcher: React.FC<CategorySwitcherProps> = ({
+  items,
   activeCategory,
   onClickCategory,
 }) => {
