@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 
+import { Button } from "@src/common";
 import GiftCard from "@reactComponents/GiftCard";
 import type { Category } from "@src/types/category.ts";
 import CategorySwitcher from "./CategorySwitcher";
@@ -27,11 +28,13 @@ interface Idea {
 interface FeaturedIdeasProps {
   lang: SupportedLanguages;
   locale: SupportedLocales;
+  categoryLinks: Record<Category, string>;
   featured: Idea[];
 }
 
 const FeaturedIdeas: React.FC<FeaturedIdeasProps> = ({
   featured,
+  categoryLinks,
   lang,
   locale,
 }) => {
@@ -104,6 +107,15 @@ const FeaturedIdeas: React.FC<FeaturedIdeasProps> = ({
                 </div>
               ))}
           </div>
+        </div>
+
+        <div className={styles.featured__btn}>
+          <Button
+            color="primary"
+            link={translatePath(categoryLinks[activeCategory])}
+          >
+            {t("section.btn_text")}
+          </Button>
         </div>
       </div>
     </section>

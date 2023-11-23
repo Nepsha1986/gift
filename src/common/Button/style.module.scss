@@ -46,3 +46,9 @@
     opacity: 0.8;
   }
 }
+
+a.button {
+  &:hover {
+    color: #fff;
+  }
+}
