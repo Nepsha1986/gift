@@ -1,0 +1,30 @@
+---
+import { getCollection } from "astro:content";
+import { useTranslatedPath, getLocaleFromUrl, getLangFromUrl, getLocaleFromSlug } from "@i18n/utils";
+import FeaturedIdeas from "@src/components/react/FeaturedIdeas";
+import { Category } from "@src/types/category";
+
+const URL = Astro.url.pathname;
+
+const locale = getLocaleFromUrl(URL);
+const lang = getLangFromUrl(URL);
+const translatePath = useTranslatedPath(locale);
+
+const giftsEntries = await getCollection("gifts");
+const featured = giftsEntries.filter(i => getLocaleFromSlug(i.slug) === locale).filter(i => !!i.data?.featured);
+
+const tempCategoriesLinks = {
+  "for-women": "/gifts/for-women/adventure-experience-for-women",
+  "for-men": "/gifts/for-men/adventure-experiences-for-men",
+  "for-teens": "/gifts/for-teens/board-game",
+  "for-kids": "/gifts/for-kids/arts-and-craft-kits",
+};
+---
+<FeaturedIdeas  client:load categoryLinks={tempCategoriesLinks} lang={lang} locale={locale} featured={featured.map(i => ({
+  description: i.data.description,
+  link: i.slug,
+  slug: i.slug,
+  title: i.data.title,
+  category: i.data.category,
+  imgSrc: i.data.thumbnail.src
+}))} />

@@ -12,7 +12,7 @@ const locale = getLocaleFromUrl(Astro.url.pathname);
 
 const t = useTranslations(lang, ui);
 const translatePath = useTranslatedPath(locale);
-const categories: Category[] = ["for-women", "for-men", "for-kids", "for-teens"];
+const categories: Category[] = ["for-women", "for-men", "for-teens", "for-kids"];
 
 const getFirstItemLink = (category: Category): string => {
   const filteredByLang = gifts.filter(i => getLangFromSlug(i.slug) === lang);

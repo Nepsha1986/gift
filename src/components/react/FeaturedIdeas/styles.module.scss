@@ -26,6 +26,12 @@
     font-size: 1.05rem;
     color: var(--c-grey);
   }
+
+  &__btn {
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+  }
 }
 
 .featuredIdeas {
