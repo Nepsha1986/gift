@@ -1,22 +1,24 @@
 import type { Translations } from "@i18n/ui.ts";
 
-type FeaturedIdeasTranslations = "section.heading" | "section.subheading";
+export type FeaturedIdeasTranslations =
+  | "section.heading"
+  | "section.subheading";
 
 const translations: Translations<FeaturedIdeasTranslations> = {
   en: {
     "section.heading": "Featured",
     "section.subheading":
-      "Elevate your gift-giving experience with our featured picks that promise inspiration, delight, and a lasting impression.",
+      "Discover the best <strong>gift ideas</strong> in our carefully curated selections. Regardless of the occasion, our compilations offer unique and inspiring gifts. Immerse yourself in a world of creativity, where each gift becomes not only an expression of care but also a special moment in the life of your loved one.",
   },
   ru: {
     "section.heading": "Избранные",
     "section.subheading":
-      "Повысьте уровень вашего опыта в дарении подарков с нашими лучшими выборами, которые обещают вдохновение, восторг и непередаваемое впечатление.",
+      "Откройте для себя лучшие <strong>идеи подарков</strong> в наших тщательно отобранных рекомендациях. Независимо от повода, наши подборки предлагают уникальные и вдохновляющие подарки. Погрузитесь в мир творчества, где каждый подарок становится не только проявлением заботы, но и особым моментом в жизни вашего близкого.",
   },
   uk: {
     "section.heading": "Обрані",
     "section.subheading":
-      "Підніміть рівень свого досвіду в даруванні подарунків з нашими обраними варіантами, які обіцяють надихання, захоплення і тривале враження.",
+      "Відкрийте для себе найкращі <strong>ідеї подарунків</strong> у наших ретельно підібраних рекомендаціях. Незалежно від приводу, наші підбірки пропонують унікальні та надихаючі подарунки. Зануртеся в світ творчості, де кожен подарунок стає не лише вираженням турботи, але й особливим моментом у житті вашого близького.",
   },
 };
 

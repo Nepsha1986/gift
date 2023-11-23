@@ -17,7 +17,7 @@ const getLink = (slug: string, category?: Category): string => translatePath(`/g
 
 
 <div class="giftList">
-  {!!filtered.length && filtered.map((i, index: number) => (
+  {!!filtered.length && filtered.map((i, index) => (
     <GiftCard
       index={index + 1}
       key={i.slug}
