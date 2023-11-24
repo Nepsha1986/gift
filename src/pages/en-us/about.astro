@@ -1,14 +1,38 @@
 ---
-import Layout from '@layouts/Layout.astro';
+import Layout from "@layouts/Layout.astro";
 ---
 
 <Layout title="About">
-  <h1>About us</h1>
-  <p>Welcome to our gift-finding website! We are dedicated to helping you find the perfect gifts for your loved ones, no matter the occasion.</p>
+  <div style={{ marginBottom: "2rem" }}>
+    <h1>About us</h1>
+    <p>Welcome to our gift-finding website! We are dedicated to helping you find the perfect gifts for your loved ones,
+      no matter the occasion.</p>
 
-  <p>Our mission is to make the gift-giving process easier and more enjoyable. We understand that finding the right gift can be a challenge, so we've curated a collection of thoughtful and unique gift ideas to inspire you.</p>
+    <p>Our mission is to make the gift-giving process easier and more enjoyable. We understand that finding the right
+      gift can be a challenge, so we've curated a collection of thoughtful and unique gift ideas to inspire you.</p>
 
-  <p>Whether it's a birthday, anniversary, holiday, or any special moment, our website is here to assist you in selecting gifts that will bring smiles and happiness to your friends and family. Use our search and filtering options to discover the ideal presents that match your recipient's interests and preferences.</p>
+    <p>Whether it's a birthday, anniversary, holiday, or any special moment, our website is here to assist you in
+      selecting gifts that will bring smiles and happiness to your friends and family. Use our search and filtering
+      options to discover the ideal presents that match your recipient's interests and preferences.</p>
 
-  <p>If you have any questions or suggestions, please don't hesitate to <a href="/en-us/contacts">contact us</a>. We value your feedback and are committed to continually improving our service to make your gift-giving experience exceptional.</p>
+    <p>If you have any questions or suggestions, please don't hesitate to <a href="/en-us/contacts">contact us</a>. We
+      value your feedback and are committed to continually improving our service to make your gift-giving experience
+      exceptional.</p>
+  </div>
+
+  <div>
+    <h2>Acknowledgment to resources</h2>
+    <h3>Thanks to the OpenAI team for GPT-3.5.</h3>
+    <p>While we are developing our resource and aiming to create unique and engaging content for users, at the start of
+      the project, most articles were generated using GPT-3.5. We want to express sincere gratitude for your
+      contribution to our project. We appreciate your hard work and commitment to excellence in the field of artificial
+      intelligence. </p>
+    <h3>Pixabay</h3>
+    <p>We express immense gratitude to the Pixabay community for their generosity in providing free and high-quality
+      images. </p>
+    <a href="https://pixabay.com/" target="_blank">
+      <img style={{ width: "100%", maxWidth: "600px" }} src="https://pixabay.com/static/img/public/leaderboard_b.png"
+           alt="Pixabay">
+    </a>
+  </div>
 </Layout>
