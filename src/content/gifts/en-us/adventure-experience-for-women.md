@@ -7,8 +7,6 @@ author:
 date: '2023-11-24'
 thumbnail: ../../img/hot_air_balloon.webp
 category: "for-women"
-meta:
-  age: 18+
 ---
 
 If your girlfriend, wife, or just a close friend leads an active lifestyle and can't live without adventures and an adrenaline rush, then our selection of exciting gift ideas will come in handy. Depending on where you live, these can be completely different adventures. For example, if you live near mountains, a long hike with a picnic stop and food you've prepared yourself can be a wonderful gift. But if you're looking for something more unusual and exciting, here are a few ideas:
