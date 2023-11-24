@@ -5,7 +5,8 @@ date: '2023-11-24'
 thumbnail: ../../img/skydiving.webp
 category: "for-men"
 author:
-  name: Alex Nepsha
+  fullName: 'Alex Nepsha'
+  link: 'https://www.linkedin.com/in/alex-nepsha-851a23115/'
 meta:
   age: 18+
 ---
