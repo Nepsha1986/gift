@@ -34,7 +34,13 @@ const Button: React.FC<Props> = ({
     );
 
   return (
-    <button type="button" onClick={onClick} className={className} style={style}>
+    <button
+      type="button"
+      onClick={onClick}
+      className={className}
+      disabled={disabled}
+      style={style}
+    >
       {children}
     </button>
   );
