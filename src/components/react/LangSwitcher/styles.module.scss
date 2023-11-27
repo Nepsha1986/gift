@@ -2,16 +2,14 @@
   $self: &;
 
   padding: 3px 7px;
-  min-width: 120px;
-  font-size: 0.65rem;
+  font-size: 0.85rem;
   border-radius: 3px;
   display: block;
-  width: 150px;
+  width: 175px;
 
   &__icon {
     margin-left: 7px;
-    width: 20px;
-    height: 20px;
+    font-size: 1rem;
     display: inline-block;
   }
 
@@ -29,14 +27,13 @@
 }
 
 .langSwitcher {
-  $self: &;
+  $this: &;
 
   position: relative;
-  width: 150px;
   z-index: 2;
 
   &:hover {
-    #{$self}__list {
+    #{$this}__list {
       height: auto;
       opacity: 1;
     }
@@ -50,8 +47,19 @@
     overflow: hidden;
     opacity: 0;
     position: absolute;
-    top: 100%;
     left: 0;
     transition: 0.3s opacity;
+  }
+
+  &_dropdownBottom {
+    #{$this}__list {
+      top: 100%;
+    }
+  }
+
+  &_dropdownTop {
+    #{$this}__list {
+      bottom: 100%;
+    }
   }
 }

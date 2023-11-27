@@ -27,6 +27,7 @@ const locales: Record<
 
 interface Props {
   pathname: string;
+  direction?: "top" | "bottom";
 }
 
 const LangSwitcherItem: React.FC<{
@@ -43,19 +44,24 @@ const LangSwitcherItem: React.FC<{
       <span className={styles.langSwitcherItem__label}>{label}</span>
       {active && (
         <span className={styles.langSwitcherItem__icon}>
-          <FontAwesomeIcon size="sm" icon={faGlobe} />
+          <FontAwesomeIcon icon={faGlobe} />
         </span>
       )}
     </a>
   );
 };
 
-const LangSwitcher: React.FC<Props> = ({ pathname }) => {
+const LangSwitcher: React.FC<Props> = ({ pathname, direction = "bottom" }) => {
   const activeLocale = getLocaleFromUrl(pathname);
   const path = "/" + pathname.split("/").slice(2).join("/");
 
+  const classname = classNames(styles.langSwitcher, {
+    [styles.langSwitcher_dropdownBootom]: direction === "bottom",
+    [styles.langSwitcher_dropdownTop]: direction === "top",
+  });
+
   return (
-    <div className={styles.langSwitcher}>
+    <div className={classname}>
       <LangSwitcherItem active label={locales[activeLocale].label} />
 
       <ul className={styles.langSwitcher__list}>
