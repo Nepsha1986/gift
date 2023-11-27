@@ -1,8 +1,16 @@
 ---
+import LangSwitcher from "@reactComponents/LangSwitcher";
+import { removeTrailingSlash } from "@utils/removeTrailingSlash";
+
+const URL = Astro.url.pathname;
+const pathname = removeTrailingSlash(URL);
 ---
+
 <footer class="footer">
   <div class="footer__container">
-    © 2023, GiftIdea. All Rights Reserved.
+    <span>&copy; 2023, GiftIdea. All Rights Reserved.</span>
+
+    <LangSwitcher pathname={pathname} direction="top" />
   </div>
 </footer>
 

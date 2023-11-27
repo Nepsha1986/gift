@@ -5,6 +5,7 @@ import { removeTrailingSlash } from "../utils/removeTrailingSlash";
 import LangSwitcher from "../components/react/LangSwitcher";
 import Navigation from "../components/react/Navigation";
 import LogoDark from "../components/react/LogoDark";
+import MobileMenu from "../components/react/MobileMenu";
 
 const URL = Astro.url.pathname;
 
@@ -15,15 +16,21 @@ const pathname = removeTrailingSlash(URL);
 <header class="header">
   <div class="header__container">
     <a class="header__logo" href={`/${locale}`}>
-      <LogoDark/>
+      <LogoDark />
     </a>
 
     <div class="header__nav">
-      <Navigation currentPage={pathname}/>
+      <Navigation currentPage={pathname} />
     </div>
 
-    <div class="header__rigthSlot">
-      <LangSwitcher pathname={pathname}/>
+    <div class="header__rightSlot">
+      <LangSwitcher pathname={pathname} />
+    </div>
+
+    <div class="header__mobileNav">
+      <MobileMenu client:load>
+        <Navigation currentPage={pathname} slot="navigation" type="mobile" />
+      </MobileMenu>
     </div>
   </div>
 </header>
@@ -51,10 +58,25 @@ const pathname = removeTrailingSlash(URL);
 			}
 		}
 
+		&__rightSlot {
+			display: none;
+
+			@media screen and (min-width: 960px) {
+				display: block;
+			}
+		}
+
 		&__nav {
-			@media screen and (max-width: 800px) {
-				order: 1;
-				width: 100%;
+			display: none;
+
+			@media screen and (min-width: 960px) {
+				display: block;
+			}
+		}
+
+		&__mobileNav {
+			@media screen and (min-width: 960px) {
+				display: none;
 			}
 		}
 	}

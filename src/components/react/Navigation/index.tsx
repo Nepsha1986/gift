@@ -35,21 +35,27 @@ const navItems: Array<[string, NavTranslationStrings]> = [
 
 interface Props {
   currentPage: string;
+  type?: "desktop" | "mobile";
 }
 
 const getParentFromUrl = (url: string): string => {
   return url.split("/")[2];
 };
 
-const Navigation: React.FC<Props> = ({ currentPage }) => {
+const Navigation: React.FC<Props> = ({ currentPage, type = "desktop" }) => {
   const locale = getLocaleFromUrl(currentPage);
   const lang = getLangFromUrl(currentPage);
   const currentPageParent = getParentFromUrl(currentPage);
   const t = useTranslations(lang, ui);
   const translatePath = useTranslatedPath(locale);
 
+  const classname = classNames(styles.navigation, {
+    [styles.navigation_desctop]: type === "desktop",
+    [styles.navigation_mobile]: type === "mobile",
+  });
+
   return (
-    <nav className={styles.navigation}>
+    <nav className={classname}>
       {navItems.map((i) => {
         const navItemParent = i[0].split("/")[1];
         const navItemClass = classNames(styles.navigation__item, {

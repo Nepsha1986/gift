@@ -1,0 +1,33 @@
+.mobileMenu {
+  $this: &;
+
+  text-align: right;
+
+  &__nav {
+    background: #fff;
+    padding: 1rem;
+    z-index: 9999;
+    position: fixed;
+    width: 320px;
+    top: 0;
+    bottom: 0;
+    right: -320px;
+    transition: 0.5s;
+    will-change: right;
+  }
+
+  &_active {
+    #{$this}__overlay {
+      position: absolute;
+      width: 100dvw;
+      height: 100dvh;
+      left: 0;
+      top: 0;
+      background: rgba(0, 0, 0, 0.75);
+    }
+
+    #{$this}__nav {
+      right: 0;
+    }
+  }
+}
