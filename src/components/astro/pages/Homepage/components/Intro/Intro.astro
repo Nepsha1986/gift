@@ -1,11 +1,20 @@
 ---
+import { getImage, Image } from "astro:assets";
+import CategoryLink from "./components/CategoryLink.astro";
+
 import { useTranslatedPath, getLocaleFromUrl, getLangFromUrl, useTranslations } from "@i18n/utils";
-import { getImage } from "astro:assets";
 import translations from "./translations";
+
+import { categoryLinks } from "@utils/categoryLinks";
+
+import manImg from "@src/assets/man.webp";
+import womanImg from "@src/assets/woman.webp";
+import teenImg from "@src/assets/teen.webp";
+import kidImg from "@src/assets/kid.webp";
 import background from "@public/assets/bg-1.png";
 
 const URL = Astro.url.pathname;
-const bg = await getImage({src: background, format: 'png'})
+const bg = await getImage({ src: background, format: "png" });
 
 const locale = getLocaleFromUrl(URL);
 const lang = getLangFromUrl(URL);
@@ -13,20 +22,52 @@ const translatePath = useTranslatedPath(locale);
 
 const t = useTranslations(lang, translations);
 
-const viewIdeasLink = translatePath("/gifts/for-women/adventure-experience-for-women");
-
+const womenCategoryLink = translatePath(categoryLinks["for-women"]);
+const menCategoryLink = translatePath(categoryLinks["for-men"]);
+const teensCategoryLink = translatePath(categoryLinks["for-teens"]);
+const kidsCategoryLink = translatePath(categoryLinks["for-kids"]);
 ---
 <Fragment>
   <section class="intro">
     <div class="intro__container">
-      <div style={{marginBottom: '7rem'}}>
-        <h1 class="intro__heading">{t('intro.heading')}</h1>
+      <div class="intro__content">
+        <h1 class="intro__heading">{t("intro.heading")}</h1>
 
-        <h2 class="intro__subheading">{t('intro.subheading')}</h2>
+        <h2 class="intro__subheading">{t("intro.subheading")}</h2>
 
-        <p class="intro__text"><Fragment set:html={t('intro.text')} /></p>
+        <p class="intro__text">
+          <Fragment set:html={t("intro.text")} />
+        </p>
 
-        <a href={viewIdeasLink}>{t('intro.btn_text')}</a>
+        <div class="intro__categoryLinks">
+          <div class="intro__categoryLink">
+            <CategoryLink link={womenCategoryLink}>
+              <slot set:html={t("cat.women")} />
+              <Image class="img-cover" width="160px" height="160px" slot="img" src={womanImg} alt="woman" />
+            </CategoryLink>
+          </div>
+
+          <div class="intro__categoryLink">
+            <CategoryLink link={menCategoryLink}>
+              <slot set:html={t("cat.men")} />
+              <Image class="img-cover" width="160px" height="160px" slot="img" src={manImg} alt="man" />
+            </CategoryLink>
+          </div>
+
+          <div class="intro__categoryLink">
+            <CategoryLink link={teensCategoryLink}>
+              <slot set:html={t("cat.teens")} />
+              <Image class="img-cover" width="160px" height="160px" slot="img" src={teenImg} alt="teen" />
+            </CategoryLink>
+          </div>
+
+          <div class="intro__categoryLink">
+            <CategoryLink link={kidsCategoryLink}>
+              <slot set:html={t("cat.kids")} />
+              <Image class="img-cover" width="160px" height="160px" slot="img" src={kidImg} alt="kid" />
+            </CategoryLink>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -55,7 +96,15 @@ const viewIdeasLink = translatePath("/gifts/for-women/adventure-experience-for-w
 			padding: 2rem 15px;
 			margin: 0 auto;
 			display: flex;
+			flex-flow: row wrap;
 			align-items: center;
+			justify-content: space-between;
+			gap: 1rem;
+		}
+
+		&__content {
+			margin-bottom: 3rem;
+			max-width: 870px;
 		}
 
 		&__heading {
@@ -69,7 +118,20 @@ const viewIdeasLink = translatePath("/gifts/for-women/adventure-experience-for-w
 		&__text {
 			color: var(--c-grey-dark);
 			font-size: 1.2rem;
-			max-width: 600px;
+        margin-bottom: 3rem;
+		}
+
+		&__categoryLinks {
+			display: flex;
+			flex-flow: row wrap;
+			gap: 1rem;
+			justify-content: center;
+		}
+
+		&__categoryLink {
+			flex-basis: 350px;
+			flex-grow: 1;
+			max-width: 450px;
 		}
 	}
 
