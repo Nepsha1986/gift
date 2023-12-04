@@ -1,16 +1,26 @@
 .banner {
+  $icon-size: 24px;
+
   padding: 1rem;
   border: 1px solid var(--c-grey-lightest);
   border-radius: 5px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 0.5rem;
+  position: relative;
 
   &__image {
-    max-width: 48px;
-    width: 100%;
-    color: var(--c-grey);
+    color: var(--c-info);
+    position: absolute;
+    top: - calc($icon-size/2);
+    left: - calc($icon-size/2);
+    width: $icon-size;
+    height: $icon-size;
+    border-radius: calc($icon-size/2);
+    box-shadow: 0 0 2px 2px #fff;
+    background: #fff;
+
+    svg {
+      font-size: $icon-size;
+      display: inline-block;
+    }
   }
 
   &__text {
