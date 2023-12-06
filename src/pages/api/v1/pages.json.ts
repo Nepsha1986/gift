@@ -14,6 +14,6 @@ const pages: IdeaPage[] = giftsEntries.map((i) => ({
   modules: (i.data.modules as ModuleName[]) || [],
 }));
 
-export async function GET() {
+export async function GET(): Promise<Response> {
   return new Response(JSON.stringify(pages));
 }
