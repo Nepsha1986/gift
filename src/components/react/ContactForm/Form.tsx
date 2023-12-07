@@ -10,6 +10,11 @@ import translations from "./translations.ts";
 
 import styles from "./styles.module.scss";
 
+/**
+ * Form is done with a https://formspree.io/
+ */
+const formURL = import.meta.env.PUBLIC_FORM_SPREE_URL;
+
 interface Props {
   lang: SupportedLanguages;
 }
@@ -29,12 +34,11 @@ const Form: React.FC<Props> = ({ lang }) => {
 
   const [state, setState] = useState<"success" | "error" | "default">();
 
-  // Form is done with Netlify Forms, that is why the code below does not follow best practices of this project
   const { mutate: handleSend } = useMutation({
     mutationKey: ["sendMessage"],
     mutationFn: async () => {
       return await axios.post(
-        "/",
+        formURL,
         new URLSearchParams({
           name,
           email,
@@ -59,15 +63,7 @@ const Form: React.FC<Props> = ({ lang }) => {
 
   return (
     <div>
-      <input type="hidden" name="contact" value="name" />
-
-      <form name="contact" data-netlify="true" hidden>
-        <input type="text" name="name" />
-        <input type="text" name="email" />
-        <input type="text" name="message" />
-      </form>
-
-      <form className={styles.contactForm} name="contact" data-netlify="true">
+      <form className={styles.contactForm} name="contact">
         <Input
           name="name"
           label={t("field.name")}
