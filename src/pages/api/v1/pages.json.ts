@@ -1,9 +1,14 @@
 import { getCollection } from "astro:content";
-import {
-  type IdeaPage,
-  type ModuleName,
-} from "@src/features/AdminPanel/types/IdeaPage.ts";
 import type { Category } from "@src/types/category.ts";
+
+export type ModuleName = "RelatedProducts" | "Ads";
+
+export interface IdeaPage {
+  title: string;
+  slug: string;
+  category: Category;
+  modules: ModuleName[] | [];
+}
 
 const giftsEntries = await getCollection("gifts");
 
