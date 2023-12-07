@@ -11,11 +11,13 @@ import "../styles/global.scss";
 interface Props {
 	title: string;
 	isLanding: boolean;
+	hasHeader: boolean;
+	hasFooter: boolean;
 }
 
 const URL = Astro.url.pathname;
 
-const {title, isLanding} = Astro.props;
+const {title, isLanding, hasHeader = true, hasFooter = true} = Astro.props;
 const lang = getLangFromUrl(URL);
 const locale = getLocaleFromUrl(URL);
 const t = useTranslations(lang, ui);
@@ -27,7 +29,7 @@ const hasSidebar = !!Astro.slots.has('sidebar');
 <html lang={lang}>
 <Head title={title}/>
 <body>
-<Header/>
+{ hasHeader && <Header/> }
 {isLanding ?
   <main>
     <slot/>
@@ -44,7 +46,7 @@ const hasSidebar = !!Astro.slots.has('sidebar');
 			)}
     </div>
 	)}
-<Footer/>
+{ hasFooter &&  <Footer/>}
 </body>
 </html>
 
