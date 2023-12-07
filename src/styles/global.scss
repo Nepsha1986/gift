@@ -5,10 +5,15 @@ body {
   min-height: 100vh;
 }
 
-a,
-a:hover {
+a {
   color: var(--c-primary);
   text-decoration: none;
+  transition: 0.3s color;
+
+  &:hover {
+    text-decoration: none;
+    color: var(--c-primary-dark);
+  }
 }
 
 h1,
