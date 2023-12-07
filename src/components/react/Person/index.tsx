@@ -11,7 +11,7 @@ const isAvailable = true;
 const linkedAcc = "https://www.linkedin.com/in/alex-nepsha-851a23115/";
 const githubAcc = "https://github.com/Nepsha1986";
 
-const Person = () => {
+const Person: React.FC = () => {
   return (
     <section className={styles.about}>
       <div className={styles.about__container}>
@@ -19,7 +19,7 @@ const Person = () => {
           <div className={styles.about__photo}>
             <img className="img-cover" src={myPhoto.src} alt="Alex Nepsha" />
           </div>
-          <h2>HELLO, I'M ALEX</h2>
+          <h2>{"Hello, I'm Alex"}</h2>
 
           <p>
             I am a highly skilled frontend developer with a passion for crafting
@@ -27,10 +27,10 @@ const Person = () => {
           </p>
 
           <div className={styles.about__socials}>
-            <a href={githubAcc} target="_blank">
+            <a href={githubAcc} target="_blank" rel="noreferrer">
               <FontAwesomeIcon icon={faGithub} />
             </a>
-            <a href={linkedAcc} target="_blank">
+            <a href={linkedAcc} target="_blank" rel="noreferrer">
               <FontAwesomeIcon icon={faLinkedin} />
             </a>
           </div>
@@ -63,7 +63,7 @@ const Person = () => {
                 exploring new opportunities.
               </p>
 
-              <a href={cv} target={"_blank"}>
+              <a href={cv} target={"_blank"} rel="noreferrer">
                 <FontAwesomeIcon
                   icon={faDownload}
                   style={{ marginRight: "10px" }}
