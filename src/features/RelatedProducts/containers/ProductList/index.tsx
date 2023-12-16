@@ -36,6 +36,7 @@ const ProductList: React.FC<Props> = ({ refId }) => {
     <ul className={styles.productList}>
       {data.items?.map((item, index) => (
         <li key={item._id} className={styles.productList__item}>
+          <img width="200px" src={item.imgSrc} alt={item.title} />
           <p style={{ marginBottom: 0 }}>
             <span>{index + 1}.</span> <a href={item.link}>{item.title}</a> (
             {<span>{item.description}</span>}).
