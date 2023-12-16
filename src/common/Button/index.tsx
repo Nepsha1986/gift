@@ -10,6 +10,9 @@ interface Props {
   iconOnly?: boolean;
   disabled?: boolean;
   style?: React.CSSProperties;
+  size?: "sm" | "md" | "lg";
+  className?: string;
+  target?: React.HTMLAttributeAnchorTarget;
 }
 const Button: React.FC<Props> = ({
   children,
@@ -19,16 +22,20 @@ const Button: React.FC<Props> = ({
   iconOnly,
   disabled = false,
   style,
+  size = "lg",
+  className = "",
+  target,
 }) => {
-  const className = classNames(styles.button, {
+  const cssClassName = classNames(styles.button, className, {
     [styles.button_disabled]: disabled,
     [styles.button_iconOnly]: iconOnly,
     [styles[`button_${color}`]]: color,
+    [styles[`button_${size}`]]: color,
   });
 
   if (link)
     return (
-      <a href={link} className={className} style={style}>
+      <a href={link} className={cssClassName} style={style} target={target}>
         {children}
       </a>
     );
@@ -37,7 +44,7 @@ const Button: React.FC<Props> = ({
     <button
       type="button"
       onClick={onClick}
-      className={className}
+      className={cssClassName}
       disabled={disabled}
       style={style}
     >
