@@ -3,7 +3,10 @@
     {
       "source": "/pages/api/(.*)",
       "headers": [
-        { "key": "Access-Control-Allow-Origin", "value": "https://admin.gift-idea.co" },
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "https://admin.gift-idea.co"
+        },
         {
           "key": "Access-Control-Allow-Methods",
           "value": "GET"

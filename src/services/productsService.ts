@@ -10,6 +10,7 @@ export interface ProductDto {
   refId?: string;
   title: string;
   description: string;
+  imgSrc: string;
   link: string;
   locale: string;
 }
