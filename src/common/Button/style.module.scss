@@ -42,6 +42,21 @@
     opacity: 0.5;
   }
 
+  &_sm {
+    padding: 3px 15px;
+    font-size: 0.65rem;
+  }
+
+  &_md {
+    padding: 5px 20px;
+    font-size: 0.75rem;
+  }
+
+  &_lg {
+    padding: 7px 25px;
+    font-size: 0.85rem;
+  }
+
   &:hover {
     opacity: 0.8;
   }

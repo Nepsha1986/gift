@@ -1,7 +1,6 @@
 .dialog {
   border: none;
   border-radius: 3px;
-  max-width: 600px;
   padding: 0;
   width: 100%;
 
@@ -26,6 +25,18 @@
   &__main {
     padding: 1rem;
     min-height: clamp(250px, 20vw, 380px);
+  }
+
+  &_small {
+    max-width: 600px;
+  }
+
+  &_medium {
+    max-width: 950px;
+  }
+
+  &_large {
+    max-width: 1300px;
   }
 
   &::backdrop {

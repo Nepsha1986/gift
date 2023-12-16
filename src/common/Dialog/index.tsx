@@ -4,15 +4,17 @@ import { faClose } from "@fortawesome/free-solid-svg-icons";
 
 import { Button } from "src/common";
 
+import classNames from "classnames";
 import styles from "./styles.module.scss";
 
 const Dialog: React.FC<{
   open: boolean;
   children: ReactNode;
+  onClickClose?: () => void;
+  size?: "small" | "medium" | "large";
   heading?: string;
   footer?: React.ReactNode | React.ReactNode[];
-  onClickClose: () => void;
-}> = ({ open, children, onClickClose, heading, footer }) => {
+}> = ({ open, children, onClickClose, heading, footer, size = "small" }) => {
   const dialogRef = useRef<HTMLDialogElement>(null);
 
   useEffect(() => {
@@ -23,15 +25,21 @@ const Dialog: React.FC<{
     }
   }, [open]);
 
+  const className = classNames(styles.dialog, {
+    [styles[`dialog_${size}`]]: size,
+  });
+
   return (
-    <dialog className={styles.dialog} ref={dialogRef}>
+    <dialog className={className} ref={dialogRef}>
       <header className={styles.dialog__header}>
         {!!heading && <h3 style={{ marginBottom: 0 }}>{heading}</h3>}
 
         <div className={styles.dialog__closeBtn}>
-          <Button onClick={onClickClose} iconOnly color="transparent">
-            <FontAwesomeIcon icon={faClose} />
-          </Button>
+          {onClickClose && (
+            <Button onClick={onClickClose} iconOnly color="transparent">
+              <FontAwesomeIcon icon={faClose} />
+            </Button>
+          )}
         </div>
       </header>
 

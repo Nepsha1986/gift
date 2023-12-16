@@ -35,6 +35,7 @@ const RelatedProducts: React.FC<AstroContextProps> = ({
           <Dialog
             heading={t("dialog.heading")}
             open={isDialogVisible}
+            size="medium"
             onClickClose={() => {
               setDialogVisible(false);
             }}

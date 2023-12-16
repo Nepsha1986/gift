@@ -1,9 +1,15 @@
 .productList {
   list-style: none;
+  display: flex;
+  flex-flow: row wrap;
   padding: 0;
   font-size: 0.85rem;
+  gap: 10px;
+  justify-content: space-between;
 
   &__item {
+    flex-basis: 450px;
+    flex-grow: 1;
     margin-bottom: 3px;
   }
 }
