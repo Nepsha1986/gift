@@ -5,6 +5,8 @@ date: '2023-11-30'
 thumbnail: ../../img/monopoly.webp
 category: "for-teens"
 featured: true
+modules:
+  - RelatedProducts
 ---
 
 Настольные игры — отличный способ создать незабываемые моменты и подарить радость как детям, так и взрослым. В этой
