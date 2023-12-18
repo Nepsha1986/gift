@@ -1,1 +1,0 @@
-Country flag source - [Country flags](https://gitlab.com/catamphetamine/country-flag-icons)
