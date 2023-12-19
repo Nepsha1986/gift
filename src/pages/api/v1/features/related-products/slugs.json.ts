@@ -3,7 +3,7 @@ import { getCleanSlug, getLangFromSlug } from "@i18n/utils.ts";
 
 const giftsEntries = await getCollection("gifts");
 
-const slugs: { name: string; slug: string }[] = giftsEntries
+const slugs: Array<{ name: string; slug: string }> = giftsEntries
   .filter((i) => getLangFromSlug(i.slug) === "en")
   .filter((i) => i.data?.modules?.includes("RelatedProducts"))
   .map((i) => ({
