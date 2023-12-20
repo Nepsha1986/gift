@@ -1,18 +1,27 @@
 import type { Translations } from "@i18n/ui.ts";
 
-type RelatedProductsTranslations = "btn.related_products" | "dialog.heading";
+type RelatedProductsTranslations =
+  | "related_products_text"
+  | "related_products_action"
+  | "dialog.heading";
 
 const all: Translations<RelatedProductsTranslations> = {
   en: {
-    "btn.related_products": "related products",
+    related_products_text:
+      "Our team has prepared a list of products that could interest you",
+    related_products_action: "click to view",
     "dialog.heading": "Happy gift-hunting!",
   },
   ru: {
-    "btn.related_products": "связанные товары",
+    related_products_text:
+      "Наша команда подготовила список продуктов, которые могут вас заинтересовать",
+    related_products_action: "нажмите, чтобы посмотреть",
     "dialog.heading": "Приятного поиска подарков!",
   },
   uk: {
-    "btn.related_products": "пов'язані товари",
+    related_products_text:
+      "Наша команда підготувала список продуктів, які можуть вас зацікавити",
+    related_products_action: "натисніть, щоб переглянути",
     "dialog.heading": "Приємного пошуку подарунків!",
   },
 };
