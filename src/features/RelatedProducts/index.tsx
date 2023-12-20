@@ -55,7 +55,7 @@ const RelatedProducts: React.FC<AstroContextProps> = ({
         )}
 
         <p style={{ marginBottom: 0, fontFamily: "var(--font-secondary)" }}>
-          Our team has prepared a list of products that could interest you,{" "}
+          {t("related_products_text")},{" "}
           <a
             href="#"
             onClick={(e) => {
