@@ -8,6 +8,8 @@ featured: true
 author:
   fullName: 'Alex Nepsha'
   link: 'https://www.linkedin.com/in/alex-nepsha-851a23115/'
+modules:
+  - RelatedProducts
 ---
 
 Our editorial team has chosen to highlight the backpack as a unique gift idea, as it is truly an excellent choice — some models are quite budget-friendly, yet practical and essential.
