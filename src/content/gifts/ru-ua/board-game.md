@@ -2,7 +2,7 @@
 title: Настольная игра
 description: Откройте мир веселья и укрепите отношения с захватывающей настольной игрой в подарок.
 date: '2023-11-30'
-thumbnail: ../../img/monopoly.webp
+thumbnail: ../../img/board_game.webp
 category: "for-teens"
 featured: true
 modules:
