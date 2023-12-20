@@ -58,6 +58,7 @@ const seoTitle = `${t("s.gift_idea")} ${t(entry.data.category)} - ${entry.data.t
       alt={entry.data.title}
     />
 
+    { entry.data?.modules?.includes('RelatedProducts') && <RelatedProducts slot="related-products" refId={getCleanSlug(entry.slug)} lang={lang} locale={locale} client:load />}
     { entry.data?.modules?.includes('Ads') &&  <div slot="ads"><Ads /></div>}
     <Content slot="content" />
   </GiftPage>
@@ -66,8 +67,6 @@ const seoTitle = `${t("s.gift_idea")} ${t(entry.data.category)} - ${entry.data.t
     <CategoryFilter activeCategory={category}/>
     <GiftList category={category} activeGiftSlug={activeGiftSlug}/>
   </div>
-
-  { entry.data?.modules?.includes('RelatedProducts') &&  <RelatedProducts refId={getCleanSlug(entry.slug)} lang={lang} locale={locale} client:load />}
 
   { !entry.data?.author && <AIPostBanner lang={lang} />}
 </Layout>

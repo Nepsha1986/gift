@@ -54,14 +54,19 @@ const RelatedProducts: React.FC<AstroContextProps> = ({
           </Dialog>
         )}
 
-        <Button
-          onClick={() => {
-            setDialogVisible(true);
-          }}
-          color="primary"
-        >
-          {t("btn.related_products")}
-        </Button>
+        <p style={{ marginBottom: 0, fontFamily: "var(--font-secondary)" }}>
+          Our team has prepared a list of products that could interest you,{" "}
+          <a
+            href="#"
+            onClick={(e) => {
+              e.preventDefault();
+              setDialogVisible(true);
+            }}
+          >
+            {t("related_products_action")}
+          </a>
+          .
+        </p>
       </AstroContext.Provider>
     </QueryClientProvider>
   );
