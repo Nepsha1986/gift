@@ -2,13 +2,11 @@
 title: Board Game
 description: Gift them hours of fun and bonding with a captivating board game.
 date: '2023-09-17'
-thumbnail: ../../img/monopoly.webp
+thumbnail: ../../img/board_game.webp
 category: "for-teens"
 modules:
   - RelatedProducts
   - Ads
-meta:
-    age: 6+
 featured: true
 ---
 Looking for a gift that fosters fun, laughter, and memorable moments? Consider gifting them a captivating board game. It's a fantastic way to bring friends and family together for hours of entertainment.
