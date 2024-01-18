@@ -31,28 +31,26 @@ const RelatedProducts: React.FC<AstroContextProps> = ({
           locale,
         }}
       >
-        {isDialogVisible && (
-          <Dialog
-            heading={t("dialog.heading")}
-            open={isDialogVisible}
-            size="medium"
-            onClickClose={() => {
-              setDialogVisible(false);
-            }}
-            footer={
-              <Button
-                color="default"
-                onClick={() => {
-                  setDialogVisible(false);
-                }}
-              >
-                Close
-              </Button>
-            }
-          >
-            <ProductList refId={refId} />
-          </Dialog>
-        )}
+        <Dialog
+          heading={t("dialog.heading")}
+          open={isDialogVisible}
+          size="medium"
+          onClickClose={() => {
+            setDialogVisible(false);
+          }}
+          footer={
+            <Button
+              color="default"
+              onClick={() => {
+                setDialogVisible(false);
+              }}
+            >
+              Close
+            </Button>
+          }
+        >
+          <ProductList refId={refId} />
+        </Dialog>
 
         <p style={{ marginBottom: 0, fontFamily: "var(--font-secondary)" }}>
           {t("related_products_text")},{" "}

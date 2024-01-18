@@ -17,20 +17,27 @@ const Dialog: React.FC<{
 }> = ({ open, children, onClickClose, heading, footer, size = "small" }) => {
   const dialogRef = useRef<HTMLDialogElement>(null);
 
+  const onAnimationEnd = () => {
+    if (!open) dialogRef.current?.close();
+  };
+
   useEffect(() => {
     if (open) {
       dialogRef.current?.showModal();
-    } else {
-      dialogRef.current?.close();
     }
   }, [open]);
 
   const className = classNames(styles.dialog, {
     [styles[`dialog_${size}`]]: size,
+    [styles.dialog_dissapear]: !open,
   });
 
   return (
-    <dialog className={className} ref={dialogRef}>
+    <dialog
+      className={className}
+      ref={dialogRef}
+      onAnimationEnd={onAnimationEnd}
+    >
       <header className={styles.dialog__header}>
         {!!heading && <h3 style={{ marginBottom: 0 }}>{heading}</h3>}
 

@@ -1,8 +1,11 @@
 .dialog {
+  $this: &;
+
   border: none;
   border-radius: 3px;
   padding: 0;
   width: 100%;
+  animation: fadeScaleIn 0.3s ease;
 
   &__closeBtn {
     position: absolute;
@@ -41,5 +44,54 @@
 
   &::backdrop {
     background: rgba(0, 0, 0, 0.45);
+    animation: fadeIn 0.3s ease;
+  }
+
+  &_dissapear {
+    animation: fadeScaleOut 0.3s ease;
+
+    &#{$this}::backdrop {
+      animation: fadeOut 0.3s ease;
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeScaleIn {
+  from {
+    opacity: 0.3;
+    scale: 0.9;
+  }
+  to {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+@keyframes fadeScaleOut {
+  from {
+    opacity: 1;
+    scale: 1;
+  }
+  to {
+    opacity: 0;
+    scale: 0.9;
   }
 }
