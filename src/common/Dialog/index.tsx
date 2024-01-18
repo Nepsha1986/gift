@@ -17,7 +17,7 @@ const Dialog: React.FC<{
 }> = ({ open, children, onClickClose, heading, footer, size = "small" }) => {
   const dialogRef = useRef<HTMLDialogElement>(null);
 
-  const onAnimationEnd = () => {
+  const onAnimationEnd = (): void => {
     if (!open) dialogRef.current?.close();
   };
 
