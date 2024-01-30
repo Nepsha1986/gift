@@ -5,7 +5,7 @@
   border-radius: 3px;
   padding: 0;
   width: 100%;
-  animation: fadeScaleIn 0.3s ease;
+  animation: fadeScaleIn 0.25s ease-in-out;
 
   &__closeBtn {
     position: absolute;
@@ -44,14 +44,14 @@
 
   &::backdrop {
     background: rgba(0, 0, 0, 0.45);
-    animation: fadeIn 0.3s ease;
+    animation: fadeIn 0.25s ease;
   }
 
   &_dissapear {
-    animation: fadeScaleOut 0.3s ease;
+    animation: fadeScaleOut 0.25s ease;
 
     &#{$this}::backdrop {
-      animation: fadeOut 0.3s ease;
+      animation: fadeOut 0.25s ease;
     }
   }
 }
@@ -75,11 +75,15 @@
 }
 
 @keyframes fadeScaleIn {
-  from {
+  0% {
     opacity: 0.3;
     scale: 0.9;
   }
-  to {
+  85% {
+    opacity: 1;
+    scale: 1.01;
+  }
+  100% {
     opacity: 1;
     scale: 1;
   }
