@@ -3,27 +3,37 @@ import { Button, Dialog } from "@src/common";
 import PageFinder from "./components/PageFinder";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import type { SupportedLanguages } from "@i18n/ui.ts";
+import { useTranslations } from "@i18n/utils.ts";
+import translations from "./translations.ts";
 
 const hasSearch = import.meta.env.MODE === "production";
 
-const Search: React.FC = () => {
+interface Props {
+  lang: SupportedLanguages;
+}
+
+const Search: React.FC<Props> = ({ lang }) => {
+  const t = useTranslations(lang as SupportedLanguages, translations);
   const [opened, setOpened] = useState(false);
   return (
     <>
       <Dialog
-        heading="Search"
+        heading={t("search.heading")}
         size="medium"
         open={opened}
         onClickClose={() => {
           setOpened(false);
         }}
       >
-        <p>Type your search term</p>
+        <p>{t("search.term")}</p>
         {hasSearch ? (
           <PageFinder />
         ) : (
           <p>
-            {'Available only for production, or run "npm run dev:pagefind"'}
+            {
+              'Available only for production, or run "npm run preview:pagefind" to preview locally'
+            }
           </p>
         )}
       </Dialog>

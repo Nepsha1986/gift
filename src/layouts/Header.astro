@@ -1,5 +1,5 @@
 ---
-import { getLocaleFromUrl } from "../i18n/utils";
+import { getLangFromUrl, getLocaleFromUrl } from "../i18n/utils";
 import { removeTrailingSlash } from "../utils/removeTrailingSlash";
 
 import LangSwitcher from "../components/react/LangSwitcher";
@@ -11,6 +11,7 @@ import Search from "../components/react/Search";
 const URL = Astro.url.pathname;
 
 const locale = getLocaleFromUrl(URL);
+const lang = getLangFromUrl(URL);
 const pathname = removeTrailingSlash(URL);
 ---
 
@@ -26,7 +27,7 @@ const pathname = removeTrailingSlash(URL);
 
     <div class="header__rightSlot">
       <LangSwitcher pathname={pathname} />
-      <Search client:load />
+      <Search client:load lang={lang} />
     </div>
 
     <div class="header__mobileNav">
