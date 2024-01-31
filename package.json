@@ -6,7 +6,9 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
+    "postbuild": "pagefind --site dist",
     "preview": "astro preview",
+    "preview:pagefind": "astro build && npm run postbuild && astro preview",
     "lint": "eslint 'src/**/*.{js,ts,tsx}'",
     "lint:fix": "eslint 'src/**/*.{js,ts,tsx}' --fix",
     "astro": "astro",
@@ -25,6 +27,7 @@
     "astro": "^3.4.4",
     "axios": "^1.6.0",
     "classnames": "2.3.2",
+    "pagefind": "^1.0.4",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },

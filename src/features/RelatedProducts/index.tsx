@@ -49,7 +49,7 @@ const RelatedProducts: React.FC<AstroContextProps> = ({
             </Button>
           }
         >
-          <ProductList refId={refId} />
+          {isDialogVisible && <ProductList refId={refId} />}
         </Dialog>
 
         <p style={{ marginBottom: 0, fontFamily: "var(--font-secondary)" }}>
