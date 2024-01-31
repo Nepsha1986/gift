@@ -1,15 +1,17 @@
 ---
-import { getLocaleFromUrl } from "../i18n/utils";
+import { getLangFromUrl, getLocaleFromUrl } from "../i18n/utils";
 import { removeTrailingSlash } from "../utils/removeTrailingSlash";
 
 import LangSwitcher from "../components/react/LangSwitcher";
 import Navigation from "../components/react/Navigation";
 import LogoDark from "../components/react/LogoDark";
 import MobileMenu from "../components/react/MobileMenu";
+import Search from "../components/react/Search";
 
 const URL = Astro.url.pathname;
 
 const locale = getLocaleFromUrl(URL);
+const lang = getLangFromUrl(URL);
 const pathname = removeTrailingSlash(URL);
 ---
 
@@ -25,6 +27,7 @@ const pathname = removeTrailingSlash(URL);
 
     <div class="header__rightSlot">
       <LangSwitcher pathname={pathname} />
+      <Search client:load lang={lang} />
     </div>
 
     <div class="header__mobileNav">
@@ -62,7 +65,8 @@ const pathname = removeTrailingSlash(URL);
 			display: none;
 
 			@media screen and (min-width: 960px) {
-				display: block;
+				display: flex;
+        gap: 10px;
 			}
 		}
 

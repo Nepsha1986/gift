@@ -29,7 +29,7 @@ interface Props {
 const {thumbnail, title, content, category, subtitle, meta, author, date} = Astro.props;
 ---
 
-<article class="article">
+<article class="article" data-pagefind-body>
   <header class="article__header">
     <div class="article__imgWrap">
       <slot name="thumbnail" class="article__img"/>

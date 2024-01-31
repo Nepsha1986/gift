@@ -30,7 +30,7 @@ const hasSidebar = !!Astro.slots.has('sidebar');
 <Head title={title}/>
 <body class='body' id="body">
 {hasHeader &&
-  <Header/>}
+  <Header transition:persist />}
 {isLanding ?
   <main>
     <slot/>
@@ -41,7 +41,7 @@ const hasSidebar = !!Astro.slots.has('sidebar');
       </main>
 
 			{hasSidebar && (
-        <aside id='sidebar' class="app__sidebar">
+        <aside id='sidebar' class="app__sidebar" data-pagefind-ignore="all">
           <button class="app__sidebarToggleBtn" id='sidebar_toggle'>View all ideas</button>
           <slot name='sidebar'/>
         </aside>
@@ -145,11 +145,13 @@ const hasSidebar = !!Astro.slots.has('sidebar');
 	document.addEventListener('astro:page-load', () => {
 		const button = document.querySelector('#sidebar_toggle');
 		const sidebar = document.querySelector('#sidebar');
-		const body = document.querySelector('#body')
+		const body = document.querySelector('#body');
 
-		button.addEventListener('click', () => {
-			sidebar.classList.toggle('app__sidebar_active');
-			body.classList.toggle('body_noScroll');
-		});
+    if(button) {
+      button.addEventListener('click', () => {
+        sidebar.classList.toggle('app__sidebar_active');
+        body.classList.toggle('body_noScroll');
+      });
+    }
 	}, {once: false});
 </script>
