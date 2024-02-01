@@ -40,12 +40,12 @@ const Search: React.FC<Props> = ({ lang }) => {
 
       <Button
         color="transparent"
-        iconOnly
         onClick={() => {
           setOpened(true);
         }}
       >
-        <FontAwesomeIcon icon={faSearch} />
+        <FontAwesomeIcon icon={faSearch} style={{ marginRight: "10px" }} />{" "}
+        Search
       </Button>
     </>
   );
