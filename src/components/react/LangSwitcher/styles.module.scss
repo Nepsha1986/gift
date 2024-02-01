@@ -1,11 +1,10 @@
 .langSwitcherItem {
   $self: &;
 
-  padding: 3px 7px;
+  padding: 3px 0;
   font-size: 0.85rem;
   border-radius: 3px;
   display: block;
-  width: 175px;
 
   &__icon {
     margin-left: 7px;
@@ -19,6 +18,8 @@
 
   &:not(#{$self}_active) {
     background: #fff;
+    padding: 3px 7px;
+    width: 175px;
   }
 
   &:not(#{$self}_active):hover {
@@ -47,7 +48,7 @@
     overflow: hidden;
     opacity: 0;
     position: absolute;
-    left: 0;
+    right: 0;
     transition: 0.3s opacity;
   }
 
