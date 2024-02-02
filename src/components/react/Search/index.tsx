@@ -45,7 +45,7 @@ const Search: React.FC<Props> = ({ lang }) => {
         }}
       >
         <FontAwesomeIcon icon={faSearch} style={{ marginRight: "10px" }} />{" "}
-        Search
+        {t("search.heading")}
       </Button>
     </>
   );
