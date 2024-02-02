@@ -41,12 +41,12 @@ const LangSwitcherItem: React.FC<{
 
   return (
     <a href={link} className={className}>
-      <span className={styles.langSwitcherItem__label}>{label}</span>
       {active && (
         <span className={styles.langSwitcherItem__icon}>
           <FontAwesomeIcon icon={faGlobe} />
         </span>
       )}
+      <span className={styles.langSwitcherItem__label}>{label}</span>
     </a>
   );
 };
