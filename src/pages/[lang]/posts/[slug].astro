@@ -31,7 +31,7 @@ export async function getStaticPaths() {
 }
 ---
 
-<Layout title={'Article page'}>
+<Layout title={entry.data.title}>
   <PostPage
     title={entry.data.title}
     subtitle={entry.data.description}
