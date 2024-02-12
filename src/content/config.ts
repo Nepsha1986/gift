@@ -35,6 +35,31 @@ const giftsCollection = defineCollection({
     }),
 });
 
+const postsCollection = defineCollection({
+  type: "content",
+  schema: ({ image }) =>
+    z.object({
+      title: z.string(),
+      description: z.string(),
+      thumbnail: image()
+        .refine((img) => img.width === 1280 && img.height === 700, {
+          message: "Thumbnail image must be 1300x700 pixels!",
+        })
+        .refine((image) => image.format === "webp", {
+          message: "Image should have a webp valid format!",
+        }),
+      author: z
+        .object({
+          fullName: z.string(),
+          link: z.string().optional(),
+        })
+        .optional(),
+      date: z.string(),
+      featured: z.boolean().optional().default(false),
+    }),
+});
+
 export const collections = {
   gifts: giftsCollection,
+  posts: postsCollection,
 };

@@ -1,0 +1,51 @@
+---
+import { getCollection } from "astro:content";
+import { Image } from "astro:assets";
+import Layout from "@layouts/Layout.astro";
+
+import { getLocaleFromUrl, getCleanSlug, getLangFromUrl, useTranslations, getLocaleFromSlug } from "@i18n/utils";
+import PostPage from "@astroComponents/PostPage.astro";
+import { ui } from "@i18n/ui";
+
+import { removeTrailingSlash } from "@utils/removeTrailingSlash";
+
+const URL = Astro.url.pathname;
+const lang = getLangFromUrl(URL);
+const locale = getLocaleFromUrl(URL);
+const t = useTranslations(lang, ui);
+
+const pathname = removeTrailingSlash(URL);
+const pathParts = pathname.split("/");
+const category = pathParts[3];
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+
+export async function getStaticPaths() {
+  const giftsEntries = await getCollection("posts");
+
+  return giftsEntries.map((entry) => ({
+    params: { lang: getLocaleFromSlug(entry.slug), slug: getCleanSlug(entry.slug)},
+    props: { entry }
+  }));
+}
+---
+
+<Layout title={'Article page'}>
+  <PostPage
+    title={entry.data.title}
+    subtitle={entry.data.description}
+    author={entry.data?.author}
+    date={entry.data?.date}
+  >
+    <Image
+      data-pagefind-meta="image[src]"
+      class="img-cover"
+      slot="thumbnail"
+      src={entry.data?.thumbnail}
+      alt={entry.data.title}
+    />
+
+    <Content slot="content" />
+  </PostPage>
+</Layout>

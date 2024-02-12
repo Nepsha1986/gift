@@ -1,0 +1,88 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "@layouts/Layout.astro";
+
+import { getLocaleFromUrl, getLangFromUrl, useTranslations, getLocaleFromSlug, getCleanSlug } from "@i18n/utils";
+import { ui } from "@i18n/ui";
+import { Image } from "astro:assets";
+import { formatDate } from "@utils/formatDate";
+
+const URL = Astro.url.pathname;
+const lang = getLangFromUrl(URL);
+const locale = getLocaleFromUrl(URL);
+const t = useTranslations(lang, ui);
+
+const posts = await getCollection("posts", ({ slug }) => {
+  return getLocaleFromSlug(slug) === locale;
+});
+
+export async function getStaticPaths() {
+  const giftsEntries = await getCollection("posts");
+
+  return giftsEntries.map((entry) => ({
+    params: { lang: getLocaleFromSlug(entry.slug) },
+    props: { entry }
+  }));
+}
+---
+
+<Layout title={"Posts page"}>
+  <div class="posts-container">
+    {posts.map(i => (
+      <a href={`/${locale}/posts/${getCleanSlug(i.slug)}`} class="post-item">
+        <div class="post-item__img">
+          <Image
+            class="img-cover"
+            slot="thumbnail"
+            src={i.data?.thumbnail}
+            alt={i.data.title}
+            width={600}
+            height={400}
+          />
+        </div>
+
+        <div class="post-item__content">
+          <span>{formatDate(i.data.date)}</span>
+          <h2 class="post-item__title">{i.data.title}</h2>
+
+          <p class="post-item__desc">{i.data.description}</p>
+        </div>
+      </a>
+    ))}
+  </div>
+</Layout>
+
+<style lang="scss">
+	@import "@src/styles/mixins";
+
+	.posts-container {
+		margin: 0 auto;
+		display: grid;
+		gap: 15px;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	}
+
+	.post-item {
+		background: #fff;
+		box-shadow: 0 5px 15px -5px rgba(0, 0, 0, 0.3);
+		max-width: 400px;
+
+		&__img {
+			aspect-ratio: 400 / 300;
+		}
+
+		&__title {
+			font-size: 1.15rem;
+			@include textOverflow(2);
+		}
+
+		&__content {
+			padding: 1.5rem 1rem;
+		}
+
+		&__desc {
+			@include textOverflow(5);
+		}
+	}
+
+</style>

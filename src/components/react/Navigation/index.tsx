@@ -29,6 +29,7 @@ const navItems: Array<[string, NavTranslationStrings]> = [
     )}`,
     "nav.gifts",
   ],
+  ["/posts", "nav.posts"],
   ["/about", "nav.about"],
   ["/contacts", "nav.contacts"],
 ];
