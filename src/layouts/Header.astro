@@ -49,6 +49,11 @@ const pathname = removeTrailingSlash(URL);
 		  top: 0;
       backdrop-filter: blur(10px);
       background: rgba(255,255,255, 0.25);
+
+		  @media (pointer: coarse)  {
+        backdrop-filter: none;
+        background: rgb(255,255,255);
+		  }
     }
 
 		&__container {
