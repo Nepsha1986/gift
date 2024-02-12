@@ -35,6 +35,30 @@ const giftsCollection = defineCollection({
     }),
 });
 
+const postsCollection = defineCollection({
+  type: "content",
+  schema: ({ image }) =>
+    z.object({
+      title: z.string(),
+      description: z.string(),
+      thumbnail: image().refine(
+        (img) => img.width >= 900 && img.height >= 400,
+        {
+          message: "Thumbnail image must be 900 pixels wide!",
+        },
+      ),
+      author: z
+        .object({
+          fullName: z.string(),
+          link: z.string().optional(),
+        })
+        .optional(),
+      date: z.string(),
+      featured: z.boolean().optional().default(false),
+    }),
+});
+
 export const collections = {
   gifts: giftsCollection,
+  posts: postsCollection,
 };
