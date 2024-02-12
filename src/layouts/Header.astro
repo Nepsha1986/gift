@@ -15,7 +15,7 @@ const lang = getLangFromUrl(URL);
 const pathname = removeTrailingSlash(URL);
 ---
 
-<header class="header">
+<header id="website_header" class="header">
   <div class="header__container">
     <a class="header__logo" href={`/${locale}`}>
       <LogoDark />
@@ -40,6 +40,17 @@ const pathname = removeTrailingSlash(URL);
 
 <style lang="scss">
 	.header {
+	  position: sticky;
+	  top: -100px;
+    z-index: 10;
+	  transition: 0.2s;
+
+    &_sticky {
+		  top: 0;
+      backdrop-filter: blur(10px);
+      background: rgba(255,255,255, 0.25);
+    }
+
 		&__container {
 			padding: .5rem 15px;
 			display: flex;
@@ -85,3 +96,36 @@ const pathname = removeTrailingSlash(URL);
 		}
 	}
 </style>
+
+<script client:load>
+  document.addEventListener('astro:page-load', () => {
+    const header = document.getElementById('website_header');
+    function throttle(func, limit) {
+      let inThrottle = false;
+
+      return function() {
+        if (!inThrottle) {
+          func.apply(this, arguments);
+          inThrottle = true;
+
+          setTimeout(() => {
+            inThrottle = false;
+          }, limit);
+        }
+      };
+    }
+
+    const handleScroll = throttle((e) => {
+      const offset = e.target.scrollY || e.target.documentElement.scrollTop;
+
+      if(offset > 500) {
+        header.classList.add('header_sticky');
+      } else {
+        header.classList.remove('header_sticky');
+      }
+    }, 50);
+
+
+    if(header) window.addEventListener('scroll', handleScroll)
+  });
+</script>
