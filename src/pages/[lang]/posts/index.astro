@@ -36,16 +36,16 @@ export async function getStaticPaths() {
             slot="thumbnail"
             src={i.data?.thumbnail}
             alt={i.data.title}
-            width={300}
-            height={230}
+            width={600}
+            height={400}
           />
         </div>
 
         <div class="post-item__content">
           <span>{formatDate(i.data.date)}</span>
-          <h3>{i.data.title}</h3>
+          <h2 class="post-item__title">{i.data.title}</h2>
 
-          <p>{i.data.description}</p>
+          <p class="post-item__desc">{i.data.description}</p>
         </div>
       </a>
     ))}
@@ -53,22 +53,35 @@ export async function getStaticPaths() {
 </Layout>
 
 <style lang="scss">
+	@import "@src/styles/mixins";
+
 	.posts-container {
-		max-width: 900px;
 		margin: 0 auto;
 	  display: grid;
-	  grid-template-columns: 1fr 1fr;
+    gap: 15px;
+	  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 	}
 
 	.post-item {
-      background: #fff;
-      box-shadow: 0 5px 15px -5px rgba(0, 0, 0, 0.3);
+    background: #fff;
+    box-shadow: 0 5px 15px -5px rgba(0, 0, 0, 0.3);
+      max-width: 400px;
+
 		&__img {
-      aspect-ratio: 300 / 230;
+      aspect-ratio: 400 / 300;
     }
 
-      &__content {
-          padding: 1.5rem 1rem;
+	  &__title {
+        font-size: 1.15rem;
+		@include textOverflow(2);
+	  }
+
+    &__content {
+        padding: 1.5rem 1rem;
+    }
+
+      &__desc {
+		    @include textOverflow(5);
       }
 	}
 

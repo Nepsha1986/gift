@@ -41,12 +41,13 @@ const postsCollection = defineCollection({
     z.object({
       title: z.string(),
       description: z.string(),
-      thumbnail: image().refine(
-        (img) => img.width >= 900 && img.height >= 400,
-        {
-          message: "Thumbnail image must be 900 pixels wide!",
-        },
-      ),
+      thumbnail: image()
+        .refine((img) => img.width === 1280 && img.height === 700, {
+          message: "Thumbnail image must be 1300x700 pixels!",
+        })
+        .refine((image) => image.format === "webp", {
+          message: "Image should have a webp valid format!",
+        }),
       author: z
         .object({
           fullName: z.string(),
