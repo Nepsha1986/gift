@@ -6,6 +6,7 @@ import { getLangFromUrl, useTranslations } from "@i18n/utils";
 
 import Intro from "./components/Intro/Intro.astro";
 import Featured from "./components/Featured/Featured.astro";
+import LatestPosts from "./components/LatestPosts/LatestPosts.astro";
 
 const URL = Astro.url.pathname;
 
@@ -17,4 +18,5 @@ const t = useTranslations(lang, translations);
 <Layout title={t('page.title')} isLanding={true}>
   <Intro />
   <Featured />
+  <LatestPosts />
 </Layout>

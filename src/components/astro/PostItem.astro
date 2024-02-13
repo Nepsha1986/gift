@@ -1,0 +1,55 @@
+---
+import { formatDate } from "@utils/formatDate";
+import { Image } from "astro:assets";
+
+const {thumbnail, title, description, href, date} = Astro.props;
+---
+
+<a href={href} class="post-item">
+  <div class="post-item__img">
+    <Image
+      class="img-cover"
+      slot="thumbnail"
+      src={thumbnail}
+      alt={title}
+      width={600}
+      height={400}
+    />
+  </div>
+
+  <div class="post-item__content">
+    <span>{formatDate(date)}</span>
+    <h2 class="post-item__title">{title}</h2>
+
+    <p class="post-item__desc">{description}</p>
+  </div>
+</a>
+
+<style lang="scss">
+	@use "@src/styles/_mixins";
+
+	.post-item {
+		background: #fff;
+		box-shadow: 0 5px 15px -5px rgba(0, 0, 0, 0.3);
+    display: inline-block;
+		max-width: 400px;
+
+		&__img {
+			aspect-ratio: 400 / 300;
+		}
+
+		&__title {
+			font-size: 1.15rem;
+			@include mixins.textOverflow(2);
+		}
+
+		&__content {
+			padding: 1.5rem 1rem;
+		}
+
+		&__desc {
+			@include mixins.textOverflow(5);
+		}
+	}
+
+</style>

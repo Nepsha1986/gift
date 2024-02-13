@@ -1,33 +1,23 @@
 ---
 import { getCollection } from "astro:content";
-import Layout from "@layouts/Layout.astro";
 
-import { getLocaleFromUrl, getLangFromUrl, useTranslations, getLocaleFromSlug, getCleanSlug } from "@i18n/utils";
-import { ui } from "@i18n/ui";
 import PostItem from '@astroComponents/PostItem.astro';
-import { Image } from "astro:assets";
+import Section from '../Section/Section.astro';
+import { getLocaleFromUrl, getLocaleFromSlug, getCleanSlug, getLangFromUrl,useTranslations } from "@i18n/utils";
 import { formatDate } from "@utils/formatDate";
+import translations from "./translations";
 
 const URL = Astro.url.pathname;
-const lang = getLangFromUrl(URL);
 const locale = getLocaleFromUrl(URL);
-const t = useTranslations(lang, ui);
+const lang = getLangFromUrl(URL);
 
-const posts = await getCollection("posts", ({ slug }) => {
-  return getLocaleFromSlug(slug) === locale;
-});
+const t = useTranslations(lang, translations);
 
-export async function getStaticPaths() {
-  const giftsEntries = await getCollection("posts");
-
-  return giftsEntries.map((entry) => ({
-    params: { lang: getLocaleFromSlug(entry.slug) },
-    props: { entry }
-  }));
-}
+const posts = await getCollection("posts", ({slug}) =>
+  getLocaleFromSlug(slug) === locale).then(posts => posts.toSpliced(0, posts.length - 6));
 ---
 
-<Layout title={"Posts page"}>
+<Section heading={t('section.heading')}>
   <div class="posts-container">
     {posts.map(i => (
       <PostItem
@@ -40,7 +30,7 @@ export async function getStaticPaths() {
       />
     ))}
   </div>
-</Layout>
+</Section>
 
 <style lang="scss">
 	.posts-container {
