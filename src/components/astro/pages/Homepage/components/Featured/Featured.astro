@@ -2,6 +2,7 @@
 import { getCollection } from "astro:content";
 import { useTranslatedPath, getLocaleFromUrl, getLangFromUrl, getLocaleFromSlug, useTranslations } from "@i18n/utils";
 import FeaturedIdeas from "@src/components/react/FeaturedIdeas";
+import Section from '../Section/Section.astro';
 import translations from "./translations";
 import LinkButton from "@astroComponents/LinkButton.astro";
 
@@ -17,67 +18,35 @@ const featured = giftsEntries.filter(i => getLocaleFromSlug(i.slug) === locale).
 const t = useTranslations(lang, translations);
 ---
 
-<section class='featured'>
-  <div class="featured__container">
-    <header class="featured__header">
-      <h1 class="featured__heading">{t("section.heading")}</h1>
+<Section heading={t("section.heading")}>
+  <p slot="subheading" set:html={t("section.subheading")} class="subheading" />
 
-      <p class='featured__subheading'><Fragment set:html={t("section.subheading")} /></p>
-    </header>
+  <FeaturedIdeas  client:load lang={lang} locale={locale} featured={featured.map(i => ({
+    description: i.data.description,
+    link: i.slug,
+    slug: i.slug,
+    title: i.data.title,
+    category: i.data.category,
+    imgSrc: i.data.thumbnail.src
+  }))} />
 
-    <div class="featured__ideas">
-      <FeaturedIdeas  client:load lang={lang} locale={locale} featured={featured.map(i => ({
-        description: i.data.description,
-        link: i.slug,
-        slug: i.slug,
-        title: i.data.title,
-        category: i.data.category,
-        imgSrc: i.data.thumbnail.src
-      }))} />
-    </div>
-
-    <div class="featured__btn">
-      <LinkButton text={t("section.btn_text")} color="primary" link={translatePath('/gifts/for-women/adventure-experience-for-women')} />
-    </div>
+  <div class="btn-container">
+    <LinkButton text={t("section.btn_text")} color="primary" link={translatePath('/gifts/for-women/adventure-experience-for-women')} />
   </div>
-</section>
+</Section>
 
 <style is:global>
-    .featured__subheading strong {
-        color: var(--c-primary);
+    .subheading {
+        strong {
+            color: var(--c-primary);
+        }
     }
 </style>
 
 <style lang="scss">
-	.featured {
-		min-height: 100dvh;
-
-		&__container {
-			max-width: 1300px;
-			height: 100%;
-			padding: 5rem 15px;
-			margin: 0 auto;
-		}
-
-		&__header {
-			text-align: center;
-			max-width: 800px;
-			margin: 0 auto 2rem;
-		}
-
-		&__heading {
-			font-size: clamp(1.6rem, 4vw, 3.2rem);
-		}
-
-		&__subheading {
-			font-size: 1.05rem;
-			color: var(--c-grey);
-		}
-
-		&__btn {
-			display: flex;
-			justify-content: center;
-			margin-top: 3rem;
-		}
+	.btn-container {
+	  display: flex;
+	  justify-content: center;
+	  margin-top: 3rem;
 	}
 </style>
