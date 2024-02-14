@@ -4,8 +4,7 @@ description: Зафіксуйте красу, впевненість та дор
 date: '2023-11-25'
 thumbnail: ../../img/photo_camera.webp
 category: "for-women"
-author:
-    fullName: "Alex Nepsha"
+author: "alex_nepsha"
 ---
 
 Для багатьох жінок гарне фото, яке вони зможуть використовувати в соціальних мережах, вже є чудовим подарунком! Зробіть

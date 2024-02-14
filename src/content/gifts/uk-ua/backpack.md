@@ -7,9 +7,7 @@ category: "for-men"
 modules:
   - RelatedProducts
 featured: true
-author:
-  fullName: 'Alex Nepsha'
-  link: 'https://www.linkedin.com/in/alex-nepsha-851a23115/'
+author: "alex_nepsha"
 ---
 
 Наша редакція вирішила виділити рюкзак як окрему ідею для подарунка, оскільки це дійсно відмінний вибір — деякі моделі є досить бюджетними, але в той же час необхідними та практичними.

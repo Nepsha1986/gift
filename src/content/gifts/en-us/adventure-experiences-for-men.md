@@ -4,9 +4,7 @@ description: Exciting adventures and adrenaline-pumping experiences for men who 
 date: '2023-11-24'
 thumbnail: ../../img/skydiving.webp
 category: "for-men"
-author:
-  fullName: 'Alex Nepsha'
-  link: 'https://www.linkedin.com/in/alex-nepsha-851a23115/'
+author: "alex_nepsha"
 ---
 
 If your man is a true enthusiast of active recreation and adrenaline-fueled adventures, we've prepared a selection of gift ideas that will surely delight him. Depending on his preferences and place of residence, you can choose various options to create an unforgettable experience. Here are some inspiring ideas:

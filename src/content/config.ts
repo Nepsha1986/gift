@@ -20,12 +20,7 @@ const giftsCollection = defineCollection({
       thumbnail: image().refine((img) => img.width >= 400, {
         message: "Thumbnail image must be at least 400 pixels wide!",
       }),
-      author: z
-        .object({
-          fullName: z.string(),
-          link: z.string().optional(),
-        })
-        .optional(),
+      author: Author.optional(),
       date: z.string(),
       category: GiftCategory.optional(),
       meta: z
