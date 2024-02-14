@@ -3,8 +3,7 @@ title: Art and Creativity
 description: Unlock the creative potential in your loved one! Give her the opportunity to create unique projects expressing her inner world.
 date: '2023-12-01'
 thumbnail: ../../img/arts_and_craft.webp
-author:
-  fullName: "Alex Nepsha"
+author: "alex_nepsha"
 category: "for-women"
 ---
 

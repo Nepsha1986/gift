@@ -4,8 +4,7 @@ description: Зафиксируйте красоту, уверенность и 
 date: '2023-11-25'
 thumbnail: ../../img/photo_camera.webp
 category: "for-women"
-author:
-    fullName: "Alex Nepsha"
+author: "alex_nepsha"
 ---
 
 Для многих девушек красивый снимок, который она сможет использовать в социальных сетях, уже является прекрасным

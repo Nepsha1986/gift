@@ -2,6 +2,7 @@
 import { getLangFromUrl, useTranslations } from "@i18n/utils";
 import { ui } from "@i18n/ui";
 import { formatDate } from "@utils/formatDate";
+import { authors } from "../../content/_authors";
 
 const lang = getLangFromUrl(Astro.url.pathname);
 const t = useTranslations(lang, ui);
@@ -37,7 +38,7 @@ const {thumbnail, title, content, subtitle, meta, author, date} = Astro.props;
         <h1 class="post__title">{title}</h1>
         {author &&
           <div class="post__authorBlock">
-            <address class="post__author">By <a rel="author" href={author.link}>{author.fullName}</a>, </address>
+            <address class="post__author">By <a rel="author" target="_blank" href={authors[author].link}>{authors[author].fullName}</a>, </address>
             <span>{formatDate(date)}</span>
           </div>
         }

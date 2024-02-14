@@ -5,9 +5,7 @@ date: '2023-11-24'
 thumbnail: ../../img/backpack.webp
 category: "for-men"
 featured: true
-author:
-  fullName: 'Alex Nepsha'
-  link: 'https://www.linkedin.com/in/alex-nepsha-851a23115/'
+author: "alex_nepsha"
 ---
 
 Наша редакция решила выделить рюкзак как отдельную идею для подарка, поскольку это действительно отличный выбор – некоторые модели являются вполне бюджетными, но в то же время нужными и практичными.

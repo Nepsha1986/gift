@@ -1,5 +1,6 @@
 import { z, defineCollection } from "astro:content";
-import type { Category } from "../types/category.ts";
+import type { Category } from "@src/types/category.ts";
+import type { AuthorID } from "@src/types/author.ts";
 
 const GiftCategory = z.union([
   z.literal("for-men" as Category),
@@ -7,6 +8,8 @@ const GiftCategory = z.union([
   z.literal("for-kids" as Category),
   z.literal("for-teens" as Category),
 ]);
+
+const Author = z.literal("alex_nepsha" as AuthorID);
 
 const giftsCollection = defineCollection({
   type: "content",
@@ -17,12 +20,7 @@ const giftsCollection = defineCollection({
       thumbnail: image().refine((img) => img.width >= 400, {
         message: "Thumbnail image must be at least 400 pixels wide!",
       }),
-      author: z
-        .object({
-          fullName: z.string(),
-          link: z.string().optional(),
-        })
-        .optional(),
+      author: Author.optional(),
       date: z.string(),
       category: GiftCategory.optional(),
       meta: z
@@ -48,12 +46,7 @@ const postsCollection = defineCollection({
         .refine((image) => image.format === "webp", {
           message: "Image should have a webp valid format!",
         }),
-      author: z
-        .object({
-          fullName: z.string(),
-          link: z.string().optional(),
-        })
-        .optional(),
+      author: Author.optional(),
       date: z.string(),
       featured: z.boolean().optional().default(false),
     }),

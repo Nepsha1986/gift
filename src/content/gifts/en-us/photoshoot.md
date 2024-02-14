@@ -4,8 +4,7 @@ description: Capture beauty, confidence, and precious moments with a professiona
 date: '2023-11-25'
 thumbnail: ../../img/photo_camera.webp
 category: "for-women"
-author:
-    fullName: "Alex Nepsha"
+author: "alex_nepsha"
 ---
 
 For many women, a beautiful photo that they can use on social media is already a wonderful gift! Make it even more
