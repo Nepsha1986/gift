@@ -1,9 +1,7 @@
 ---
 title: "International Women's Day: Universal Gifts That Will Warm Women's Hearts"
 description: "The International Women's Day is approaching, and perhaps you haven't decided yet on how to delight the important women in your life. Instead of traditional flower bouquets or boxes of chocolates, let's consider universal gifts that are sure to lift spirits and create special memories."
-author:
-  fullName: 'Alex Nepsha'
-  link: 'https://www.linkedin.com/in/alex-nepsha-851a23115/'
+author: "alex_nepsha"
 date: '2024-02-12'
 thumbnail: ../../img/posts/tulips.webp
 ---
