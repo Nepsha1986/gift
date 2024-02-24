@@ -12,6 +12,7 @@ const GiftCategory = z.union([
 const Author = z.union([
   z.literal("alex_nepsha" as AuthorID),
   z.literal("polina_gordienko" as AuthorID),
+  z.literal("olga_soskrypchenko" as AuthorID),
 ]);
 
 const giftsCollection = defineCollection({
