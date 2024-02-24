@@ -1,4 +1,4 @@
-export type AuthorID = "alex_nepsha";
+export type AuthorID = "alex_nepsha" | "polina_gordienko";
 export interface AuthorData {
   fullName: string;
   link: string;
