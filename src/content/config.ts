@@ -9,7 +9,10 @@ const GiftCategory = z.union([
   z.literal("for-teens" as Category),
 ]);
 
-const Author = z.literal("alex_nepsha" as AuthorID);
+const Author = z.union([
+  z.literal("alex_nepsha" as AuthorID),
+  z.literal("polina_gordienko" as AuthorID),
+]);
 
 const giftsCollection = defineCollection({
   type: "content",
