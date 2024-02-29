@@ -15,8 +15,8 @@ export const authors: Authors = {
     link: "https://freelance.ua/user/polina1818/",
     photo: polinaPhoto,
   },
-  olga_soskrypchenko: {
-    fullName: "Olga Soskrypchenko",
+  olga_sergeevna: {
+    fullName: "Olga Sergeevna",
     link: "https://freelance.ua/user/soskrypchenko/",
     photo: olgaPhoto,
   },
