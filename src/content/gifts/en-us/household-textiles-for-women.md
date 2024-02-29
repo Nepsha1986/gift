@@ -4,7 +4,7 @@ description: Accessories that create coziness and comfort at home!
 date: '2024-02-24'
 thumbnail: ../../img/bed.webp
 category: "for-women"
-author: "olga_soskrypchenko"
+author: "olga_sergeevna"
 ---
 
 Home textiles can not only add a touch of style to the interior but also make every room cozy, fill it with a warm homely atmosphere, and, of course, highlight the taste of the home owner. We have compiled a list of gifts that will delight your woman and serve as a thoughtful gesture of attention for her.

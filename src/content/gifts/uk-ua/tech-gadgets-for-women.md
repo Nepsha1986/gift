@@ -4,7 +4,7 @@ description: Корисні аксесуари та гаджети, які зр�
 date: '2024-02-24'
 thumbnail: ../../img/earbuds.webp
 category: "for-women"
-author: "olga_soskrypchenko"
+author: "olga_sergeevna"
 featured: true
 ---
 

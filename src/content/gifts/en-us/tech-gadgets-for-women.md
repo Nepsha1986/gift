@@ -4,7 +4,7 @@ description: Useful accessories and gadgets that will make everyday routine simp
 date: '2024-02-24'
 thumbnail: ../../img/earbuds.webp
 category: "for-women"
-author: "olga_soskrypchenko"
+author: "olga_sergeevna"
 featured: true
 ---
 

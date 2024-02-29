@@ -4,7 +4,7 @@ description: Gift your significant other an engaging book from their favorite ge
 date: '2024-02-24'
 thumbnail: ../../img/book.webp
 category: "for-women"
-author: "olga_soskrypchenko"
+author: "olga_sergeevna"
 featured: true
 ---
 

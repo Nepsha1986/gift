@@ -4,7 +4,7 @@ description: Подарите своей второй половинке увл�
 date: '2024-02-24'
 thumbnail: ../../img/book.webp
 category: "for-women"
-author: "olga_soskrypchenko"
+author: "olga_sergeevna"
 featured: true
 ---
 
