@@ -2,7 +2,7 @@
 title: Home Decor
 description: Elevate your living spaces with stylish and unique home decor items.
 date: '2023-09-19'
-thumbnail: ../../img/photo_frame.webp
+thumbnail: ../../img/gifts/photo_frame.webp
 category: "for-women"
 meta:
     age: 18+

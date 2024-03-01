@@ -2,7 +2,7 @@
 title: Віртуальна реальність
 description: Зануртеся в захопливі світи за допомогою подарунка віртуальної реальності.
 date: '2023-09-18'
-thumbnail: ../../img/vr.webp
+thumbnail: ../../img/gifts/vr.webp
 category: "for-teens"
 meta:
     age: 10+

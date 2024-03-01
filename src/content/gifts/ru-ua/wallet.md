@@ -2,7 +2,7 @@
 title: Кошелек
 description: Подарите им стильный и функциональный кошелек для повседневного удобства.
 date: '2023-09-17'
-thumbnail: ../../img/wallet.webp
+thumbnail: ../../img/gifts/wallet.webp
 category: "for-men"
 meta:
     age: 18+

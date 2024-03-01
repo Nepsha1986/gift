@@ -2,7 +2,7 @@
 title: Игровая приставка
 description: Подарите им бесконечное развлечение с современной игровой приставкой.
 date: '2023-09-17'
-thumbnail: ../../img/joystick.webp
+thumbnail: ../../img/gifts/joystick.webp
 category: "for-men"
 meta:
     age: 12+

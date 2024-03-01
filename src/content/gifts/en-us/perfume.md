@@ -2,7 +2,7 @@
 title: Perfume
 description: Gift them a captivating fragrance to leave a lasting impression.
 date: '2023-09-17'
-thumbnail: ../../img/perfume.jpeg
+thumbnail: ../../img/gifts/perfume.jpeg
 category: "for-women"
 meta:
     age: 18+

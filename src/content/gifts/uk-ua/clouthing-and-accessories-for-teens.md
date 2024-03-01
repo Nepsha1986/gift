@@ -2,7 +2,7 @@
 title: Одяг та аксесуари
 description: Відкрийте для себе модний та молодіжний одяг та аксесуари, ідеальні для підлітків.
 date: '2023-12-18'
-thumbnail: ../../img/clouthing-and-accessories-for-teens.webp
+thumbnail: ../../img/gifts/clouthing-and-accessories-for-teens.webp
 category: "for-teens"
 ---
 

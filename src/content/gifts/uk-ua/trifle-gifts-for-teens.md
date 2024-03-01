@@ -2,7 +2,7 @@
 title: Дрібниці в подарунок
 description: Відкрийте веселі та доступні дрібниці в подарунок, які подарують посмішку будь-якому підлітку.
 date: '2023-09-19'
-thumbnail: ../../img/rubik_cube.jpeg
+thumbnail: ../../img/gifts/rubik_cube.jpeg
 category: "for-teens"
 meta:
     age: 13-19

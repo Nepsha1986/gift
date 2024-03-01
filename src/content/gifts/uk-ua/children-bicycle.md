@@ -2,7 +2,7 @@
 title: Велосипед
 description: Подаруйте радість відкритих пригод з якісним велосипедом.
 date: '2023-09-18'
-thumbnail: ../../img/bicycle_small.webp
+thumbnail: ../../img/gifts/bicycle_small.webp
 category: "for-kids"
 meta:
   age: 8+

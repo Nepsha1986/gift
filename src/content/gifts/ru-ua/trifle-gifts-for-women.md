@@ -2,7 +2,7 @@
 title: Небольшие Подарки
 description: Обнаружьте очаровательные и восхитительные небольшие подарки, которые принесут улыбку на лицо любой женщине.
 date: '2023-09-19'
-thumbnail: ../../img/rubik_cube.jpeg
+thumbnail: ../../img/gifts/rubik_cube.jpeg
 category: "for-women"
 meta:
     age: 18+

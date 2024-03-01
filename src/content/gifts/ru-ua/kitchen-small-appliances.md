@@ -2,7 +2,7 @@
 title: Мелкая кухонная техника
 description: Повысьте свои кулинарные навыки с помощью этих удобных кухонных гаджетов и мелкой кухонной техники.
 date: '2023-09-19'
-thumbnail: ../../img/blender.webp
+thumbnail: ../../img/gifts/blender.webp
 category: "for-women"
 meta:
     age: 18+

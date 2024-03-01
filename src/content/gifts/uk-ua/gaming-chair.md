@@ -2,7 +2,7 @@
 title: Гральне крісло
 description: Піднесіть гральний досвід з комфортабельним та стильним гральним кріслом.
 date: '2023-09-18'
-thumbnail: ../../img/office_chair.webp
+thumbnail: ../../img/gifts/office_chair.webp
 category: "for-teens"
 meta:
   age: 12+

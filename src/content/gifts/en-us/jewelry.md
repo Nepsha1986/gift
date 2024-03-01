@@ -2,7 +2,7 @@
 title: Jewelry
 description: Gift them timeless elegance with exquisite jewelry pieces.
 date: '2023-09-17'
-thumbnail: ../../img/jewelry.webp
+thumbnail: ../../img/gifts/jewelry.webp
 category: "for-women"
 meta:
     age: 18+

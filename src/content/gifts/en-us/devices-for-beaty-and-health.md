@@ -2,7 +2,7 @@
 title: Devices for Beauty and Health
 description: Enhance your beauty and well-being with these innovative devices for women.
 date: '2023-09-19'
-thumbnail: ../../img/hair_straightener.webp
+thumbnail: ../../img/gifts/hair_straightener.webp
 category: "for-women"
 meta:
     age: 18+

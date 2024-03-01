@@ -2,7 +2,7 @@
 title: Дитячий ігровий намет
 description: Сприяйте розвитку уяви зі затишним і пригодницьким дитячим наметом.
 date: '2023-09-18'
-thumbnail: ../../img/kids_play_tent.jpeg
+thumbnail: ../../img/gifts/kids_play_tent.jpeg
 category: "for-kids"
 meta:
     age: 3+

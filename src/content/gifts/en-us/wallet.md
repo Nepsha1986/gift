@@ -2,7 +2,7 @@
 title: Wallet
 description: Gift them a stylish and functional wallet for everyday convenience.
 date: '2023-09-17'
-thumbnail: ../../img/wallet.webp
+thumbnail: ../../img/gifts/wallet.webp
 category: "for-men"
 meta:
     age: 18+

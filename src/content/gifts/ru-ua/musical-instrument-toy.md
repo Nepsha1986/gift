@@ -2,7 +2,7 @@
 title: Детские музыкальные инструменты
 description: Поддержите музыкальные таланты с веселыми и образовательными инструментами.
 date: '2023-09-18'
-thumbnail: ../../img/xylophone.webp
+thumbnail: ../../img/gifts/xylophone.webp
 category: "for-kids"
 meta:
     age: 3+

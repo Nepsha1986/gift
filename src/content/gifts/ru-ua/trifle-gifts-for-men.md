@@ -2,7 +2,7 @@
 title: Подарки в миниатюре
 description: Обнаружьте веселые и забавные мелочи для мужчин в вашей жизни.
 date: '2023-09-19'
-thumbnail: ../../img/rubik_cube.jpeg
+thumbnail: ../../img/gifts/rubik_cube.jpeg
 category: "for-men"
 meta:
     age: 18+

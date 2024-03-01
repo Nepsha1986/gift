@@ -2,7 +2,7 @@
 title: Мангал і аксесуари
 description: Підвищте рівень приготування на відкритому повітрі з подарунками - інструментами і аксесуарами для мангала.
 date: '2023-09-19'
-thumbnail: ../../img/bbq.webp
+thumbnail: ../../img/gifts/bbq.webp
 category: "for-men"
 meta:
   age: 18+

@@ -2,7 +2,7 @@
 title: Одяг та аксесуари
 description: Підвищте стиль і комфорт ідеями подарунків у вигляді одягу та аксесуарів для чоловіків.
 date: '2023-09-19'
-thumbnail: ../../img/sunglasses.jpeg
+thumbnail: ../../img/gifts/sunglasses.jpeg
 category: "for-men"
 meta:
     age: 18+

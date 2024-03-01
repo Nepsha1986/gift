@@ -2,7 +2,7 @@
 title: Trifle Gifts
 description: Discover charming and delightful trifle gifts to bring a smile to any woman's face.
 date: '2023-09-19'
-thumbnail: ../../img/rubik_cube.jpeg
+thumbnail: ../../img/gifts/rubik_cube.jpeg
 category: "for-women"
 meta:
     age: 18+

@@ -2,7 +2,7 @@
 title: Дрібниці в подарунок
 description: Відкрийте веселі та незвичайні дрібниці для чоловіків у вашому житті.
 date: '2023-09-19'
-thumbnail: ../../img/rubik_cube.jpeg
+thumbnail: ../../img/gifts/rubik_cube.jpeg
 category: "for-men"
 meta:
     age: 18+

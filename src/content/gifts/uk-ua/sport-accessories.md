@@ -2,7 +2,7 @@
 title: Спортивні Аксесуари
 description: Готуйтеся до активних пригод з цими спортивними аксесуарами для підлітків.
 date: '2023-09-19'
-thumbnail: ../../img/football_ball.webp
+thumbnail: ../../img/gifts/football_ball.webp
 category: "for-teens"
 meta:
   age: 13-19

@@ -2,7 +2,7 @@
 title: Art and Creativity
 description: Unlock the creative potential in your loved one! Give her the opportunity to create unique projects expressing her inner world.
 date: '2023-12-01'
-thumbnail: ../../img/arts_and_craft.webp
+thumbnail: ../../img/gifts/arts_and_craft.webp
 author: "alex_nepsha"
 category: "for-women"
 ---

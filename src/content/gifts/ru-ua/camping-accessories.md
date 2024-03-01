@@ -2,7 +2,7 @@
 title: Аксессуары для кемпинга
 description: Исследуйте дикую природу с этими неотъемлемыми аксессуарами для кемпинга для мужчин.
 date: '2023-09-18'
-thumbnail: ../../img/adventure_accessories.webp
+thumbnail: ../../img/gifts/adventure_accessories.webp
 category: "for-men"
 meta:
     age: 18+

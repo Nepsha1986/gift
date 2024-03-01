@@ -2,7 +2,7 @@
 title: Extreme Adventure
 description: Exciting adventures and adrenaline-pumping experiences for men who crave adventure.
 date: '2023-11-24'
-thumbnail: ../../img/skydiving.webp
+thumbnail: ../../img/gifts/skydiving.webp
 category: "for-men"
 author: "alex_nepsha"
 ---

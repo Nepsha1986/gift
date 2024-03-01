@@ -2,7 +2,7 @@
 title: Вікенд-подорож удвох
 description: Подаруйте їм незабутні відпочинок з вікенд-подорожжю удвох.
 date: '2023-09-17'
-thumbnail: ../../img/trip_to_europe.webp
+thumbnail: ../../img/gifts/trip_to_europe.webp
 category: "for-women"
 meta:
     age: 18+

@@ -2,7 +2,7 @@
 title: Посещение массажного салона
 description: Подарите им релаксацию и омоложение благодаря успокаивающему массажу.
 date: '2023-09-17'
-thumbnail: ../../img/massage.jpeg
+thumbnail: ../../img/gifts/massage.jpeg
 category: "for-women"
 meta:
     age: 18+

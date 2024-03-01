@@ -2,7 +2,7 @@
 title: Гральні приставки та аксесуари
 description: Піднесіть свій гральний досвід на новий рівень з останніми гральними приставками та аксесуарами для підлітків.
 date: '2023-09-19'
-thumbnail: ../../img/joystick.webp
+thumbnail: ../../img/gifts/joystick.webp
 category: "for-teens"
 meta:
     age: 13-19

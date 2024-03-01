@@ -2,7 +2,7 @@
 title: Ювелірні вироби
 description: Подаруйте їм вічну елегантність з вишуканими ювелірними виробами.
 date: '2023-09-17'
-thumbnail: ../../img/jewelry.webp
+thumbnail: ../../img/gifts/jewelry.webp
 category: "for-women"
 meta:
     age: 18+

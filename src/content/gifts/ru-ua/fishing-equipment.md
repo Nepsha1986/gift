@@ -2,7 +2,7 @@
 title: Рыболовное снаряжение
 description: Поднимите уровень их рыболовных приключений с высококачественным рыболовным снаряжением.
 date: '2023-09-17'
-thumbnail: ../../img/fishing.webp
+thumbnail: ../../img/gifts/fishing.webp
 category: "for-men"
 meta:
     age: 12+

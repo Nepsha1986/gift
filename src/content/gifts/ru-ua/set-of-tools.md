@@ -2,7 +2,7 @@
 title: Набор Инструментов
 description: Подарите увлеченным рукодельникам универсальный и качественный набор инструментов.
 date: '2023-09-18'
-thumbnail: ../../img/tools_set.webp
+thumbnail: ../../img/gifts/tools_set.webp
 category: "for-men"
 meta:
     age: 18+

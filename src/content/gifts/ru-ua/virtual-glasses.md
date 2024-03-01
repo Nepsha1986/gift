@@ -2,7 +2,7 @@
 title: Очки виртуальной реальности
 description: Погрузитесь в захватывающие миры с подарком в виде очков виртуальной реальности.
 date: '2023-09-18'
-thumbnail: ../../img/vr.webp
+thumbnail: ../../img/gifts/vr.webp
 category: "for-teens"
 meta:
     age: 10+

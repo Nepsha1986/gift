@@ -2,7 +2,7 @@
 title: Clothing and Accessories
 description: Elevate style and comfort with fashionable clothing and accessories gift ideas for men.
 date: '2023-09-19'
-thumbnail: ../../img/sunglasses.jpeg
+thumbnail: ../../img/gifts/sunglasses.jpeg
 category: "for-men"
 meta:
     age: 18+

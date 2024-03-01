@@ -2,7 +2,7 @@
 title: Садові інструменти
 description: Вивчіть важливі садові інструменти та аксесуари для зеленолюбів.
 date: '2023-09-19'
-thumbnail: ../../img/garden_gloves.webp
+thumbnail: ../../img/gifts/garden_gloves.webp
 category: "for-men"
 meta:
     age: 18+

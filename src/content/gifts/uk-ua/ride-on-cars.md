@@ -2,7 +2,7 @@
 title: Дитячі Машинки та Іграшки-каталки
 description: Розвивайте уяву вашої дитини за допомогою цих чудових дитячих машинок та іграшок-каталок.
 date: '2023-09-19'
-thumbnail: ../../img/ride_on_cars.webp
+thumbnail: ../../img/gifts/ride_on_cars.webp
 category: "for-kids"
 meta:
     age: 1-5

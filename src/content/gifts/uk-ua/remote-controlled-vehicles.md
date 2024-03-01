@@ -2,7 +2,7 @@
 title: Віддалено Керовані Транспортні Засоби
 description: Звільніть напругу за допомогою віддалено керованих машин, гелікоптерів та дронів.
 date: '2023-09-18'
-thumbnail: ../../img/drone.webp
+thumbnail: ../../img/gifts/drone.webp
 category: "for-kids"
 meta:
     age: 8+

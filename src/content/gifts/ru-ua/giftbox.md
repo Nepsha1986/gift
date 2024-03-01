@@ -2,7 +2,7 @@
 title: Подарочные наборы для детей
 description: Удивите и порадуйте детей тематическими подарочными наборами, наполненными веселыми и образовательными предметами.
 date: '2023-09-18'
-thumbnail: ../../img/gift_box.webp
+thumbnail: ../../img/gifts/gift_box.webp
 category: "for-kids"
 meta:
     age: 3+

@@ -2,7 +2,7 @@
 title: Дрібна кухонна техніка
 description: Підвищте свої кулінарні навички за допомогою цих зручних кухонних гаджетів і дрібної кухонної техніки.
 date: '2023-09-19'
-thumbnail: ../../img/blender.webp
+thumbnail: ../../img/gifts/blender.webp
 category: "for-women"
 meta:
     age: 18+

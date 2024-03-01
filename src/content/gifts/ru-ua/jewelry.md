@@ -2,7 +2,7 @@
 title: Ювелирные украшения
 description: Подарите им вечную элегантность с изысканными ювелирными изделиями.
 date: '2023-09-17'
-thumbnail: ../../img/jewelry.webp
+thumbnail: ../../img/gifts/jewelry.webp
 category: "for-women"
 meta:
     age: 18+

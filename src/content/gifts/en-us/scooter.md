@@ -2,7 +2,7 @@
 title: Scooter
 description: Gift the joy of mobility with a stylish scooter.
 date: '2023-09-18'
-thumbnail: ../../img/scooter-for-kids.webp
+thumbnail: ../../img/gifts/scooter-for-kids.webp
 category: "for-kids"
 meta:
     age: 5+

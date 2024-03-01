@@ -2,7 +2,7 @@
 title: Палатка для Кемпінгу
 description: Підніміть їхні пригоди на новий рівень з надійною палаткою для кемпінгу.
 date: '2023-09-17'
-thumbnail: ../../img/camping_tent.webp
+thumbnail: ../../img/gifts/camping_tent.webp
 category: "for-men"
 meta:
     age: 18+

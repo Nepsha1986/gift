@@ -2,7 +2,7 @@
 title: Sport Accessories
 description: Gear up for active adventures with these sporty accessories for teenagers.
 date: '2023-09-19'
-thumbnail: ../../img/football_ball.webp
+thumbnail: ../../img/gifts/football_ball.webp
 category: "for-teens"
 meta:
     age: 13-19

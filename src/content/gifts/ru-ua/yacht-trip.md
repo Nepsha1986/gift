@@ -2,7 +2,7 @@
 title: Прогулка на яхте
 description: Подарите ей абсолютную роскошь с частной поездкой на яхте в открытом море.
 date: '2023-09-17'
-thumbnail: ../../img/yacht.webp
+thumbnail: ../../img/gifts/yacht.webp
 category: "for-women"
 meta:
     age: 18+

@@ -2,7 +2,7 @@
 title: Одежда и аксессуары
 description: Поднимите стиль и комфорт с модными подарками в виде одежды и аксессуаров.
 date: '2023-09-19'
-thumbnail: ../../img/hat.webp
+thumbnail: ../../img/gifts/hat.webp
 category: "for-women"
 meta:
     age: 18+

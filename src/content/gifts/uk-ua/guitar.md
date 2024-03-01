@@ -2,7 +2,7 @@
 title: Гітара
 description: Розпали їх музичну пристрасть класичною акустичною гітарою.
 date: '2023-09-17'
-thumbnail: ../../img/guitar.webp
+thumbnail: ../../img/gifts/guitar.webp
 category: "for-men"
 meta:
   age: 10+

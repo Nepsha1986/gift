@@ -2,7 +2,7 @@
 title: Умные Весы
 description: Отслеживайте здоровье и цели по фитнесу с точностью с помощью передовых умных весов.
 date: '2023-09-18'
-thumbnail: ../../img/smart_scales.webp
+thumbnail: ../../img/gifts/smart_scales.webp
 category: "for-women"
 meta:
     age: 18+

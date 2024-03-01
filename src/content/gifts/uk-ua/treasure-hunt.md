@@ -2,7 +2,7 @@
 title: Скарби на острові
 description: Зробіть вручення подарунків незабутнім та навчіть дітей фінансовій відповідальності, подарувавши гроші з креативністю.
 date: '2023-09-18'
-thumbnail: ../../img/piggy_bank.jpeg
+thumbnail: ../../img/gifts/piggy_bank.jpeg
 category: "for-kids"
 meta:
   age: 5+

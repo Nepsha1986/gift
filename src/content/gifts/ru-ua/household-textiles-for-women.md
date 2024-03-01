@@ -2,7 +2,7 @@
 title: Текстиль для дома
 description: Аксессуары, которые создают уют и комфорт в доме!
 date: '2024-02-24'
-thumbnail: ../../img/bed.webp
+thumbnail: ../../img/gifts/bed.webp
 category: "for-women"
 author: "olga_sergeevna"
 ---

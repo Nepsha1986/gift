@@ -2,7 +2,7 @@
 title: Сокровище на острове
 description: Сделайте вручение подарков незабываемым и научите детей финансовой ответственности, представив деньги с творчеством.
 date: '2023-09-18'
-thumbnail: ../../img/piggy_bank.jpeg
+thumbnail: ../../img/gifts/piggy_bank.jpeg
 category: "for-kids"
 meta:
     age: 5+

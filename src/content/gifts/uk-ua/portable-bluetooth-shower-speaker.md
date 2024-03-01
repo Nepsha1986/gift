@@ -2,7 +2,7 @@
 title: Портативна бездротова душова колонка Bluetooth
 description: Підніміть душовий процес з музикою та гучним зв'язком за допомогою водонепроникної портативної душової колонки Bluetooth.
 date: '2023-09-18'
-thumbnail: ../../img/shower_speaker.webp
+thumbnail: ../../img/gifts/shower_speaker.webp
 category: "for-men"
 meta:
     age: 18+

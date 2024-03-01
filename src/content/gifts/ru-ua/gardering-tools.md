@@ -2,7 +2,7 @@
 title: Садовые инструменты
 description: Исследуйте важные садовые инструменты и аксессуары для зеленоглазых энтузиастов.
 date: '2023-09-19'
-thumbnail: ../../img/garden_gloves.webp
+thumbnail: ../../img/gifts/garden_gloves.webp
 category: "for-men"
 meta:
     age: 18+

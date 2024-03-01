@@ -2,7 +2,7 @@
 title: Remote-Controlled Vehicles
 description: Unleash excitement with remote-controlled cars, helicopters, and drones.
 date: '2023-09-18'
-thumbnail: ../../img/drone.webp
+thumbnail: ../../img/gifts/drone.webp
 category: "for-kids"
 meta:
     age: 8+

@@ -2,7 +2,7 @@
 title: Набор посуды для детей
 description: Превратите прием пищи в увлекательное приключение с яркими и прочными наборами посуды для детей.
 date: '2023-09-18'
-thumbnail: ../../img/kids_dinnerware_set.jpeg
+thumbnail: ../../img/gifts/kids_dinnerware_set.jpeg
 category: "for-kids"
 meta:
     age: 1+

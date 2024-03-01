@@ -2,7 +2,7 @@
 title: Удаленно Управляемые Транспортные Средства
 description: Освободите волнение с удаленно управляемыми машинами, вертолетами и дронами.
 date: '2023-09-18'
-thumbnail: ../../img/drone.webp
+thumbnail: ../../img/gifts/drone.webp
 category: "for-kids"
 meta:
     age: 8+

@@ -2,7 +2,7 @@
 title: Електроінструменти
 description: Виконуйте завдання ефективно завдяки високоякісним електроінструментам для ваших потреб у DIY та будівництві.
 date: '2023-09-19'
-thumbnail: ../../img/saw.jpeg
+thumbnail: ../../img/gifts/saw.jpeg
 category: "for-men"
 meta:
     age: 18+

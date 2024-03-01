@@ -2,7 +2,7 @@
 title: Фитнес-оборудование
 description: Подарите им инструменты для более здорового образа жизни с высококачественным фитнес-оборудованием.
 date: '2023-09-17'
-thumbnail: ../../img/sport.jpeg
+thumbnail: ../../img/gifts/sport.jpeg
 category: "for-women"
 meta:
     age: 18+

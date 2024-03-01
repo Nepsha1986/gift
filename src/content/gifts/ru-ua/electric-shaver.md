@@ -2,7 +2,7 @@
 title: Электробритва
 description: Поднимите уровень своего ухода за собой с высокопроизводительной электробритвой.
 date: '2023-09-17'
-thumbnail: ../../img/electric_shaver.webp
+thumbnail: ../../img/gifts/electric_shaver.webp
 category: "for-men"
 meta:
     age: 18+

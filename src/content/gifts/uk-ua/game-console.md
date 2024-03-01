@@ -2,7 +2,7 @@
 title: Гральна приставка
 description: Подаруйте їм нескінченну розвагу з сучасною гральною приставкою.
 date: '2023-09-17'
-thumbnail: ../../img/joystick.webp
+thumbnail: ../../img/gifts/joystick.webp
 category: "for-men"
 meta:
     age: 12+

@@ -2,7 +2,7 @@
 title: Одяг та аксесуари
 description: Підвищте стиль та комфорт з модними подарунками у вигляді одягу та аксесуарів.
 date: '2023-09-19'
-thumbnail: ../../img/hat.webp
+thumbnail: ../../img/gifts/hat.webp
 category: "for-women"
 meta:
     age: 18+

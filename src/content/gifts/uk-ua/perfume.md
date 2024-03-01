@@ -2,7 +2,7 @@
 title: Парфуми
 description: Подаруйте їм захоплюючий аромат, який залишить незабутнє враження.
 date: '2023-09-17'
-thumbnail: ../../img/perfume.jpeg
+thumbnail: ../../img/gifts/perfume.jpeg
 category: "for-women"
 meta:
     age: 18+

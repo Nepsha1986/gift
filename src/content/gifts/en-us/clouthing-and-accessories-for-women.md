@@ -2,7 +2,7 @@
 title: Clothing and Accessories
 description: Elevate style and comfort with fashionable clothing and accessories gift ideas.
 date: '2023-09-19'
-thumbnail: ../../img/hat.webp
+thumbnail: ../../img/gifts/hat.webp
 category: "for-women"
 meta:
     age: 18+

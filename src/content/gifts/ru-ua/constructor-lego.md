@@ -2,7 +2,7 @@
 title: Конструктор Лего
 description: Вдохновите творчество и инженерные навыки с наборами Конструктор Лего.
 date: '2023-09-18'
-thumbnail: ../../img/lego.webp
+thumbnail: ../../img/gifts/lego.webp
 category: "for-kids"
 meta:
     age: 6+

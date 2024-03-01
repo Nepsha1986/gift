@@ -2,7 +2,7 @@
 title: Догляд за собою та здоров'я
 description: Підвищте якість догляду за собою завдяки цим важливим ідеям подарунків у галузі особистого догляду та здоров'я для чоловіків.
 date: '2023-09-19'
-thumbnail: ../../img/electric_toothbrush.webp
+thumbnail: ../../img/gifts/electric_toothbrush.webp
 category: "for-men"
 meta:
     age: 18+

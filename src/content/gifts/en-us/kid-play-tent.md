@@ -2,7 +2,7 @@
 title: Kid's Play Tent
 description: Foster imagination with a cozy and adventurous kid's tent.
 date: '2023-09-18'
-thumbnail: ../../img/kids_play_tent.jpeg
+thumbnail: ../../img/gifts/kids_play_tent.jpeg
 category: "for-kids"
 meta:
     age: 3+

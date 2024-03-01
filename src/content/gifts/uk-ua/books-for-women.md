@@ -2,7 +2,7 @@
 title: Книги та література
 description: Подаруйте своїй другій половинці захоплюючу книгу улюбленого жанру чи автора!
 date: '2024-02-24'
-thumbnail: ../../img/book.webp
+thumbnail: ../../img/gifts/book.webp
 category: "for-women"
 author: "olga_sergeevna"
 featured: true
