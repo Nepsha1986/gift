@@ -2,7 +2,7 @@
 title: Автомобільні аксесуари
 description: Покращте свій автомобільний досвід з цими практичними та стильними аксесуарами для авто.
 date: '2023-09-19'
-thumbnail: ../../img/wheel.webp
+thumbnail: ../../img/gifts/wheel.webp
 category: "for-men"
 meta:
     age: 18+

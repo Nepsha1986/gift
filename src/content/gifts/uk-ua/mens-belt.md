@@ -2,7 +2,7 @@
 title: Чоловічий ремінь
 description: Підвищте їхній стиль та заверште образ класичним чоловічим ременем.
 date: '2023-09-17'
-thumbnail: ../../img/mens_belt.webp
+thumbnail: ../../img/gifts/mens_belt.webp
 category: "for-men"
 meta:
     age: 18+

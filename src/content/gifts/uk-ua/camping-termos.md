@@ -2,7 +2,7 @@
 title: Термос для Кемпінгу
 description: Підтримайте їхні пригоди надійним термосом для кемпінгу.
 date: '2023-09-17'
-thumbnail: ../../img/thermos.webp
+thumbnail: ../../img/gifts/thermos.webp
 category: "for-men"
 meta:
     age: 12+

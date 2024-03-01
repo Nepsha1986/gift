@@ -2,7 +2,7 @@
 title: Гитара
 description: Разожгите их музыкальную страсть классической акустической гитарой.
 date: '2023-09-17'
-thumbnail: ../../img/guitar.webp
+thumbnail: ../../img/gifts/guitar.webp
 category: "for-men"
 meta:
   age: 10+

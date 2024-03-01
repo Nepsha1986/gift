@@ -2,7 +2,7 @@
 title: Рибальське спорядження
 description: Підвищте рівень їхніх рибальських пригод з високоякісним рибальським спорядженням.
 date: '2023-09-17'
-thumbnail: ../../img/fishing.webp
+thumbnail: ../../img/gifts/fishing.webp
 category: "for-men"
 meta:
     age: 12+

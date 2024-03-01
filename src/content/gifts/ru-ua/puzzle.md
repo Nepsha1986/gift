@@ -2,7 +2,7 @@
 title: Головоломка
 description: Подарите им радость решения головоломок и раскройте их творческий потенциал.
 date: '2023-09-17'
-thumbnail: ../../img/puzzle.webp
+thumbnail: ../../img/gifts/puzzle.webp
 category: "for-kids"
 meta:
     age: 8+

@@ -2,7 +2,7 @@
 title: Мужской пояс
 description: Поднимите их стиль и завершите образ с классическим мужским поясом.
 date: '2023-09-17'
-thumbnail: ../../img/mens_belt.webp
+thumbnail: ../../img/gifts/mens_belt.webp
 category: "for-men"
 meta:
     age: 18+

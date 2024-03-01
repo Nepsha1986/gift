@@ -2,7 +2,7 @@
 title: Технологічні Гаджети
 description: Досліджуйте останні та найкрутіші технологічні гаджети, створені з урахуванням інтересів чоловіків, які завжди слідкують за інноваціями.
 date: '2023-09-19'
-thumbnail: ../../img/earbuds.webp
+thumbnail: ../../img/gifts/earbuds.webp
 category: "for-men"
 meta:
   age: 18+

@@ -2,7 +2,7 @@
 title: Kids' Gift Box
 description: Surprise and delight children with a themed gift box filled with fun and educational items.
 date: '2023-09-18'
-thumbnail: ../../img/gift_box.webp
+thumbnail: ../../img/gifts/gift_box.webp
 category: "for-kids"
 meta:
     age: 3+

@@ -2,7 +2,7 @@
 title: Фітнес-обладнання
 description: Подаруйте їм інструменти для більш здорового способу життя з високоякісним фітнес-обладнанням.
 date: '2023-09-17'
-thumbnail: ../../img/sport.jpeg
+thumbnail: ../../img/gifts/sport.jpeg
 category: "for-women"
 meta:
     age: 18+

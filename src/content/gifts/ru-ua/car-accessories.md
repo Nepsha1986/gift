@@ -2,7 +2,7 @@
 title: Автомобильные аксессуары
 description: Улучшите свой автомобильный опыт с этими практичными и стильными аксессуарами для авто.
 date: '2023-09-19'
-thumbnail: ../../img/wheel.webp
+thumbnail: ../../img/gifts/wheel.webp
 category: "for-men"
 meta:
     age: 18+

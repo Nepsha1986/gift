@@ -2,7 +2,7 @@
 title: Детская игровая палатка
 description: Способствуйте развитию воображения с уютной и приключенческой детской палаткой.
 date: '2023-09-18'
-thumbnail: ../../img/kids_play_tent.jpeg
+thumbnail: ../../img/gifts/kids_play_tent.jpeg
 category: "for-kids"
 meta:
     age: 3+

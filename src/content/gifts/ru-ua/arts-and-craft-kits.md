@@ -2,7 +2,7 @@
 title: Наборы для творчества для детей
 description: Возгорите искру творчества с идеальным подарком для ремесел.
 date: '2023-09-18'
-thumbnail: ../../img/plastelin.webp
+thumbnail: ../../img/gifts/plastelin.webp
 category: "for-kids"
 meta:
   age: 8+

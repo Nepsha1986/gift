@@ -2,7 +2,7 @@
 title: Photoshoot
 description: Capture beauty, confidence, and precious moments with a professional photoshoot.
 date: '2023-11-25'
-thumbnail: ../../img/photo_camera.webp
+thumbnail: ../../img/gifts/photo_camera.webp
 category: "for-women"
 author: "alex_nepsha"
 ---

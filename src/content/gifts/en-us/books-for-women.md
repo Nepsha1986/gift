@@ -2,7 +2,7 @@
 title: Books and Literature
 description: Gift your significant other an engaging book from their favorite genre or author!
 date: '2024-02-24'
-thumbnail: ../../img/book.webp
+thumbnail: ../../img/gifts/book.webp
 category: "for-women"
 author: "olga_sergeevna"
 featured: true

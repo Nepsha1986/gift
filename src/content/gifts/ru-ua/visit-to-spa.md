@@ -2,7 +2,7 @@
 title: Посещение Спа-салона
 description: Подарите им расслабление и омоложение с роскошным спа-опытом.
 date: '2023-09-17'
-thumbnail: ../../img/spa_visit.jpeg
+thumbnail: ../../img/gifts/spa_visit.jpeg
 category: "for-women"
 meta:
     age: 18+

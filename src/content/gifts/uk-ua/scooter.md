@@ -2,7 +2,7 @@
 title: Самокат
 description: Подаруйте радість руху з елегантним самокатом.
 date: '2023-09-18'
-thumbnail: ../../img/scooter-for-kids.webp
+thumbnail: ../../img/gifts/scooter-for-kids.webp
 category: "for-kids"
 meta:
   age: 5+

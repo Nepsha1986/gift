@@ -2,7 +2,7 @@
 title: Навушники
 description: Підвищте їх музичний досвід високоякісними навушниками.
 date: '2023-09-17'
-thumbnail: ../../img/headphones.webp
+thumbnail: ../../img/gifts/headphones.webp
 category: "for-women"
 meta:
   age: 12+

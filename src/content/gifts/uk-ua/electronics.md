@@ -2,7 +2,7 @@
 title: Електроніка
 description: Досліджуйте останні гаджети та технічні подарунки для шанувальників технологій.
 date: '2023-09-19'
-thumbnail: ../../img/earphones.webp
+thumbnail: ../../img/gifts/earphones.webp
 category: "for-teens"
 meta:
     age: 16+

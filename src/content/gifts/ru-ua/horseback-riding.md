@@ -2,7 +2,7 @@
 title: Катание на лошади
 description: Подарите им незабываемое приключение верхом на лошади на свежем воздухе.
 date: '2023-09-17'
-thumbnail: ../../img/horseback_riding.webp
+thumbnail: ../../img/gifts/horseback_riding.webp
 category: "for-women"
 meta:
     age: 12+

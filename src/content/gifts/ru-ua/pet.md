@@ -2,7 +2,7 @@
 title: Домашний пушистик
 description: Рассмотрите возможность подарить ответственному подростку пушистого друга.
 date: '2023-09-19'
-thumbnail: ../../img/bulldog.webp
+thumbnail: ../../img/gifts/bulldog.webp
 category: "for-teens"
 meta:
     age: 13-19

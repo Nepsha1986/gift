@@ -2,7 +2,7 @@
 title: Портативные колонки
 description: Подарите возможность слушать музыку в любом месте с универсальными портативными колонками.
 date: '2023-09-18'
-thumbnail: ../../img/portable_speaker.webp
+thumbnail: ../../img/gifts/portable_speaker.webp
 category: "for-teens"
 meta:
     age: 12+

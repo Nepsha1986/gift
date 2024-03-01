@@ -2,7 +2,7 @@
 title: Путешествие в Квест-Комнату
 description: Отправьтесь в захватывающее приключение с участием интерактивной квест-комнаты.
 date: '2023-09-18'
-thumbnail: ../../img/escape_room.webp
+thumbnail: ../../img/gifts/escape_room.webp
 category: "for-teens"
 meta:
     age: 16+

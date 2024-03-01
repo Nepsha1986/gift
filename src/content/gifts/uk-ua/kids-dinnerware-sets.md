@@ -2,7 +2,7 @@
 title: Набір посуду для дітей
 description: Перетворіть прийом їжі на захоплюючу пригоду з яскравими та міцними наборами посуду для дітей.
 date: '2023-09-18'
-thumbnail: ../../img/kids_dinnerware_set.jpeg
+thumbnail: ../../img/gifts/kids_dinnerware_set.jpeg
 category: "for-kids"
 meta:
     age: 1+

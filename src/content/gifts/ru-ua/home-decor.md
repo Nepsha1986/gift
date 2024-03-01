@@ -2,7 +2,7 @@
 title: Декор для дома
 description: Поднимите уровень ваших жилых пространств стильными и уникальными предметами декора.
 date: '2023-09-19'
-thumbnail: ../../img/photo_frame.webp
+thumbnail: ../../img/gifts/photo_frame.webp
 category: "for-women"
 meta:
     age: 18+

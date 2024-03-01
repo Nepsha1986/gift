@@ -2,7 +2,7 @@
 title: Набір Інструментів
 description: Подаруйте запальним рукодільникам універсальний та якісний набір інструментів.
 date: '2023-09-18'
-thumbnail: ../../img/tools_set.webp
+thumbnail: ../../img/gifts/tools_set.webp
 category: "for-men"
 meta:
   age: 18+

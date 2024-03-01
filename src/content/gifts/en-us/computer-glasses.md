@@ -2,7 +2,7 @@
 title: Computer Glasses
 description: Protect eyes and enhance comfort with stylish computer glasses.
 date: '2023-09-18'
-thumbnail: ../../img/computer-glasses.webp
+thumbnail: ../../img/gifts/computer-glasses.webp
 category: "for-men"
 meta:
     age: 18+

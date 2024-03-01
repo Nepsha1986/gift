@@ -2,7 +2,7 @@
 title: Game Consoles and Accessories
 description: Level up your gaming experience with the latest consoles and accessories for teenagers.
 date: '2023-09-19'
-thumbnail: ../../img/joystick.webp
+thumbnail: ../../img/gifts/joystick.webp
 category: "for-teens"
 meta:
     age: 13-19

@@ -2,7 +2,7 @@
 title: Квадрокоптер на дистанційному управлінні
 description: Підніміть рівень вражень від подарунка за допомогою високолітучого сюрпризу.
 date: '2023-12-20'
-thumbnail: ../../img/drone.webp
+thumbnail: ../../img/gifts/drone.webp
 category: "for-men"
 ---
 

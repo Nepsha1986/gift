@@ -2,7 +2,7 @@
 title: Board Game
 description: Gift them hours of fun and bonding with a captivating board game.
 date: '2023-09-17'
-thumbnail: ../../img/board_game.webp
+thumbnail: ../../img/gifts/board_game.webp
 category: "for-teens"
 modules:
   - RelatedProducts

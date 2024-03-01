@@ -2,7 +2,7 @@
 title: Устройства для Красоты и Здоровья
 description: Подарите женщинам возможность чувствовать себя прекрасно и уделять внимание своему благополучию с помощью инновационных устройств для ухода за собой.
 date: '2023-09-19'
-thumbnail: ../../img/hair_straightener.webp
+thumbnail: ../../img/gifts/hair_straightener.webp
 category: "for-women"
 meta:
   age: 18+

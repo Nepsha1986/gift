@@ -2,7 +2,7 @@
 title: Personal Care and Health
 description: Enhance self-care routines with these essential personal care and health gift ideas for men.
 date: '2023-09-19'
-thumbnail: ../../img/electric_toothbrush.webp
+thumbnail: ../../img/gifts/electric_toothbrush.webp
 category: "for-men"
 meta:
     age: 18+

@@ -2,7 +2,7 @@
 title: Маленькі Подарунки
 description: Відкрийте чарівні та чудові маленькі подарунки, які принесуть посмішку на обличчя будь-якій жінці.
 date: '2023-09-19'
-thumbnail: ../../img/rubik_cube.jpeg
+thumbnail: ../../img/gifts/rubik_cube.jpeg
 category: "for-women"
 meta:
     age: 18+

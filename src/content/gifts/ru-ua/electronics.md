@@ -2,7 +2,7 @@
 title: Электроника
 description: Исследуйте последние гаджеты и технические подарки для ценителей технологий.
 date: '2023-09-19'
-thumbnail: ../../img/earphones.webp
+thumbnail: ../../img/gifts/earphones.webp
 category: "for-teens"
 meta:
     age: 16+

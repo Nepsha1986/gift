@@ -2,7 +2,7 @@
 title: Уикенд-поездка на двоих
 description: Подарите им незабываемый отдых с уикенд-поездкой на двоих.
 date: '2023-09-17'
-thumbnail: ../../img/trip_to_europe.webp
+thumbnail: ../../img/gifts/trip_to_europe.webp
 category: "for-women"
 meta:
     age: 18+

@@ -2,7 +2,7 @@
 title: Tech Gadgets
 description: Explore the latest and coolest tech gadgets tailored for men with a passion for technology.
 date: '2023-09-19'
-thumbnail: ../../img/earbuds.webp
+thumbnail: ../../img/gifts/earbuds.webp
 category: "for-men"
 meta:
     age: 18+

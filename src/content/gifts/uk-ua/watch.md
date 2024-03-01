@@ -2,7 +2,7 @@
 title: Наручні годинники
 description: Піднесіть їх стиль і пунктуальність завдяки вічним наручним годинникам.
 date: '2023-09-17'
-thumbnail: ../../img/wrist_watch.webp
+thumbnail: ../../img/gifts/wrist_watch.webp
 category: "for-men"
 meta:
     age: 16+

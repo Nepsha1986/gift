@@ -2,7 +2,7 @@
 title: Рюкзак
 description: Идеальный подарок для современных и активных личностей.
 date: '2023-11-24'
-thumbnail: ../../img/backpack.webp
+thumbnail: ../../img/gifts/backpack.webp
 category: "for-men"
 featured: true
 author: "alex_nepsha"

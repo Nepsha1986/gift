@@ -2,7 +2,7 @@
 title: Игровые приставки и аксессуары
 description: Поднимите свой игровой опыт на новый уровень с последними игровыми приставками и аксессуарами для подростков.
 date: '2023-09-19'
-thumbnail: ../../img/joystick.webp
+thumbnail: ../../img/gifts/joystick.webp
 category: "for-teens"
 meta:
     age: 13-19

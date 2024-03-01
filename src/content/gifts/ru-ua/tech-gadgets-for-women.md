@@ -2,7 +2,7 @@
 title: Технологические гаджеты и аксессуары
 description: Полезные аксессуары и гаджеты, которые сделают повседневную рутину простой и приятной!
 date: '2024-02-24'
-thumbnail: ../../img/earbuds.webp
+thumbnail: ../../img/gifts/earbuds.webp
 category: "for-women"
 author: "olga_sergeevna"
 featured: true

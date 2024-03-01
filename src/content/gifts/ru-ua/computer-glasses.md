@@ -2,7 +2,7 @@
 title: Компьютерные очки
 description: Защитите глаза и повысьте комфорт с модными компьютерными очками.
 date: '2023-09-18'
-thumbnail: ../../img/computer-glasses.webp
+thumbnail: ../../img/gifts/computer-glasses.webp
 category: "for-men"
 meta:
     age: 18+

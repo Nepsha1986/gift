@@ -2,7 +2,7 @@
 title: Одежда и аксессуары
 description: Поднимите стиль и комфорт с модными идеями подарков в виде одежды и аксессуаров для мужчин.
 date: '2023-09-19'
-thumbnail: ../../img/sunglasses.jpeg
+thumbnail: ../../img/gifts/sunglasses.jpeg
 category: "for-men"
 meta:
     age: 18+

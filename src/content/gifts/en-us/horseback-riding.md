@@ -2,7 +2,7 @@
 title: Horseback Riding
 description: Gift them an unforgettable horseback riding adventure in the great outdoors.
 date: '2023-09-17'
-thumbnail: ../../img/horseback_riding.webp
+thumbnail: ../../img/gifts/horseback_riding.webp
 category: "for-women"
 meta:
     age: 12+

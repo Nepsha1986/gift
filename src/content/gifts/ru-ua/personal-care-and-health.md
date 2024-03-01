@@ -2,7 +2,7 @@
 title: Забота о себе и здоровье
 description: Повысьте качество ухода за собой с этими важными идеями в подарок в области личного ухода и здоровья для мужчин.
 date: '2023-09-19'
-thumbnail: ../../img/electric_toothbrush.webp
+thumbnail: ../../img/gifts/electric_toothbrush.webp
 category: "for-men"
 meta:
     age: 18+

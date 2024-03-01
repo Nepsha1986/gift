@@ -2,7 +2,7 @@
 title: Trifle Gifts
 description: Discover fun and affordable trifle gifts that will bring a smile to any teenager's face.
 date: '2023-09-19'
-thumbnail: ../../img/rubik_cube.jpeg
+thumbnail: ../../img/gifts/rubik_cube.jpeg
 category: "for-teens"
 meta:
     age: 13-19

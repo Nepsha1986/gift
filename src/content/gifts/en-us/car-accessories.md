@@ -2,7 +2,7 @@
 title: Car Accessories
 description: Upgrade your driving experience with these practical and stylish car accessories.
 date: '2023-09-19'
-thumbnail: ../../img/wheel.webp
+thumbnail: ../../img/gifts/wheel.webp
 category: "for-men"
 meta:
     age: 18+

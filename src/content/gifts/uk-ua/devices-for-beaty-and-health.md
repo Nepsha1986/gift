@@ -2,7 +2,7 @@
 title: Пристрої для Краси і Здоров'я
 description: Подаруйте жінкам можливість почувати себе чудово та дбати про своє благополуччя завдяки інноваційним пристроям для догляду за собою.
 date: '2023-09-19'
-thumbnail: ../../img/hair_straightener.webp
+thumbnail: ../../img/gifts/hair_straightener.webp
 category: "for-women"
 meta:
   age: 18+

@@ -2,7 +2,7 @@
 title: Парфюм
 description: Подарите им завораживающий аромат, оставляющий незабываемое впечатление.
 date: '2023-09-17'
-thumbnail: ../../img/perfume.jpeg
+thumbnail: ../../img/gifts/perfume.jpeg
 category: "for-women"
 meta:
     age: 18+

@@ -2,7 +2,7 @@
 title: Yacht Trip
 description: Gift them the ultimate luxury with a private yacht trip on the open seas.
 date: '2023-09-17'
-thumbnail: ../../img/yacht.webp
+thumbnail: ../../img/gifts/yacht.webp
 category: "for-women"
 meta:
     age: 18+

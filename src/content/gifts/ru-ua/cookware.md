@@ -2,7 +2,7 @@
 title: Кухонные принадлежности
 description: Поднимите их кулинарные приключения с высококачественной кухонной утварью.
 date: '2023-09-17'
-thumbnail: ../../img/cookware.webp
+thumbnail: ../../img/gifts/cookware.webp
 category: "for-women"
 meta:
   age: 18+

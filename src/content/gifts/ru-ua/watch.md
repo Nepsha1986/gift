@@ -2,7 +2,7 @@
 title: Наручные часы
 description: Поднимите их стиль и пунктуальность с помощью вечных наручных часов.
 date: '2023-09-17'
-thumbnail: ../../img/wrist_watch.webp
+thumbnail: ../../img/gifts/wrist_watch.webp
 category: "for-men"
 meta:
     age: 16+

@@ -2,7 +2,7 @@
 title: Technological Gadgets and Accessories
 description: Useful accessories and gadgets that will make everyday routine simple and enjoyable!
 date: '2024-02-24'
-thumbnail: ../../img/earbuds.webp
+thumbnail: ../../img/gifts/earbuds.webp
 category: "for-women"
 author: "olga_sergeevna"
 featured: true

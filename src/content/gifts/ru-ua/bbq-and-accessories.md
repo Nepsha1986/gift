@@ -2,7 +2,7 @@
 title: Мангал и аксессуары
 description: Поднимите уровень приготовления на открытом воздухе с подарками - инструментами и аксессуарами для мангала.
 date: '2023-09-19'
-thumbnail: ../../img/bbq.webp
+thumbnail: ../../img/gifts/bbq.webp
 category: "for-men"
 meta:
   age: 18+

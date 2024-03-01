@@ -2,7 +2,7 @@
 title: Одежда и аксессуары
 description: Познакомьтесь с модной и молодежной одеждой и аксессуарами, идеальными для подростков.
 date: '2023-12-18'
-thumbnail: ../../img/clouthing-and-accessories-for-teens.webp
+thumbnail: ../../img/gifts/clouthing-and-accessories-for-teens.webp
 category: "for-teens"
 ---
 

@@ -2,7 +2,7 @@
 title: Силовые инструменты
 description: Выполняйте задачи эффективно с высококачественными силовыми инструментами для ваших потребностей в DIY и строительстве.
 date: '2023-09-19'
-thumbnail: ../../img/saw.jpeg
+thumbnail: ../../img/gifts/saw.jpeg
 category: "for-men"
 meta:
     age: 18+

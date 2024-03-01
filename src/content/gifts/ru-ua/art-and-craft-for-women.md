@@ -2,7 +2,7 @@
 title: Искусство и творчество
 description: Откройте потенциал творчества в своем любимом человеке! Подарите ей возможность создавать уникальные проекты, выражающие её внутренний мир.
 date: '2023-12-01'
-thumbnail: ../../img/arts_and_craft.webp
+thumbnail: ../../img/gifts/arts_and_craft.webp
 category: "for-women"
 author: "alex_nepsha"
 ---

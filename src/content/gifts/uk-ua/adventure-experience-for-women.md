@@ -3,7 +3,7 @@ title: Екстремальний відпочинок
 description: Захопливі пригоди та враження для дівчат із пристрастю до адреналіну.
 author: "alex_nepsha"
 date: '2023-11-24'
-thumbnail: ../../img/hot_air_balloon.webp
+thumbnail: ../../img/gifts/hot_air_balloon.webp
 category: "for-women"
 ---
 

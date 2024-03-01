@@ -2,7 +2,7 @@
 title: Trifle Gifts
 description: Discover fun and quirky trifle gifts for the men in your life.
 date: '2023-09-19'
-thumbnail: ../../img/rubik_cube.jpeg
+thumbnail: ../../img/gifts/rubik_cube.jpeg
 category: "for-men"
 meta:
     age: 18+

@@ -2,7 +2,7 @@
 title: Розумні Ваги
 description: Слідкуйте за здоров'ям та цілями фітнесу з точністю завдяки передовим розумним вагам.
 date: '2023-09-18'
-thumbnail: ../../img/smart_scales.webp
+thumbnail: ../../img/gifts/smart_scales.webp
 category: "for-women"
 meta:
   age: 18+

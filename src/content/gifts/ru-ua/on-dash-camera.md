@@ -2,7 +2,7 @@
 title: Видеорегистратор
 description: Зафиксируйте каждое путешествие с надежным видеорегистратором для безопасности и спокойствия.
 date: '2023-09-18'
-thumbnail: ../../img/on_dash_camera.jpeg
+thumbnail: ../../img/gifts/on_dash_camera.jpeg
 category: "for-women"
 meta:
     age: 18+

@@ -2,7 +2,7 @@
 title: On-Dash Camera
 description: Capture every journey with a reliable on-dash camera for safety and peace of mind.
 date: '2023-09-18'
-thumbnail: ../../img/on_dash_camera.jpeg
+thumbnail: ../../img/gifts/on_dash_camera.jpeg
 category: "for-women"
 meta:
     age: 18+
