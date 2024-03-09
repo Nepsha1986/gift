@@ -1,6 +1,6 @@
 ---
 title: "Книги и литература"
-description: "Gift your man his favorite book or a global literary bestseller!"
+description: "Подарите своему мужчине его любимую книгу  или мировой литературный бестселлер!"
 category: "for-men"
 author: "olga_sergeevna"
 date: "2024-03-09"
