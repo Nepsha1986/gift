@@ -1,5 +1,5 @@
 ---
-title: "Facial cosmetics and body care products"
+title: "Косметика для лица и средства по уходу за телом"
 description: "Подарите вашей любимой возможность стать еще красивее и позаботится о своей коже с помощью популярных косметических средств!"
 category: "for-women"
 author: "olga_sergeevna"
