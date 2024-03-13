@@ -2,7 +2,7 @@
 title: Комп'ютерні окуляри
 description: Захистіть очі та підвищте комфорт із модними комп'ютерними окулярами.
 date: '2023-09-18'
-thumbnail: ../../img/gifts/computer-glasses.webp
+thumbnail: ../../img/gifts/computer_glasses.webp
 category: "for-men"
 meta:
   age: 18+
