@@ -3,7 +3,7 @@ title: "Choosing the Right Baby Pillow: A Guide for Parents"
 description: "Navigate the world of baby pillows with confidence! Our comprehensive guide for parents is packed with essential tips and insights to help you choose the perfect pillow for your little one."
 author: "alex_nepsha"
 date: "2024-02-12"
-thumbnail: ../../img/posts/baby-cotton-pillow.webp
+thumbnail: ../../img/posts/baby_cotton_pillow.webp
 ---
 
 When it comes to ensuring a comfortable and safe sleep environment for your baby, selecting the right pillow is crucial. Here are some key factors to consider when choosing a baby pillow:
