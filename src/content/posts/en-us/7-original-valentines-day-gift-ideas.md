@@ -3,7 +3,7 @@ title: "7 Original Valentine's Day Gift Ideas"
 description: "Valentine's Day is just around the corner, and finding the perfect gift can be a delightful challenge. Move beyond the expected with these 7 original ideas that are sure to captivate your loved one's heart."
 author: "alex_nepsha"
 date: "2024-02-12"
-thumbnail: ../../img/posts/valentines-day.webp
+thumbnail: ../../img/posts/valentines_day.webp
 ---
 
 ### 1. **Personalized Star Map:**
