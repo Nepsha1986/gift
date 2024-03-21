@@ -5,8 +5,10 @@ import categories, {
 import shared, { type SharedStrings } from "@i18n/translations/shared.ts";
 import seo, { type SeoStrings } from "@i18n/translations/seo.ts";
 
-export type SupportedLanguages = "en" | "ru" | "uk";
-export type SupportedLocales = "en-us" | "uk-ua" | "ru-ua";
+export const languages = ["en", "ru", "uk"] as const;
+export type SupportedLanguages = (typeof languages)[number];
+export const locales = ["en-us", "uk-ua", "ru-ua"] as const;
+export type SupportedLocales = (typeof locales)[number];
 
 export const defaultLang = "en";
 
