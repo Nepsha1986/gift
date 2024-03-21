@@ -1,10 +1,10 @@
 import type { APIRoute } from "astro";
 import { getCollection } from "astro:content";
 import { getCleanSlug, getLangFromSlug } from "@i18n/utils.ts";
-import type { Feature } from "@src/types/feature.ts";
+import type { Module } from "@src/types/module.ts";
 import { transformString } from "@utils/stransformString.ts";
 
-const modules: Feature[] = ["RelatedProducts", "Ads"];
+const modules: Module[] = ["RelatedProducts", "Ads"];
 
 const giftsEntries = await getCollection("gifts");
 
@@ -13,14 +13,14 @@ const giftsEntries = await getCollection("gifts");
  * Filter gifts entries that match the feature, and returns an array of slugs and names.
  */
 export const GET: APIRoute = ({ params }) => {
-  const feature = transformString(params.feature as string, [
+  const module = transformString(params.feature as string, [
     "kebabToCamel",
     "capitalize",
-  ]) as Feature;
+  ]) as Module;
 
   const slugs: Array<{ name: string; slug: string }> = giftsEntries
     .filter((i) => getLangFromSlug(i.slug) === "en")
-    .filter((i) => i.data?.modules?.includes(feature))
+    .filter((i) => i.data?.modules?.includes(module))
     .map((i) => ({
       name: i.data.title,
       slug: getCleanSlug(i.slug),
