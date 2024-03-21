@@ -18,7 +18,7 @@ export function getLangFromSlug(slug: string): SupportedLanguages {
 }
 
 export function getLocaleFromSlug(slug: string): SupportedLocales {
-  return slug.split("/")[0] as "en-us" | "uk-ua" | "ru-ua";
+  return slug.split("/")[0] as SupportedLocales;
 }
 
 export function getCleanSlug(slug: string): string {
