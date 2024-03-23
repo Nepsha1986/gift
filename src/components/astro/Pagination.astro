@@ -1,0 +1,84 @@
+---
+import { faAnglesLeft, faAnglesRight, faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+const { length, currentUrl, currentPage, firstUrl, prevUrl, nextUrl, lastUrl } = Astro.props;
+const paginationList = Array.from({ length }, (_, i) => i + 1);
+---
+
+<nav aria-label="Blog pages" class="pagination">
+  {firstUrl === currentUrl ? (
+    <span class="pagination__link disabled">
+        <FontAwesomeIcon icon={faAnglesLeft} />
+    </span>
+  ) : (
+    <a href={firstUrl} class="pagination__link">
+      <FontAwesomeIcon icon={faAnglesLeft} />
+    </a>
+  )}
+
+  {prevUrl ? (
+    <a href={prevUrl} class="pagination__link">
+      <FontAwesomeIcon icon={faAngleLeft} />
+      Prev
+    </a>
+  ) : (
+    <span class="pagination__link disabled">
+       <FontAwesomeIcon icon={faAngleLeft} /> Prev
+    </span>
+  )}
+
+  <div class="pagination__links">
+    {paginationList.map((num) => (
+      <a href={`${firstUrl}${num == 1 ? "" : "/" + (num)}`}
+         class={`pagination__link ${currentPage == num ? "disabled active" : ""}`}>
+        {num}
+      </a>
+    ))}
+  </div>
+
+  {!nextUrl ? (
+    <span class="pagination__link disabled">
+        Next <FontAwesomeIcon icon={faAngleRight} />
+    </span>
+  ) : (
+    <a href={nextUrl} class="pagination__link">
+      Next
+      <FontAwesomeIcon icon={faAngleRight} />
+    </a>
+  )}
+
+  {lastUrl === currentUrl ? (
+    <span class="pagination__link disabled"><FontAwesomeIcon icon={faAnglesRight} /></span>
+  ) : (
+    <a href={lastUrl} class="pagination__link">
+      <FontAwesomeIcon icon={faAnglesRight} />
+    </a>
+  )}
+</nav>
+
+<style lang="scss">
+	.pagination {
+		font-weight: 300;
+
+		&__links {
+			display: inline-flex;
+			margin: 0 30px;
+			justify-content: center;
+			gap: 10px
+		}
+
+		&__link {
+			font-size: 1.05rem;
+			color: var(--c-grey);
+
+			&.disabled {
+				color: var(--c-grey-light);
+				pointer-events: none;
+			}
+
+			&:hover {
+				color: var(--c-primary-dark);
+			}
+		}
+	}
+</style>
