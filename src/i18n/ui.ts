@@ -1,3 +1,4 @@
+import z from "zod";
 import nav, { type NavTranslationStrings } from "./translations/navigation.ts";
 import categories, {
   type CategoriesTranslationStrings,
@@ -7,8 +8,14 @@ import seo, { type SeoStrings } from "@i18n/translations/seo.ts";
 
 export const languages = ["en", "ru", "uk"] as const;
 export type SupportedLanguages = (typeof languages)[number];
-export const locales = ["en-us", "uk-ua", "ru-ua"] as const;
-export type SupportedLocales = (typeof locales)[number];
+
+export const SupportedLocalesSchema = z.union([
+  z.literal("en-us"),
+  z.literal("ru-ua"),
+  z.literal("uk-ua"),
+]);
+export type SupportedLocales = z.infer<typeof SupportedLocalesSchema>;
+export const locales: SupportedLocales[] = ["en-us", "uk-ua", "ru-ua"];
 
 export const defaultLang = "en";
 
