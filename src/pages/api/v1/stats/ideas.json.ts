@@ -6,7 +6,7 @@ import { type SupportedLocales, SupportedLocalesSchema } from "@i18n/ui.ts";
 
 const ideas = await getCollection("gifts");
 
-const PostsStatsSchema = z.object({
+const IdeasStatsSchema = z.object({
   total: z.number(),
   locales: z.array(
     z.object({
@@ -17,9 +17,9 @@ const PostsStatsSchema = z.object({
   ),
 });
 
-type PostsStats = z.infer<typeof PostsStatsSchema>;
+type IdeasStats = z.infer<typeof IdeasStatsSchema>;
 
-const getStats = (collection: Array<CollectionEntry<"gifts">>): PostsStats => {
+const getStats = (collection: Array<CollectionEntry<"gifts">>): IdeasStats => {
   const collectionCropped = collection.map((i) => ({
     id: i.id,
     locale: getLocaleFromSlug(i.slug),
@@ -41,11 +41,11 @@ const getStats = (collection: Array<CollectionEntry<"gifts">>): PostsStats => {
   };
 };
 
-const resBody: PostsStats = getStats(ideas);
+const resBody: IdeasStats = getStats(ideas);
 
 export async function GET(): Promise<Response> {
   try {
-    PostsStatsSchema.parse(resBody);
+    IdeasStatsSchema.parse(resBody);
     return new Response(JSON.stringify(resBody));
   } catch (e) {
     if (e instanceof ZodError) {
