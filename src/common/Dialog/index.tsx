@@ -10,11 +10,20 @@ import styles from "./styles.module.scss";
 const Dialog: React.FC<{
   open: boolean;
   children: ReactNode;
+  asDrawer?: boolean;
   onClickClose?: () => void;
   size?: "small" | "medium" | "large";
   heading?: string;
   footer?: React.ReactNode | React.ReactNode[];
-}> = ({ open, children, onClickClose, heading, footer, size = "small" }) => {
+}> = ({
+  open,
+  children,
+  onClickClose,
+  heading,
+  footer,
+  size = "small",
+  asDrawer = false,
+}) => {
   const dialogRef = useRef<HTMLDialogElement>(null);
 
   const onAnimationEnd = (): void => {
@@ -30,6 +39,7 @@ const Dialog: React.FC<{
   const className = classNames(styles.dialog, {
     [styles[`dialog_${size}`]]: size,
     [styles.dialog_dissapear]: !open,
+    [styles.dialog_asDrawer]: asDrawer,
   });
 
   return (

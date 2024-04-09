@@ -32,6 +32,7 @@ const RelatedProducts: React.FC<AstroContextProps> = ({
         }}
       >
         <Dialog
+          asDrawer
           heading={t("dialog.heading")}
           open={isDialogVisible}
           size="medium"
