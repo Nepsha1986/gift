@@ -4,8 +4,6 @@ description: Make mealtime fun and engaging with colorful and durable kids' dinn
 date: '2023-09-18'
 thumbnail: ../../img/gifts/kids_dinnerware_set.jpeg
 category: "for-kids"
-meta:
-    age: 1+
 ---
 Looking for a gift that turns everyday meals into exciting adventures for children? Kids' dinnerware sets are the perfect choice! Whether you're shopping for a picky eater, a toddler just starting solids, or a child who loves imaginative dining experiences, these colorful and durable sets add a delightful touch to mealtime.
 

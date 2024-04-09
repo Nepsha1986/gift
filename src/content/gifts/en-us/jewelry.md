@@ -4,8 +4,6 @@ description: Gift them timeless elegance with exquisite jewelry pieces.
 date: '2023-09-17'
 thumbnail: ../../img/gifts/jewelry.webp
 category: "for-women"
-meta:
-    age: 18+
 ---
 Searching for a gift that exudes elegance and captures the essence of beauty? Consider gifting them exquisite jewelry. It's a timeless gesture that adds a touch of luxury and sophistication to any outfit.
 

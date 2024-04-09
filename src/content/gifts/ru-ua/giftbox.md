@@ -4,8 +4,6 @@ description: Удивите и порадуйте детей тематичес�
 date: '2023-09-18'
 thumbnail: ../../img/gifts/gift_box.webp
 category: "for-kids"
-meta:
-    age: 3+
 featured: true
 ---
 

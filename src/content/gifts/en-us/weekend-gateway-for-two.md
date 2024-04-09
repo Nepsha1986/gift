@@ -4,8 +4,6 @@ description: Gift them an unforgettable escape with a weekend getaway for two.
 date: '2023-09-17'
 thumbnail: ../../img/gifts/trip_to_europe.webp
 category: "for-women"
-meta:
-    age: 18+
 featured: true
 ---
 Looking for a gift that promises cherished memories and quality time together? Consider gifting them a weekend getaway for two. It's the perfect escape from the daily grind and an opportunity to create lasting moments of togetherness.

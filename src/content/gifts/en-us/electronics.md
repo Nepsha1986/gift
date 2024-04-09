@@ -4,8 +4,6 @@ description: Explore the latest gadgets and tech gifts for tech-savvy individual
 date: '2023-09-19'
 thumbnail: ../../img/gifts/earphones.webp
 category: "for-teens"
-meta:
-    age: 16+
 featured: true
 ---
 Embrace the future with the latest and greatest electronic gadgets and tech gifts. In this section, we present a curated collection of cutting-edge technology and innovative devices that will delight tech enthusiasts of all ages.

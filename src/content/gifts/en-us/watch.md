@@ -4,8 +4,6 @@ description: Elevate their style and punctuality with a timeless wristwatch.
 date: '2023-09-17'
 thumbnail: ../../img/gifts/wrist_watch.webp
 category: "for-men"
-meta:
-    age: 16+
 featured: true
 ---
 Searching for a gift that blends style and functionality seamlessly? Look no further than a classic wristwatch. A wristwatch is more than a timekeeping device; it's a symbol of sophistication and punctuality.

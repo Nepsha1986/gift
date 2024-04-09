@@ -4,8 +4,6 @@ description: Foster imagination with a cozy and adventurous kid's tent.
 date: '2023-09-18'
 thumbnail: ../../img/gifts/kids_play_tent.jpeg
 category: "for-kids"
-meta:
-    age: 3+
 featured: true
 ---
 Looking for a gift that sparks imagination, provides a cozy hideaway, and encourages endless adventures? A kid's tent is the perfect choice! Whether you're shopping for a little explorer, a budding storyteller, or a child looking for their own special space, a kid's tent offers a world of imaginative possibilities.

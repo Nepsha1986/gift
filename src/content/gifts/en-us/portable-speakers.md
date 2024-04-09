@@ -4,8 +4,6 @@ description: Share the gift of music on the go with versatile portable speakers.
 date: '2023-09-18'
 thumbnail: ../../img/gifts/portable_speaker.webp
 category: "for-teens"
-meta:
-    age: 12+
 ---
 Searching for a gift that brings music to life no matter where you are? Portable speakers are the perfect choice! Whether you're shopping for an audiophile, a party enthusiast, or someone who simply loves sharing their favorite tunes, portable speakers provide a soundtrack to every adventure.
 

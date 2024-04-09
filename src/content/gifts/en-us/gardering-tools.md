@@ -4,8 +4,6 @@ description: Explore essential gardening tools and accessories for green-thumbed
 date: '2023-09-19'
 thumbnail: ../../img/gifts/garden_gloves.webp
 category: "for-men"
-meta:
-    age: 18+
 ---
 For those who find solace in tending to plants and nurturing green spaces, the right gardening tools can make all the difference. Explore our selection of essential gardening tools and accessories perfect for green-thumbed enthusiasts. Whether it's a beginner or a seasoned gardener, these gifts will help them cultivate a thriving garden.
 

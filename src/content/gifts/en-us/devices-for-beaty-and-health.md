@@ -4,8 +4,6 @@ description: Enhance your beauty and well-being with these innovative devices fo
 date: '2023-09-19'
 thumbnail: ../../img/gifts/hair_straightener.webp
 category: "for-women"
-meta:
-    age: 18+
 ---
 Empower women to look and feel their best with the latest beauty and health devices designed to enhance their well-being. In this section, we offer a selection of innovative tools and gadgets that promote self-care, confidence, and a healthier lifestyle.
 

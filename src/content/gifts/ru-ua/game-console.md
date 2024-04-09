@@ -4,8 +4,6 @@ description: Подарите им бесконечное развлечение
 date: '2023-09-17'
 thumbnail: ../../img/gifts/joystick.webp
 category: "for-men"
-meta:
-    age: 12+
 featured: true
 ---
 

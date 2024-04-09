@@ -4,8 +4,6 @@ description: Enhance self-care routines with these essential personal care and h
 date: '2023-09-19'
 thumbnail: ../../img/gifts/electric_toothbrush.webp
 category: "for-men"
-meta:
-    age: 18+
 ---
 Taking care of one's personal well-being is a priority for men who value their health and self-care. Explore our curated collection of essential personal care and health gift ideas tailored for men. From grooming to relaxation, these gifts promote physical and mental well-being.
 

@@ -4,8 +4,6 @@ description: Elevate outdoor cooking with these BBQ tools and accessories gift i
 date: '2023-09-19'
 thumbnail: ../../img/gifts/bbq.webp
 category: "for-men"
-meta:
-    age: 18+
 ---
 There's nothing quite like the sizzle of the grill and the aroma of barbecue wafting through the air. Explore our collection of BBQ tools and accessories that are perfect for outdoor cooking enthusiasts. From grill masters to weekend barbecuers, these gifts will enhance their grilling experience.
 

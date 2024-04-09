@@ -4,8 +4,6 @@ description: Підвищте ефективність фітнесу цими �
 date: '2023-09-19'
 thumbnail: ../../img/gifts/dumbbell.webp
 category: "for-men"
-meta:
-    age: 18+
 featured: true
 ---
 

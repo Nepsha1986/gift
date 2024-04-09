@@ -4,8 +4,6 @@ description: Gift them endless entertainment with a cutting-edge game console.
 date: '2023-09-17'
 thumbnail: ../../img/gifts/joystick.webp
 category: "for-men"
-meta:
-    age: 12+
 featured: true
 ---
 Looking for a gift that immerses them in a world of excitement, adventure, and endless fun? Consider gifting them a cutting-edge game console. It's a gateway to thrilling gaming experiences and entertainment.

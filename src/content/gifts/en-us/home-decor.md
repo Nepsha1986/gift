@@ -4,8 +4,6 @@ description: Elevate your living spaces with stylish and unique home decor items
 date: '2023-09-19'
 thumbnail: ../../img/gifts/photo_frame.webp
 category: "for-women"
-meta:
-    age: 18+
 featured: true
 ---
 Transform your living spaces into havens of style and comfort with our curated collection of home decor items. Whether you're redecorating your home or searching for the perfect gift, these stylish pieces will add personality and charm to any room.

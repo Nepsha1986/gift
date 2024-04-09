@@ -4,8 +4,6 @@ description: Elevate their grooming routine with a high-performance electric sha
 date: '2023-09-17'
 thumbnail: ../../img/gifts/electric_shaver.webp
 category: "for-men"
-meta:
-    age: 18+
 ---
 Searching for a gift that combines practicality with grooming excellence? Consider gifting them a high-performance electric shaver. It's a versatile tool that elevates their grooming routine to a whole new level.
 

@@ -4,8 +4,6 @@ description: Gift them relaxation and rejuvenation with a soothing massage exper
 date: '2023-09-17'
 thumbnail: ../../img/gifts/massage.jpeg
 category: "for-women"
-meta:
-    age: 18+
 featured: true
 ---
 Looking for a gift that pampers and revitalizes both the body and spirit? Consider gifting them a visit to a massage salon. It's an invitation to escape the everyday grind and embrace tranquility.

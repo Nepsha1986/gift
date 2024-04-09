@@ -4,8 +4,6 @@ description: Gift them relaxation and rejuvenation with a luxurious spa experien
 date: '2023-09-17'
 thumbnail: ../../img/gifts/spa_visit.jpeg
 category: "for-women"
-meta:
-    age: 18+
 featured: false
 ---
 Looking for a gift that pampers and rejuvenates the body and soul? Consider gifting them a luxurious spa experience. It's a chance to escape the stresses of everyday life and indulge in ultimate relaxation.

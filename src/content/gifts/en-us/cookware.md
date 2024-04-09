@@ -4,8 +4,6 @@ description: Elevate their culinary adventures with high-quality cookware.
 date: '2023-09-17'
 thumbnail: ../../img/gifts/cookware.webp
 category: "for-women"
-meta:
-    age: 18+
 ---
 Looking for a gift that transforms their kitchen into a culinary haven and inspires gourmet creations? Consider gifting them high-quality cookware. It's a practical yet elegant gesture that elevates their cooking experience.
 

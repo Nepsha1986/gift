@@ -4,8 +4,6 @@ description: Keep their adventure fueled with a reliable camping thermos.
 date: '2023-09-17'
 thumbnail: ../../img/gifts/thermos.webp
 category: "for-men"
-meta:
-    age: 12+
 ---
 Searching for a gift that combines practicality with outdoor adventure? Consider gifting them a dependable camping thermos. It's the key to staying hydrated and fueled during their wilderness explorations.
 

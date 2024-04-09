@@ -4,8 +4,6 @@ description: Поднимите игровой опыт с комфортабе�
 date: '2023-09-18'
 thumbnail: ../../img/gifts/office_chair.webp
 category: "for-teens"
-meta:
-    age: 12+
 featured: true
 ---
 

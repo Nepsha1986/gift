@@ -27,11 +27,6 @@ const giftsCollection = defineCollection({
       author: Author.optional(),
       date: z.string(),
       category: GiftCategory.optional(),
-      meta: z
-        .object({
-          age: z.string().optional(),
-        })
-        .optional(),
       featured: z.boolean().optional().default(false),
       modules: z.array(z.string()).optional(),
     }),

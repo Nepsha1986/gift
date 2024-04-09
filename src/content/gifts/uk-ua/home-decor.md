@@ -4,8 +4,6 @@ description: Підніміть рівень вашого житлового п�
 date: '2023-09-19'
 thumbnail: ../../img/gifts/photo_frame.webp
 category: "for-women"
-meta:
-    age: 18+
 featured: true
 ---
 

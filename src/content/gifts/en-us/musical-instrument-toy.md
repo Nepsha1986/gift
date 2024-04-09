@@ -4,8 +4,6 @@ description: Nurture musical talents with fun and educational instruments.
 date: '2023-09-18'
 thumbnail: ../../img/gifts/xylophone.webp
 category: "for-kids"
-meta:
-    age: 3+
 featured: true
 ---
 Searching for a gift that introduces children to the magical world of music, rhythm, and self-expression? Musical instruments designed for kids are the perfect choice! Whether you're shopping for a budding musician, a music enthusiast, or a child looking to discover their artistic side, these instruments offer a delightful and educational experience.

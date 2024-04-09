@@ -4,8 +4,6 @@ description: Embark on an exhilarating adventure with an immersive escape room c
 date: '2023-09-18'
 thumbnail: ../../img/gifts/escape_room.webp
 category: "for-teens"
-meta:
-    age: 16+
 featured: true
 ---
 Looking for a gift that combines excitement, teamwork, and the thrill of solving puzzles? An escape room experience is the perfect choice! Whether you're shopping for an adventure-loving friend, a family looking for a unique outing, or a special someone seeking a memorable date, escape rooms offer an unforgettable adventure.

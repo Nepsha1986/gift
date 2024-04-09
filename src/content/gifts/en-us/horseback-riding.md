@@ -4,8 +4,6 @@ description: Gift them an unforgettable horseback riding adventure in the great 
 date: '2023-09-17'
 thumbnail: ../../img/gifts/horseback_riding.webp
 category: "for-women"
-meta:
-    age: 12+
 featured: true
 ---
 Looking for a gift that combines adventure, nature, and a dash of equestrian elegance? Consider gifting them a horseback riding experience. It's a chance to connect with the great outdoors while enjoying the timeless allure of horse riding.

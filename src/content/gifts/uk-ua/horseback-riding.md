@@ -4,8 +4,6 @@ description: Подаруйте незабутню пригоду верхи н�
 date: '2023-09-17'
 thumbnail: ../../img/gifts/horseback_riding.webp
 category: "for-women"
-meta:
-    age: 12+
 featured: true
 ---
 

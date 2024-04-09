@@ -4,8 +4,6 @@ description: Розпали їх музичну пристрасть класи�
 date: '2023-09-17'
 thumbnail: ../../img/gifts/guitar.webp
 category: "for-men"
-meta:
-  age: 10+
 featured: true
 ---
 

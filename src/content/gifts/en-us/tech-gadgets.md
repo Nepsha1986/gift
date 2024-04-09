@@ -4,8 +4,6 @@ description: Explore the latest and coolest tech gadgets tailored for men with a
 date: '2023-09-19'
 thumbnail: ../../img/gifts/earbuds.webp
 category: "for-men"
-meta:
-    age: 18+
 ---
 For tech-savvy men who appreciate the power of innovation, there's a world of exciting gadgets to explore. Dive into our collection of the latest and coolest tech gadgets designed with men in mind. Whether it's enhancing productivity, entertainment, or convenience, these gifts will satisfy their tech cravings.
 

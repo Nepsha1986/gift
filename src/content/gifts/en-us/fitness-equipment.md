@@ -4,8 +4,6 @@ description: Gift them the tools for a healthier lifestyle with high-quality fit
 date: '2023-09-17'
 thumbnail: ../../img/gifts/sport.jpeg
 category: "for-women"
-meta:
-    age: 18+
 featured: true
 ---
 Looking for a gift that promotes health, wellness, and an active lifestyle? Consider gifting them high-quality fitness equipment. It's a practical gesture that supports their journey to a healthier and fitter self.

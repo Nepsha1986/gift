@@ -4,8 +4,6 @@ description: Подарите им инструменты для более зд
 date: '2023-09-17'
 thumbnail: ../../img/gifts/sport.jpeg
 category: "for-women"
-meta:
-    age: 18+
 featured: true
 ---
 

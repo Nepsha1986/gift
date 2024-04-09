@@ -4,8 +4,6 @@ description: Upgrade your driving experience with these practical and stylish ca
 date: '2023-09-19'
 thumbnail: ../../img/gifts/wheel.webp
 category: "for-men"
-meta:
-    age: 18+
 ---
 Enhance your time on the road with a selection of practical and stylish car accessories. Whether you're looking to improve comfort, organization, or safety, these products are designed to make your daily commute or road trips more enjoyable. From tech gadgets to interior enhancements, we've got you covered.
 

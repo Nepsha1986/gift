@@ -4,8 +4,6 @@ description: Elevate style and comfort with fashionable clothing and accessories
 date: '2023-09-19'
 thumbnail: ../../img/gifts/sunglasses.jpeg
 category: "for-men"
-meta:
-    age: 18+
 ---
 For the modern man who values both style and functionality, finding the right clothing and accessories can be a game-changer. Explore our curated collection of fashionable gift ideas tailored for men, from wardrobe staples to statement pieces. These gifts are designed to help him express his unique style and stay comfortable in any setting.
 

@@ -4,8 +4,6 @@ description: Elevate fitness routines with these essential workout and fitness g
 date: '2023-09-19'
 thumbnail: ../../img/gifts/dumbbell.webp
 category: "for-men"
-meta:
-    age: 18+
 featured: true
 ---
 For men committed to staying fit and pushing their physical limits, the right fitness tools and accessories can make all the difference. Explore our curated collection of essential fitness and workout gift ideas tailored for men. Whether it's strength training, cardio, or recovery, these gifts will help them achieve their fitness goals.

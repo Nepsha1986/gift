@@ -4,8 +4,6 @@ description: Elevate style and comfort with fashionable clothing and accessories
 date: '2023-09-19'
 thumbnail: ../../img/gifts/hat.webp
 category: "for-women"
-meta:
-    age: 18+
 ---
 Fashion is a form of self-expression, and the right clothing and accessories can help anyone feel confident and stylish. Explore our curated collection of fashionable gift ideas that range from wardrobe essentials to statement pieces. These gifts are perfect for adding a touch of style to any outfit or personalizing one's look.
 

@@ -4,8 +4,6 @@ description: Elevate their outdoor adventures with a reliable camping tent.
 date: '2023-09-17'
 thumbnail: ../../img/gifts/camping_tent.webp
 category: "for-men"
-meta:
-    age: 18+
 ---
 Looking for a gift that encourages outdoor exploration and adventure? Consider gifting them a durable camping tent. It's the key to unforgettable outdoor experiences and a cozy night under the stars.
 

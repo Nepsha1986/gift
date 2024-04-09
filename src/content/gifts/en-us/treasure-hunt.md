@@ -4,8 +4,6 @@ description: Make gift-giving memorable and teach financial responsibility by cr
 date: '2023-09-18'
 thumbnail: ../../img/gifts/piggy_bank.jpeg
 category: "for-kids"
-meta:
-    age: 5+
 ---
 We understand that some parents may have concerns about giving money as a gift to children. While traditional gifts have their place, incorporating money into gift-giving can offer unique benefits:
 

@@ -4,8 +4,6 @@ description: Elevate their music experience with high-quality headphones.
 date: '2023-09-17'
 thumbnail: ../../img/gifts/headphones.webp
 category: "for-women"
-meta:
-  age: 12+
 ---
 Looking for a gift that will take their music listening experience to the next level? Consider gifting them a pair of high-quality headphones. Whether they're a music enthusiast, a gamer, or simply someone who enjoys audio content, headphones make for an exceptional present.
 

@@ -4,8 +4,6 @@ description: Unleash excitement with remote-controlled cars, helicopters, and dr
 date: '2023-09-18'
 thumbnail: ../../img/gifts/drone.webp
 category: "for-kids"
-meta:
-    age: 8+
 ---
 Looking for a gift that combines the thrill of speed, precision, and outdoor exploration? Remote-controlled vehicles are the perfect choice! Whether you're shopping for a young car enthusiast, a budding pilot, or a tech-savvy kid, these vehicles offer a world of exciting possibilities.
 

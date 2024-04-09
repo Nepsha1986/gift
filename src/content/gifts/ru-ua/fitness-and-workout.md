@@ -4,8 +4,6 @@ description: Повысьте эффективность фитнеса с эт�
 date: '2023-09-19'
 thumbnail: ../../img/gifts/dumbbell.webp
 category: "for-men"
-meta:
-    age: 18+
 featured: true
 ---
 

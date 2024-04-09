@@ -4,8 +4,6 @@ description: Monitor health and fitness goals with precision using cutting-edge 
 date: '2023-09-18'
 thumbnail: ../../img/gifts/smart_scales.webp
 category: "for-women"
-meta:
-    age: 18+
 ---
 Searching for a gift that promotes well-being, precision, and the pursuit of health and fitness? Smart scales are the answer! Whether you're shopping for a fitness fanatic, someone on a wellness journey, or anyone looking to monitor their health more closely, smart scales provide essential insights and motivation.
 

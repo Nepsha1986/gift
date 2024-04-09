@@ -4,8 +4,6 @@ description: Gift them the ultimate luxury with a private yacht trip on the open
 date: '2023-09-17'
 thumbnail: ../../img/gifts/yacht.webp
 category: "for-women"
-meta:
-    age: 18+
 ---
 Searching for a gift that's the epitome of luxury, adventure, and sheer indulgence? Consider gifting them a private yacht trip. It's an escape to a world of opulence, where they can explore the open seas in style.
 
