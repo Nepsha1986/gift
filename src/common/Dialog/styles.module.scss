@@ -68,7 +68,7 @@
     }
 
     &#{$this}_dissapear {
-      animation: slideOut 0.45s ease;
+      animation: slideOut 0.45s ease-in-out;
     }
   }
 }
