@@ -14,7 +14,9 @@ const lang = getLangFromUrl(URL);
 const t = useTranslations(lang, translations);
 
 const posts = await getCollection("posts", ({slug}) => getLocaleFromSlug(slug) === locale);
-const latestPosts = posts.slice(0, 6);
+const postsSorted = posts.sort((prev, cur) => new Date(cur.data.date) - new Date(prev.data.date));
+
+const latestPosts = postsSorted.slice(0, 6);
 ---
 
 <Section heading={t('section.heading')}>

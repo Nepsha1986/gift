@@ -14,7 +14,9 @@ export async function getStaticPaths({ paginate }): any {
   const postsEntries = await getCollection("posts");
 
   return locales.flatMap((locale) => {
-    const filteredPosts = postsEntries.filter((post) => getLocaleFromSlug(post.slug) === locale);
+    const filteredPosts = postsEntries
+      .filter((post) => getLocaleFromSlug(post.slug) === locale)
+      .sort((prev, cur) => new Date(cur.data.date) - new Date(prev.data.date));
 
     return paginate(filteredPosts, {
       params: { lang: locale },
