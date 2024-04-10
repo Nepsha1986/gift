@@ -2,7 +2,7 @@
 import { formatDate } from "@utils/formatDate";
 import { Image } from "astro:assets";
 
-const {thumbnail, title, description, href, date} = Astro.props;
+const { thumbnail, title, description, href, date } = Astro.props;
 ---
 
 <a href={href} class="post-item">
@@ -18,7 +18,8 @@ const {thumbnail, title, description, href, date} = Astro.props;
   </div>
 
   <div class="post-item__content">
-    <span>{formatDate(date)}</span>
+    <span class="post-item__date">{formatDate(date)}</span>
+
     <h2 class="post-item__title">{title}</h2>
 
     <p class="post-item__desc">{description}</p>
@@ -29,26 +30,53 @@ const {thumbnail, title, description, href, date} = Astro.props;
 	@use "@src/styles/_mixins";
 
 	.post-item {
+		$this: &;
+
 		background: #fff;
 		box-shadow: 0 5px 15px -5px rgba(0, 0, 0, 0.3);
-    display: inline-block;
+		display: inline-block;
 		max-width: 400px;
+		border-radius: 3px;
+		position: relative;
+		transition: 0.185s ease-in-out;
+
+		&:hover {
+			scale: 1.007;
+			box-shadow: 0 6px 16px -4px rgba(0, 0, 0, 0.28);
+		}
 
 		&__img {
-			aspect-ratio: 400 / 300;
+			aspect-ratio: 400 / 420;
 		}
 
 		&__title {
 			font-size: 1.15rem;
+			line-height: 1.3;
 			@include mixins.textOverflow(2);
 		}
 
 		&__content {
-			padding: 1.5rem 1rem;
+			padding: 3.5rem 1rem 1rem;
+			position: absolute;
+			bottom: 0;
+			background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.8) 30%, rgba(255, 255, 255, 1));
+			backdrop-filter: blur(3);
 		}
 
 		&__desc {
-			@include mixins.textOverflow(5);
+			@include mixins.textOverflow(3);
+			font-size: 0.9rem;
+			line-height: 1.3;
+			color: var(--c-grey);
+		}
+
+		&__date {
+			font-weight: 600;
+			font-style: italic;
+			font-size: 0.85rem;
+			display: inline-block;
+			margin-bottom: 10px;
+			color: var(--c-primary-dark);
 		}
 	}
 
