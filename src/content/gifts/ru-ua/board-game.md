@@ -1,8 +1,8 @@
 ---
-title: Настольная игра
-description: Откройте мир веселья и укрепите отношения с захватывающей настольной игрой в подарок.
+title: "Настольная игра"
+description: "Наш ТОП настольных игр которые подойдут для веселой компании"
 date: '2023-11-30'
-thumbnail: ../../img/gifts/board_game.webp
+thumbnail: "../../img/gifts/board_game.webp"
 category: "for-teens"
 featured: true
 modules:

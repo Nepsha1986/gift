@@ -1,8 +1,8 @@
 ---
-title: Экстремальное приключение
-description: Увлекательные приключения и впечатления для мужчин, увлекающихся адреналином.
+title: "Экстремальное приключение"
+description: "Захватывающие идеи для подарка активным мужчинам"
 date: '2023-11-24'
-thumbnail: ../../img/gifts/skydiving.webp
+thumbnail: "../../img/gifts/skydiving.webp"
 category: "for-men"
 author: "alex_nepsha"
 ---

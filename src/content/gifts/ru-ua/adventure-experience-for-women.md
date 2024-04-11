@@ -1,9 +1,9 @@
 ---
-title: Экстремальное развлечение
-description: Увлекательные приключения и впечатления для девушек со страстью к адреналину.
+title: "Экстремальное приключение"
+description: "Захватывающие идеи для подарка активным девушкам"
 author: "alex_nepsha"
 date: '2023-11-24'
-thumbnail: ../../img/gifts/hot_air_balloon.webp
+thumbnail: "../../img/gifts/hot_air_balloon.webp"
 category: "for-women"
 ---
 
