@@ -3,69 +3,68 @@ import { Category } from "@src/types/category";
 import { getLangFromUrl, useTranslations } from "@i18n/utils";
 import { ui } from "@i18n/ui";
 import { formatDate } from "@utils/formatDate";
-import { authors } from "../../content/_authors";
+import { authors } from "@src/content/_authors";
 
 const lang = getLangFromUrl(Astro.url.pathname);
 const t = useTranslations(lang, ui);
 interface MetaInfo {
-	age: string,
-	priceRange: string,
+  age: string,
+  priceRange: string,
 }
 
 type Author = {
-	fullName: string;
-	link: string;
+  fullName: string;
+  link: string;
 }
 interface Props {
-	thumbnail: string;
-	title: string;
-	subtitle: string;
-	content: any;
-	category?: Category;
-	meta?: MetaInfo;
-	author?: Author;
-	date?: string;
+  thumbnail: string;
+  title: string;
+  subtitle: string;
+  content: any;
+  category?: Category;
+  meta?: MetaInfo;
+  author?: Author;
+  date?: string;
 }
 
-const {thumbnail, title, content, category, subtitle, meta, author, date} = Astro.props;
+const { thumbnail, title, content, category, meta, author, date } = Astro.props;
 ---
 
 <article class="article" data-pagefind-body>
   <header class="article__header">
     <div class="article__imgWrap">
-      <slot name="thumbnail" class="article__img"/>
+      <slot name="thumbnail" class="article__img" />
     </div>
 
     <div class="article__headerInfo">
       <div>
         <h1 class="article__title">{title}</h1>
-				{category && <p class="article__category">{category}</p>}
-				{author &&
+        {category && <p class="article__category">{category}</p>}
+        {author &&
           <div class="article__authorBlock">
             <address class="article__author">By <a rel="author" href={authors[author].link}>{authors[author].fullName}</a>,</address>
             <span>{formatDate(date)}</span>
           </div>
-				}
-        <p class="article__subtitle">{subtitle}</p>
-
-				{!!meta?.age && <p class="article__age"><span class="bold">{t("s.age")}: </span>{meta.age}</p>}
+        }
       </div>
 
       <div>
-        <slot name="related-products"/>
+        <slot name="related-products" />
       </div>
     </div>
   </header>
 
-  <slot name="ads"/>
+  <slot name="ads" />
 
-  <slot name="content"/>
+  <div class="article__content">
+    <slot name="content" />
+  </div>
 </article>
 
 <style lang="scss">
 	.article {
 		&__title {
-			font-size: 1.75rem;
+			font-size: 1.5rem;
 			margin-bottom: 0;
 		}
 
@@ -123,7 +122,12 @@ const {thumbnail, title, content, category, subtitle, meta, author, date} = Astr
 		&__headerInfo {
 			display: flex;
 			flex-direction: column;
+			flex-shrink: 2;
 			justify-content: space-between;
+		}
+
+		&__content {
+			text-align: justify;
 		}
 	}
 </style>

@@ -2,10 +2,11 @@
 import { getCollection } from "astro:content";
 import Layout from "@layouts/Layout.astro";
 
-import GiftPage from "@astroComponents/GiftPage.astro";
-import AIPostBanner from '@reactComponents/AIPostBanner';
-import CategoryFilter from "@astroComponents/CategoryFilter.astro";
+import GiftPage from "@astroComponents/pages/GiftPage/GiftPage.astro";
 import GiftList from "@astroComponents/GiftList.astro";
+import CategoryFilter from "@astroComponents/CategoryFilter.astro";
+
+import AIPostBanner from '@reactComponents/AIPostBanner';
 
 import RelatedProducts from "src/features/RelatedProducts";
 import Ads from "src/features/Ads";
@@ -42,9 +43,8 @@ const seoTitle = `${t("s.gift_idea")} ${t(entry.data.category)} - ${entry.data.t
 
 <Layout title={seoTitle}>
   <GiftPage
-    title={entry.data.title}
+    title={`${entry.data.title}: ${entry.data.description}`}
     category={t(entry.data.category)}
-    subtitle={entry.data.description}
     meta={entry.data?.meta}
     author={entry.data?.author}
     date={entry.data?.date}
