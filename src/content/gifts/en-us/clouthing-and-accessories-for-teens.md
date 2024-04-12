@@ -1,6 +1,6 @@
 ---
-title: Clothing and Accessories
-description: Discover trendy and youthful clothing and accessories perfect for teens.
+title: "Clothing and Accessories"
+description: "Trendy Gift Ideas for Fashionable Teenagers"
 date: '2023-12-18'
 thumbnail: ../../img/gifts/clouthing-and-accessories-for-teens.webp
 category: "for-teens"

@@ -1,8 +1,8 @@
 ---
-title: Фитнес-оборудование
-description: Подарите им инструменты для более здорового образа жизни с высококачественным фитнес-оборудованием.
-date: '2023-09-17'
-thumbnail: ../../img/gifts/sport.jpeg
+title: "Фитнес-оборудование"
+description: "Идеи практичных подарков для активного стиля жизни"
+date: "2023-09-17"
+thumbnail: "../../img/gifts/sport.jpeg"
 category: "for-women"
 featured: true
 ---

@@ -1,6 +1,6 @@
 ---
 title: "Tourism and Active Leisure"
-description: "Give a practical and indispensable inventory to a traveler and adventure-seeking girl!"
+description: "Our TOP Practical and Indispensable Gear for the Active Girl"
 category: "for-women"
 author: "olga_sergeevna"
 date: "2024-03-18"

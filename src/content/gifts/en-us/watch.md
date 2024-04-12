@@ -1,8 +1,8 @@
 ---
-title: Wrist Watch
-description: Elevate their style and punctuality with a timeless wristwatch.
-date: '2023-09-17'
-thumbnail: ../../img/gifts/wrist_watch.webp
+title: "Wrist Watch"
+description: "How to Choose the Perfect Elegant Gift for a True Gentleman"
+date: "2023-09-17"
+thumbnail: "../../img/gifts/wrist_watch.webp"
 category: "for-men"
 featured: true
 ---

@@ -1,6 +1,6 @@
 ---
 title: "Accessories for the Office"
-description: "Original accessories for a home office or workplace will create an inspiring atmosphere and emphasize a man's style!"
+description: "Original Accessories for a Business Office or Workspace"
 category: "for-men"
 author: "olga_sergeevna"
 date: "2024-03-02"

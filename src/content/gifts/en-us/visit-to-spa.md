@@ -1,8 +1,8 @@
 ---
-title: Visit to the Spa
-description: Gift them relaxation and rejuvenation with a luxurious spa experience.
-date: '2023-09-17'
-thumbnail: ../../img/gifts/spa_visit.jpeg
+title: "Visit to the Spa"
+description: "Indulge in an Exquisite Gift for Rejuvenation and Relaxation"
+date: "2023-09-17"
+thumbnail: "../../img/gifts/spa_visit.jpeg"
 category: "for-women"
 featured: false
 ---

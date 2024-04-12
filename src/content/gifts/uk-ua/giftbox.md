@@ -1,8 +1,8 @@
 ---
-title: Подарункові набори для дітей
-description: Здивуйте і порадуйте дітей тематичними подарунковими наборами, наповненими веселими та освітніми речами.
-date: '2023-09-18'
-thumbnail: ../../img/gifts/gift_box.webp
+title: "Подарункові набори для дітей"
+description: "ТОП-5 порад, як скласти ідеальний набір для вашої дитини"
+date: "2023-09-18"
+thumbnail: "../../img/gifts/gift_box.webp"
 category: "for-kids"
 featured: true
 ---

@@ -1,6 +1,6 @@
 ---
 title: "Gardening and Plants"
-description: "Give your beloved the opportunity to connect with nature, care for it, or simply contemplate the beauty around while relaxing in the garden!"
+description: "Luxurious and Practical Gifts for Creating a Cozy Corner"
 category: "for-women"
 author: "olga_sergeevna"
 date: "2024-03-18"

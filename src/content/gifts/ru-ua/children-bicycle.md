@@ -1,8 +1,8 @@
 ---
-title: Велосипед
-description: Подарите радость открытых приключений с качественным велосипедом.
+title: "Велосипед"
+description: "Подарите радость открытых приключений с качественным велосипедом"
 date: '2023-09-18'
-thumbnail: ../../img/gifts/bicycle_small.webp
+thumbnail: "../../img/gifts/bicycle_small.webp"
 category: "for-kids"
 featured: true
 ---

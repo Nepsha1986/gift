@@ -3,7 +3,7 @@ import { Image } from "astro:assets";
 import { getLangFromUrl, useTranslations } from "@i18n/utils";
 import { ui } from "@i18n/ui";
 import { formatDate } from "@utils/formatDate";
-import { authors } from "../../content/_authors";
+import { authors } from "src/content/_authors";
 import { AuthorID } from "src/types/author";
 
 const lang = getLangFromUrl(Astro.url.pathname);
@@ -46,7 +46,9 @@ const { thumbnail, title, content, subtitle, meta, author, date } = Astro.props;
     </div>
   </header>
 
-  <slot name="content" />
+  <div class="post__content">
+    <slot name="content" />
+  </div>
 </article>
 
 <style lang="scss">
@@ -101,6 +103,10 @@ const { thumbnail, title, content, subtitle, meta, author, date } = Astro.props;
 			margin: 0 auto 2rem;
 			max-width: 800px;
 			text-align: center;
+		}
+
+		&__content {
+			text-align: justify;
 		}
 	}
 </style>

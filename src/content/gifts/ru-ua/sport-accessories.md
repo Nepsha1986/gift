@@ -1,8 +1,8 @@
 ---
-title: Спортивные аксессуары
-description: Готовьтесь к активным приключениям с этими спортивными аксессуарами для подростков.
+title: "Спортивные аксессуары"
+description: "Готовьтесь к активным приключениям с этими спортивными аксессуарами для подростков"
 date: '2023-09-19'
-thumbnail: ../../img/gifts/football_ball.webp
+thumbnail: "../../img/gifts/football_ball.webp"
 category: "for-teens"
 featured: true
 ---

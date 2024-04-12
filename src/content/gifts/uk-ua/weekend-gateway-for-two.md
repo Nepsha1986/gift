@@ -1,8 +1,8 @@
 ---
-title: Вікенд-подорож удвох
-description: Подаруйте їм незабутні відпочинок з вікенд-подорожжю удвох.
-date: '2023-09-17'
-thumbnail: ../../img/gifts/trip_to_europe.webp
+title: "Вікенд-подорож удвох"
+description: "Як організувати незабутню пригоду для улюбленої дівчини"
+date: "2023-09-17"
+thumbnail: "../../img/gifts/trip_to_europe.webp"
 category: "for-women"
 featured: true
 ---

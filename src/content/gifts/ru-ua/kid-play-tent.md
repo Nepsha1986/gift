@@ -1,8 +1,8 @@
 ---
-title: Детская игровая палатка
-description: Способствуйте развитию воображения с уютной и приключенческой детской палаткой.
-date: '2023-09-18'
-thumbnail: ../../img/gifts/kids_play_tent.jpeg
+title: "Детская игровая палатка"
+description: "Способствуйте развитию воображения с уютной и приключенческой детской палаткой"
+date: "2023-09-18"
+thumbnail: "../../img/gifts/kids_play_tent.jpeg"
 category: "for-kids"
 featured: true
 ---

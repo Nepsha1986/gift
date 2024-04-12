@@ -1,8 +1,8 @@
 ---
-title: Технологічні гаджети та аксесуари
-description: Корисні аксесуари та гаджети, які зроблять повсякденну рутину простою та приємною!
-date: '2024-02-24'
-thumbnail: ../../img/gifts/earbuds.webp
+title: "Технологічні гаджети та аксесуари"
+description: "Корисні аксесуари та гаджети, які зроблять щоденну рутину простою й приємною!"
+date: "2024-02-24"
+thumbnail: "../../img/gifts/earbuds.webp"
 category: "for-women"
 author: "olga_sergeevna"
 featured: true

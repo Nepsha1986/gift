@@ -1,6 +1,6 @@
 ---
 title: "A Pet"
-description: "Give your better half a plethora of positive emotions, tenderness, warmth, and affection that she can express towards a beloved pet!"
+description: "Give your significant other a wealth of positive emotions, tenderness, warmth, and affection!"
 category: "for-women"
 author: "olga_sergeevna"
 date: "2024-03-09"

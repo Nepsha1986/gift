@@ -1,8 +1,8 @@
 ---
-title: Game Consoles and Accessories
-description: Level up your gaming experience with the latest consoles and accessories for teenagers.
-date: '2023-09-19'
-thumbnail: ../../img/gifts/joystick.webp
+title: "Gaming Consoles and Accessories"
+description: "The Perfect Gift for Teens Craving Virtual Adventures"
+date: "2023-09-19"
+thumbnail: "../../img/gifts/joystick.webp"
 category: "for-teens"
 ---
 Take gaming to the next level with the latest game consoles and accessories designed for teenagers. Whether they're into action-packed adventures, epic battles, or immersive worlds, these gaming gifts will enhance their gaming experience and provide endless entertainment.

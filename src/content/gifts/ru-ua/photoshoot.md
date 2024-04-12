@@ -1,8 +1,8 @@
 ---
-title: Фотосессия
-description: Зафиксируйте красоту, уверенность и драгоценные моменты с профессиональной фотосессией.
-date: '2023-11-25'
-thumbnail: ../../img/gifts/photo_camera.webp
+title: "Фотосессия"
+description: "Зафиксируйте красоту, уверенность и драгоценные моменты с профессиональной фотосессией"
+date: "2023-11-25"
+thumbnail: "../../img/gifts/photo_camera.webp"
 category: "for-women"
 author: "alex_nepsha"
 ---

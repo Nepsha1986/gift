@@ -1,8 +1,8 @@
 ---
-title: Наручні годинники
-description: Піднесіть їх стиль і пунктуальність завдяки вічним наручним годинникам.
-date: '2023-09-17'
-thumbnail: ../../img/gifts/wrist_watch.webp
+title: "Наручні годинники"
+description: "Як правильно підібрати елегантний подарунок для справжнього джентльмена"
+date: "2023-09-17"
+thumbnail: "../../img/gifts/wrist_watch.webp"
 category: "for-men"
 featured: true
 ---

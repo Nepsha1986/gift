@@ -1,8 +1,8 @@
 ---
-title: Фітнес і Тренування
-description: Підвищте ефективність фітнесу цими важливими ідеями подарунків для тренувань та фітнесу для чоловіків.
-date: '2023-09-19'
-thumbnail: ../../img/gifts/dumbbell.webp
+title: "Фітнес і тренування"
+description: "Подарунки для чоловіків, які прагнуть до кращої фізичної форми"
+date: "2023-09-19"
+thumbnail: "../../img/gifts/dumbbell.webp"
 category: "for-men"
 featured: true
 ---

@@ -1,8 +1,8 @@
 ---
-title: Remote-Controlled Vehicles
-description: Unleash excitement with remote-controlled cars, helicopters, and drones.
-date: '2023-09-18'
-thumbnail: ../../img/gifts/drone.webp
+title: "Remote-Controlled Vehicles"
+description: "Unleash Excitement with Remote-Controlled Cars, Helicopters, and Drones"
+date: "2023-09-18"
+thumbnail: "../../img/gifts/drone.webp"
 category: "for-kids"
 ---
 Looking for a gift that combines the thrill of speed, precision, and outdoor exploration? Remote-controlled vehicles are the perfect choice! Whether you're shopping for a young car enthusiast, a budding pilot, or a tech-savvy kid, these vehicles offer a world of exciting possibilities.

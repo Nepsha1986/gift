@@ -1,8 +1,8 @@
 ---
-title: Trifle Gifts
-description: Discover fun and quirky trifle gifts for the men in your life.
+title: "Trifle Gifts"
+description: "Our Top Picks of Affordable Trinkets to Delight Your Man"
 date: '2023-09-19'
-thumbnail: ../../img/gifts/rubik_cube.jpeg
+thumbnail: "../../img/gifts/rubik_cube.jpeg"
 category: "for-men"
 ---
 Sometimes, the best gifts come in small packages. Explore our collection of delightful trifle gifts that are perfect for adding a touch of humor, nostalgia, or quirkiness to any occasion. Whether it's for a friend, family member, or colleague, these small gifts are sure to bring a smile to their face.

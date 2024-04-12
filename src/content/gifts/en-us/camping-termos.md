@@ -1,6 +1,6 @@
 ---
-title: Camping Thermos
-description: Keep their adventure fueled with a reliable camping thermos.
+title: "Camping Thermos"
+description: "Support Their Adventures with a Reliable Camping Thermos"
 date: '2023-09-17'
 thumbnail: ../../img/gifts/thermos.webp
 category: "for-men"

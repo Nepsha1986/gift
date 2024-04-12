@@ -1,8 +1,8 @@
 ---
-title: Екстремальна пригода
-description: Захоплюючі пригоди та враження для чоловіків, які люблять адреналін.
-date: '2023-11-24'
-thumbnail: ../../img/gifts/skydiving.webp
+title: "Екстремальна пригода"
+description: "Захоплюючі ідеї для подарунків активним чоловікам"
+date: "2023-11-24"
+thumbnail: "../../img/gifts/skydiving.webp"
 category: "for-men"
 author: "alex_nepsha"
 ---

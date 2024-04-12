@@ -1,8 +1,8 @@
 ---
-title: Game Console
-description: Gift them endless entertainment with a cutting-edge game console.
-date: '2023-09-17'
-thumbnail: ../../img/gifts/joystick.webp
+title: "Gaming Console"
+description: "Great Gift for Men Who Appreciate Quality Games and Virtual Adventures"
+date: "2023-09-17"
+thumbnail: "../../img/gifts/joystick.webp"
 category: "for-men"
 featured: true
 ---

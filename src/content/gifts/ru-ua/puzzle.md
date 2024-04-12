@@ -1,8 +1,8 @@
 ---
-title: Головоломка
-description: Подарите им радость решения головоломок и раскройте их творческий потенциал.
-date: '2023-09-17'
-thumbnail: ../../img/gifts/puzzle.webp
+title: "Головоломка"
+description: "Интеллектуальное приключение для молодых эрудитов"
+date: "2023-09-17"
+thumbnail: "../../img/gifts/puzzle.webp"
 category: "for-kids"
 featured: true
 ---

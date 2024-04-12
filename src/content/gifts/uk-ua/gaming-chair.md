@@ -1,8 +1,8 @@
 ---
-title: Гральне крісло
-description: Піднесіть гральний досвід з комфортабельним та стильним гральним кріслом.
-date: '2023-09-18'
-thumbnail: ../../img/gifts/office_chair.webp
+title: "Гральне крісло"
+description: "Чому це ідеальний подарунок для геймерів і стрімерів"
+date: "2023-09-18"
+thumbnail: "../../img/gifts/office_chair.webp"
 category: "for-teens"
 featured: true
 ---

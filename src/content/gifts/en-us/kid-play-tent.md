@@ -1,6 +1,6 @@
 ---
-title: Kid's Play Tent
-description: Foster imagination with a cozy and adventurous kid's tent.
+title: "Kids' Play Tent"
+description: "Foster Imagination with a Cozy and Adventurous Kids' Tent"
 date: '2023-09-18'
 thumbnail: ../../img/gifts/kids_play_tent.jpeg
 category: "for-kids"

@@ -1,8 +1,8 @@
 ---
-title: Дитячі музичні інструменти
-description: Підтримайте музичний розвиток дітей за допомогою веселих та освітніх інструментів.
-date: '2023-09-18'
-thumbnail: ../../img/gifts/xylophone.webp
+title: "Дитячі музичні інструменти"
+description: "Чому і які музичні інструменти варто вибрати дитині в подарунок"
+date: "2023-09-18"
+thumbnail: "../../img/gifts/xylophone.webp"
 category: "for-kids"
 featured: true
 ---

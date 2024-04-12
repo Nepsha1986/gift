@@ -1,6 +1,6 @@
 ---
-title: Constructor Lego
-description: Inspire creativity and engineering skills with Constructor Lego sets.
+title: "LEGO Construction Set"
+description: "Give Your Child Incredible Worlds They Create Themselves"
 date: '2023-09-18'
 thumbnail: ../../img/gifts/lego.webp
 category: "for-kids"

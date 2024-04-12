@@ -1,8 +1,8 @@
 ---
-title: Наручные часы
-description: Поднимите их стиль и пунктуальность с помощью вечных наручных часов.
+title: "Наручные часы"
+description: "Как правильно подобрать элегантный подарок для истинного джентльмена"
 date: '2023-09-17'
-thumbnail: ../../img/gifts/wrist_watch.webp
+thumbnail: "../../img/gifts/wrist_watch.webp"
 category: "for-men"
 featured: true
 ---

@@ -52,6 +52,10 @@
     transition: 0.3s opacity;
   }
 
+  &__item {
+    margin-bottom: 0;
+  }
+
   &_dropdownBottom {
     #{$this}__list {
       top: 100%;

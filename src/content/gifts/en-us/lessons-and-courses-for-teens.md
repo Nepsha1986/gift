@@ -1,6 +1,6 @@
 ---
 title: "Lessons and Courses"
-description: "Give a teenage boy or girl an incredible and exciting journey into the world of developing thinking, creativity, and acquiring new useful skills!"
+description: "Gifts That Will Help Teenagers Achieve Their Goals"
 category: "for-teens"
 author: "alex_nepsha"
 date: "2024-04-01"

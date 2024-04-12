@@ -1,8 +1,8 @@
 ---
-title: Perfume
-description: Gift them a captivating fragrance to leave a lasting impression.
+title: "Perfume"
+description: "A Gift of Style and Luxury for Your Special Woman"
 date: '2023-09-17'
-thumbnail: ../../img/gifts/perfume.jpeg
+thumbnail: "../../img/gifts/perfume.jpeg"
 category: "for-women"
 featured: true
 ---

@@ -1,8 +1,8 @@
 ---
-title: Fitness Equipment
-description: Gift them the tools for a healthier lifestyle with high-quality fitness equipment.
-date: '2023-09-17'
-thumbnail: ../../img/gifts/sport.jpeg
+title: "Fitness Equipment"
+description: "Practical Gift Ideas for an Active Lifestyle"
+date: "2023-09-17"
+thumbnail: "../../img/gifts/sport.jpeg"
 category: "for-women"
 featured: true
 ---

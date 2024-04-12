@@ -1,8 +1,8 @@
 ---
-title: Парфуми
-description: Подаруйте їм захоплюючий аромат, який залишить незабутнє враження.
-date: '2023-09-17'
-thumbnail: ../../img/gifts/perfume.jpeg
+title: "Парфуми"
+description: "Подарунок стилю та розкіші для вашої особливої жінки"
+date: "2023-09-17"
+thumbnail: "../../img/gifts/perfume.jpeg"
 category: "for-women"
 featured: true
 ---

@@ -1,8 +1,8 @@
 ---
-title: Home Textiles
-description: Accessories that create coziness and comfort at home!
-date: '2024-02-24'
-thumbnail: ../../img/gifts/bed.webp
+title: "Home Textiles"
+description: "What Can You Gift a Woman to Create Comfort and Coziness at Home"
+date: "2024-02-24"
+thumbnail: "../../img/gifts/bed.webp"
 category: "for-women"
 author: "olga_sergeevna"
 ---

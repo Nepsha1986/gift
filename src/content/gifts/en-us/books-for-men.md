@@ -1,6 +1,6 @@
 ---
 title: "Books and Literature"
-description: "Gift your man his favorite book or a global literary bestseller!"
+description: "Gift Ideas for Your Beloved Man Who Appreciates Literary Masterpieces"
 category: "for-men"
 author: "olga_sergeevna"
 date: "2024-03-09"

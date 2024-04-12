@@ -1,8 +1,8 @@
 ---
-title: Escape Room Experience
-description: Embark on an exhilarating adventure with an immersive escape room challenge.
+title: "Escape Room Experience"
+description: "An intriguing gift for enthusiasts of puzzles and adventures"
 date: '2023-09-18'
-thumbnail: ../../img/gifts/escape_room.webp
+thumbnail: "../../img/gifts/escape_room.webp"
 category: "for-teens"
 featured: true
 ---

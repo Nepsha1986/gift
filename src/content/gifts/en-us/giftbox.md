@@ -1,8 +1,8 @@
 ---
-title: Kids' Gift Box
-description: Surprise and delight children with a themed gift box filled with fun and educational items.
-date: '2023-09-18'
-thumbnail: ../../img/gifts/gift_box.webp
+title: "Gift Sets for Children"
+description: "Top 10 Tips on How to Assemble the Perfect Set for Your Child"
+date: "2023-09-18"
+thumbnail: "../../img/gifts/gift_box.webp"
 category: "for-kids"
 featured: true
 ---

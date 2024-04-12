@@ -1,6 +1,6 @@
 ---
 title: "Books and Literature"
-description: "Give a teenager an exciting journey into the world of literature!"
+description: "A Selection of Engaging Books for Teenagers of All Tastes"
 category: "for-teens"
 author: "olga_sergeevna"
 date: "2024-03-23"

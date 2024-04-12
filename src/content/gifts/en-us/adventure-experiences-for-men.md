@@ -1,6 +1,6 @@
 ---
-title: Extreme Adventure
-description: Exciting adventures and adrenaline-pumping experiences for men who crave adventure.
+title: "Extreme Adventure"
+description: "Exciting Ideas for Gifts for Active Men"
 date: '2023-11-24'
 thumbnail: ../../img/gifts/skydiving.webp
 category: "for-men"

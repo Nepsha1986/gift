@@ -1,6 +1,6 @@
 ---
-title: Clothing and Accessories
-description: Elevate style and comfort with fashionable clothing and accessories gift ideas for men.
+title: "Clothing and Accessories"
+description: "What Clothing to Gift a Man Who Values Style"
 date: '2023-09-19'
 thumbnail: ../../img/gifts/sunglasses.jpeg
 category: "for-men"

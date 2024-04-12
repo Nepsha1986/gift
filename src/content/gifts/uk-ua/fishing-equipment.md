@@ -1,8 +1,8 @@
 ---
-title: Рибальське спорядження
-description: Підвищте рівень їхніх рибальських пригод з високоякісним рибальським спорядженням.
-date: '2023-09-17'
-thumbnail: ../../img/gifts/fishing.webp
+title: "Рибальське спорядження"
+description: "Практичний та захоплюючий подарунок для любителів риболовлі"
+date: "2023-09-17"
+thumbnail: "../../img/gifts/fishing.webp"
 category: "for-men"
 ---
 

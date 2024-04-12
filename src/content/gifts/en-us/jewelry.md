@@ -1,8 +1,8 @@
 ---
-title: Jewelry
-description: Gift them timeless elegance with exquisite jewelry pieces.
-date: '2023-09-17'
-thumbnail: ../../img/gifts/jewelry.webp
+title: "Jewelry"
+description: "A Luxurious Gift for Your Beloved Woman"
+date: "2023-09-17"
+thumbnail: "../../img/gifts/jewelry.webp"
 category: "for-women"
 ---
 Searching for a gift that exudes elegance and captures the essence of beauty? Consider gifting them exquisite jewelry. It's a timeless gesture that adds a touch of luxury and sophistication to any outfit.

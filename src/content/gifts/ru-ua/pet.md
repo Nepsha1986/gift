@@ -1,8 +1,8 @@
 ---
-title: Домашний пушистик
-description: Рассмотрите возможность подарить ответственному подростку пушистого друга.
-date: '2023-09-19'
-thumbnail: ../../img/gifts/bulldog.webp
+title: "Домашний питомец"
+description: "Рассмотрите возможность подарить ответственному подростку пушистого друга"
+date: "2023-09-19"
+thumbnail: "../../img/gifts/bulldog.webp"
 category: "for-teens"
 featured: true
 ---

@@ -1,8 +1,8 @@
 ---
-title: Musical Instruments for Kids
-description: Nurture musical talents with fun and educational instruments.
-date: '2023-09-18'
-thumbnail: ../../img/gifts/xylophone.webp
+title: "Children's Musical Instruments"
+description: "Why and Which Musical Instruments to Choose for a Child as a Gift"
+date: "2023-09-18"
+thumbnail: "../../img/gifts/xylophone.webp"
 category: "for-kids"
 featured: true
 ---

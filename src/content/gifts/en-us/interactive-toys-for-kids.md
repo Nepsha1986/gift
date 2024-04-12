@@ -1,6 +1,6 @@
 ---
 title: "Interactive Toys"
-description: "Delight your child with incredibly interesting, unusual, and captivating toys!"
+description: "Delight Your Child with Incredibly Interesting, Unusual, and Engaging Toys!"
 category: "for-kids"
 author: "olga_sergeevna"
 date: "2024-04-08"

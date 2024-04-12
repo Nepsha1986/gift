@@ -1,8 +1,8 @@
 ---
-title: Настільна гра
-description: Відкрийте світ веселощів та зміцніть стосунки захопливою настільною грою у подарунок.
-date: '2023-11-30'
-thumbnail: ../../img/gifts/board_game.webp
+title: "Настільна гра"
+description: "Наш ТОП настільних ігор, які підходять для веселої компанії"
+date: "2023-11-30"
+thumbnail: "../../img/gifts/board_game.webp"
 category: "for-teens"
 featured: true
 ---

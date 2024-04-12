@@ -1,9 +1,9 @@
 ---
-title: Екстремальний відпочинок
-description: Захопливі пригоди та враження для дівчат із пристрастю до адреналіну.
+title: "Екстремальний відпочинок"
+description: "Захоплюючі ідеї для подарунків активним дівчатам"
 author: "alex_nepsha"
-date: '2023-11-24'
-thumbnail: ../../img/gifts/hot_air_balloon.webp
+date: "2023-11-24"
+thumbnail: "../../img/gifts/hot_air_balloon.webp"
 category: "for-women"
 ---
 

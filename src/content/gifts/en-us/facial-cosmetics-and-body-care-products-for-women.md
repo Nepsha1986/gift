@@ -1,6 +1,6 @@
 ---
-title: "Facial cosmetics and body care products"
-description: "Give your loved one the opportunity to become even more beautiful and take care of her skin with popular cosmetic products!"
+title: "Facial and Body Care Cosmetics"
+description: "Show Сare for Health and Beauty with the Best Skincare Products"
 category: "for-women"
 author: "olga_sergeevna"
 date: "2024-03-09"

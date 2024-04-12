@@ -1,8 +1,8 @@
 ---
-title: Remote Control Drone
-description: Elevate the gift-giving experience with a high-flying surprise.
-date: '2023-12-20'
-thumbnail: ../../img/gifts/drone.webp
+title: "Remote Control Drone"
+description: "Elevate the Gift Experience with a High-Flying Surprise"
+date: "2023-12-20"
+thumbnail: "../../img/gifts/drone.webp"
 category: "for-men"
 ---
 

@@ -28,6 +28,19 @@ h6 {
 
 p {
   color: var(--c-grey-darkest);
+  font-weight: 300;
+}
+
+ul {
+}
+
+li,
+ol {
+  margin-bottom: 1rem;
+}
+
+strong {
+  font-weight: 600;
 }
 
 html,

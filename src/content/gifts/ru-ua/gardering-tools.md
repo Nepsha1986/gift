@@ -1,8 +1,8 @@
 ---
-title: Садовые инструменты
-description: Исследуйте важные садовые инструменты и аксессуары для зеленоглазых энтузиастов.
+title: "Садовые инструменты"
+description: "Подарки для мужчины, который обожает свой сад и природу"
 date: '2023-09-19'
-thumbnail: ../../img/gifts/garden_gloves.webp
+thumbnail: "../../img/gifts/garden_gloves.webp"
 category: "for-men"
 ---
 

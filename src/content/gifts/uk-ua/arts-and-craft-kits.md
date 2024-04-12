@@ -1,8 +1,8 @@
 ---
-title: Набори для творчості для дітей
-description: Запальте іскру творчості і отримайте години мистецького задоволення з ідеальним подарунком для ремесел.
-date: '2023-09-18'
-thumbnail: ../../img/gifts/plastelin.webp
+title: "Набори для творчості для дітей"
+description: "Ідеї подарунків для дітей, які розвинуть їх творчий потенціал"
+date: "2023-09-18"
+thumbnail: "../../img/gifts/plastelin.webp"
 category: "for-kids"
 featured: true
 ---

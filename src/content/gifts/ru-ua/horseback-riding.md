@@ -1,8 +1,8 @@
 ---
-title: Катание на лошади
-description: Подарите им незабываемое приключение верхом на лошади на свежем воздухе.
-date: '2023-09-17'
-thumbnail: ../../img/gifts/horseback_riding.webp
+title: "Катание на лошади"
+description: "Как подарить любимой незабываемые впечатления от проведенного дня на природе"
+date: "2023-09-17"
+thumbnail: "../../img/gifts/horseback_riding.webp"
 category: "for-women"
 featured: true
 ---

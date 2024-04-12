@@ -1,8 +1,8 @@
 ---
-title: Фитнес и Тренировки
-description: Повысьте эффективность фитнеса с этими важными идеями подарков для тренировок и фитнеса для мужчин.
-date: '2023-09-19'
-thumbnail: ../../img/gifts/dumbbell.webp
+title: "Фитнес и тренировки"
+description: "Подарки для мужчин, стремящихся к лучшей физической форме"
+date: "2023-09-19"
+thumbnail: "../../img/gifts/dumbbell.webp"
 category: "for-men"
 featured: true
 ---

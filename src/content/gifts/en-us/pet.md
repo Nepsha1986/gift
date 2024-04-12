@@ -1,8 +1,8 @@
 ---
-title: A Pet
-description: Consider giving the gift of a furry friend to a responsible teenager.
-date: '2023-09-19'
-thumbnail: ../../img/gifts/bulldog.webp
+title: "A Pet"
+description: "Consider gifting a furry friend to a responsible teenager"
+date: "2023-09-19"
+thumbnail: "../../img/gifts/bulldog.webp"
 category: "for-teens"
 featured: true
 ---
