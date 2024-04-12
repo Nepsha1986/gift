@@ -1,8 +1,8 @@
 ---
-title: Рюкзак
-description: Ідеальний подарунок для сучасних та активних особистостей.
-date: '2023-11-24'
-thumbnail: ../../img/gifts/backpack.webp
+title: "Рюкзак"
+description: "Ідеальний подарунок для сучасних та активних особистостей"
+date: "2023-11-24"
+thumbnail: "../../img/gifts/backpack.webp"
 category: "for-men"
 modules:
   - RelatedProducts

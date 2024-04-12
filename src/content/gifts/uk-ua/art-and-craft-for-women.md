@@ -1,8 +1,8 @@
 ---
-title: Мистецтво та творчість
-description: Розкрийте потенціал творчості у вашій коханій людині! Даруйте їй можливість створювати унікальні проекти, які виражають її внутрішній світ.
-date: '2023-12-01'
-thumbnail: ../../img/gifts/arts_and_craft.webp
+title: "Мистецтво та творчість"
+description: "Оригінальні ідеї подарунків для творчих жінок"
+date: "2023-12-01"
+thumbnail: "../../img/gifts/arts_and_craft.webp"
 category: "for-women"
 author: "alex_nepsha"
 ---
