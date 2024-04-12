@@ -1,8 +1,8 @@
 ---
-title: Фотосесія
-description: Зафіксуйте красу, впевненість та дорогоцінні моменти за допомогою професійної фотосесії.
-date: '2023-11-25'
-thumbnail: ../../img/gifts/photo_camera.webp
+title: "Фотосесія"
+description: "Подаруйте вашій другій половинці безліч позитивних емоцій, ніжності, тепла та ласки!"
+date: "2023-11-25"
+thumbnail: "../../img/gifts/photo_camera.webp"
 category: "for-women"
 author: "alex_nepsha"
 ---

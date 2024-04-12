@@ -1,8 +1,8 @@
 ---
-title: Гаманець
-description: Подаруйте їм стильний та функціональний гаманець для щоденного комфорту.
-date: '2023-09-17'
-thumbnail: ../../img/gifts/wallet.webp
+title: "Гаманець"
+description: "Стильний та функціональний подарунок для щоденного використання"
+date: "2023-09-17"
+thumbnail: "../../img/gifts/wallet.webp"
 category: "for-men"
 featured: true
 ---

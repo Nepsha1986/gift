@@ -1,8 +1,8 @@
 ---
-title: Спортивні Аксесуари
-description: Готуйтеся до активних пригод з цими спортивними аксесуарами для підлітків.
-date: '2023-09-19'
-thumbnail: ../../img/gifts/football_ball.webp
+title: "Спортивні Аксесуари"
+description: "Готуйтеся до активних пригод з цими спортивними аксесуарами для підлітків"
+date: "2023-09-19"
+thumbnail: "../../img/gifts/football_ball.webp"
 category: "for-teens"
 featured: true
 ---
