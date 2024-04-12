@@ -1,8 +1,8 @@
 ---
-title: A Visit to a Massage Salon
-description: Gift them relaxation and rejuvenation with a soothing massage experience.
-date: '2023-09-17'
-thumbnail: ../../img/gifts/massage.jpeg
+title: "A Visit to a Massage Salon"
+description: "Rejuvenating Gift for a Special Woman"
+date: "2023-09-17"
+thumbnail: "../../img/gifts/massage.jpeg"
 category: "for-women"
 featured: true
 ---

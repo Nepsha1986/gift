@@ -1,8 +1,8 @@
 ---
-title: Guitar
-description: Ignite their musical passion with a classic acoustic guitar.
-date: '2023-09-17'
-thumbnail: ../../img/gifts/guitar.webp
+title: "Guitar"
+description: "How to Choose the Right Guitar as a Gift for a Music-Loving Man"
+date: "2023-09-17"
+thumbnail: "../../img/gifts/guitar.webp"
 category: "for-men"
 featured: true
 modules:

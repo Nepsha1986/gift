@@ -1,8 +1,8 @@
 ---
-title: Kitchen Small Appliances
-description: Elevate your culinary skills with these handy kitchen gadgets and small appliances.
-date: '2023-09-19'
-thumbnail: ../../img/gifts/blender.webp
+title: "Small Kitchen Appliances"
+description: "What to Give a Woman for Culinary Creativity."
+date: "2023-09-19"
+thumbnail: "../../img/gifts/blender.webp"
 category: "for-women"
 ---
 Transform your kitchen into a culinary paradise with these innovative kitchen gadgets and small appliances. Whether you're a seasoned chef or a cooking enthusiast, these tools will help you create delicious meals and simplify your cooking process.

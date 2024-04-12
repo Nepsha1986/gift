@@ -1,6 +1,6 @@
 ---
-Title: "Gift Sets for Children"
-Description: "Top 10 Tips on How to Assemble the Perfect Set for Your Child"
+title: "Gift Sets for Children"
+description: "Top 10 Tips on How to Assemble the Perfect Set for Your Child"
 date: "2023-09-18"
 thumbnail: "../../img/gifts/gift_box.webp"
 category: "for-kids"

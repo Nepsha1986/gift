@@ -1,8 +1,8 @@
 ---
-title: Horseback Riding
-description: Gift them an unforgettable horseback riding adventure in the great outdoors.
-date: '2023-09-17'
-thumbnail: ../../img/gifts/horseback_riding.webp
+title: "Horseback Riding"
+description: "How to Gift Your Loved One Unforgettable Experiences from a Day Spent in Nature"
+date: "2023-09-17"
+thumbnail: "../../img/gifts/horseback_riding.webp"
 category: "for-women"
 featured: true
 ---

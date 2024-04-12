@@ -1,8 +1,8 @@
 ---
-title: Office Chair
-description: Enhance comfort and productivity with a high-quality ergonomic office chair.
-date: '2023-09-18'
-thumbnail: ../../img/gifts/office_chair.webp
+title: "Office Chair"
+description: "The Perfect Gift for a Man Working at a Computer"
+date: "2023-09-18"
+thumbnail: "../../img/gifts/office_chair.webp"
 category: "for-men"
 ---
 In search of the perfect gift that combines comfort, style, and enhanced productivity? An ergonomic office chair is the ideal choice! Whether you're shopping for a dedicated professional, a remote worker, or someone who values comfort during long hours at the desk, an ergonomic chair provides the support and luxury they need.
