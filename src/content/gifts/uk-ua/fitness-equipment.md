@@ -1,8 +1,8 @@
 ---
-title: Фітнес-обладнання
-description: Подаруйте їм інструменти для більш здорового способу життя з високоякісним фітнес-обладнанням.
-date: '2023-09-17'
-thumbnail: ../../img/gifts/sport.jpeg
+title: "Фітнес-обладнання"
+description: "Ідеї практичних подарунків для активного способу життя"
+date: "2023-09-17"
+thumbnail: "../../img/gifts/sport.jpeg"
 category: "for-women"
 featured: true
 ---

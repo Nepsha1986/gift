@@ -1,8 +1,8 @@
 ---
-title: Електроніка
-description: Досліджуйте останні гаджети та технічні подарунки для шанувальників технологій.
-date: '2023-09-19'
-thumbnail: ../../img/gifts/earphones.webp
+title: "Електроніка"
+description: "Від смартфонів до дронів - найкращі подарунки для підлітків, які слідкують за новинками у світі електроніки"
+date: "2023-09-19"
+thumbnail: "../../img/gifts/earphones.webp"
 category: "for-teens"
 featured: true
 ---

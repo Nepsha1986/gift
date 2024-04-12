@@ -1,8 +1,8 @@
 ---
-title: Садові інструменти
-description: Вивчіть важливі садові інструменти та аксесуари для зеленолюбів.
-date: '2023-09-19'
-thumbnail: ../../img/gifts/garden_gloves.webp
+title: "Садові інструменти"
+description: "Подарунки для чоловіка, який обожнює свій сад та природу"
+date: "2023-09-19"
+thumbnail: "../../img/gifts/garden_gloves.webp"
 category: "for-men"
 ---
 

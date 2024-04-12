@@ -1,8 +1,8 @@
 ---
-title: Гральна приставка
-description: Подаруйте їм нескінченну розвагу з сучасною гральною приставкою.
-date: '2023-09-17'
-thumbnail: ../../img/gifts/joystick.webp
+title: "Гральна приставка"
+description: "Чудовий подарунок для чоловіків, що цінують якісні ігри та віртуальні пригоди"
+date: "2023-09-17"
+thumbnail: "../../img/gifts/joystick.webp"
 category: "for-men"
 featured: true
 ---

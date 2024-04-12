@@ -1,8 +1,8 @@
 ---
-title: Відвідання масажного салону
-description: Подаруйте їм релаксацію та омолодження завдяки успокійливому масажу.
-date: '2023-09-17'
-thumbnail: ../../img/gifts/massage.jpeg
+title: "Відвідання масажного салону"
+description: "Омолоджуючий подарунок для особливої жінки"
+date: "2023-09-17"
+thumbnail: "../../img/gifts/massage.jpeg"
 category: "for-women"
 featured: true
 ---

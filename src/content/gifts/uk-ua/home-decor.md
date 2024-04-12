@@ -1,8 +1,8 @@
 ---
-title: Декор для дому
-description: Підніміть рівень вашого житлового простору стильними та унікальними предметами декору.
-date: '2023-09-19'
-thumbnail: ../../img/gifts/photo_frame.webp
+title: "Декор для дому"
+description: "Поради з пошуку ідеального подарунка для жінки, яка цінує затишок"
+date: "2023-09-19"
+thumbnail: "../../img/gifts/photo_frame.webp"
 category: "for-women"
 featured: true
 ---

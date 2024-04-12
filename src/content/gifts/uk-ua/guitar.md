@@ -1,8 +1,8 @@
 ---
-title: Гітара
-description: Розпали їх музичну пристрасть класичною акустичною гітарою.
+title: "Гітара"
+description: "Як правильно вибрати гітару в подарунок чоловікові, який любить музику"
 date: '2023-09-17'
-thumbnail: ../../img/gifts/guitar.webp
+thumbnail: "../../img/gifts/guitar.webp"
 category: "for-men"
 featured: true
 ---

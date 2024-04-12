@@ -1,8 +1,8 @@
 ---
-title: Дитячий ігровий намет
-description: Сприяйте розвитку уяви зі затишним і пригодницьким дитячим наметом.
-date: '2023-09-18'
-thumbnail: ../../img/gifts/kids_play_tent.jpeg
+title: "Дитячий ігровий намет"
+description: "Сприяйте розвитку уяви затишним та пригодницьким дитячим наметом"
+date: "2023-09-18"
+thumbnail: "../../img/gifts/kids_play_tent.jpeg"
 category: "for-kids"
 featured: true
 ---

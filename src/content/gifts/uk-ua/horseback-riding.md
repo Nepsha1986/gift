@@ -1,8 +1,8 @@
 ---
-title: Катання на лошадях
-description: Подаруйте незабутню пригоду верхи на коні на свіжому повітрі.
-date: '2023-09-17'
-thumbnail: ../../img/gifts/horseback_riding.webp
+title: "Катання на лошадях"
+description: "Як подарувати улюбленій незабутні враження від проведеного дня на природі"
+date: "2023-09-17"
+thumbnail: "../../img/gifts/horseback_riding.webp"
 category: "for-women"
 featured: true
 ---

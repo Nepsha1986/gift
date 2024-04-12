@@ -1,8 +1,8 @@
 ---
-title: Навушники
-description: Підвищте їх музичний досвід високоякісними навушниками.
-date: '2023-09-17'
-thumbnail: ../../img/gifts/headphones.webp
+title: "Навушники"
+description: "Подарунок, який завжди буде актуальним для любителів музики"
+date: "2023-09-17"
+thumbnail: "../../img/gifts/headphones.webp"
 category: "for-women"
 ---
 

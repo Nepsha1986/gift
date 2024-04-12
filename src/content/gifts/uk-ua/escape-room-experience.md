@@ -1,8 +1,8 @@
 ---
-title: Подорож в Кімнату Квесту
-description: Вируште в захоплюючу пригоду з інтерактивною кімнатою квесту.
-date: '2023-09-18'
-thumbnail: ../../img/gifts/escape_room.webp
+title: "Подорож в Кімнату Квесту"
+description: "Захоплюючий подарунок для любителів загадок та пригод"
+date: "2023-09-18"
+thumbnail: "../../img/gifts/escape_room.webp"
 category: "for-teens"
 featured: true
 ---
