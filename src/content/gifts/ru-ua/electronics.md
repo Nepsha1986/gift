@@ -1,8 +1,8 @@
 ---
-title: Электроника
-description: Исследуйте последние гаджеты и технические подарки для ценителей технологий.
+title: "Электроника"
+description: "От смартфонов до дронов - лучшие подарки для подростков, которые следят за новинками в мире электроники"
 date: '2023-09-19'
-thumbnail: ../../img/gifts/earphones.webp
+thumbnail: "../../img/gifts/earphones.webp"
 category: "for-teens"
 featured: true
 ---
