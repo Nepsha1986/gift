@@ -1,6 +1,6 @@
 ---
-title: Tools Set
-description: Empower DIY enthusiasts with a versatile and high-quality tool set.
+title: "Tools Set"
+description: "Gift Enthusiastic Crafters a Versatile and High-Quality Tool Set"
 date: '2023-09-18'
 thumbnail: ../../img/gifts/tools_set.webp
 category: "for-men"

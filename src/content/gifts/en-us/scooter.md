@@ -1,8 +1,8 @@
 ---
-title: Scooter
-description: Gift the joy of mobility with a stylish scooter.
-date: '2023-09-18'
-thumbnail: ../../img/gifts/scooter-for-kids.webp
+title: "Scooter"
+description: "Gift the Joy of Mobility with an Elegant Scooter"
+date: "2023-09-18"
+thumbnail: "../../img/gifts/scooter-for-kids.webp"
 category: "for-kids"
 ---
 Looking for a gift that combines style, mobility, and outdoor fun? Consider gifting a scooter! Whether it's for a child, a teenager, or an adult, a scooter is a fantastic way to enjoy the thrill of the ride while effortlessly getting around town.

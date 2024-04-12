@@ -1,8 +1,8 @@
 ---
-title: Virtual Reality Glasses
-description: Dive into immersive worlds with the gift of virtual reality glasses.
-date: '2023-09-18'
-thumbnail: ../../img/gifts/vr.webp
+title: "Virtual Reality Glasses"
+description: "Immerse Yourself in Exciting Worlds with the Gift of Virtual Reality Glasses"
+date: "2023-09-18"
+thumbnail: "../../img/gifts/vr.webp"
 category: "for-teens"
 ---
 Searching for a gift that transcends the boundaries of reality, offering adventure, entertainment, and innovative experiences? Virtual Reality (VR) glasses are the perfect choice! Whether you're shopping for a tech enthusiast, a gaming aficionado, or someone looking to explore the cutting edge of technology, VR glasses open the door to exciting new worlds.

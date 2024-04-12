@@ -1,8 +1,8 @@
 ---
-title: Sport Accessories
-description: Gear up for active adventures with these sporty accessories for teenagers.
-date: '2023-09-19'
-thumbnail: ../../img/gifts/football_ball.webp
+title: "Sport Accessories"
+description: "Get Ready for Active Adventures with These Sports Accessories for Teens"
+date: "2023-09-19"
+thumbnail: "../../img/gifts/football_ball.webp"
 category: "for-teens"
 featured: true
 ---

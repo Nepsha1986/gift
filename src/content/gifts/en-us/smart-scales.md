@@ -1,8 +1,8 @@
 ---
-title: Smart Scales
-description: Monitor health and fitness goals with precision using cutting-edge smart scales.
-date: '2023-09-18'
-thumbnail: ../../img/gifts/smart_scales.webp
+title: "Smart Scales"
+description: "Track Health and Fitness Goals with Precision Using Advanced Smart Scales"
+date: "2023-09-18"
+thumbnail: "../../img/gifts/smart_scales.webp"
 category: "for-women"
 ---
 Searching for a gift that promotes well-being, precision, and the pursuit of health and fitness? Smart scales are the answer! Whether you're shopping for a fitness fanatic, someone on a wellness journey, or anyone looking to monitor their health more closely, smart scales provide essential insights and motivation.

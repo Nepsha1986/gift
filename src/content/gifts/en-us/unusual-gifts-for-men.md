@@ -1,6 +1,6 @@
 ---
 title: "Unusual Gifts"
-description: "Give your man something extraordinary that he definitely doesn't expect but will be delighted and happy with your present."
+description: "Top 7 Creative Ideas for Gifting Your Loved One"
 category: "for-men"
 author: "olga_sergeevna"
 date: "2024-04-01"

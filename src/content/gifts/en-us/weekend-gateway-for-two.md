@@ -1,8 +1,8 @@
 ---
-title: Weekend Getaway for Two
-description: Gift them an unforgettable escape with a weekend getaway for two.
-date: '2023-09-17'
-thumbnail: ../../img/gifts/trip_to_europe.webp
+title: "Weekend Getaway for Two"
+description: "How to Arrange an Unforgettable Adventure for Your Beloved Girlfriend"
+date: "2023-09-17"
+thumbnail: "../../img/gifts/trip_to_europe.webp"
 category: "for-women"
 featured: true
 ---
