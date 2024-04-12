@@ -1,8 +1,8 @@
 ---
-title: Fishing Equipment
-description: Elevate their fishing adventures with high-quality fishing gear.
-date: '2023-09-17'
-thumbnail: ../../img/gifts/fishing.webp
+title: "Fishing Gear"
+description: "A Practical and Exciting Gift for Fishing Enthusiasts"
+date: "2023-09-17"
+thumbnail: "../../img/gifts/fishing.webp"
 category: "for-men"
 ---
 Looking for a gift that connects them with nature, tranquility, and the thrill of the catch? Consider gifting them high-quality fishing equipment. It's a practical yet exciting gesture that enhances their fishing adventures.

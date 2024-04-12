@@ -1,8 +1,8 @@
 ---
-title: Gaming Chair
-description: Elevate gaming experiences with a comfortable and stylish gaming chair.
-date: '2023-09-18'
-thumbnail: ../../img/gifts/office_chair.webp
+title: "Gaming Chair"
+description: "Why It's the Perfect Gift for Gamers and Streamers"
+date: "2023-09-18"
+thumbnail: "../../img/gifts/office_chair.webp"
 category: "for-teens"
 featured: true
 ---

@@ -1,8 +1,8 @@
 ---
-title: Fitness and Workout
-description: Elevate fitness routines with these essential workout and fitness gift ideas for men.
-date: '2023-09-19'
-thumbnail: ../../img/gifts/dumbbell.webp
+title: "Fitness and Workouts"
+description: "Gifts for Men Striving for Better Physical Fitness"
+date: "2023-09-19"
+thumbnail: "../../img/gifts/dumbbell.webp"
 category: "for-men"
 featured: true
 ---

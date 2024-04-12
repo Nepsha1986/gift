@@ -1,6 +1,6 @@
 ---
-title: Gardening Tools
-description: Explore essential gardening tools and accessories for green-thumbed enthusiasts.
+title: "Gardening Tools"
+description: "Gifts for the Man Who Cherishes His Garden and Nature"
 date: '2023-09-19'
 thumbnail: ../../img/gifts/garden_gloves.webp
 category: "for-men"
