@@ -1,6 +1,6 @@
 ---
-title: Board Game
-description: Gift them hours of fun and bonding with a captivating board game.
+title: "Board Games"
+description: "Our TOP Picks for Board Games That Are Perfect for a Fun Company"
 date: '2023-09-17'
 thumbnail: ../../img/gifts/board_game.webp
 category: "for-teens"

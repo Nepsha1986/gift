@@ -1,9 +1,9 @@
 ---
-title: Extreme Adventure
-description: Thrilling adventures and experiences for women with a passion for adrenaline.
+title: "Extreme Adventure"
+description: "Exciting Ideas for Gifts for Active Women"
 author: "alex_nepsha"
-date: '2023-11-24'
-thumbnail: ../../img/gifts/hot_air_balloon.webp
+date: "2023-11-24"
+thumbnail: "../../img/gifts/hot_air_balloon.webp"
 category: "for-women"
 ---
 

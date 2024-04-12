@@ -1,6 +1,6 @@
 ---
-title: Clothing and Accessories
-description: Elevate style and comfort with fashionable clothing and accessories gift ideas.
+title: "Clothing and Accessories"
+description: "Trendy Gift Ideas for Girls Who Love Style and Beauty"
 date: '2023-09-19'
 thumbnail: ../../img/gifts/hat.webp
 category: "for-women"

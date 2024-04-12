@@ -1,6 +1,6 @@
 ---
-title: Computer Glasses
-description: Protect eyes and enhance comfort with stylish computer glasses.
+title: "Computer Glasses"
+description: "A Practical and Thoughtful Gift for Eye Protection"
 date: '2023-09-18'
 thumbnail: ../../img/gifts/computer_glasses.webp
 category: "for-men"

@@ -1,6 +1,6 @@
 ---
 title: "Books and Literature"
-description: "Gift a child a book to foster their imaginative thinking from an early age and cultivate the best in them!"
+description: "A Selection of Literary Gifts to Foster a Child's Development"
 category: "for-kids"
 author: "olga_sergeevna"
 date: "2024-03-23"

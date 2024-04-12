@@ -1,6 +1,6 @@
 ---
-title: Art and Creativity
-description: Unlock the creative potential in your loved one! Give her the opportunity to create unique projects expressing her inner world.
+title: "Art and Creativity"
+description: "Original Gift Ideas for Creative Women"
 date: '2023-12-01'
 thumbnail: ../../img/gifts/arts_and_craft.webp
 author: "alex_nepsha"

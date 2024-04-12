@@ -1,6 +1,6 @@
 ---
-title: Bicycle
-description: Gift the joy of outdoor adventures with a quality bicycle.
+title: "Bicycle"
+description: "Give the Joy of Open Adventures with a Quality Bicycle"
 date: '2023-09-18'
 thumbnail: ../../img/gifts/bicycle_small.webp
 category: "for-kids"

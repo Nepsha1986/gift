@@ -1,6 +1,6 @@
 ---
-title: Cookware
-description: Elevate their culinary adventures with high-quality cookware.
+title: "Kitchen Utensils"
+description: "A Great Choice for Inspiration and Creativity in the Kitchen"
 date: '2023-09-17'
 thumbnail: ../../img/gifts/cookware.webp
 category: "for-women"

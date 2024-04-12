@@ -1,6 +1,6 @@
 ---
-title: "Computer Hardware and Accessories"
-description: "Gift a powerful desktop computer or a cutting-edge laptop for studying or entertainment to a teenager!"
+title: "Computer Equipment and Accessories"
+description: "Practical and Useful Gifts for Teenagers"
 category: "for-teens"
 author: "olga_sergeevna"
 date: "2024-04-08"

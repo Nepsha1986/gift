@@ -1,6 +1,6 @@
 ---
-title: Arts & Craft Kits for Kids
-description: Spark creativity with the perfect craft gift.
+title: "Craft Kits"
+description: "Gift Ideas for Children to Nurture Their Creative Potential"
 date: '2023-09-18'
 thumbnail: ../../img/gifts/plastelin.webp
 category: "for-kids"

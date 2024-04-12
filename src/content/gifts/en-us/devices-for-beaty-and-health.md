@@ -1,6 +1,6 @@
 ---
-title: Devices for Beauty and Health
-description: Enhance your beauty and well-being with these innovative devices for women.
+title: "Beauty and Wellness Devices"
+description: "Top Ideas for Gifting Women for Self-Care"
 date: '2023-09-19'
 thumbnail: ../../img/gifts/hair_straightener.webp
 category: "for-women"

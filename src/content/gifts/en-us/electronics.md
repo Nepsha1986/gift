@@ -1,8 +1,8 @@
 ---
-title: Electronics
-description: Explore the latest gadgets and tech gifts for tech-savvy individuals.
-date: '2023-09-19'
-thumbnail: ../../img/gifts/earphones.webp
+title: "Electronics"
+description: "From smartphones to drones - the best gifts for teenagers who keep up with the latest in electronics"
+date: "2023-09-19"
+thumbnail: "../../img/gifts/earphones.webp"
 category: "for-teens"
 featured: true
 ---

@@ -1,8 +1,8 @@
 ---
-title: Backpack
-description: The perfect gift for modern and active individuals.
-date: '2023-11-24'
-thumbnail: ../../img/gifts/backpack.webp
+title: "Backpack"
+description: "The Perfect Gift for Modern and Active Individuals"
+date: "2023-11-24"
+thumbnail: "../../img/gifts/backpack.webp"
 category: "for-men"
 featured: true
 author: "alex_nepsha"

@@ -1,8 +1,8 @@
 ---
-title: Camping Accessories
-description: Explore the great outdoors with these camping essentials for men.
-date: '2023-09-18'
-thumbnail: ../../img/gifts/adventure_accessories.webp
+title: "Camping Accessories"
+description: "Top 10 Gifts for True Outdoor Adventure Enthusiasts"
+date: "2023-09-18"
+thumbnail: "../../img/gifts/adventure_accessories.webp"
 category: "for-men"
 ---
 Camping is a wonderful way to disconnect from the hustle and bustle of city life and immerse yourself in nature. If the men in your life have a passion for outdoor adventures, consider gifting them with high-quality camping accessories. In this section, we offer you a selection of gear and accessories that will enhance their camping experience.

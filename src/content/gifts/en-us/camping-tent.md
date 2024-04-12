@@ -1,6 +1,6 @@
 ---
-title: Camping Tent
-description: Elevate their outdoor adventures with a reliable camping tent.
+title: "Camping Tent"
+description: "How to Choose a Gift for a Man Who Loves Nature and Adventure"
 date: '2023-09-17'
 thumbnail: ../../img/gifts/camping_tent.webp
 category: "for-men"

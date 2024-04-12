@@ -1,6 +1,6 @@
 ---
-title: "Developmental Toys"
-description: "Ensure proper child development and captivate their interest with engaging games!"
+title: "Educational Toys"
+description: "Gift Ideas for Children That Bring Joy and Learning"
 category: "for-kids"
 author: "olga_sergeevna"
 date: "2024-03-02"

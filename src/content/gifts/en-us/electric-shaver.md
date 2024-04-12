@@ -1,8 +1,8 @@
 ---
-title: Electric Shaver
-description: Elevate their grooming routine with a high-performance electric shaver.
-date: '2023-09-17'
-thumbnail: ../../img/gifts/electric_shaver.webp
+title: "Electric Shaver"
+description: "Why It's the Perfect Gift for Men Who Value Comfort and Efficiency"
+date: "2023-09-17"
+thumbnail: "../../img/gifts/electric_shaver.webp"
 category: "for-men"
 ---
 Searching for a gift that combines practicality with grooming excellence? Consider gifting them a high-performance electric shaver. It's a versatile tool that elevates their grooming routine to a whole new level.
