@@ -1,8 +1,8 @@
 ---
-title: Парфюм
-description: Подарите им завораживающий аромат, оставляющий незабываемое впечатление.
-date: '2023-09-17'
-thumbnail: ../../img/gifts/perfume.jpeg
+title: "Парфюм"
+description: "Подарок стиля и роскоши для вашей особенной женщины"
+date: "2023-09-17"
+thumbnail: "../../img/gifts/perfume.jpeg"
 category: "for-women"
 featured: true
 ---

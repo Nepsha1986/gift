@@ -1,8 +1,8 @@
 ---
-title: Кошелек
-description: Подарите им стильный и функциональный кошелек для повседневного удобства.
+title: "Кошелек"
+description: "Стильный и функциональный подарок для повседневного использования"
 date: '2023-09-17'
-thumbnail: ../../img/gifts/wallet.webp
+thumbnail: "../../img/gifts/wallet.webp"
 category: "for-men"
 featured: true
 ---
