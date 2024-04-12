@@ -1,6 +1,6 @@
 ---
-Title: "Jewelry"
-Description: "A Luxurious Gift for Your Beloved Woman"
+title: "Jewelry"
+description: "A Luxurious Gift for Your Beloved Woman"
 date: "2023-09-17"
 thumbnail: "../../img/gifts/jewelry.webp"
 category: "for-women"

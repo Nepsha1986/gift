@@ -1,8 +1,8 @@
 ---
-title: Portable Speakers
-description: Share the gift of music on the go with versatile portable speakers.
+title: "Portable Speakers"
+description: "Give the Gift of Music Anywhere"
 date: '2023-09-18'
-thumbnail: ../../img/gifts/portable_speaker.webp
+thumbnail: "../../img/gifts/portable_speaker.webp"
 category: "for-teens"
 ---
 Searching for a gift that brings music to life no matter where you are? Portable speakers are the perfect choice! Whether you're shopping for an audiophile, a party enthusiast, or someone who simply loves sharing their favorite tunes, portable speakers provide a soundtrack to every adventure.

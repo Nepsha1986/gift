@@ -1,8 +1,8 @@
 ---
-title: Power Tools
-description: Get the job done efficiently with top-quality power tools for your DIY and construction needs.
+title: "Power Tools"
+description: "How to Choose a Gift for a Man Who Loves Creating and Building"
 date: '2023-09-19'
-thumbnail: ../../img/gifts/saw.jpeg
+thumbnail: "../../img/gifts/saw.jpeg"
 category: "for-men"
 ---
 Equip yourself with the power to tackle DIY projects and construction tasks with ease. Our selection of high-quality power tools will help you complete projects efficiently and with professional results. Whether you're a seasoned handywoman or just starting your DIY journey, these tools are essential for your toolbox.

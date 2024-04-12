@@ -1,8 +1,8 @@
 ---
-title: Ride-On Cars and Push Toys
-description: Spark your child's imagination with these fun and exciting ride-on cars and push toys.
-date: '2023-09-19'
-thumbnail: ../../img/gifts/ride_on_cars.webp
+title: "Ride-On Cars and Push Toys"
+description: "Choosing the Perfect Ride-On Toy Car for Your Child as a Gift"
+date: "2023-09-19"
+thumbnail: "../../img/gifts/ride_on_cars.webp"
 category: "for-kids"
 ---
 Give your child the gift of adventure and imagination with these delightful kids' ride-on cars and push toys. In this section, we present a range of options designed to make playtime more enjoyable and interactive for your little ones.

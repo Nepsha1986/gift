@@ -1,8 +1,8 @@
 ---
-title: Puzzle
-description: Gift them the joy of solving puzzles and unlocking creativity.
-date: '2023-09-17'
-thumbnail: ../../img/gifts/puzzle.webp
+title: "Puzzle"
+description: "Intellectual Adventure for Young Erudites"
+date: "2023-09-17"
+thumbnail: "../../img/gifts/puzzle.webp"
 category: "for-kids"
 featured: true
 ---

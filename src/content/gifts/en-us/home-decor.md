@@ -1,6 +1,6 @@
 ---
-Title: "Home Decor"
-Description: "Tips for Finding the Perfect Gift for a Woman Who Appreciates Coziness"
+title: "Home Decor"
+description: "Tips for Finding the Perfect Gift for a Woman Who Appreciates Coziness"
 date: "2023-09-19"
 thumbnail: "../../img/gifts/photo_frame.webp"
 category: "for-women"

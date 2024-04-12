@@ -1,6 +1,6 @@
 ---
-Title: "Lessons and Courses"
-Description: "Gifts That Will Help Teenagers Achieve Their Goals"
+title: "Lessons and Courses"
+description: "Gifts That Will Help Teenagers Achieve Their Goals"
 category: "for-teens"
 author: "alex_nepsha"
 date: "2024-04-01"
