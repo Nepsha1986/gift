@@ -1,8 +1,8 @@
 ---
-title: Игровое кресло
-description: Поднимите игровой опыт с комфортабельным и стильным игровым креслом.
-date: '2023-09-18'
-thumbnail: ../../img/gifts/office_chair.webp
+title: "Игровое кресло"
+description: "Почему это идеальный подарок для геймеров и стримеров"
+date: "2023-09-18"
+thumbnail: "../../img/gifts/office_chair.webp"
 category: "for-teens"
 featured: true
 ---
