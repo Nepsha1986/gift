@@ -1,12 +1,16 @@
 ---
 import { getCollection } from "astro:content";
 import { locales } from "@i18n/ui.ts";
-import { getLocaleFromSlug, getCleanSlug } from "@i18n/utils.ts";
 import Layout from "@layouts/Layout.astro";
+
 import PostItem from "@components/astro/PostItem.astro";
 import Pagination from "@components/astro/Pagination.astro";
+import Section from "@components/astro/Section/Section.astro";
+
 import { formatDate } from "@utils/formatDate";
-import { getLocaleFromUrl } from "@i18n/utils";
+
+import { getLocaleFromUrl, useTranslations, getLangFromUrl, getCleanSlug, getLocaleFromSlug } from "@i18n/utils";
+import translations from "./translations";
 
 export async function getStaticPaths({ paginate }): any {
   const PAGE_SIZE = 12;
@@ -25,11 +29,16 @@ export async function getStaticPaths({ paginate }): any {
   });
 }
 
+const URL = Astro.url.pathname;
+const lang = getLangFromUrl(URL);
+const t = useTranslations(lang, translations);
+
 const { page } = Astro.props;
 ---
 
-<Layout title='Posts page'>
-  <div class="posts-page">
+<Layout title={t('page.heading')} isLanding>
+  <Section heading={t('page.heading')}>
+    <p slot="subheading" set:html={t("page.subheading")} />
     <div class="posts-page__posts">
       {page.data.map(i => (
         <PostItem
@@ -42,20 +51,18 @@ const { page } = Astro.props;
         />
       ))}
     </div>
-  </div>
-
-  { page.lastPage > 1 && <div class="posts-page__pagination">
-    <Pagination
-      length={page.lastPage}
-      currentUrl={page.url.current}
-      currentPage={page.currentPage}
-      firstUrl={`/${getLocaleFromUrl(page.url.current)}/posts`}
-      prevUrl={page.url.prev}
-      nextUrl={page.url.next}
-      lastUrl={`/${getLocaleFromUrl(page.url.current)}/posts/${page.lastPage}`}
-    />
-  </div> }
-
+    { page.lastPage > 1 && <div class="posts-page__pagination">
+      <Pagination
+        length={page.lastPage}
+        currentUrl={page.url.current}
+        currentPage={page.currentPage}
+        firstUrl={`/${getLocaleFromUrl(page.url.current)}/posts`}
+        prevUrl={page.url.prev}
+        nextUrl={page.url.next}
+        lastUrl={`/${getLocaleFromUrl(page.url.current)}/posts/${page.lastPage}`}
+      />
+    </div> }
+  </Section>
 </Layout>
 
 <style lang="scss">

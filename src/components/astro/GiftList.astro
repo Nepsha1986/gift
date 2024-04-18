@@ -17,9 +17,8 @@ const getLink = (slug: string, category?: Category): string => translatePath(`/g
 
 
 <div class="giftList">
-  {!!filtered.length && filtered.map((i, index) => (
+  {!!filtered.length && filtered.map((i) => (
     <GiftCard
-      index={index + 1}
       key={i.slug}
       title={i.data.title}
       description={i.data.description}
@@ -35,5 +34,6 @@ const getLink = (slug: string, category?: Category): string => translatePath(`/g
     .giftList {
         overflow-y: auto;
         max-height: 88vh;
+        padding: 0 5px;
     }
 </style>

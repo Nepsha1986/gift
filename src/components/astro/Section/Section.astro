@@ -2,12 +2,14 @@
 const { heading } = Astro.props;
 ---
 
-<section class='section'>
+<section class="section">
   <div class="section__container">
     <header class="section__header">
       <h1 class="section__heading">{heading}</h1>
 
-      <slot class="section__subheading" name="subheading" />
+      <div class="section__subheading">
+        <slot name="subheading" />
+      </div>
     </header>
 
     <div class="section__content">
@@ -16,10 +18,18 @@ const { heading } = Astro.props;
   </div>
 </section>
 
-<style is:global>
-    .section__subheading strong {
-        color: var(--c-primary);
-    }
+<style lang="scss" is:global>
+	.section__subheading {
+		p {
+			font-size: 1.1rem;
+			font-weight: 400;
+			color: var(--c-grey-dark);
+		}
+
+		strong {
+			color: var(--c-primary);
+		}
+	}
 </style>
 
 <style lang="scss">
@@ -27,7 +37,7 @@ const { heading } = Astro.props;
 		&__container {
 			max-width: 1300px;
 			height: 100%;
-			padding: 5rem 15px;
+			padding: 3rem 15px;
 			margin: 0 auto;
 		}
 
@@ -42,8 +52,7 @@ const { heading } = Astro.props;
 		}
 
 		&__subheading {
-			font-size: 1.05rem;
-			color: var(--c-grey);
+			margin-bottom: 3rem;
 		}
 	}
 </style>

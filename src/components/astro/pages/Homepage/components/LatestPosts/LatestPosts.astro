@@ -1,8 +1,8 @@
 ---
 import { getCollection } from "astro:content";
 
-import PostItem from '@astroComponents/PostItem.astro';
-import Section from '../Section/Section.astro';
+import PostItem from '@src/components/astro/PostItem.astro';
+import Section from '@src/components/astro/Section/Section.astro';
 import { getLocaleFromUrl, getLocaleFromSlug, getCleanSlug, getLangFromUrl,useTranslations } from "@i18n/utils";
 import { formatDate } from "@utils/formatDate";
 import translations from "./translations";

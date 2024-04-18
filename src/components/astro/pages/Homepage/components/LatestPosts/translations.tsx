@@ -4,7 +4,7 @@ export type LatestPostsTranslations = "section.heading";
 
 const translations: Translations<LatestPostsTranslations> = {
   en: {
-    "section.heading": "Recent posts",
+    "section.heading": "Recent Posts",
   },
   ru: {
     "section.heading": "Последние статьи",

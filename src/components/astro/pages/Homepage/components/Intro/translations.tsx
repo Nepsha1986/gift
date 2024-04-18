@@ -12,7 +12,7 @@ export type HomePageTranslations =
 
 const translations: Translations<HomePageTranslations> = {
   en: {
-    "intro.heading": "Gift Ideas 2023",
+    "intro.heading": "Gift Ideas 2024",
     "intro.subheading": "Welcome to gift-idea.co!",
     "intro.text":
       "Our mission is to take the stress out of gift shopping by offering a wide range of thoughtful and unique <a href='/en-us/gifts/for-women/adventure-experience-for-women'><strong>gift ideas</strong></a> tailored to various recipients.",
@@ -27,7 +27,7 @@ const translations: Translations<HomePageTranslations> = {
       "Delightful <strong>kid-friendly gifts </strong> for every age and interest.",
   },
   ru: {
-    "intro.heading": "Идеи подарков 2023",
+    "intro.heading": "Идеи подарков 2024",
     "intro.subheading": "Добро пожаловать на gift-idea.co!",
     "intro.text":
       "Наша миссия - избавить вас от стресса при выборе подарков, предлагая широкий выбор заботливых и уникальных <a href='/ru-ua/gifts/for-women/adventure-experience-for-women'><strong>идей для подарков</strong></a>, подходящих для различных получателей.",
@@ -42,7 +42,7 @@ const translations: Translations<HomePageTranslations> = {
       "Веселые подарки <strong>для детей</strong> с разными интересами.",
   },
   uk: {
-    "intro.heading": "Ідеї подарунків 2023",
+    "intro.heading": "Ідеї подарунків 2024",
     "intro.subheading": "Ласкаво просимо на gift-idea.co!",
     "intro.text":
       "Наша місія - позбавити вас стресу при виборі подарунків, пропонуючи широкий вибір турботливих та унікальних <a href='/uk-ua/gifts/for-women/adventure-experience-for-women'><strong>ідей для подарунків</strong></a>, призначених для різних отримувачів.",

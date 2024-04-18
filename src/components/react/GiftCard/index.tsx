@@ -3,7 +3,6 @@ import classNames from "classnames";
 
 import styles from "./styles.module.scss";
 interface Props {
-  index: number;
   title: string;
   description: string;
   children: React.ReactNode;
@@ -11,7 +10,6 @@ interface Props {
   active?: boolean;
 }
 const GiftCard: React.FC<Props> = ({
-  index,
   title,
   children,
   description,
@@ -27,9 +25,7 @@ const GiftCard: React.FC<Props> = ({
       <div className={styles.giftCard__imgWrap}>{children}</div>
 
       <div>
-        <h2 className={styles.giftCard__heading}>
-          {index}. {title}
-        </h2>
+        <h2 className={styles.giftCard__heading}>{title}</h2>
         <p className={styles.giftCard__desc}>{description}</p>
       </div>
     </a>
