@@ -1,0 +1,17 @@
+---
+import {faFacebookF} from '@fortawesome/free-brands-svg-icons';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+
+import ShareBtn from './ShareBtn.astro';
+
+const { url= Astro.request.url } = Astro.props;
+
+let URL = `https://www.facebook.com/sharer/sharer.php?u=${url}`
+---
+
+<ShareBtn color="#3b5998" href={URL}>
+  <FontAwesomeIcon icon={faFacebookF} slot="icon" />
+  Facebook
+</ShareBtn>
+
+

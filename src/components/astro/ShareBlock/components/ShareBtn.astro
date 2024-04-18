@@ -1,0 +1,36 @@
+---
+interface Props {
+  href: string;
+  color?: string;
+}
+
+const { href, color = "#eee", icon, ...props }: Props = Astro.props;
+---
+
+<a class="shareBtn" style={{ backgroundColor: color }} href={href} target="_blank" {...props}>
+  <span class="shareBtn__icon">
+    <slot name="icon" />
+  </span>
+
+  <slot />
+</a>
+
+<style lang="scss">
+	.shareBtn {
+		display: inline-block;
+		padding: 7px 15px;
+		font-size: 0.85rem;
+		color: #fff;
+		border-radius: 3px;
+		transition: 0.3s opacity;
+		cursor: pointer;
+
+      &__icon {
+          margin-right: 0.25rem;
+      }
+
+		&:hover {
+			opacity: 0.8;
+		}
+	}
+</style>
