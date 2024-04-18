@@ -6,6 +6,8 @@ import { formatDate } from "@utils/formatDate";
 import { authors } from "src/content/_authors";
 import { AuthorID } from "src/types/author";
 
+import ShareBlock from "./ShareBlock/ShareBlock.astro";
+
 const lang = getLangFromUrl(Astro.url.pathname);
 const t = useTranslations(lang, ui);
 
@@ -49,6 +51,10 @@ const { thumbnail, title, content, subtitle, meta, author, date } = Astro.props;
   <div class="post__content">
     <slot name="content" />
   </div>
+
+  <aside class="post__aside">
+    <ShareBlock />
+  </aside>
 </article>
 
 <style lang="scss">
@@ -88,7 +94,7 @@ const { thumbnail, title, content, subtitle, meta, author, date } = Astro.props;
 			width: 100px;
 			height: 100px;
 			border-radius: 50%;
-      margin-bottom: 10px;
+			margin-bottom: 10px;
 			position: relative;
 			border: 3px solid #fff;
 		}
@@ -107,6 +113,12 @@ const { thumbnail, title, content, subtitle, meta, author, date } = Astro.props;
 
 		&__content {
 			text-align: justify;
+		}
+
+		&__aside {
+			border-top: 1px solid var(--c-grey-light);
+			margin: 2rem 0;
+			padding: 1rem 0;
 		}
 	}
 </style>
