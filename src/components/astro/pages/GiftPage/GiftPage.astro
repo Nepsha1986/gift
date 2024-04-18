@@ -4,6 +4,7 @@ import { getLangFromUrl, useTranslations } from "@i18n/utils";
 import { ui } from "@i18n/ui";
 import { formatDate } from "@utils/formatDate";
 import { authors } from "@src/content/_authors";
+import ShareBlock from "@src/components/astro/ShareBlock/ShareBlock.astro";
 
 const lang = getLangFromUrl(Astro.url.pathname);
 const t = useTranslations(lang, ui);
@@ -59,6 +60,10 @@ const { thumbnail, title, content, category, meta, author, date } = Astro.props;
   <div class="article__content">
     <slot name="content" />
   </div>
+
+  <aside class="article__aside">
+    <ShareBlock />
+  </aside>
 </article>
 
 <style lang="scss">
@@ -129,5 +134,11 @@ const { thumbnail, title, content, category, meta, author, date } = Astro.props;
 		&__content {
 			text-align: justify;
 		}
+
+    &__aside {
+      border-top: 1px solid var(--c-grey-light);
+      margin: 2rem 0;
+      padding: 1rem 0;
+    }
 	}
 </style>
