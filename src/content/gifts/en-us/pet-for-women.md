@@ -35,9 +35,3 @@ To make it easier for you, here is a small list of popular pets:
 - **Fish**: The most versatile gift, but be sure to include an aquarium. Fish have a calming effect and will likely appeal to your significant other, especially if she has a stressful job.
 
 Regardless of the pet you choose, the most important thing is that your girlfriend develops love and care for it.
-
----
-
-*This text was translated with the assistance of ChatGPT. If you would like to contribute to the project and improve the translation, please feel free to contact us.*
-
-

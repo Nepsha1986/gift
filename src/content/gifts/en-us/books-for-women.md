@@ -30,5 +30,3 @@ Choose based on your girl's or wife's field of expertise. If she is interested i
 One of the most popular genres in recent years. Books on self-awareness and self-improvement have taken over the world and will undoubtedly appeal to every girl, bringing significant benefits as well. Our recommendation is Greg McKeown's "Essentialism: The Disciplined Pursuit of Less" and Daniel Goleman's "Emotional Intelligence."
 
 If you are still uncertain about which book to gift, we recommend purchasing a gift certificate from a bookstore. This way, your girl can choose something she will find interesting to read.
-
-*This text was translated with the assistance of ChatGPT. If you would like to contribute to the project and improve the translation, please feel free to contact us.*

@@ -22,8 +22,3 @@ Many women are passionate about gardening, caring for plants, and love beautiful
 - **Potted flowers**. An ideal gift for a girl who grows indoor plants, loves to transplant them, and take care of them. The best and fail-safe option is an orchid. This flower is loved by all girls because it's very elegant.
 
 The secret to a luxurious gift for your beloved is simple – choose the best for her, something that will be useful and show your love and care!
-
-
----
-*This text was translated with the assistance of ChatGPT. If you would like to contribute to the project and improve the translation, please feel free to contact us.*
-

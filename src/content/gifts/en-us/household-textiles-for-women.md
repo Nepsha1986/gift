@@ -28,5 +28,3 @@ In our selection of ideas, you can choose what your woman will like the most. Al
 - **Robes** - A bathrobe is a real find for a woman who loves spa treatments at home. When choosing, size is crucial, and among the abundance of color options, it's better to prefer neutral pastel shades. You can also order embroidery on the robe with a creative inscription that characterizes the woman.
 
 These are precisely the gifts that are essential for everyday life, so they will undoubtedly bring benefits to the home.
-
-*This text was translated with the assistance of ChatGPT. If you would like to contribute to the project and improve the translation, please feel free to contact us.*
