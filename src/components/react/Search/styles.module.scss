@@ -1,0 +1,23 @@
+.searchTrigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  height: 38px;
+  width: 190px;
+  padding: 0 14px;
+  font-size: 0.875rem;
+  color: var(--c-grey);
+  text-align: left;
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition:
+    border-color 0.2s var(--ease),
+    box-shadow 0.2s var(--ease);
+
+  &:hover {
+    border-color: var(--c-grey-light);
+    box-shadow: var(--shadow-sm);
+  }
+}

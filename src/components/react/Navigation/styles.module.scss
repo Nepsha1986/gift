@@ -2,35 +2,87 @@
   $this: &;
 
   &__item {
-    text-transform: uppercase;
     font-family: var(--font-secondary);
     color: var(--c-grey-dark);
-    font-size: 1.05rem;
-    font-weight: 700;
-    transition: 0.3s;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition:
+      color 0.2s var(--ease),
+      background-color 0.2s var(--ease);
+
+    &:hover {
+      color: var(--c-grey-darkest);
+    }
+  }
+
+  &__item_active {
+    color: var(--c-primary-dark);
 
     &:hover {
       color: var(--c-primary-dark);
     }
   }
 
-  &__item_active {
-    color: var(--c-primary-dark);
-  }
-
   &_desctop {
-    padding: 7px;
     display: flex;
-    justify-content: space-between;
-    z-index: 1000;
-    gap: 2.2rem;
+    align-items: center;
+    gap: 2px;
+
+    #{$this}__item {
+      padding: 8px 14px;
+      border-radius: var(--radius-full);
+
+      &:hover {
+        background: rgba(22, 27, 38, 0.05);
+      }
+    }
+
+    #{$this}__item_active,
+    #{$this}__item_active:hover {
+      background: var(--c-primary-lightest);
+    }
   }
 
   &_mobile {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+
     #{$this}__item {
       display: block;
-      text-align: center;
-      margin-bottom: 0.5rem;
+      font-size: 1.15rem;
+      padding: 12px 16px;
+      border-radius: var(--radius-md);
+
+      &:hover {
+        background: var(--c-grey-lightest);
+      }
     }
+
+    #{$this}__item_active,
+    #{$this}__item_active:hover {
+      background: var(--c-primary-lightest);
+    }
+  }
+}
+
+.navigation_footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 22px;
+
+  .navigation__item {
+    font-family: var(--font-primary);
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: var(--c-grey);
+
+    &:hover {
+      color: var(--c-grey-darkest);
+    }
+  }
+
+  .navigation__item_active {
+    color: var(--c-grey-darkest);
   }
 }

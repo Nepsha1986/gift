@@ -1,24 +1,76 @@
 .categorySwitcher {
+  $this: &;
+
   display: flex;
-  max-width: 600px;
-  margin: 0 auto 1rem;
+  gap: 2px;
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 auto 2rem;
+  padding: 4px;
   position: relative;
+  overflow-x: auto;
+  scrollbar-width: none;
+  background: var(--c-grey-lightest);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-full);
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 
   &__activeIndicator {
     position: absolute;
-    bottom: 0;
-    height: 2px;
-    background: var(--c-secondary);
-    transition: 0.3s linear;
+    top: 4px;
+    bottom: 4px;
+    left: 0;
+    background: var(--c-surface);
+    border-radius: var(--radius-full);
+    box-shadow: var(--shadow-md);
+    transition:
+      transform 0.3s var(--ease),
+      width 0.3s var(--ease);
   }
 }
 
 .switcher {
-  width: 100%;
+  position: relative;
+  z-index: 1;
+  flex: 1 0 auto;
+  padding: 8px 18px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.25;
+  white-space: nowrap;
   text-align: center;
+  color: var(--c-grey);
+  background: transparent;
+  border: none;
+  border-radius: var(--radius-full);
   cursor: pointer;
-  padding: 5px 10px;
-  &:first-letter {
-    text-transform: capitalize;
+  transition: color 0.2s var(--ease);
+
+  @media (max-width: 480px) {
+    padding: 8px 9px;
+    font-size: 0.82rem;
   }
+
+  &:hover {
+    color: var(--c-grey-darkest);
+  }
+
+  &_active {
+    color: var(--c-primary-dark);
+    background: var(--c-surface);
+    box-shadow: var(--shadow-md);
+
+    &:hover {
+      color: var(--c-primary-dark);
+    }
+  }
+}
+
+// Once the sliding indicator is measured it replaces the static background
+.categorySwitcher_measured .switcher_active {
+  background: transparent;
+  box-shadow: none;
 }

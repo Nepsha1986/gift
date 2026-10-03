@@ -1,5 +1,4 @@
 ---
-import { formatDate } from "@utils/formatDate";
 import { Image } from "astro:assets";
 
 const { thumbnail, title, description, href, date } = Astro.props;
@@ -9,16 +8,15 @@ const { thumbnail, title, description, href, date } = Astro.props;
   <div class="post-item__img">
     <Image
       class="img-cover"
-      slot="thumbnail"
       src={thumbnail}
-      alt={title}
-      width={600}
+      alt=""
+      width={640}
       height={400}
     />
   </div>
 
   <div class="post-item__content">
-    <span class="post-item__date">{formatDate(date)}</span>
+    <span class="post-item__date">{date}</span>
 
     <h2 class="post-item__title">{title}</h2>
 
@@ -32,51 +30,61 @@ const { thumbnail, title, description, href, date } = Astro.props;
 	.post-item {
 		$this: &;
 
-		background: #fff;
-		box-shadow: 0 5px 15px -5px rgba(0, 0, 0, 0.3);
-		display: inline-block;
-		border-radius: 3px;
-		position: relative;
-		transition: 0.185s ease-in-out;
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+		background: var(--c-surface);
+		border: 1px solid var(--c-border);
+		border-radius: var(--radius-lg);
+		overflow: hidden;
+		box-shadow: var(--shadow-sm);
+		transition: box-shadow 0.25s var(--ease), transform 0.25s var(--ease), border-color 0.25s var(--ease);
 
 		&:hover {
-			scale: 1.007;
-			box-shadow: 0 6px 16px -4px rgba(0, 0, 0, 0.28);
+			transform: translateY(-3px);
+			border-color: transparent;
+			box-shadow: var(--shadow-lg);
+
+			#{$this}__title {
+				color: var(--c-primary-dark);
+			}
 		}
 
 		&__img {
-			aspect-ratio: 400 / 420;
+			aspect-ratio: 16 / 10;
+			overflow: hidden;
+			background: var(--c-grey-lightest);
+		}
+
+		&__content {
+			display: flex;
+			flex-direction: column;
+			flex-grow: 1;
+			padding: 1.1rem 1.25rem 1.35rem;
+		}
+
+		&__date {
+			display: inline-block;
+			margin-bottom: 0.5rem;
+			font-size: 0.8rem;
+			font-weight: 500;
+			color: var(--c-grey);
 		}
 
 		&__title {
 			font-size: 1.15rem;
-			line-height: 1.3;
+			line-height: 1.35;
+			margin-bottom: 0.5rem;
+			transition: color 0.2s var(--ease);
 			@include mixins.textOverflow(2);
-		}
-
-		&__content {
-			padding: 3.5rem 1rem 1rem;
-			position: absolute;
-			bottom: 0;
-			background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.8) 30%, rgba(255, 255, 255, 1));
-			backdrop-filter: blur(3);
 		}
 
 		&__desc {
 			@include mixins.textOverflow(3);
-			font-size: 0.9rem;
-			line-height: 1.3;
+			font-size: 0.925rem;
+			line-height: 1.55;
 			color: var(--c-grey);
-		}
-
-		&__date {
-			font-weight: 600;
-			font-style: italic;
-			font-size: 0.85rem;
-			display: inline-block;
-			margin-bottom: 10px;
-			color: var(--c-primary-dark);
+			margin-bottom: 0;
 		}
 	}
-
 </style>

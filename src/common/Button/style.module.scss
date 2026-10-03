@@ -1,26 +1,46 @@
 .button {
-  display: inline-block;
-  padding: 7px 25px;
-  font-size: 0.85rem;
-  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: var(--font-primary);
+  font-weight: 600;
+  line-height: 1.2;
   color: #fff;
-  border-radius: 3px;
-  transition: 0.3s opacity;
-  font-weight: bold;
+  border: 1px solid transparent;
+  border-radius: var(--radius-full);
   cursor: pointer;
-  border: none;
+  white-space: nowrap;
+  transition:
+    background-color 0.2s var(--ease),
+    border-color 0.2s var(--ease),
+    color 0.2s var(--ease),
+    box-shadow 0.2s var(--ease);
 
   &_default {
-    color: var(--c-grey-dark);
-    background: var(--c-grey-lightest);
+    color: var(--c-grey-darkest);
+    background: var(--c-surface);
+    border-color: var(--c-border);
+
+    &:hover {
+      border-color: var(--c-grey-light);
+    }
   }
 
   &_primary {
     background: var(--c-primary);
+
+    &:hover {
+      background: var(--c-primary-dark);
+    }
   }
 
   &_secondary {
     background: var(--c-secondary);
+
+    &:hover {
+      background: var(--c-secondary-dark);
+    }
   }
 
   &_danger {
@@ -30,39 +50,48 @@
   &_transparent {
     background: transparent;
     color: var(--c-grey-dark);
+
+    &:hover {
+      color: var(--c-grey-darkest);
+      background: rgba(22, 27, 38, 0.05);
+    }
   }
 
-  &_disabled {
+  &_disabled,
+  &:disabled {
     pointer-events: none;
-    opacity: 0.5;
+    opacity: 0.45;
   }
 
   &_sm {
-    padding: 3px 15px;
-    font-size: 0.65rem;
+    height: 30px;
+    padding: 0 12px;
+    font-size: 0.8rem;
   }
 
   &_md {
-    padding: 5px 20px;
-    font-size: 0.75rem;
+    height: 38px;
+    padding: 0 16px;
+    font-size: 0.875rem;
   }
 
   &_lg {
-    padding: 7px 25px;
-    font-size: 0.85rem;
+    height: 46px;
+    padding: 0 24px;
+    font-size: 0.95rem;
   }
 
   &_iconOnly {
-    padding: 0.5rem;
+    width: 40px;
+    height: 40px;
+    padding: 0;
     line-height: 1;
-  }
-
-  &:hover {
-    opacity: 0.8;
   }
 }
 
-a.button {
+a.button_primary,
+a.button_secondary,
+a.button_danger {
   &:hover {
     color: #fff;
   }

@@ -3,7 +3,7 @@ import classNames from "classnames";
 interface Props {
   link: string;
   text: string;
-  color?: "primary" | "secondary";
+  color?: "primary" | "secondary" | "outline";
 }
 
 const { link, text, color = "primary" } = Astro.props;
@@ -13,30 +13,64 @@ const className = classNames("linkButton", {
 });
 ---
 
-<a class={className} href={link}>{text}</a>
+<a class={className} href={link}>
+  {text}
+  <span class="linkButton__arrow" aria-hidden="true">→</span>
+</a>
 
 <style lang="scss">
 	.linkButton {
-		display: inline-block;
-		padding: 7px 25px;
-		font-size: 0.85rem;
-		text-transform: uppercase;
+		display: inline-flex;
+		align-items: center;
+		gap: 8px;
+		height: 46px;
+		padding: 0 24px;
+		font-size: 0.95rem;
+		font-weight: 600;
 		color: #fff;
-		border-radius: 3px;
-		transition: 0.3s opacity;
-		font-weight: 400;
-      letter-spacing: 0.055em;
+		border: 1px solid transparent;
+		border-radius: var(--radius-full);
+		transition: background-color 0.2s var(--ease), border-color 0.2s var(--ease), color 0.2s var(--ease);
+
+		&:first-letter {
+			text-transform: uppercase;
+		}
+
+		&__arrow {
+			transition: transform 0.2s var(--ease);
+		}
+
+		&:hover &__arrow {
+			transform: translateX(3px);
+		}
 
 		&_primary {
 			background: var(--c-primary);
+
+			&:hover {
+				color: #fff;
+				background: var(--c-primary-dark);
+			}
 		}
 
 		&_secondary {
 			background: var(--c-secondary);
+
+			&:hover {
+				color: #fff;
+				background: var(--c-secondary-dark);
+			}
 		}
 
-		&:hover {
-			opacity: 0.8;
+		&_outline {
+			color: var(--c-grey-darkest);
+			background: var(--c-surface);
+			border-color: var(--c-border);
+
+			&:hover {
+				color: var(--c-grey-darkest);
+				border-color: var(--c-grey-light);
+			}
 		}
 	}
 </style>

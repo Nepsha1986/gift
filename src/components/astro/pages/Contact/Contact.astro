@@ -10,12 +10,14 @@ const t = useTranslations(lang, translations)
 
 <Layout title={t("page.title")}>
   <div class="formBlock">
-    <h1 class="formBlock__title">{t("page.heading")}</h1>
+    <header class="formBlock__header">
+      <h1 class="formBlock__title">{t("page.heading")}</h1>
+    </header>
 
     <div class="formBlock__container">
-      <h2>{t("form.title")}</h2>
+      <h2 class="formBlock__formTitle">{t("form.title")}</h2>
 
-      <p>{t("form.subtitle")}</p>
+      <p class="formBlock__subtitle">{t("form.subtitle")}</p>
 
       <ContactForm client:load lang={lang} />
     </div>
@@ -24,23 +26,37 @@ const t = useTranslations(lang, translations)
 
 <style lang="scss">
 	.formBlock {
-		height: 100%;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		flex-flow: column;
+		max-width: 640px;
+		margin: 0 auto;
 
-    &__title {
-      margin-bottom: 2rem;
-    }
+		&__header {
+			text-align: center;
+			margin-bottom: 2rem;
+		}
+
+		&__title {
+			font-size: clamp(1.75rem, 4vw, 2.5rem);
+			font-weight: 800;
+			letter-spacing: -0.03em;
+			margin: 0;
+		}
 
 		&__container {
-			background: #fff;
-			width: 100%;
-			max-width: clamp(400px, 60%, 900px);
-			padding: 2rem 1rem;
-			box-shadow: 0 5px 15px -5px rgba(0, 0, 0, 0.3);
+			background: var(--c-surface);
+			padding: clamp(1.5rem, 4vw, 2.5rem);
+			border: 1px solid var(--c-border);
+			border-radius: var(--radius-lg);
+			box-shadow: var(--shadow-md);
+		}
 
+		&__formTitle {
+			font-size: 1.35rem;
+			margin-bottom: 0.5rem;
+		}
+
+		&__subtitle {
+			color: var(--c-grey);
+			margin-bottom: 1.75rem;
 		}
 	}
 </style>

@@ -1,5 +1,5 @@
 ---
-import { getImage, Image } from "astro:assets";
+import { Image } from "astro:assets";
 import CategoryLink from "./components/CategoryLink.astro";
 
 import { useTranslatedPath, getLocaleFromUrl, getLangFromUrl, useTranslations } from "@i18n/utils";
@@ -11,10 +11,8 @@ import manImg from "@src/assets/man.webp";
 import womanImg from "@src/assets/woman.webp";
 import teenImg from "@src/assets/teen.webp";
 import kidImg from "@src/assets/kid.webp";
-import background from "@public/assets/bg-1.png";
 
 const URL = Astro.url.pathname;
-const bg = await getImage({ src: background, format: "png" });
 
 const locale = getLocaleFromUrl(URL);
 const lang = getLangFromUrl(URL);
@@ -27,121 +25,146 @@ const menCategoryLink = translatePath(categoryLinks["for-men"]);
 const teensCategoryLink = translatePath(categoryLinks["for-teens"]);
 const kidsCategoryLink = translatePath(categoryLinks["for-kids"]);
 ---
-<Fragment>
-  <section class="intro">
-    <div class="intro__container">
-      <div class="intro__content">
-        <h1 class="intro__heading">{t("intro.heading")}</h1>
 
-        <h2 class="intro__subheading">{t("intro.subheading")}</h2>
-
-        <p class="intro__text">
-          <Fragment set:html={t("intro.text")} />
-        </p>
-
-        <div class="intro__categoryLinks">
-          <div class="intro__categoryLink">
-            <CategoryLink link={womenCategoryLink}>
-              <slot set:html={t("cat.women")} />
-              <Image class="img-cover" width="160px" height="160px" slot="img" src={womanImg} alt="woman" />
-            </CategoryLink>
-          </div>
-
-          <div class="intro__categoryLink">
-            <CategoryLink link={menCategoryLink}>
-              <slot set:html={t("cat.men")} />
-              <Image class="img-cover" width="160px" height="160px" slot="img" src={manImg} alt="man" />
-            </CategoryLink>
-          </div>
-
-          <div class="intro__categoryLink">
-            <CategoryLink link={teensCategoryLink}>
-              <slot set:html={t("cat.teens")} />
-              <Image class="img-cover" width="160px" height="160px" slot="img" src={teenImg} alt="teen" />
-            </CategoryLink>
-          </div>
-
-          <div class="intro__categoryLink">
-            <CategoryLink link={kidsCategoryLink}>
-              <slot set:html={t("cat.kids")} />
-              <Image class="img-cover" width="160px" height="160px" slot="img" src={kidImg} alt="kid" />
-            </CategoryLink>
-          </div>
-        </div>
-      </div>
+<section class="intro">
+  <div class="intro__container">
+    <div class="intro__content">
+      <h1 class="intro__heading">{t("intro.heading")}</h1>
+      <p class="intro__subheading">{t("intro.subheading")}</p>
+      <p class="intro__text">
+        <Fragment set:html={t("intro.text")} />
+      </p>
     </div>
-  </section>
 
-  <div class="bg" style={`background-image: url(${bg.src});`}></div>
-</Fragment>
+    <ul class="intro__categoryLinks">
+      <li class="intro__categoryLink">
+        <CategoryLink link={womenCategoryLink}>
+          <Fragment set:html={t("cat.women")} />
+          <Image class="img-cover" width={400} height={300} slot="img" src={womanImg} alt="" />
+        </CategoryLink>
+      </li>
+
+      <li class="intro__categoryLink">
+        <CategoryLink link={menCategoryLink}>
+          <Fragment set:html={t("cat.men")} />
+          <Image class="img-cover" width={400} height={300} slot="img" src={manImg} alt="" />
+        </CategoryLink>
+      </li>
+
+      <li class="intro__categoryLink">
+        <CategoryLink link={teensCategoryLink}>
+          <Fragment set:html={t("cat.teens")} />
+          <Image class="img-cover" width={400} height={300} slot="img" src={teenImg} alt="" />
+        </CategoryLink>
+      </li>
+
+      <li class="intro__categoryLink">
+        <CategoryLink link={kidsCategoryLink}>
+          <Fragment set:html={t("cat.kids")} />
+          <Image class="img-cover" width={400} height={300} slot="img" src={kidImg} alt="" />
+        </CategoryLink>
+      </li>
+    </ul>
+  </div>
+</section>
 
 <style is:global>
-    .intro__text a {
-        color: var(--c-secondary-light);
-        transition: .3s;
+	.intro__text a {
+		color: var(--c-secondary);
+		text-decoration: underline;
+		text-decoration-color: var(--c-secondary-light);
+		text-underline-offset: 3px;
 
-        &:hover {
-            color: var(--c-secondary);
-        }
-    }
+		strong {
+			color: inherit;
+		}
+
+		&:hover {
+			color: var(--c-secondary-dark);
+		}
+	}
 </style>
 
 <style lang="scss">
 	.intro {
+		position: relative;
+		overflow-x: clip;
+		isolation: isolate;
+
+		// Soft brand-coloured glow instead of a heavy background image
+		&::before,
+		&::after {
+			content: "";
+			position: absolute;
+			z-index: -1;
+			border-radius: 50%;
+			filter: blur(80px);
+			pointer-events: none;
+		}
+
+		&::before {
+			width: 520px;
+			height: 520px;
+			top: -320px;
+			right: -120px;
+			background: rgba(114, 212, 229, 0.45);
+		}
+
+		&::after {
+			width: 420px;
+			height: 420px;
+			top: -60px;
+			right: 280px;
+			background: rgba(253, 197, 186, 0.5);
+		}
+
 		&__container {
-			max-width: 1300px;
-		  min-height: calc(100vh - 82px);
-			padding: 2rem 15px;
+			max-width: var(--container);
+			padding: clamp(2.5rem, 7vw, 5.5rem) var(--gutter) 2rem;
 			margin: 0 auto;
-			display: flex;
-			flex-flow: row wrap;
-			align-items: center;
-			justify-content: space-between;
-			gap: 1rem;
 		}
 
 		&__content {
-			margin-bottom: 3rem;
-			max-width: 870px;
+			max-width: 760px;
+			margin-bottom: clamp(2rem, 5vw, 3.5rem);
 		}
 
 		&__heading {
-			font-size: clamp(2rem, 5vw, 4rem);
+			font-size: clamp(2.4rem, 6vw, 4.25rem);
+			font-weight: 800;
+			letter-spacing: -0.035em;
+			line-height: 1.05;
+			margin-bottom: 0.75rem;
 		}
 
 		&__subheading {
-			font-size: clamp(1.6rem, 4vw, 3.2rem);
+			font-family: var(--font-secondary);
+			font-size: clamp(1.25rem, 2.6vw, 1.75rem);
+			font-weight: 700;
+			letter-spacing: -0.02em;
+			color: var(--c-primary-dark);
+			margin-bottom: 1.25rem;
 		}
 
 		&__text {
-			color: var(--c-grey-dark);
-			font-size: 1.2rem;
-        margin-bottom: 3rem;
+			color: var(--c-grey);
+			font-size: clamp(1.05rem, 1.6vw, 1.2rem);
+			line-height: 1.65;
+			margin-bottom: 0;
 		}
 
 		&__categoryLinks {
-			display: flex;
-			flex-flow: row wrap;
-			gap: 1rem;
-			justify-content: center;
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			display: grid;
+			gap: 16px;
+			grid-template-columns: repeat(auto-fill, minmax(min(100%, 250px), 1fr));
 		}
 
 		&__categoryLink {
-			flex-basis: 350px;
-			flex-grow: 1;
-			max-width: 450px;
+			margin: 0;
+			display: flex;
 		}
-	}
-
-	.bg {
-		top: 0;
-		right: 0;
-		position: absolute;
-		width: 100vw;
-		height: 100vh;
-		background-position: top right;
-		background-repeat: no-repeat;
-		background-size: contain;
-		z-index: -1;
 	}
 </style>

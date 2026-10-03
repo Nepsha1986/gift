@@ -7,6 +7,7 @@ interface Props {
   value: string;
   onChange?: (val: string) => void;
   placeholder?: string;
+  type?: React.HTMLInputTypeAttribute;
 }
 const Input: React.FC<Props> = ({
   name,
@@ -14,6 +15,7 @@ const Input: React.FC<Props> = ({
   onChange,
   label,
   placeholder,
+  type = "text",
 }) => {
   return (
     <div className={styles.input}>
@@ -23,7 +25,7 @@ const Input: React.FC<Props> = ({
 
       <input
         id={name}
-        type="text"
+        type={type}
         name={name}
         onChange={(event) => {
           onChange && onChange(event.target.value);

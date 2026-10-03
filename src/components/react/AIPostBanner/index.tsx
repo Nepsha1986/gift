@@ -14,7 +14,7 @@ const AIPostBanner: React.FC<Props> = ({ lang }) => {
   const t = useTranslations(lang as SupportedLanguages, translations);
 
   return (
-    <div style={{ marginBottom: "1rem", marginTop: "3rem" }}>
+    <div style={{ marginTop: "2rem", maxWidth: "820px" }}>
       <Banner
         image={<FontAwesomeIcon icon={faInfoCircle} />}
         text={t("banner.text")}

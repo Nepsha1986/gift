@@ -58,26 +58,49 @@ const paginationList = Array.from({ length }, (_, i) => i + 1);
 
 <style lang="scss">
 	.pagination {
-		font-weight: 300;
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: center;
+		gap: 6px;
 
 		&__links {
 			display: inline-flex;
-			margin: 0 30px;
+			margin: 0 8px;
 			justify-content: center;
-			gap: 10px
+			gap: 6px;
 		}
 
 		&__link {
-			font-size: 1.05rem;
-			color: var(--c-grey);
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			gap: 6px;
+			min-width: 40px;
+			height: 40px;
+			padding: 0 12px;
+			font-size: 0.9rem;
+			font-weight: 500;
+			color: var(--c-grey-dark);
+			background: var(--c-surface);
+			border: 1px solid var(--c-border);
+			border-radius: var(--radius-full);
+			transition: border-color 0.2s var(--ease), color 0.2s var(--ease);
+
+			&:hover {
+				color: var(--c-grey-darkest);
+				border-color: var(--c-grey-light);
+			}
 
 			&.disabled {
 				color: var(--c-grey-light);
 				pointer-events: none;
 			}
 
-			&:hover {
-				color: var(--c-primary-dark);
+			&.active {
+				color: #fff;
+				background: var(--c-primary);
+				border-color: var(--c-primary);
 			}
 		}
 	}

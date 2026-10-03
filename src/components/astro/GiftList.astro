@@ -30,10 +30,13 @@ const getLink = (slug: string, category?: Category): string => translatePath(`/g
   ))}
 </div>
 
-<style>
-    .giftList {
-        overflow-y: auto;
-        max-height: 88vh;
-        padding: 0 5px;
-    }
+<style lang="scss">
+	.giftList {
+		@media (min-width: 1200px) {
+			overflow-y: auto;
+			max-height: calc(100vh - var(--header-height) - 100px);
+			padding-right: 4px;
+			scrollbar-width: thin;
+		}
+	}
 </style>

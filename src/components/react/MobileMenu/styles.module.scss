@@ -1,34 +1,65 @@
 .mobileMenu {
   $this: &;
 
-  text-align: right;
-
   &__nav {
-    background: #fff;
-    padding: 1rem;
+    background: var(--c-surface);
     z-index: 9999;
     position: fixed;
-    width: 320px;
+    width: min(320px, 86vw);
     height: 100dvh;
     top: 0;
-    bottom: 0;
-    right: -320px;
-    transition: 0.5s;
-    will-change: right;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    box-shadow: var(--shadow-lg);
+    transform: translateX(105%);
+    visibility: hidden;
+    transition:
+      transform 0.3s var(--ease),
+      visibility 0s linear 0.3s;
+  }
+
+  &__head {
+    display: flex;
+    justify-content: flex-end;
+    height: var(--header-height);
+    align-items: center;
+    padding: 0 12px;
+  }
+
+  &__body {
+    padding: 0.5rem 12px;
+    flex-grow: 1;
+    overflow-y: auto;
+  }
+
+  &__footer {
+    padding: 1rem 12px 1.5rem;
+    border-top: 1px solid var(--c-border);
+  }
+
+  &__overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9998;
+    background: rgba(16, 24, 40, 0.4);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s var(--ease);
   }
 
   &_active {
     #{$this}__overlay {
-      position: absolute;
-      width: 100dvw;
-      height: 100dvh;
-      left: 0;
-      top: 0;
-      background: rgba(0, 0, 0, 0.75);
+      opacity: 1;
+      pointer-events: auto;
     }
 
     #{$this}__nav {
-      right: 0;
+      transform: translateX(0);
+      visibility: visible;
+      transition:
+        transform 0.3s var(--ease),
+        visibility 0s;
     }
   }
 }

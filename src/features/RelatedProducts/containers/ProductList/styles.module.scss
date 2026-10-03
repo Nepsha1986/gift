@@ -4,12 +4,13 @@
   flex-flow: row wrap;
   padding: 0;
   font-size: 0.85rem;
-  gap: 10px;
+  gap: 12px;
+  margin: 0;
   justify-content: space-between;
 
   &__item {
-    flex-basis: 450px;
+    flex-basis: 340px;
     flex-grow: 1;
-    margin-bottom: 3px;
+    margin-bottom: 0;
   }
 }

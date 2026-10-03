@@ -3,23 +3,22 @@ import Head from "./Head.astro";
 import Header from "./Header.astro";
 import Footer from "./Footer.astro";
 
-import { getLangFromUrl, useTranslations, getLocaleFromUrl } from "@i18n/utils";
+import { getLangFromUrl, useTranslations } from "@i18n/utils";
 import { ui } from "@i18n/ui";
 
 import "../styles/global.scss";
 
 interface Props {
 	title: string;
-	isLanding: boolean;
-	hasHeader: boolean;
-	hasFooter: boolean;
+	isLanding?: boolean;
+	hasHeader?: boolean;
+	hasFooter?: boolean;
 }
 
 const URL = Astro.url.pathname;
 
 const {title, isLanding, hasHeader = true, hasFooter = true} = Astro.props;
 const lang = getLangFromUrl(URL);
-const locale = getLocaleFromUrl(URL);
 const t = useTranslations(lang, ui);
 
 const hasSidebar = !!Astro.slots.has('sidebar');
@@ -41,10 +40,16 @@ const hasSidebar = !!Astro.slots.has('sidebar');
       </main>
 
 			{hasSidebar && (
-        <aside id='sidebar' class="app__sidebar" data-pagefind-ignore="all">
-          <button class="app__sidebarToggleBtn" id='sidebar_toggle'>View all ideas</button>
-          <slot name='sidebar'/>
-        </aside>
+        <Fragment>
+          <aside id='sidebar' class="app__sidebar" data-pagefind-ignore="all">
+            <slot name='sidebar'/>
+          </aside>
+          <div class="app__sidebarOverlay" id="sidebar_overlay"></div>
+          <button class="app__sidebarToggleBtn" id='sidebar_toggle' type="button" aria-controls="sidebar" aria-expanded="false">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><rect x="1" y="1" width="6" height="6" rx="1.5"/><rect x="9" y="1" width="6" height="6" rx="1.5"/><rect x="1" y="9" width="6" height="6" rx="1.5"/><rect x="9" y="9" width="6" height="6" rx="1.5"/></svg>
+            {t("s.view_all_ideas")}
+          </button>
+        </Fragment>
 			)}
     </div>
 	)}
@@ -55,86 +60,112 @@ const hasSidebar = !!Astro.slots.has('sidebar');
 
 <style lang="scss">
 	.body {
-		background-color: #f8f9fa;
-		background-attachment: fixed;
-		background-size: cover;
+		display: flex;
+		flex-direction: column;
 
 		&_noScroll {
 			overflow: hidden;
 		}
 	}
 
+	main {
+		flex-grow: 1;
+	}
+
 	.app {
 		$this: &;
 
-		max-width: 1300px;
-		min-height: calc(100vh - 135px);
-		padding: 3rem 15px;
+		width: 100%;
+		max-width: var(--container);
+		flex-grow: 1;
+		padding: 2.5rem var(--gutter) 0;
 		margin: 0 auto;
 
 		&_hasSidebar {
 			display: flex;
-			flex-flow: row wrap;
-			gap: 30px;
+			align-items: flex-start;
+			gap: 48px;
 
 			#{$this}__main {
-				flex-basis: 650px;
+				min-width: 0;
 				width: 100%;
 				flex-grow: 1;
 			}
 
 			#{$this}__sidebar {
-				padding: 20px 1rem;
-				width: 100%;
-				max-width: 360px;
+				padding: 1.25rem 1rem;
+				width: min(380px, 90vw);
 				position: fixed;
 				top: 0;
-				right: -360px;
-				min-height: 100dvh;
-				background: #f1f8ff;
-				z-index: 5;
-				transition: .3s;
-				will-change: right;
+				right: 0;
+				height: 100dvh;
+				overflow-y: auto;
+				background: var(--c-bg);
+				box-shadow: var(--shadow-lg);
+				z-index: 9999;
+				transform: translateX(105%);
+				visibility: hidden;
+				transition: transform 0.3s var(--ease), visibility 0s linear 0.3s;
 
 				@media (min-width: 1200px) {
-					all: unset;
-					position: static;
-					max-width: 400px;
+					position: sticky;
+					top: calc(var(--header-height) + 16px);
+					height: auto;
+					max-height: calc(100vh - var(--header-height) - 32px);
+					width: 360px;
+					flex-shrink: 0;
+					padding: 0;
+					background: transparent;
+					box-shadow: none;
+					transform: none;
+					visibility: visible;
+					overflow: visible;
+					z-index: 1;
+				}
+			}
+
+			#{$this}__sidebar_active {
+				transform: translateX(0);
+				visibility: visible;
+				transition: transform 0.3s var(--ease), visibility 0s;
+			}
+
+			#{$this}__sidebarOverlay {
+				position: fixed;
+				inset: 0;
+				z-index: 9998;
+				background: rgba(16, 24, 40, 0.4);
+				opacity: 0;
+				pointer-events: none;
+				transition: opacity 0.3s var(--ease);
+
+				&_active {
+					opacity: 1;
+					pointer-events: auto;
 				}
 			}
 
 			#{$this}__sidebarToggleBtn {
-				transform: rotateZ(-90deg);
-				white-space: nowrap;
-				transform-origin: bottom right;
-				cursor: pointer;
-				padding: 7px 25px;
-				font-size: 0.85rem;
-				text-transform: uppercase;
+				position: fixed;
+				right: 16px;
+				bottom: 16px;
+				z-index: 9;
+				display: inline-flex;
+				align-items: center;
+				gap: 8px;
+				height: 46px;
+				padding: 0 20px;
+				font-size: 0.9rem;
+				font-weight: 600;
 				color: #fff;
-				border-radius: 3px;
-				background: var(--c-primary);
+				background: var(--c-grey-darkest);
 				border: none;
-				position: absolute;
-				top: 100px;
-				right: 100%;
-				z-index: 2;
-			}
+				border-radius: var(--radius-full);
+				box-shadow: var(--shadow-lg);
+				cursor: pointer;
 
-			#{$this}__sidebar_active {
-				right: 0;
-        z-index: 9999;
-
-				&:before {
-					display: block;
-					content: '';
-					width: 100vw;
-					height: 100vh;
-					position: absolute;
-					right: 100%;
-					top: 0;
-					z-index: 1;
-					background: rgb(0, 0, 0, 0.25);
+				@media (min-width: 1200px) {
+					display: none;
 				}
 			}
 		}
@@ -145,13 +176,19 @@ const hasSidebar = !!Astro.slots.has('sidebar');
 	document.addEventListener('astro:page-load', () => {
 		const button = document.querySelector('#sidebar_toggle');
 		const sidebar = document.querySelector('#sidebar');
+		const overlay = document.querySelector('#sidebar_overlay');
 		const body = document.querySelector('#body');
 
-    if(button) {
-      button.addEventListener('click', () => {
-        sidebar.classList.toggle('app__sidebar_active');
-        body.classList.toggle('body_noScroll');
-      });
-    }
+		if (!button || !sidebar) return;
+
+		const toggle = () => {
+			const isActive = sidebar.classList.toggle('app__sidebar_active');
+			overlay?.classList.toggle('app__sidebarOverlay_active', isActive);
+			body.classList.toggle('body_noScroll', isActive);
+			button.setAttribute('aria-expanded', String(isActive));
+		};
+
+		button.addEventListener('click', toggle);
+		overlay?.addEventListener('click', toggle);
 	}, {once: false});
 </script>

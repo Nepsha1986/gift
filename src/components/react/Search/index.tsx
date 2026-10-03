@@ -6,14 +6,16 @@ import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import type { SupportedLanguages } from "@i18n/ui.ts";
 import { useTranslations } from "@i18n/utils.ts";
 import translations from "./translations.ts";
+import styles from "./styles.module.scss";
 
 const hasSearch = import.meta.env.MODE === "production";
 
 interface Props {
   lang: SupportedLanguages;
+  compact?: boolean;
 }
 
-const Search: React.FC<Props> = ({ lang }) => {
+const Search: React.FC<Props> = ({ lang, compact = false }) => {
   const t = useTranslations(lang as SupportedLanguages, translations);
   const [opened, setOpened] = useState(false);
   return (
@@ -28,7 +30,7 @@ const Search: React.FC<Props> = ({ lang }) => {
       >
         <p>{t("search.term")}</p>
         {hasSearch ? (
-          <PageFinder />
+          opened && <PageFinder />
         ) : (
           <p>
             {
@@ -38,15 +40,29 @@ const Search: React.FC<Props> = ({ lang }) => {
         )}
       </Dialog>
 
-      <Button
-        color="transparent"
-        onClick={() => {
-          setOpened(true);
-        }}
-      >
-        <FontAwesomeIcon icon={faSearch} style={{ marginRight: "10px" }} />{" "}
-        {t("search.heading")}
-      </Button>
+      {compact ? (
+        <Button
+          iconOnly
+          color="transparent"
+          ariaLabel={t("search.heading")}
+          onClick={() => {
+            setOpened(true);
+          }}
+        >
+          <FontAwesomeIcon icon={faSearch} style={{ fontSize: "1.1rem" }} />
+        </Button>
+      ) : (
+        <button
+          type="button"
+          className={styles.searchTrigger}
+          onClick={() => {
+            setOpened(true);
+          }}
+        >
+          <FontAwesomeIcon icon={faSearch} />
+          <span>{t("search.heading")}…</span>
+        </button>
+      )}
     </>
   );
 };

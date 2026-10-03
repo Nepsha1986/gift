@@ -10,7 +10,7 @@ import {
   useTranslatedPath,
   useTranslations,
 } from "@i18n/utils.ts";
-import categories from "@i18n/translations/categories.ts";
+import categoryTabs from "@i18n/translations/categoryTabs.ts";
 
 import styles from "./styles.module.scss";
 
@@ -38,7 +38,7 @@ const FeaturedIdeas: React.FC<FeaturedIdeasProps> = ({
   const visible = featured.filter((i) => i.category === activeCategory);
 
   const translatePath = useTranslatedPath(locale);
-  const t = useTranslations(lang, categories);
+  const t = useTranslations(lang, categoryTabs);
 
   const items: Array<{ category: Category; label: string }> = [
     {
@@ -69,10 +69,9 @@ const FeaturedIdeas: React.FC<FeaturedIdeasProps> = ({
 
       <div className={styles.featuredIdeas}>
         {!!visible.length &&
-          visible.map((i, index) => (
+          visible.map((i) => (
             <div className={styles.featuredIdeas__item} key={i.slug}>
               <GiftCard
-                index={index + 1}
                 key={i.slug}
                 title={i.title}
                 description={i.description}

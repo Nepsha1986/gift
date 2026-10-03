@@ -3,15 +3,16 @@ import { faBars, faClose } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import classNames from "classnames";
 import { Button } from "@src/common";
-
 import styles from "./styles.module.scss";
 
 interface Props {
   navigation: React.ReactNode;
+  footer?: React.ReactNode;
 }
 
-const MobileMenu: React.FC<Props> = ({ navigation }) => {
+const MobileMenu: React.FC<Props> = ({ navigation, footer }) => {
   const [isActive, setIsActive] = useState(false);
+
   const handleOnClickMenu = (): void => {
     setIsActive((isActive) => !isActive);
   };
@@ -20,7 +21,7 @@ const MobileMenu: React.FC<Props> = ({ navigation }) => {
     if (isActive) document.body.style.overflow = "hidden";
 
     return () => {
-      document.body.style.overflow = "visible";
+      document.body.style.overflow = "";
     };
   }, [isActive]);
 
@@ -30,16 +31,30 @@ const MobileMenu: React.FC<Props> = ({ navigation }) => {
 
   return (
     <div className={classname}>
-      <Button iconOnly onClick={handleOnClickMenu} color="transparent">
-        <FontAwesomeIcon style={{ fontSize: "1.6rem" }} icon={faBars} />
+      <Button
+        iconOnly
+        onClick={handleOnClickMenu}
+        color="transparent"
+        ariaLabel="Open menu"
+      >
+        <FontAwesomeIcon style={{ fontSize: "1.25rem" }} icon={faBars} />
       </Button>
 
-      <div className={styles.mobileMenu__nav}>
-        <Button iconOnly onClick={handleOnClickMenu} color="transparent">
-          <FontAwesomeIcon style={{ fontSize: "1.6rem" }} icon={faClose} />
-        </Button>
+      <div className={styles.mobileMenu__nav} aria-hidden={!isActive}>
+        <div className={styles.mobileMenu__head}>
+          <Button
+            iconOnly
+            onClick={handleOnClickMenu}
+            color="transparent"
+            ariaLabel="Close menu"
+          >
+            <FontAwesomeIcon style={{ fontSize: "1.25rem" }} icon={faClose} />
+          </Button>
+        </div>
 
-        <div style={{ marginTop: "2rem" }}>{navigation}</div>
+        <div className={styles.mobileMenu__body}>{navigation}</div>
+
+        {footer && <div className={styles.mobileMenu__footer}>{footer}</div>}
       </div>
 
       <div className={styles.mobileMenu__overlay} onClick={handleOnClickMenu} />

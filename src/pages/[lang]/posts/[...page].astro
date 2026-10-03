@@ -37,7 +37,7 @@ const { page } = Astro.props;
 ---
 
 <Layout title={t('page.heading')} isLanding>
-  <Section heading={t('page.heading')}>
+  <Section heading={t('page.heading')} as="h1">
     <p slot="subheading" set:html={t("page.subheading")} />
     <div class="posts-page__posts">
       {page.data.map(i => (
@@ -70,14 +70,14 @@ const { page } = Astro.props;
 		&__posts {
 			margin: 0 auto;
 			display: grid;
-			gap: 30px;
-			grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+			gap: 24px;
+			grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
 		}
 
     &__pagination {
         display: flex;
         justify-content: center;
-        margin: 5rem 0 0;
+        margin: 3.5rem 0 0;
     }
 	}
 </style>

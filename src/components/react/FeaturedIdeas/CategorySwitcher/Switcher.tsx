@@ -1,6 +1,5 @@
 import React from "react";
 import classNames from "classnames";
-
 import { type Category } from "@src/types/category.ts";
 import styles from "./styles.module.scss";
 
@@ -15,14 +14,17 @@ const Switcher: React.FC<{
   });
 
   return (
-    <div
+    <button
+      type="button"
+      role="tab"
+      aria-selected={active}
       className={className}
       onClick={() => {
         onClick(category);
       }}
     >
       {label}
-    </div>
+    </button>
   );
 };
 

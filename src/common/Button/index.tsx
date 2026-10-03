@@ -13,6 +13,7 @@ interface Props {
   size?: "sm" | "md" | "lg";
   className?: string;
   target?: React.HTMLAttributeAnchorTarget;
+  ariaLabel?: string;
 }
 const Button: React.FC<Props> = ({
   children,
@@ -25,17 +26,25 @@ const Button: React.FC<Props> = ({
   size = "lg",
   className = "",
   target,
+  ariaLabel,
 }) => {
   const cssClassName = classNames(styles.button, className, {
     [styles.button_disabled]: disabled,
     [styles.button_iconOnly]: iconOnly,
     [styles[`button_${color}`]]: color,
-    [styles[`button_${size}`]]: color,
+    [styles[`button_${size}`]]: size,
   });
 
   if (link)
     return (
-      <a href={link} className={cssClassName} style={style} target={target}>
+      <a
+        href={link}
+        className={cssClassName}
+        style={style}
+        target={target}
+        aria-label={ariaLabel}
+        rel={target === "_blank" ? "noopener" : undefined}
+      >
         {children}
       </a>
     );
@@ -47,6 +56,7 @@ const Button: React.FC<Props> = ({
       className={cssClassName}
       disabled={disabled}
       style={style}
+      aria-label={ariaLabel}
     >
       {children}
     </button>

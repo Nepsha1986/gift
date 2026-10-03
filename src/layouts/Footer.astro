@@ -1,30 +1,90 @@
 ---
 import LangSwitcher from "@reactComponents/LangSwitcher";
+import Navigation from "@reactComponents/Navigation";
+import LogoDark from "@reactComponents/LogoDark";
 import { removeTrailingSlash } from "@utils/removeTrailingSlash";
+import { getLangFromUrl, getLocaleFromUrl, useTranslations } from "@i18n/utils";
+import { ui } from "@i18n/ui";
 
 const URL = Astro.url.pathname;
 const pathname = removeTrailingSlash(URL);
+const lang = getLangFromUrl(URL);
+const locale = getLocaleFromUrl(URL);
+const t = useTranslations(lang, ui);
+const year = new Date().getFullYear();
 ---
 
 <footer class="footer">
   <div class="footer__container">
-    <span>&copy; 2024, GiftIdea. All Rights Reserved.</span>
+    <div class="footer__top">
+      <div class="footer__brand">
+        <a class="footer__logo" href={`/${locale}`} aria-label="Gift Idea">
+          <LogoDark />
+        </a>
+        <p class="footer__tagline">{t("s.tagline")}</p>
+      </div>
 
-    <LangSwitcher pathname={pathname} direction="top" />
+      <Navigation currentPage={pathname} type="footer" />
+    </div>
+
+    <div class="footer__bottom">
+      <span>&copy; {year} GiftIdea. {t("s.rights")}</span>
+      <LangSwitcher pathname={pathname} direction="top" />
+    </div>
   </div>
 </footer>
 
 <style lang="scss">
 	.footer {
+		margin-top: 4rem;
+		background: var(--c-surface);
+		border-top: 1px solid var(--c-border);
+
 		&__container {
-			font-size: 0.9rem;
-			font-weight: 300;
-			padding: 1.25rem 15px 0.75rem;
+			max-width: var(--container);
+			margin: 0 auto;
+			padding: 2.5rem var(--gutter) 1.25rem;
+		}
+
+		&__top {
 			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			align-items: flex-start;
+			gap: 1.5rem 3rem;
+			padding-bottom: 2rem;
+		}
+
+		&__brand {
+			max-width: 360px;
+		}
+
+		&__logo {
+			display: block;
+			width: 120px;
+			margin-bottom: 0.5rem;
+
+			:global(svg) {
+				display: block;
+			}
+		}
+
+		&__tagline {
+			font-size: 0.9rem;
+			color: var(--c-text-muted);
+			margin: 0;
+		}
+
+		&__bottom {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 1rem;
 			justify-content: space-between;
 			align-items: center;
-			max-width: 1300px;
-			margin: 0 auto;
+			padding-top: 1.25rem;
+			border-top: 1px solid var(--c-border);
+			font-size: 0.85rem;
+			color: var(--c-text-muted);
 		}
 	}
 </style>
