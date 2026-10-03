@@ -1,33 +1,25 @@
 .banner {
-  $icon-size: 24px;
-
-  padding: 1rem;
-  border: 1px solid var(--c-grey-lightest);
-  border-radius: 5px;
-  position: relative;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 1rem 1.25rem;
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-md);
 
   &__image {
-    color: var(--c-info);
-    position: absolute;
-    top: - calc($icon-size/2);
-    left: - calc($icon-size/2);
-    width: $icon-size;
-    height: $icon-size;
-    border-radius: calc($icon-size/2);
-    box-shadow: 0 0 2px 2px #fff;
-    background: #fff;
-
-    svg {
-      font-size: $icon-size;
-      display: inline-block;
-    }
+    flex-shrink: 0;
+    color: var(--c-primary);
+    font-size: 1.15rem;
+    line-height: 1.35;
   }
 
   &__text {
-    font-size: 0.9rem;
+    font-size: 0.875rem;
     margin-bottom: 0;
-    line-height: 1.35;
+    line-height: 1.55;
     color: var(--c-grey);
-    font-style: italic;
   }
 }

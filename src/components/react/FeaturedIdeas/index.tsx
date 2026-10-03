@@ -69,10 +69,9 @@ const FeaturedIdeas: React.FC<FeaturedIdeasProps> = ({
 
       <div className={styles.featuredIdeas}>
         {!!visible.length &&
-          visible.map((i, index) => (
+          visible.map((i) => (
             <div className={styles.featuredIdeas__item} key={i.slug}>
               <GiftCard
-                index={index + 1}
                 key={i.slug}
                 title={i.title}
                 description={i.description}

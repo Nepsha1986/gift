@@ -4,10 +4,10 @@ interface Props {
   color?: string;
 }
 
-const { href, color = "#eee", icon, ...props }: Props = Astro.props;
+const { href, color = "currentColor", ...props }: Props = Astro.props;
 ---
 
-<a class="shareBtn" style={{ backgroundColor: color }} href={href} target="_blank" {...props}>
+<a class="shareBtn" style={{ "--brand": color }} href={href} target="_blank" rel="noopener" {...props}>
   <span class="shareBtn__icon">
     <slot name="icon" />
   </span>
@@ -17,20 +17,27 @@ const { href, color = "#eee", icon, ...props }: Props = Astro.props;
 
 <style lang="scss">
 	.shareBtn {
-		display: inline-block;
-		padding: 7px 15px;
-		font-size: 0.85rem;
-		color: #fff;
-		border-radius: 3px;
-		transition: 0.3s opacity;
-		cursor: pointer;
+		display: inline-flex;
+		align-items: center;
+		gap: 8px;
+		height: 38px;
+		padding: 0 16px;
+		font-size: 0.875rem;
+		font-weight: 500;
+		color: var(--c-grey-dark);
+		background: var(--c-surface);
+		border: 1px solid var(--c-border);
+		border-radius: var(--radius-full);
+		transition: border-color 0.2s var(--ease), color 0.2s var(--ease);
 
-      &__icon {
-          margin-right: 0.25rem;
-      }
+		&__icon {
+			color: var(--brand);
+			display: inline-flex;
+		}
 
 		&:hover {
-			opacity: 0.8;
+			color: var(--c-grey-darkest);
+			border-color: var(--brand);
 		}
 	}
 </style>

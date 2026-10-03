@@ -48,6 +48,7 @@ const seoTitle = `${t("s.gift_idea")} ${t(entry.data.category)} - ${entry.data.t
     meta={entry.data?.meta}
     author={entry.data?.author}
     date={entry.data?.date}
+    hasRelatedProducts={!!entry.data?.modules?.includes('RelatedProducts')}
   >
     <Image
       data-pagefind-meta="image[src]"
@@ -74,7 +75,8 @@ const seoTitle = `${t("s.gift_idea")} ${t(entry.data.category)} - ${entry.data.t
 
 <style lang="scss">
   .categoryItems {
-    position: sticky;
-    top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
   }
 </style>

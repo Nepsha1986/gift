@@ -36,7 +36,7 @@ const navItems: Array<[string, NavTranslationStrings]> = [
 
 interface Props {
   currentPage: string;
-  type?: "desktop" | "mobile";
+  type?: "desktop" | "mobile" | "footer";
 }
 
 const getParentFromUrl = (url: string): string => {
@@ -53,6 +53,7 @@ const Navigation: React.FC<Props> = ({ currentPage, type = "desktop" }) => {
   const classname = classNames(styles.navigation, {
     [styles.navigation_desctop]: type === "desktop",
     [styles.navigation_mobile]: type === "mobile",
+    [styles.navigation_footer]: type === "footer",
   });
 
   return (
@@ -68,6 +69,9 @@ const Navigation: React.FC<Props> = ({ currentPage, type = "desktop" }) => {
             key={i[0]}
             className={navItemClass}
             href={translatePath(`${i[0]}`)}
+            aria-current={
+              currentPageParent === navItemParent ? "page" : undefined
+            }
           >
             {t(i[1])}
           </a>

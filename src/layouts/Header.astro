@@ -17,7 +17,7 @@ const pathname = removeTrailingSlash(URL);
 
 <header id="website_header" class="header">
   <div class="header__container">
-    <a class="header__logo" href={`/${locale}`}>
+    <a class="header__logo" href={`/${locale}`} aria-label="Gift Idea">
       <LogoDark />
     </a>
 
@@ -31,8 +31,10 @@ const pathname = removeTrailingSlash(URL);
     </div>
 
     <div class="header__mobileNav">
+      <Search client:load lang={lang} compact />
       <MobileMenu client:load>
         <Navigation currentPage={pathname} slot="navigation" type="mobile" />
+        <LangSwitcher pathname={pathname} slot="footer" variant="list" />
       </MobileMenu>
     </div>
   </div>
@@ -40,41 +42,47 @@ const pathname = removeTrailingSlash(URL);
 
 <style lang="scss">
 	.header {
-	  position: sticky;
-	  top: -100px;
-    z-index: 10;
-	  transition: 0.2s;
+		position: sticky;
+		top: 0;
+		z-index: 10;
+		border-bottom: 1px solid transparent;
 
-    &_sticky {
-		  top: 0;
-		  box-shadow: 1px 1px 4px -3px #0c0c0c;
-      backdrop-filter: blur(10px);
-      background: rgba(255,255,255, 0.25);
+		// Blur lives on a pseudo-element: backdrop-filter on the header itself
+		// would become the containing block of the fixed mobile menu.
+		&::before {
+			content: "";
+			position: absolute;
+			inset: 0;
+			z-index: -1;
+			background: rgba(247, 248, 250, 0.82);
+			backdrop-filter: saturate(180%) blur(12px);
+			-webkit-backdrop-filter: saturate(180%) blur(12px);
+		}
+		transition: border-color 0.2s var(--ease), box-shadow 0.2s var(--ease);
 
-		  @media (pointer: coarse)  {
-        backdrop-filter: none;
-        background: rgb(255,255,255);
-		  }
-    }
+		&_scrolled {
+			border-bottom-color: var(--c-border);
+			box-shadow: var(--shadow-sm);
+		}
 
 		&__container {
-			padding: .5rem 15px;
+			height: var(--header-height);
+			padding: 0 var(--gutter);
 			display: flex;
-			flex-flow: row wrap;
 			justify-content: space-between;
 			align-items: center;
-			max-width: 1300px;
+			gap: 1rem;
+			max-width: var(--container);
 			margin: 0 auto;
 		}
 
 		&__logo {
 			display: block;
-			width: 165px;
-			transition: 0.3s transform;
-			cursor: pointer;
+			width: 140px;
+			flex-shrink: 0;
 
-			&:hover {
-				transform: scale(1.04);
+			:global(svg) {
+				display: block;
 			}
 		}
 
@@ -83,7 +91,8 @@ const pathname = removeTrailingSlash(URL);
 
 			@media screen and (min-width: 960px) {
 				display: flex;
-        gap: 10px;
+				align-items: center;
+				gap: 6px;
 			}
 		}
 
@@ -96,6 +105,10 @@ const pathname = removeTrailingSlash(URL);
 		}
 
 		&__mobileNav {
+			display: flex;
+			align-items: center;
+			gap: 4px;
+
 			@media screen and (min-width: 960px) {
 				display: none;
 			}
@@ -103,35 +116,26 @@ const pathname = removeTrailingSlash(URL);
 	}
 </style>
 
-<script client:load>
-  document.addEventListener('astro:page-load', () => {
-    const header = document.getElementById('website_header');
-    function throttle(func, limit) {
-      let inThrottle = false;
+<script>
+  // Registered once: the header is persisted between view transitions.
+  let ticking = false;
 
-      return function() {
-        if (!inThrottle) {
-          func.apply(this, arguments);
-          inThrottle = true;
+  const update = (): void => {
+    document
+      .getElementById("website_header")
+      ?.classList.toggle("header_scrolled", window.scrollY > 4);
+    ticking = false;
+  };
 
-          setTimeout(() => {
-            inThrottle = false;
-          }, limit);
-        }
-      };
-    }
-
-    const handleScroll = throttle((e) => {
-      const offset = e.target.scrollY || e.target.documentElement.scrollTop;
-
-      if(offset > 500) {
-        header.classList.add('header_sticky');
-      } else {
-        header.classList.remove('header_sticky');
+  window.addEventListener(
+    "scroll",
+    () => {
+      if (!ticking) {
+        window.requestAnimationFrame(update);
+        ticking = true;
       }
-    }, 50);
-
-
-    if(header) window.addEventListener('scroll', handleScroll)
-  });
+    },
+    { passive: true },
+  );
+  document.addEventListener("astro:page-load", update);
 </script>

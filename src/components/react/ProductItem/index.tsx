@@ -15,10 +15,10 @@ const ProductItem: React.FC<Props> = ({ imgSrc, title, description, link }) => {
   return (
     <div className={styles.productItem}>
       <div className={styles.productItem__img}>
-        <img className="img-cover" src={imgSrc} alt={title} />
+        <img className="img-cover" src={imgSrc} alt={title} loading="lazy" />
       </div>
 
-      <div>
+      <div className={styles.productItem__body}>
         <h4 className={styles.productItem__title}>{title}</h4>
         <p className={styles.productItem__desc}>{description}</p>
         <Button

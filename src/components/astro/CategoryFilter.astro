@@ -35,44 +35,54 @@ const categoryLinks = generateLinks();
 const { activeCategory } = Astro.props;
 ---
 
-<div class="categoryFilter">
+<nav class="categoryFilter">
   {categoryLinks.map((i) => {
-    const navItemClass = activeCategory === i[1] ? "categoryFilter__link_active" : "";
+    const isActive = activeCategory === i[1];
 
     return (
-      <a class={`categoryFilter__link ${navItemClass}`} href={i[0]}>
+      <a class:list={["categoryFilter__link", { categoryFilter__link_active: isActive }]} href={i[0]} aria-current={isActive ? "page" : undefined}>
         {t(i[1])}
       </a>
     );
   })}
-</div>
+</nav>
 
 <style lang="scss">
 	.categoryFilter {
-		margin-bottom: 0.4rem;
-		max-height: 150px;
 		display: flex;
-		gap: 3px;
+		gap: 2px;
+		padding: 4px;
+		background: var(--c-grey-lightest);
+		border: 1px solid var(--c-border);
+		border-radius: var(--radius-full);
 
 		&__link {
+			flex: 1 1 0;
+			min-width: 0;
 			text-align: center;
-			display: inline-block;
-      font-weight: 500;
-      color: var(--c-grey-darkest);
-			border-radius: 2px;
+			padding: 6px 4px;
 			font-size: 0.8rem;
-			padding: 0.2rem 5px;
-			flex-grow: 1;
-				font-family: var(--font-secondary);
+			white-space: nowrap;
+			font-weight: 600;
+			line-height: 1.3;
+			color: var(--c-grey);
+			border-radius: var(--radius-full);
+			transition: color 0.2s var(--ease), background-color 0.2s var(--ease);
 
 			&:first-letter {
 				text-transform: capitalize;
 			}
+
+			&:hover {
+				color: var(--c-grey-darkest);
+			}
 		}
 
-		&__link_active {
-			background: #fff;
-		  color: var(--c-primary-dark);
+		&__link_active,
+		&__link_active:hover {
+			background: var(--c-surface);
+			color: var(--c-primary-dark);
+			box-shadow: var(--shadow-sm);
 		}
 	}
 </style>

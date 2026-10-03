@@ -72,6 +72,7 @@ const Form: React.FC<Props> = ({ lang }) => {
         />
         <Input
           name="email"
+          type="email"
           label={t("field.email")}
           value={email}
           onChange={setEmail}
@@ -90,7 +91,7 @@ const Form: React.FC<Props> = ({ lang }) => {
         {state === "error" && <Text color="danger">{t("error_message")}</Text>}
 
         <Button
-          style={{ marginTop: "2rem" }}
+          style={{ marginTop: "0.5rem" }}
           color="primary"
           onClick={handleSend}
           disabled={!name || !email || !message}

@@ -1,9 +1,10 @@
 .advertisement {
-  background-color: #f0f0f0;
-  padding: 10px;
-  border: 1px solid #ccc;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
   text-align: center;
-  font-size: 16px;
-  color: #333;
-  margin-bottom: 1rem;
+  font-size: 0.875rem;
+  color: var(--c-grey);
+  background: var(--c-grey-lightest);
+  border: 1px dashed var(--c-grey-light);
+  border-radius: var(--radius-md);
 }

@@ -1,24 +1,29 @@
 .giftCard {
   $this: &;
 
-  border-left: 4px solid #fff;
-  box-shadow: 0 5px 7px -7px rgba(0, 0, 0, 0.3);
-  padding: 7px 10px 7px 7px;
+  position: relative;
   display: flex;
-  flex-flow: row;
   align-items: center;
-  margin-bottom: 0.5rem;
-  background: #fff;
-  transition: 0.3s;
-  min-height: 85px;
+  gap: 14px;
+  min-height: 88px;
+  height: 100%;
+  padding: 10px 14px 10px 10px;
+  margin-bottom: 8px;
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-md);
+  transition:
+    border-color 0.2s var(--ease),
+    box-shadow 0.2s var(--ease),
+    background-color 0.2s var(--ease);
 
   &__imgWrap {
-    width: 100%;
-    max-width: 65px;
-    height: 65px;
+    flex-shrink: 0;
+    width: 68px;
+    height: 68px;
     overflow: hidden;
-    border-radius: 2px;
-    margin-right: 10px;
+    border-radius: var(--radius-sm);
+    background: var(--c-grey-lightest);
   }
 
   &__img {
@@ -28,17 +33,21 @@
     object-position: center center;
   }
 
+  &__body {
+    min-width: 0;
+  }
+
   &__heading {
-    font-size: 1.05rem;
-    margin-bottom: 5px;
-    line-height: 1;
-    transition: color 0.3s;
+    font-size: 1rem;
+    line-height: 1.3;
+    margin-bottom: 4px;
+    transition: color 0.2s var(--ease);
   }
 
   &__desc {
     color: var(--c-grey);
     margin-bottom: 0;
-    line-height: 1.15;
+    line-height: 1.4;
     font-size: 0.85rem;
     overflow: hidden;
     display: -webkit-box;
@@ -46,21 +55,26 @@
     -webkit-box-orient: vertical;
   }
 
-  &_active {
+  &:hover:not(#{$this}_active) {
+    border-color: var(--c-grey-light);
+    box-shadow: var(--shadow-md);
+
     #{$this}__heading {
       color: var(--c-primary-dark);
     }
-
-    #{$this}__desc {
-      color: var(--c-grey-darkest);
-    }
-    border-left: 4px solid var(--c-primary);
-    cursor: auto;
   }
 
-  &:hover:not(#{$this}_active) {
+  &_active {
+    cursor: default;
+    background: var(--c-primary-lightest);
+    border-color: var(--c-primary-light);
+
     #{$this}__heading {
-      color: var(--c-primary);
+      color: var(--c-primary-darkest);
+    }
+
+    #{$this}__desc {
+      color: var(--c-grey-dark);
     }
   }
 }

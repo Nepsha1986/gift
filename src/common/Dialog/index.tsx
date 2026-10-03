@@ -47,13 +47,22 @@ const Dialog: React.FC<{
       className={className}
       ref={dialogRef}
       onAnimationEnd={onAnimationEnd}
+      onCancel={(event) => {
+        event.preventDefault();
+        onClickClose?.();
+      }}
     >
       <header className={styles.dialog__header}>
-        {!!heading && <h3 style={{ marginBottom: 0 }}>{heading}</h3>}
+        {!!heading && <h3 className={styles.dialog__heading}>{heading}</h3>}
 
         <div className={styles.dialog__closeBtn}>
           {onClickClose && (
-            <Button onClick={onClickClose} iconOnly color="transparent">
+            <Button
+              onClick={onClickClose}
+              iconOnly
+              color="transparent"
+              ariaLabel="Close"
+            >
               <FontAwesomeIcon icon={faClose} />
             </Button>
           )}

@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import type { Category } from "@src/types/category.ts";
 import Switcher from "./Switcher.tsx";
-
 import styles from "./styles.module.scss";
 
 interface CategorySwitcherProps {
@@ -15,27 +14,30 @@ const CategorySwitcher: React.FC<CategorySwitcherProps> = ({
   activeCategory,
   onClickCategory,
 }) => {
-  const [activeIndex, setActiveIndex] = useState(0);
+  const activeIndex = Math.max(
+    items.findIndex((i) => i.category === activeCategory),
+    0,
+  );
 
   return (
-    <div className={styles.categorySwitcher}>
-      {items.map((i, index) => (
+    <div className={styles.categorySwitcher} role="tablist">
+      <div
+        className={styles.categorySwitcher__activeIndicator}
+        style={{
+          width: `calc((100% - 8px) / ${items.length})`,
+          transform: `translateX(${activeIndex * 100}%)`,
+        }}
+      />
+
+      {items.map((i) => (
         <Switcher
           key={i.category}
           category={i.category}
-          onClick={(category) => {
-            setActiveIndex(index);
-            onClickCategory(category);
-          }}
+          onClick={onClickCategory}
           label={i.label}
           active={activeCategory === i.category}
         />
       ))}
-
-      <div
-        className={styles.categorySwitcher__activeIndicator}
-        style={{ width: "calc(100%/4)", left: 25 * activeIndex + "%" }}
-      />
     </div>
   );
 };

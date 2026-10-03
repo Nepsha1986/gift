@@ -28,27 +28,29 @@ const { thumbnail, title, content, subtitle, meta, author, date } = Astro.props;
     <div class="post__headerInfo">
       <h1 class="post__title">{title}</h1>
       <p class="post__subtitle">{subtitle}</p>
+
+      {author && (
+        <div class="post__authorBlock">
+          <div class="post__authorImage">
+            <Image src={authors[author].photo} alt={authors[author].fullName} width="96" height="96" />
+          </div>
+
+          <div class="post__authorMeta">
+            <address class="post__author">
+              <a rel="author" target="_blank" href={authors[author].link}>{authors[author].fullName}</a>
+            </address>
+            {date && <time datetime={date}>{formatDate(date)}</time>}
+          </div>
+        </div>
+      )}
     </div>
 
     <div class="post__imgWrap">
       <slot name="thumbnail" class="post__img" />
     </div>
-
-    <div class="post__authorBlock">
-      <div class="post__authorImage">
-        <Image src={authors[author].photo} alt={authors[author].fullName} width="100px" height="100px" />
-      </div>
-
-      <div>
-        <address class="post__author">By <a rel="author" target="_blank"
-                                            href={authors[author].link}>{authors[author].fullName}</a>,
-        </address>
-        <span>{formatDate(date)}</span>
-      </div>
-    </div>
   </header>
 
-  <div class="post__content">
+  <div class="post__content prose">
     <slot name="content" />
   </div>
 
@@ -59,66 +61,87 @@ const { thumbnail, title, content, subtitle, meta, author, date } = Astro.props;
 
 <style lang="scss">
 	.post {
-		max-width: 900px;
+		max-width: 1000px;
 		margin: 0 auto;
 
 		&__header {
-			margin-bottom: 2rem;
-		}
-
-		&__title {
-			font-size: clamp(1.4rem, 4vw, 2.6rem);
-		}
-
-		&__subtitle {
-			color: var(--c-grey-dark);
-			font-style: italic;
-			font-size: clamp(1.05rem, 1.6vw, 1.3rem);
-		}
-
-		&__authorBlock {
-			margin: -70px auto 1rem;
-			display: flex;
-			flex-flow: column;
-			align-items: center;
-		}
-
-		&__author {
-			font-style: italic;
-			display: inline;
-		}
-
-		&__authorImage {
-			display: block;
-			overflow: hidden;
-			width: 100px;
-			height: 100px;
-			border-radius: 50%;
-			margin-bottom: 10px;
-			position: relative;
-			border: 3px solid #fff;
-		}
-
-		&__imgWrap {
-			overflow: hidden;
-			aspect-ratio: 3 / 1.3;
-			margin: 0 -15px 1rem -15px;
+			margin-bottom: 2.5rem;
 		}
 
 		&__headerInfo {
 			margin: 0 auto 2rem;
-			max-width: 800px;
+			max-width: 760px;
 			text-align: center;
 		}
 
+		&__title {
+			font-size: clamp(1.75rem, 4.5vw, 3rem);
+			font-weight: 800;
+			letter-spacing: -0.035em;
+			line-height: 1.1;
+			margin-bottom: 1rem;
+		}
+
+		&__subtitle {
+			color: var(--c-grey);
+			font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+			line-height: 1.6;
+			margin-bottom: 1.5rem;
+		}
+
+		&__authorBlock {
+			display: inline-flex;
+			align-items: center;
+			gap: 12px;
+			text-align: left;
+		}
+
+		&__authorImage {
+			flex-shrink: 0;
+			overflow: hidden;
+			width: 44px;
+			height: 44px;
+			border-radius: 50%;
+			box-shadow: 0 0 0 2px var(--c-surface), 0 0 0 3px var(--c-border);
+
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+		}
+
+		&__authorMeta {
+			display: flex;
+			flex-direction: column;
+			font-size: 0.875rem;
+			line-height: 1.35;
+			color: var(--c-grey);
+		}
+
+		&__author {
+			font-style: normal;
+			font-weight: 600;
+			margin: 0;
+		}
+
+		&__imgWrap {
+			overflow: hidden;
+			aspect-ratio: 16 / 8;
+			border-radius: var(--radius-lg);
+			background: var(--c-grey-lightest);
+		}
+
 		&__content {
-			text-align: justify;
+			max-width: 720px;
+			margin: 0 auto;
 		}
 
 		&__aside {
-			border-top: 1px solid var(--c-grey-light);
-			margin: 2rem 0;
-			padding: 1rem 0;
+			max-width: 720px;
+			border-top: 1px solid var(--c-border);
+			margin: 3rem auto 0;
+			padding: 1.5rem 0 0;
 		}
 	}
 </style>

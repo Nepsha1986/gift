@@ -21,10 +21,15 @@ const GiftCard: React.FC<Props> = ({
   });
 
   return (
-    <a data-testid="gift_card" href={link} className={className}>
+    <a
+      data-testid="gift_card"
+      href={link}
+      className={className}
+      aria-current={active ? "page" : undefined}
+    >
       <div className={styles.giftCard__imgWrap}>{children}</div>
 
-      <div>
+      <div className={styles.giftCard__body}>
         <h2 className={styles.giftCard__heading}>{title}</h2>
         <p className={styles.giftCard__desc}>{description}</p>
       </div>
