@@ -10,7 +10,7 @@ import {
   useTranslatedPath,
   useTranslations,
 } from "@i18n/utils.ts";
-import categories from "@i18n/translations/categories.ts";
+import categoryTabs from "@i18n/translations/categoryTabs.ts";
 
 import styles from "./styles.module.scss";
 
@@ -38,7 +38,7 @@ const FeaturedIdeas: React.FC<FeaturedIdeasProps> = ({
   const visible = featured.filter((i) => i.category === activeCategory);
 
   const translatePath = useTranslatedPath(locale);
-  const t = useTranslations(lang, categories);
+  const t = useTranslations(lang, categoryTabs);
 
   const items: Array<{ category: Category; label: string }> = [
     {

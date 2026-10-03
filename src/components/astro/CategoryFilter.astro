@@ -1,7 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import { getCleanSlug, useTranslatedPath, useTranslations, getLocaleFromUrl, getLangFromUrl } from "@i18n/utils.ts";
-import { ui } from "@i18n/ui";
+import categoryTabs from "@i18n/translations/categoryTabs";
 import { Category } from "@src/types/category";
 
 const gifts = await getCollection("gifts");
@@ -9,7 +9,7 @@ const lang = getLangFromUrl(Astro.url.pathname);
 const locale = getLocaleFromUrl(Astro.url.pathname);
 
 const categories: Category[] = ["for-women", "for-men", "for-teens", "for-kids"];
-const t = useTranslations(lang, ui);
+const t = useTranslations(lang, categoryTabs);
 
 const generateLinks = () => {
   let links: [string, Category][] = [];
@@ -51,16 +51,21 @@ const { activeCategory } = Astro.props;
 	.categoryFilter {
 		display: flex;
 		gap: 2px;
+		overflow-x: auto;
+		scrollbar-width: none;
 		padding: 4px;
 		background: var(--c-grey-lightest);
 		border: 1px solid var(--c-border);
 		border-radius: var(--radius-full);
 
 		&__link {
-			flex: 1 1 0;
-			min-width: 0;
+			flex: 1 0 auto;
 			text-align: center;
-			padding: 6px 4px;
+			padding: 6px 10px;
+
+			@media (max-width: 480px) {
+				padding: 6px 7px;
+			}
 			font-size: 0.8rem;
 			white-space: nowrap;
 			font-weight: 600;
