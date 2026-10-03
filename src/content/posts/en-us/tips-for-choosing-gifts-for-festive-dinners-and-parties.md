@@ -37,5 +37,3 @@ Festive dinners and parties are the perfect time for exchanging gifts and showin
 By excluding these gift categories from your choices, you can give something appropriate, pleasant, and thoughtfully selected, enhancing the festive atmosphere and bringing joy to the hosts.
 
 If you are going to someone's house, it's essential to inquire about the hosts' preferences in advance – sometimes it's better to ask beforehand, as people may already have a list of what they need. In America and Europe, this trend is called a "wish list," where people gather all the necessary items in a smartphone app or simply write a list, and friends and invited people choose what to give at their discretion. This has become popular for a long time and is already deeply ingrained in our culture. Typically, gifts on such a "wish list" have different price policies, allowing each invitee to feel comfortable.
-
-*This text was translated with the assistance of ChatGPT. If you would like to contribute to the project and improve the translation, please feel free to contact us.*

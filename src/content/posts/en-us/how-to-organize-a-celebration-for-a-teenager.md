@@ -33,6 +33,3 @@ Food and drinks are another essential component of a successful celebration. Cho
 A celebration always brings a special mood. A birthday is one of the most beloved days of the year. Kids deserve true happiness, so let's give them an unforgettable celebration and organize a fantastic birthday. Despite claims that adolescence requires special attention, it's important to remember that boys and girls in this period are still young beings exploring the world! Therefore, as adults, we need to show our special understanding and respect.
 
 When choosing gifts and organizing the party, don't forget about your inner child. Remember what you would like! This can significantly help in organizing the celebration.
-
-
-*This text was translated with the assistance of ChatGPT. If you would like to contribute to the project and improve the translation, please feel free to contact us.*
