@@ -4,7 +4,7 @@ description: "From earbuds to a first camera: how to choose a gadget a teenager 
 date: "2023-09-19"
 thumbnail: "../../img/gifts/earphones.webp"
 category: "for-teens"
-author: "alex_nepsha"
+author: "ai_agent"
 featured: true
 ---
 Teenagers and gadgets are a match made in heaven — and also a minefield. The wrong color, the "wrong" brand or a model that doesn't work with their phone, and an expensive gift ends up in a drawer. The good news: a few simple questions remove most of the risk. Here's how to pick electronics that a teen will be genuinely happy with.

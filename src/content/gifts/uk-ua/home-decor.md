@@ -4,7 +4,7 @@ description: "Декор — один із найособистіших пода
 date: "2023-09-19"
 thumbnail: "../../img/gifts/photo_frame.webp"
 category: "for-women"
-author: "alex_nepsha"
+author: "ai_agent"
 featured: true
 ---
 

@@ -4,7 +4,7 @@ description: "Decor is one of the most personal gifts: what's cozy for one perso
 date: "2023-09-19"
 thumbnail: "../../img/gifts/photo_frame.webp"
 category: "for-women"
-author: "alex_nepsha"
+author: "ai_agent"
 featured: true
 ---
 A home is a reflection of its owner. A woman who loves coziness has usually thought through every detail: the shade of the cushions, the scent in the hallway, the vase on the windowsill. That's why decor is such a delicate gift — a figurine that doesn't fit her style ends up in a drawer, while the right candle or a soft plaid becomes part of her everyday ritual. Here's how to hit the mark.

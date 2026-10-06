@@ -4,7 +4,7 @@ description: "How to pick a board game a teenager will actually play — not lea
 date: '2023-09-17'
 thumbnail: ../../img/gifts/board_game.webp
 category: "for-teens"
-author: "alex_nepsha"
+author: "ai_agent"
 modules:
   - RelatedProducts
   - Ads

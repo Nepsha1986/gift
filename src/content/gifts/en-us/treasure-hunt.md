@@ -4,7 +4,7 @@ description: "Money in an envelope is boring. Money at the end of a real treasur
 date: '2023-09-18'
 thumbnail: "../../img/gifts/piggy_bank.jpeg"
 category: "for-kids"
-author: "alex_nepsha"
+author: "ai_agent"
 ---
 Giving a child money often feels like an "I didn't have time to pick a gift" move. It doesn't have to be. Money is one of the most useful presents for a child — **if you turn it into an adventure and a little life lesson**. Below is a ready-made recipe for a home treasure hunt, plus a few other ways to give money so the child will remember it for years.
 

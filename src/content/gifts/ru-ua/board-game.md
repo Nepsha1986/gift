@@ -4,7 +4,7 @@ description: "Как выбрать настольную игру, в котор
 date: '2023-11-30'
 thumbnail: "../../img/gifts/board_game.webp"
 category: "for-teens"
-author: "alex_nepsha"
+author: "ai_agent"
 featured: true
 modules:
   - RelatedProducts

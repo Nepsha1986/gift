@@ -4,7 +4,7 @@ description: "A blender, an air fryer or a coffee maker can be a great gift — 
 date: "2023-09-19"
 thumbnail: "../../img/gifts/blender.webp"
 category: "for-women"
-author: "alex_nepsha"
+author: "ai_agent"
 ---
 Kitchen appliances are a risky gift category. On the one hand, a good coffee maker or air fryer can change someone's daily routine. On the other, a frying pan "for Women's Day" can sound like "it's time you cooked more". The difference is simple: **a great kitchen gift brings pleasure or saves time on something she already loves doing.** Not a new chore — a new joy.
 

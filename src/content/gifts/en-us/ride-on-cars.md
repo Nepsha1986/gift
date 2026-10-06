@@ -4,7 +4,7 @@ description: "From a first push car to an electric ride-on with a remote: what s
 date: "2023-09-19"
 thumbnail: "../../img/gifts/ride_on_cars.webp"
 category: "for-kids"
-author: "alex_nepsha"
+author: "ai_agent"
 ---
 A child's first "own car" is a big event. One moment they're sitting proudly behind the wheel, the next they're zooming around the apartment, and a week later they're asking to take it outside "just one more lap". Ride-on toys develop coordination, strengthen the legs and give a child a real feeling of independence. But the choice is huge — and a car that's too big, too fast or too heavy can disappoint both the child and the parents. Let's figure it out by age.
 

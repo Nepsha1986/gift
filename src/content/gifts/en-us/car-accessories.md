@@ -4,7 +4,7 @@ description: "Gifts for a man who loves his car: useful gadgets he'll reach for 
 date: '2023-09-19'
 thumbnail: ../../img/gifts/wheel.webp
 category: "for-men"
-author: "alex_nepsha"
+author: "ai_agent"
 ---
 For many men, the car is more than transport: it's a second office, a place to listen to music in peace and an object of quiet pride. That's exactly why a car accessory is such a good gift — as long as it's genuinely useful and not another dangling ornament for the mirror. Here's how to choose something he'll be glad to have every single day.
 

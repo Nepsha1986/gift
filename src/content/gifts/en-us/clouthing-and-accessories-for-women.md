@@ -4,7 +4,7 @@ description: "Clothes are a beautiful but risky gift: size, fit and personal sty
 date: '2023-09-19'
 thumbnail: ../../img/gifts/hat.webp
 category: "for-women"
-author: "alex_nepsha"
+author: "ai_agent"
 ---
 Giving clothes to a woman is a small act of courage. One wrong size and the gift turns into an awkward moment; one wrong style and it ends up at the back of the wardrobe with the tags still on. But a well-chosen piece — a soft scarf, a bag she's been eyeing, perfectly cozy loungewear — says "I notice you" better than almost anything else. **The secret is knowing where the risk is.**
 
