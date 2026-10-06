@@ -4,6 +4,7 @@ description: "Clothing is one of the hardest gifts for a man: size, style, his o
 date: '2023-09-19'
 thumbnail: ../../img/gifts/sunglasses.jpeg
 category: "for-men"
+author: "alex_nepsha"
 ---
 Choosing clothes for a man is like playing the lottery: you need to guess the size, the fit, the color and his ideas about style. Many men are conservative and will keep wearing their favorite old sweater even when you give them a new, "better" one. But it's possible to win — **if you know which things are risky and which are almost a guaranteed hit.**
 
