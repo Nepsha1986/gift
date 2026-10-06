@@ -13,6 +13,7 @@ const Author = z.union([
   z.literal("alex_nepsha" as AuthorID),
   z.literal("polina_gordienko" as AuthorID),
   z.literal("olga_sergeevna" as AuthorID),
+  z.literal("ai_agent" as AuthorID),
 ]);
 
 const giftsCollection = defineCollection({

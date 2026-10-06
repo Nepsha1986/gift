@@ -3,6 +3,7 @@ import type { Authors } from "@src/types/author.ts";
 import alexPhoto from "src/assets/authors/alex-nepsha.webp";
 import polinaPhoto from "src/assets/authors/polina-gordienko.webp";
 import olgaPhoto from "src/assets/authors/olga-soskrypchenko.jpeg";
+import aiAgentPhoto from "src/assets/authors/ai-agent.webp";
 
 export const authors: Authors = {
   alex_nepsha: {
@@ -19,5 +20,10 @@ export const authors: Authors = {
     fullName: "Olga Sergeevna",
     link: "https://freelance.ua/user/soskrypchenko/",
     photo: olgaPhoto,
+  },
+  ai_agent: {
+    fullName: "AI Agent (Claude)",
+    link: "https://claude.ai",
+    photo: aiAgentPhoto,
   },
 };

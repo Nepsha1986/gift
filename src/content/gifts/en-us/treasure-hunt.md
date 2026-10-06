@@ -1,9 +1,10 @@
 ---
 title: "Treasure Hunt: How to Give Kids Money in a Fun Way"
-description: "Money in an envelope is boring. Money at the end of a real treasure hunt is an adventure. Ready-made clue ideas by age, alternative formats and a mini lesson in money handling."
+description: "A Quest Kids Will Remember"
 date: '2023-09-18'
 thumbnail: "../../img/gifts/piggy_bank.jpeg"
 category: "for-kids"
+author: "ai_agent"
 ---
 Giving a child money often feels like an "I didn't have time to pick a gift" move. It doesn't have to be. Money is one of the most useful presents for a child — **if you turn it into an adventure and a little life lesson**. Below is a ready-made recipe for a home treasure hunt, plus a few other ways to give money so the child will remember it for years.
 

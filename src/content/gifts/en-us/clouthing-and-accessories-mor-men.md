@@ -1,9 +1,10 @@
 ---
 title: "Clothing and Accessories for Men"
-description: "Clothing is one of the hardest gifts for a man: size, style, his own taste. Here's what you can safely give, what is better left to him, and how to find out his size without spoiling the surprise."
+description: "How Not to Miss the Size and Style"
 date: '2023-09-19'
 thumbnail: ../../img/gifts/sunglasses.jpeg
 category: "for-men"
+author: "ai_agent"
 ---
 Choosing clothes for a man is like playing the lottery: you need to guess the size, the fit, the color and his ideas about style. Many men are conservative and will keep wearing their favorite old sweater even when you give them a new, "better" one. But it's possible to win — **if you know which things are risky and which are almost a guaranteed hit.**
 

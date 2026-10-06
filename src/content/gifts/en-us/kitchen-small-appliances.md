@@ -1,9 +1,10 @@
 ---
 title: "Small Kitchen Appliances"
-description: "A blender, an air fryer or a coffee maker can be a great gift — or a hint she didn't ask for. How to choose an appliance that will live on the counter, not in a cupboard."
+description: "Gifts That Won't Gather Dust"
 date: "2023-09-19"
 thumbnail: "../../img/gifts/blender.webp"
 category: "for-women"
+author: "ai_agent"
 ---
 Kitchen appliances are a risky gift category. On the one hand, a good coffee maker or air fryer can change someone's daily routine. On the other, a frying pan "for Women's Day" can sound like "it's time you cooked more". The difference is simple: **a great kitchen gift brings pleasure or saves time on something she already loves doing.** Not a new chore — a new joy.
 

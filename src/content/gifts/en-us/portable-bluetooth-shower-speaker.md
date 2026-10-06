@@ -1,9 +1,10 @@
 ---
 title: "Bluetooth Shower Speaker"
-description: "An inexpensive gift that gets used every single day. How to pick one that won't drown, fall off the tiles or die after a month."
+description: "How to Choose a Waterproof Speaker"
 date: "2023-09-18"
 thumbnail: "../../img/gifts/shower_speaker.webp"
 category: "for-men"
+author: "ai_agent"
 ---
 Most men have a ritual: the phone gets propped on the sink, the volume goes to max, and the podcast still turns into mush the moment the water starts running. A shower speaker solves exactly that — and costs about as much as a nice bottle of whiskey. It's a small gift, but one he'll use every morning, which is more than you can say for most "big" presents.
 
