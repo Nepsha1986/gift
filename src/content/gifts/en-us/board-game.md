@@ -1,6 +1,6 @@
 ---
 title: "Board Games for Teens"
-description: "How to pick a board game a teenager will actually play — not leave on a shelf: game types, proven hits for every group size, and a few tips before you buy."
+description: "How to Pick a Game the Whole Company Will Love"
 date: '2023-09-17'
 thumbnail: ../../img/gifts/board_game.webp
 category: "for-teens"

@@ -1,6 +1,6 @@
 ---
 title: "Ride-On Cars and Push Toys"
-description: "From a first push car to an electric ride-on with a remote: what suits each age, which specs really matter, and how to choose a ride-on toy that is safe, fun and won't end up gathering dust in the hallway."
+description: "How to Choose a Ride-On Toy for Your Child's Age"
 date: "2023-09-19"
 thumbnail: "../../img/gifts/ride_on_cars.webp"
 category: "for-kids"

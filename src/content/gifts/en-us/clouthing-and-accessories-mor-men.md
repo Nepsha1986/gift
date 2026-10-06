@@ -1,6 +1,6 @@
 ---
 title: "Clothing and Accessories for Men"
-description: "Clothing is one of the hardest gifts for a man: size, style, his own taste. Here's what you can safely give, what is better left to him, and how to find out his size without spoiling the surprise."
+description: "How Not to Miss the Size and Style"
 date: '2023-09-19'
 thumbnail: ../../img/gifts/sunglasses.jpeg
 category: "for-men"

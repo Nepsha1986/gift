@@ -1,6 +1,6 @@
 ---
 title: "Electronics for Teens"
-description: "From earbuds to a first camera: how to choose a gadget a teenager will actually use, not just unbox — and what to clarify before you buy."
+description: "Gadgets They Won't Leave in a Drawer"
 date: "2023-09-19"
 thumbnail: "../../img/gifts/earphones.webp"
 category: "for-teens"

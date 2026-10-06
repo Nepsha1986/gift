@@ -1,6 +1,6 @@
 ---
 title: "Treasure Hunt: How to Give Kids Money in a Fun Way"
-description: "Money in an envelope is boring. Money at the end of a real treasure hunt is an adventure. Ready-made clue ideas by age, alternative formats and a mini lesson in money handling."
+description: "A Quest Kids Will Remember"
 date: '2023-09-18'
 thumbnail: "../../img/gifts/piggy_bank.jpeg"
 category: "for-kids"

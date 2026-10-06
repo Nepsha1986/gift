@@ -1,6 +1,6 @@
 ---
 title: "Clothing and Accessories for Women"
-description: "Clothes are a beautiful but risky gift: size, fit and personal style all have to match. Here's what is almost guaranteed to please, what is better chosen together, and how to read her taste without asking."
+description: "What to Give So It Fits and Suits Her Style"
 date: '2023-09-19'
 thumbnail: ../../img/gifts/hat.webp
 category: "for-women"

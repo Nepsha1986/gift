@@ -1,6 +1,6 @@
 ---
 title: "Home Decor"
-description: "Decor is one of the most personal gifts: what's cozy for one person is clutter for another. Here's how to give a woman something that will truly fit into her home — from candles and plaids to personal touches she won't find in a store."
+description: "Gifts for a Woman Who Appreciates Coziness"
 date: "2023-09-19"
 thumbnail: "../../img/gifts/photo_frame.webp"
 category: "for-women"

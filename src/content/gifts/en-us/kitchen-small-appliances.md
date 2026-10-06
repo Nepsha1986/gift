@@ -1,6 +1,6 @@
 ---
 title: "Small Kitchen Appliances"
-description: "A blender, an air fryer or a coffee maker can be a great gift — or a hint she didn't ask for. How to choose an appliance that will live on the counter, not in a cupboard."
+description: "Gifts That Won't Gather Dust"
 date: "2023-09-19"
 thumbnail: "../../img/gifts/blender.webp"
 category: "for-women"

@@ -1,6 +1,6 @@
 ---
 title: "Bluetooth Shower Speaker"
-description: "An inexpensive gift that gets used every single day. How to pick one that won't drown, fall off the tiles or die after a month."
+description: "How to Choose a Waterproof Speaker"
 date: "2023-09-18"
 thumbnail: "../../img/gifts/shower_speaker.webp"
 category: "for-men"

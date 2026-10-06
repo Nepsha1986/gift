@@ -1,6 +1,6 @@
 ---
 title: "Car Accessories for Men"
-description: "Gifts for a man who loves his car: useful gadgets he'll reach for every day, things that help out on the road when something goes wrong, and what to check before buying so the gift actually fits his car."
+description: "Gifts He'll Use on Every Trip"
 date: '2023-09-19'
 thumbnail: ../../img/gifts/wheel.webp
 category: "for-men"
