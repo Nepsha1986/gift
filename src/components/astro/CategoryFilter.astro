@@ -85,17 +85,16 @@ const { activeCategory } = Astro.props;
 			height: 8px;
 			flex-shrink: 0;
 			border-radius: 50%;
-			background: var(--cat);
-			box-shadow: inset 0 0 0 1.5px var(--cat-ink);
+			background: var(--cat-ink);
 		}
 
 		&__link_active,
 		&__link_active:hover {
-			color: var(--c-ink);
-			background: var(--cat);
+			color: #fff;
+			background: var(--c-ink);
 
 			.categoryFilter__dot {
-				background: var(--cat-ink);
+				background: #fff;
 			}
 		}
 	}

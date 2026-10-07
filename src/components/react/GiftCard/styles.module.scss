@@ -165,12 +165,13 @@
 
   &_active {
     cursor: default;
-    background: var(--cat, var(--c-primary-lightest));
-    border-color: transparent;
-    box-shadow: var(--shadow-lg);
+    border-color: var(--c-primary-light);
+    box-shadow:
+      inset 3px 0 0 var(--c-primary),
+      var(--shadow-sm);
 
-    #{$this}__desc {
-      color: var(--c-grey-dark);
+    #{$this}__heading {
+      color: var(--c-primary-dark);
     }
   }
 }
