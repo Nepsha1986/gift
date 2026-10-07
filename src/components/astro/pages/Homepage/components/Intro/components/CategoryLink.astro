@@ -1,79 +1,149 @@
 ---
-const { link } = Astro.props;
+import type { Category } from "@src/types/category";
+
+interface Props {
+  link: string;
+  category: Category;
+  title: string;
+}
+
+const { link, category, title } = Astro.props;
 ---
-<a class="category" href={link}>
-  <div class="category__imgWrap">
+
+<!-- Styled as a gift tag: tinted card, punched hole, slight tilt -->
+<a class="tag" href={link} data-category={category}>
+  <span class="tag__hole" aria-hidden="true"></span>
+
+  <div class="tag__imgWrap">
     <slot name="img" />
   </div>
 
-  <div class="category__text">
-    <slot />
-    <span class="category__arrow" aria-hidden="true">→</span>
+  <div class="tag__body">
+    <span class="tag__title">{title}</span>
+    <span class="tag__desc"><slot /></span>
   </div>
+
+  <span class="tag__arrow" aria-hidden="true">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10m0 0L8.5 3.5M13 8l-4.5 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </span>
 </a>
 
-<style is:global>
-	.category__text strong {
-		color: var(--c-primary-dark);
-	}
-</style>
-
 <style lang="scss">
-	.category {
+	.tag {
+		position: relative;
 		display: flex;
 		flex-direction: column;
 		width: 100%;
-		background: var(--c-surface);
-		border: 1px solid var(--c-border);
+		padding: 10px;
+		color: var(--c-ink);
+		background: var(--cat);
+		border: 2px solid var(--c-ink);
 		border-radius: var(--radius-lg);
-		overflow: hidden;
-		box-shadow: var(--shadow-sm);
-		transition: box-shadow 0.25s var(--ease), transform 0.25s var(--ease), border-color 0.25s var(--ease);
+		box-shadow: var(--shadow-pop);
+		transform: rotate(var(--tilt, 0deg));
+		transition:
+			transform 0.35s var(--ease-bounce),
+			box-shadow 0.35s var(--ease-bounce);
 
-		&:hover {
-			transform: translateY(-3px);
-			box-shadow: var(--shadow-lg);
-			border-color: transparent;
+		&:hover,
+		&:focus-visible {
+			color: var(--c-ink);
+			transform: rotate(0deg) translate(-3px, -3px);
+			box-shadow: 8px 8px 0 var(--c-ink);
 
-			.category__arrow {
-				transform: translateX(3px);
-				color: var(--c-primary);
+			.tag__arrow {
+				background: var(--c-primary);
+				transform: rotate(-45deg);
 			}
+
+			.tag__imgWrap :global(img) {
+				transform: scale(1.06);
+			}
+		}
+
+		&__hole {
+			position: absolute;
+			z-index: 2;
+			top: 18px;
+			left: 18px;
+			width: 14px;
+			height: 14px;
+			border-radius: 50%;
+			background: var(--c-bg);
+			border: 2px solid var(--c-ink);
 		}
 
 		&__imgWrap {
-			aspect-ratio: 4 / 3;
+			aspect-ratio: 5 / 4;
 			overflow: hidden;
-			background: var(--c-grey-lightest);
-		}
+			border-radius: calc(var(--radius-lg) - 8px);
+			border: 2px solid var(--c-ink);
+			background: var(--c-surface);
 
-		@media (max-width: 559px) {
-			flex-direction: row;
-			align-items: center;
-
-			&__imgWrap {
-				flex-shrink: 0;
-				width: 96px;
-				aspect-ratio: 1 / 1;
+			:global(img) {
+				transition: transform 0.5s var(--ease);
 			}
 		}
 
-		&__text {
-			position: relative;
-			flex-grow: 1;
-			padding: 1rem 2.75rem 1.1rem 1.1rem;
-			font-size: 0.95rem;
-			line-height: 1.5;
+		&__body {
+			display: flex;
+			flex-direction: column;
+			gap: 2px;
+			padding: 12px 52px 4px 6px;
+		}
+
+		&__title {
+			font-family: var(--font-secondary);
+			font-size: 1.15rem;
+			font-weight: 700;
+			letter-spacing: -0.02em;
+			line-height: 1.2;
+		}
+
+		&__desc {
+			font-size: 0.875rem;
+			line-height: 1.4;
 			color: var(--c-grey-dark);
 		}
 
 		&__arrow {
 			position: absolute;
-			right: 1.1rem;
-			bottom: 1rem;
-			font-size: 1.1rem;
-			color: var(--c-grey-light);
-			transition: transform 0.2s var(--ease), color 0.2s var(--ease);
+			right: 14px;
+			bottom: 14px;
+			display: grid;
+			place-items: center;
+			width: 36px;
+			height: 36px;
+			color: #fff;
+			background: var(--c-ink);
+			border-radius: 50%;
+			transition:
+				transform 0.3s var(--ease-bounce),
+				background-color 0.2s var(--ease);
+		}
+
+		@media (max-width: 559px) {
+			flex-direction: row;
+			align-items: center;
+			gap: 4px;
+
+			&__hole {
+				display: none;
+			}
+
+			&__imgWrap {
+				flex-shrink: 0;
+				width: 76px;
+				aspect-ratio: 1 / 1;
+			}
+
+			&__body {
+				padding: 0 48px 0 10px;
+			}
+
+			&__title {
+				font-size: 1.05rem;
+			}
 		}
 	}
 </style>

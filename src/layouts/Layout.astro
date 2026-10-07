@@ -84,7 +84,7 @@ const hasSidebar = !!Astro.slots.has('sidebar');
 		&_hasSidebar {
 			display: flex;
 			align-items: flex-start;
-			gap: 48px;
+			gap: 40px;
 
 			#{$this}__main {
 				min-width: 0;
@@ -134,7 +134,7 @@ const hasSidebar = !!Astro.slots.has('sidebar');
 				position: fixed;
 				inset: 0;
 				z-index: 9998;
-				background: rgba(16, 24, 40, 0.4);
+				background: rgba(29, 26, 36, 0.45);
 				opacity: 0;
 				pointer-events: none;
 				transition: opacity 0.3s var(--ease);
@@ -158,10 +158,10 @@ const hasSidebar = !!Astro.slots.has('sidebar');
 				font-size: 0.9rem;
 				font-weight: 600;
 				color: #fff;
-				background: var(--c-grey-darkest);
-				border: none;
+				background: var(--c-primary);
+				border: 2px solid var(--c-ink);
 				border-radius: var(--radius-full);
-				box-shadow: var(--shadow-lg);
+				box-shadow: var(--shadow-pop);
 				cursor: pointer;
 
 				@media (min-width: 1200px) {

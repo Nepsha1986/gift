@@ -1,24 +1,36 @@
 ---
 import { Image } from "astro:assets";
 
-const { thumbnail, title, description, href, date } = Astro.props;
+interface Props {
+  thumbnail: ImageMetadata;
+  title: string;
+  description: string;
+  href: string;
+  date: string;
+  // "featured" fills the card with the photo and lays the text over it
+  variant?: "default" | "featured";
+  [key: string]: unknown;
+}
+
+const { thumbnail, title, description, href, date, variant = "default" } = Astro.props;
+const isFeatured = variant === "featured";
 ---
 
-<a href={href} class="post-item">
+<a href={href} class:list={["post-item", { "post-item_featured": isFeatured }]}>
   <div class="post-item__img">
     <Image
       class="img-cover"
       src={thumbnail}
       alt=""
-      width={640}
-      height={400}
+      width={isFeatured ? 1200 : 640}
+      height={isFeatured ? 900 : 400}
     />
   </div>
 
   <div class="post-item__content">
     <span class="post-item__date">{date}</span>
 
-    <h2 class="post-item__title">{title}</h2>
+    <h3 class="post-item__title">{title}</h3>
 
     <p class="post-item__desc">{description}</p>
   </div>
@@ -30,50 +42,68 @@ const { thumbnail, title, description, href, date } = Astro.props;
 	.post-item {
 		$this: &;
 
+		position: relative;
 		display: flex;
 		flex-direction: column;
 		height: 100%;
+		padding: 8px;
 		background: var(--c-surface);
 		border: 1px solid var(--c-border);
 		border-radius: var(--radius-lg);
-		overflow: hidden;
-		box-shadow: var(--shadow-sm);
-		transition: box-shadow 0.25s var(--ease), transform 0.25s var(--ease), border-color 0.25s var(--ease);
+		transition:
+			box-shadow 0.25s var(--ease),
+			transform 0.3s var(--ease-bounce),
+			border-color 0.2s var(--ease);
 
 		&:hover {
-			transform: translateY(-3px);
-			border-color: transparent;
-			box-shadow: var(--shadow-lg);
+			transform: translate(-2px, -2px);
+			border-color: var(--c-ink);
+			box-shadow: var(--shadow-pop);
 
 			#{$this}__title {
 				color: var(--c-primary-dark);
+			}
+
+			:global(img) {
+				transform: scale(1.05);
 			}
 		}
 
 		&__img {
 			aspect-ratio: 16 / 10;
 			overflow: hidden;
+			border-radius: calc(var(--radius-lg) - 6px);
 			background: var(--c-grey-lightest);
+
+			:global(img) {
+				transition: transform 0.6s var(--ease);
+			}
 		}
 
 		&__content {
 			display: flex;
 			flex-direction: column;
 			flex-grow: 1;
-			padding: 1.1rem 1.25rem 1.35rem;
+			padding: 14px 10px 10px;
 		}
 
 		&__date {
-			display: inline-block;
-			margin-bottom: 0.5rem;
-			font-size: 0.8rem;
-			font-weight: 500;
-			color: var(--c-grey);
+			align-self: flex-start;
+			margin-bottom: 0.6rem;
+			padding: 3px 10px;
+			font-size: 0.75rem;
+			font-weight: 600;
+			color: var(--c-grey-dark);
+			background: var(--c-grey-lightest);
+			border-radius: var(--radius-full);
 		}
 
 		&__title {
+			font-family: var(--font-primary);
 			font-size: 1.15rem;
-			line-height: 1.35;
+			font-weight: 700;
+			letter-spacing: -0.015em;
+			line-height: 1.3;
 			margin-bottom: 0.5rem;
 			transition: color 0.2s var(--ease);
 			@include mixins.textOverflow(2);
@@ -85,6 +115,97 @@ const { thumbnail, title, description, href, date } = Astro.props;
 			line-height: 1.55;
 			color: var(--c-grey);
 			margin-bottom: 0;
+		}
+
+		// Phones: compact horizontal card (thumbnail + text)
+		&:not(&_featured) {
+			@media (max-width: 599px) {
+				flex-direction: row;
+				align-items: center;
+				gap: 4px;
+				border-radius: var(--radius-md);
+
+				#{$this}__img {
+					flex-shrink: 0;
+					width: 104px;
+					aspect-ratio: 1 / 1;
+					border-radius: calc(var(--radius-md) - 4px);
+				}
+
+				#{$this}__content {
+					padding: 2px 8px 2px 10px;
+				}
+
+				#{$this}__date {
+					margin-bottom: 0.35rem;
+					font-size: 0.7rem;
+				}
+
+				#{$this}__title {
+					font-size: 1rem;
+					margin-bottom: 0;
+					-webkit-line-clamp: 3;
+				}
+
+				#{$this}__desc {
+					display: none;
+				}
+			}
+		}
+
+		// Big cover story: photo fills the card, text sits on a dark fade
+		&_featured {
+			min-height: clamp(360px, 60vw, 420px);
+			padding: 0;
+			overflow: hidden;
+			border: 2px solid var(--c-ink);
+			background: var(--c-ink);
+
+			#{$this}__img {
+				position: absolute;
+				inset: 0;
+				aspect-ratio: auto;
+				border-radius: 0;
+
+				&::after {
+					content: "";
+					position: absolute;
+					inset: 0;
+					background: linear-gradient(180deg, rgba(29, 26, 36, 0) 30%, rgba(29, 26, 36, 0.92) 100%);
+				}
+			}
+
+			#{$this}__content {
+				position: relative;
+				justify-content: flex-end;
+				padding: clamp(1.25rem, 3vw, 2rem);
+			}
+
+			#{$this}__date {
+				color: var(--c-ink);
+				background: #ffd27a;
+			}
+
+			#{$this}__title {
+				font-family: var(--font-secondary);
+				font-size: clamp(1.4rem, 2.8vw, 2.1rem);
+				font-weight: 600;
+				letter-spacing: -0.035em;
+				line-height: 1.12;
+				color: #fff;
+				-webkit-line-clamp: 3;
+			}
+
+			#{$this}__desc {
+				max-width: 560px;
+				font-size: 1rem;
+				color: rgba(255, 255, 255, 0.82);
+				-webkit-line-clamp: 2;
+			}
+
+			&:hover #{$this}__title {
+				color: #fff;
+			}
 		}
 	}
 </style>

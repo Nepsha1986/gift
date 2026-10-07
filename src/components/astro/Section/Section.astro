@@ -3,20 +3,29 @@ interface Props {
   heading: string;
   eyebrow?: string;
   as?: "h1" | "h2";
+  id?: string;
 }
 
-const { heading, eyebrow, as: Heading = "h2" } = Astro.props;
+const { heading, eyebrow, as: Heading = "h2", id } = Astro.props;
 ---
 
-<section class="section">
+<section class="section" id={id}>
   <div class="section__container">
     <header class="section__header">
-      {eyebrow && <span class="section__eyebrow">{eyebrow}</span>}
-      <Heading class="section__heading">{heading}</Heading>
+      <div class="section__titles">
+        {eyebrow && <span class="section__eyebrow">{eyebrow}</span>}
+        <Heading class="section__heading" set:html={heading} />
 
-      {Astro.slots.has("subheading") && (
-        <div class="section__subheading">
-          <slot name="subheading" />
+        {Astro.slots.has("subheading") && (
+          <div class="section__subheading">
+            <slot name="subheading" />
+          </div>
+        )}
+      </div>
+
+      {Astro.slots.has("action") && (
+        <div class="section__action">
+          <slot name="action" />
         </div>
       )}
     </header>
@@ -30,48 +39,72 @@ const { heading, eyebrow, as: Heading = "h2" } = Astro.props;
 <style lang="scss" is:global>
 	.section__subheading {
 		p {
-			font-size: 1.05rem;
-			line-height: 1.65;
+			font-size: 1.075rem;
+			line-height: 1.6;
 			color: var(--c-grey);
 			margin-bottom: 0;
 		}
 
 		strong {
-			color: var(--c-primary-dark);
+			color: var(--c-grey-darkest);
 		}
 	}
 </style>
 
 <style lang="scss">
 	.section {
+		scroll-margin-top: var(--header-height);
+
 		&__container {
 			max-width: var(--container);
 			height: 100%;
-			padding: clamp(2.5rem, 6vw, 4.5rem) var(--gutter) 0;
+			padding: clamp(3rem, 7vw, 5.5rem) var(--gutter) 0;
 			margin: 0 auto;
 		}
 
 		&__header {
-			text-align: center;
-			max-width: 720px;
-			margin: 0 auto 2.5rem;
+			display: flex;
+			flex-wrap: wrap;
+			align-items: flex-end;
+			justify-content: space-between;
+			gap: 1rem 2rem;
+			margin-bottom: clamp(1.75rem, 4vw, 2.75rem);
+		}
+
+		&__titles {
+			max-width: 680px;
 		}
 
 		&__eyebrow {
-			display: inline-block;
-			margin-bottom: 0.75rem;
+			display: inline-flex;
+			align-items: center;
+			gap: 8px;
+			margin-bottom: 0.9rem;
 			font-size: 0.8rem;
 			font-weight: 700;
-			letter-spacing: 0.08em;
+			letter-spacing: 0.1em;
 			text-transform: uppercase;
-			color: var(--c-secondary);
+			color: var(--c-primary-dark);
+
+			&::before {
+				content: "";
+				width: 22px;
+				height: 2px;
+				background: currentColor;
+				border-radius: 2px;
+			}
 		}
 
 		&__heading {
-			font-size: clamp(1.75rem, 4vw, 2.5rem);
-			font-weight: 800;
-			letter-spacing: -0.03em;
-			margin-bottom: 1rem;
+			font-size: clamp(1.85rem, 4.4vw, 3rem);
+			font-weight: 700;
+			letter-spacing: -0.045em;
+			line-height: 1.05;
+			margin-bottom: 0.75rem;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
 		}
 	}
 </style>

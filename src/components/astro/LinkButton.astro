@@ -22,15 +22,20 @@ const className = classNames("linkButton", {
 	.linkButton {
 		display: inline-flex;
 		align-items: center;
-		gap: 8px;
-		height: 46px;
-		padding: 0 24px;
-		font-size: 0.95rem;
+		gap: 10px;
+		height: 52px;
+		padding: 0 26px;
+		font-size: 1rem;
 		font-weight: 600;
 		color: #fff;
-		border: 1px solid transparent;
+		border: 2px solid var(--c-ink);
 		border-radius: var(--radius-full);
-		transition: background-color 0.2s var(--ease), border-color 0.2s var(--ease), color 0.2s var(--ease);
+		box-shadow: var(--shadow-pop);
+		transition:
+			transform 0.25s var(--ease-bounce),
+			box-shadow 0.25s var(--ease-bounce),
+			background-color 0.2s var(--ease),
+			color 0.2s var(--ease);
 
 		&:first-letter {
 			text-transform: uppercase;
@@ -40,8 +45,18 @@ const className = classNames("linkButton", {
 			transition: transform 0.2s var(--ease);
 		}
 
+		&:hover {
+			transform: translate(-2px, -2px);
+			box-shadow: 6px 6px 0 var(--c-ink);
+		}
+
 		&:hover &__arrow {
-			transform: translateX(3px);
+			transform: translateX(4px);
+		}
+
+		&:active {
+			transform: translate(2px, 2px);
+			box-shadow: 1px 1px 0 var(--c-ink);
 		}
 
 		&_primary {
@@ -63,13 +78,12 @@ const className = classNames("linkButton", {
 		}
 
 		&_outline {
-			color: var(--c-grey-darkest);
+			color: var(--c-ink);
 			background: var(--c-surface);
-			border-color: var(--c-border);
 
 			&:hover {
-				color: var(--c-grey-darkest);
-				border-color: var(--c-grey-light);
+				color: var(--c-ink);
+				background: #ffd27a;
 			}
 		}
 	}

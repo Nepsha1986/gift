@@ -2,7 +2,9 @@
   $this: &;
 
   &__nav {
-    background: var(--c-surface);
+    background: var(--c-bg);
+    border-left: 2px solid var(--c-ink);
+    border-radius: var(--radius-xl) 0 0 var(--radius-xl);
     z-index: 9999;
     position: fixed;
     width: min(320px, 86vw);
@@ -42,7 +44,7 @@
     position: fixed;
     inset: 0;
     z-index: 9998;
-    background: rgba(16, 24, 40, 0.4);
+    background: rgba(29, 26, 36, 0.45);
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.3s var(--ease);

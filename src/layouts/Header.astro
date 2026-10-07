@@ -45,41 +45,57 @@ const pathname = removeTrailingSlash(URL);
 		position: sticky;
 		top: 0;
 		z-index: 10;
-		border-bottom: 1px solid transparent;
-
-		// Blur lives on a pseudo-element: backdrop-filter on the header itself
-		// would become the containing block of the fixed mobile menu.
-		&::before {
-			content: "";
-			position: absolute;
-			inset: 0;
-			z-index: -1;
-			background: rgba(247, 248, 250, 0.82);
-			backdrop-filter: saturate(180%) blur(12px);
-			-webkit-backdrop-filter: saturate(180%) blur(12px);
-		}
-		transition: border-color 0.2s var(--ease), box-shadow 0.2s var(--ease);
-
-		&_scrolled {
-			border-bottom-color: var(--c-border);
-			box-shadow: var(--shadow-sm);
-		}
+		padding: 10px var(--gutter) 0;
 
 		&__container {
-			height: var(--header-height);
-			padding: 0 var(--gutter);
+			position: relative;
+			isolation: isolate;
+			height: calc(var(--header-height) - 10px);
+			padding: 0 10px 0 22px;
 			display: flex;
 			justify-content: space-between;
 			align-items: center;
 			gap: 1rem;
-			max-width: var(--container);
+			max-width: calc(var(--container) - 2 * var(--gutter));
 			margin: 0 auto;
+			border: 1px solid transparent;
+			border-radius: var(--radius-full);
+			transition: border-color 0.25s var(--ease), box-shadow 0.25s var(--ease);
+
+			// Blur lives on a pseudo-element: backdrop-filter on the bar itself
+			// would become the containing block of the fixed mobile menu.
+			&::before {
+				content: "";
+				position: absolute;
+				inset: 0;
+				z-index: -1;
+				border-radius: inherit;
+				background: rgba(255, 253, 249, 0);
+				transition: background-color 0.25s var(--ease);
+			}
+		}
+
+		// Once the page scrolls the header becomes a floating "island"
+		&_scrolled &__container {
+			border-color: var(--c-border);
+			box-shadow: var(--shadow-md);
+
+			&::before {
+				background: rgba(255, 253, 249, 0.82);
+				backdrop-filter: saturate(180%) blur(14px);
+				-webkit-backdrop-filter: saturate(180%) blur(14px);
+			}
 		}
 
 		&__logo {
 			display: block;
-			width: 132px;
+			width: 138px;
 			flex-shrink: 0;
+			transition: transform 0.3s var(--ease-bounce);
+
+			&:hover {
+				transform: rotate(-3deg) scale(1.03);
+			}
 
 			:global(svg) {
 				display: block;
@@ -111,6 +127,16 @@ const pathname = removeTrailingSlash(URL);
 
 			@media screen and (min-width: 960px) {
 				display: none;
+			}
+		}
+
+		@media (max-width: 959px) {
+			&__container {
+				padding: 0 6px 0 16px;
+			}
+
+			&__logo {
+				width: 124px;
 			}
 		}
 	}

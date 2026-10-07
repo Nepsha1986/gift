@@ -1,11 +1,14 @@
 ---
 import { Image } from "astro:assets";
+import { getCollection } from "astro:content";
 import CategoryLink from "./components/CategoryLink.astro";
 
-import { useTranslatedPath, getLocaleFromUrl, getLangFromUrl, useTranslations } from "@i18n/utils";
+import { useTranslatedPath, getLocaleFromUrl, getLangFromUrl, getLocaleFromSlug, useTranslations } from "@i18n/utils";
 import translations from "./translations";
 
 import { categoryLinks } from "@utils/categoryLinks";
+import { authors } from "@src/content/_authors";
+import type { Category } from "@src/types/category";
 
 import manImg from "@src/assets/man.webp";
 import womanImg from "@src/assets/woman.webp";
@@ -20,70 +23,86 @@ const translatePath = useTranslatedPath(locale);
 
 const t = useTranslations(lang, translations);
 
-const womenCategoryLink = translatePath(categoryLinks["for-women"]);
-const menCategoryLink = translatePath(categoryLinks["for-men"]);
-const teensCategoryLink = translatePath(categoryLinks["for-teens"]);
-const kidsCategoryLink = translatePath(categoryLinks["for-kids"]);
+const ideasCount = (await getCollection("gifts", ({ slug }) => getLocaleFromSlug(slug) === locale)).length;
+// Round down to a friendly "80+" style number
+const ideasLabel = `${Math.max(10, Math.floor(ideasCount / 10) * 10)}+`;
+
+const recipients: Array<{ category: Category; key: "women" | "men" | "teens" | "kids"; img: ImageMetadata; tilt: string }> = [
+  { category: "for-women", key: "women", img: womanImg, tilt: "-4deg" },
+  { category: "for-men", key: "men", img: manImg, tilt: "3deg" },
+  { category: "for-teens", key: "teens", img: teenImg, tilt: "2deg" },
+  { category: "for-kids", key: "kids", img: kidImg, tilt: "-3deg" },
+];
+
+const editors = [authors.alex_nepsha, authors.polina_gordienko, authors.olga_sergeevna];
+const occasions = t("intro.occasions").split("|");
 ---
 
 <section class="intro">
   <div class="intro__container">
     <div class="intro__content">
-      <h1 class="intro__heading">{t("intro.heading")}</h1>
-      <p class="intro__subheading">{t("intro.subheading")}</p>
-      <p class="intro__text">
-        <Fragment set:html={t("intro.text")} />
-      </p>
+      <span class="intro__badge">
+        <span class="intro__badgeDot" aria-hidden="true"></span>
+        <strong>{ideasLabel}</strong> {t("intro.badge")}
+      </span>
+
+      <h1 class="intro__heading" set:html={t("intro.heading")} />
+
+      <p class="intro__text">{t("intro.text")}</p>
+
+      <div class="intro__actions">
+        <a class="intro__cta" href="#ideas">
+          {t("intro.cta")}
+          <svg width="18" height="18" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 3v10m0 0 4.5-4.5M8 13 3.5 8.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a class="intro__ctaSecondary" href={translatePath("/posts")}>{t("intro.cta_secondary")}</a>
+      </div>
+
+      <div class="intro__editors">
+        <div class="intro__avatars">
+          {editors.map((a) => (
+            <Image src={a.photo} alt={a.fullName} width={72} height={72} />
+          ))}
+        </div>
+        <span>{t("intro.editors")}</span>
+      </div>
     </div>
 
-    <ul class="intro__categoryLinks">
-      <li class="intro__categoryLink">
-        <CategoryLink link={womenCategoryLink}>
-          <Fragment set:html={t("cat.women")} />
-          <Image class="img-cover" width={400} height={300} slot="img" src={womanImg} alt="" />
-        </CategoryLink>
-      </li>
+    <div class="intro__picker">
+      <p class="intro__pickerLabel">
+        {t("intro.picker")}
+        <svg class="intro__pickerArrow" width="46" height="30" viewBox="0 0 46 30" fill="none" aria-hidden="true"><path d="M2 4c14-3 30 2 37 18m0 0 1-9m-1 9-8-4" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </p>
 
-      <li class="intro__categoryLink">
-        <CategoryLink link={menCategoryLink}>
-          <Fragment set:html={t("cat.men")} />
-          <Image class="img-cover" width={400} height={300} slot="img" src={manImg} alt="" />
-        </CategoryLink>
-      </li>
+      <ul class="intro__categoryLinks">
+        {recipients.map((r) => (
+          <li class="intro__categoryLink" style={{ "--tilt": r.tilt }}>
+            <CategoryLink link={translatePath(categoryLinks[r.category])} category={r.category} title={t(`cat.${r.key}.title`)}>
+              {t(`cat.${r.key}`)}
+              <Image class="img-cover" width={400} height={320} slot="img" src={r.img} alt="" loading="eager" />
+            </CategoryLink>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
 
-      <li class="intro__categoryLink">
-        <CategoryLink link={teensCategoryLink}>
-          <Fragment set:html={t("cat.teens")} />
-          <Image class="img-cover" width={400} height={300} slot="img" src={teenImg} alt="" />
-        </CategoryLink>
-      </li>
-
-      <li class="intro__categoryLink">
-        <CategoryLink link={kidsCategoryLink}>
-          <Fragment set:html={t("cat.kids")} />
-          <Image class="img-cover" width={400} height={300} slot="img" src={kidImg} alt="" />
-        </CategoryLink>
-      </li>
-    </ul>
+  <!-- Decorative ribbon of occasions -->
+  <div class="ribbon" aria-hidden="true">
+    <div class="ribbon__track">
+      {[0, 1].map(() => (
+        <div class="ribbon__group">
+          {occasions.map((o) => (
+            <Fragment>
+              <span>{o}</span>
+              <svg width="20" height="20" viewBox="0 0 20 20"><path d="M10 0q1.3 8.7 10 10-8.7 1.3-10 10Q8.7 11.3 0 10 8.7 8.7 10 0z" fill="currentColor"/></svg>
+            </Fragment>
+          ))}
+        </div>
+      ))}
+    </div>
   </div>
 </section>
-
-<style is:global>
-	.intro__text a {
-		color: var(--c-secondary);
-		text-decoration: underline;
-		text-decoration-color: var(--c-secondary-light);
-		text-underline-offset: 3px;
-
-		strong {
-			color: inherit;
-		}
-
-		&:hover {
-			color: var(--c-secondary-dark);
-		}
-	}
-</style>
 
 <style lang="scss">
 	.intro {
@@ -91,66 +110,185 @@ const kidsCategoryLink = translatePath(categoryLinks["for-kids"]);
 		overflow-x: clip;
 		isolation: isolate;
 
-		// Soft brand-coloured glow instead of a heavy background image
+		// Soft festive glows behind the hero
 		&::before,
 		&::after {
 			content: "";
 			position: absolute;
 			z-index: -1;
 			border-radius: 50%;
-			filter: blur(80px);
+			filter: blur(90px);
 			pointer-events: none;
 		}
 
 		&::before {
-			width: 520px;
-			height: 520px;
-			top: -320px;
-			right: -120px;
-			background: rgba(114, 212, 229, 0.45);
+			width: 560px;
+			height: 560px;
+			top: -260px;
+			right: -140px;
+			background: rgba(255, 154, 127, 0.4);
 		}
 
 		&::after {
-			width: 420px;
-			height: 420px;
-			top: -60px;
-			right: 280px;
-			background: rgba(253, 197, 186, 0.5);
+			width: 460px;
+			height: 460px;
+			top: 220px;
+			left: -260px;
+			background: rgba(230, 245, 144, 0.55);
 		}
 
 		&__container {
 			max-width: var(--container);
-			padding: clamp(2.5rem, 7vw, 5.5rem) var(--gutter) 2rem;
+			padding: clamp(2rem, 6vw, 4.5rem) var(--gutter) clamp(3rem, 6vw, 5rem);
 			margin: 0 auto;
+			display: grid;
+			gap: clamp(2.5rem, 5vw, 4rem);
+			align-items: center;
+
+			@media (min-width: 1040px) {
+				grid-template-columns: 1.05fr 1fr;
+			}
 		}
 
-		&__content {
-			max-width: 760px;
-			margin-bottom: clamp(2rem, 5vw, 3.5rem);
+		&__badge {
+			display: inline-flex;
+			align-items: center;
+			gap: 8px;
+			margin-bottom: 1.5rem;
+			padding: 6px 14px 6px 10px;
+			font-size: 0.875rem;
+			font-weight: 500;
+			color: var(--c-grey-dark);
+			background: var(--c-surface);
+			border: 1px solid var(--c-border);
+			border-radius: var(--radius-full);
+			box-shadow: var(--shadow-sm);
+
+			strong {
+				color: var(--c-primary-dark);
+			}
+		}
+
+		&__badgeDot {
+			width: 8px;
+			height: 8px;
+			border-radius: 50%;
+			background: var(--c-primary);
+			box-shadow: 0 0 0 4px var(--c-primary-lightest);
+			animation: pulse 2s var(--ease) infinite;
 		}
 
 		&__heading {
-			font-size: clamp(2.4rem, 6vw, 4.25rem);
-			font-weight: 800;
-			letter-spacing: -0.035em;
-			line-height: 1.05;
-			margin-bottom: 0.75rem;
-		}
-
-		&__subheading {
-			font-family: var(--font-secondary);
-			font-size: clamp(1.25rem, 2.6vw, 1.75rem);
+			font-size: clamp(2.15rem, 6.4vw, 4.75rem);
 			font-weight: 700;
-			letter-spacing: -0.02em;
-			color: var(--c-primary-dark);
-			margin-bottom: 1.25rem;
+			letter-spacing: -0.05em;
+			line-height: 1.02;
+			margin-bottom: 1.5rem;
 		}
 
 		&__text {
-			color: var(--c-grey);
+			max-width: 540px;
+			color: var(--c-grey-dark);
 			font-size: clamp(1.05rem, 1.6vw, 1.2rem);
-			line-height: 1.65;
-			margin-bottom: 0;
+			line-height: 1.6;
+			margin-bottom: 2rem;
+		}
+
+		&__actions {
+			display: flex;
+			flex-wrap: wrap;
+			align-items: center;
+			gap: 12px 20px;
+			margin-bottom: 2.25rem;
+		}
+
+		&__cta {
+			display: inline-flex;
+			align-items: center;
+			gap: 10px;
+			height: 56px;
+			padding: 0 28px;
+			font-size: 1.05rem;
+			font-weight: 600;
+			color: #fff;
+			background: var(--c-primary);
+			border: 2px solid var(--c-ink);
+			border-radius: var(--radius-full);
+			box-shadow: var(--shadow-pop);
+			transition:
+				transform 0.25s var(--ease-bounce),
+				box-shadow 0.25s var(--ease-bounce),
+				background-color 0.2s var(--ease);
+
+			&:hover {
+				color: #fff;
+				background: var(--c-primary-dark);
+				transform: translate(-2px, -2px);
+				box-shadow: 6px 6px 0 var(--c-ink);
+			}
+
+			&:active {
+				transform: translate(2px, 2px);
+				box-shadow: 1px 1px 0 var(--c-ink);
+			}
+		}
+
+		&__ctaSecondary {
+			font-weight: 600;
+			color: var(--c-ink);
+			text-decoration: underline;
+			text-decoration-thickness: 2px;
+			text-decoration-color: var(--c-primary-light);
+			text-underline-offset: 5px;
+
+			&:hover {
+				color: var(--c-primary-dark);
+				text-decoration-color: currentColor;
+			}
+		}
+
+		&__editors {
+			display: flex;
+			align-items: center;
+			gap: 12px;
+			font-size: 0.9rem;
+			color: var(--c-grey);
+		}
+
+		&__avatars {
+			display: flex;
+
+			:global(img) {
+				width: 36px;
+				height: 36px;
+				object-fit: cover;
+				border-radius: 50%;
+				border: 2px solid var(--c-bg);
+
+				&:not(:first-child) {
+					margin-left: -10px;
+				}
+			}
+		}
+
+		&__picker {
+			position: relative;
+		}
+
+		&__pickerLabel {
+			display: flex;
+			align-items: flex-end;
+			gap: 6px;
+			margin-bottom: 1rem;
+			font-family: var(--font-secondary);
+			font-size: 1.1rem;
+			font-weight: 600;
+			color: var(--c-ink);
+		}
+
+		&__pickerArrow {
+			color: var(--c-primary);
+			margin-bottom: -10px;
 		}
 
 		&__categoryLinks {
@@ -158,13 +296,75 @@ const kidsCategoryLink = translatePath(categoryLinks["for-kids"]);
 			margin: 0;
 			padding: 0;
 			display: grid;
-			gap: 16px;
-			grid-template-columns: repeat(auto-fill, minmax(min(100%, 250px), 1fr));
+			gap: 20px;
+			grid-template-columns: repeat(2, 1fr);
+
+			@media (max-width: 559px) {
+				grid-template-columns: 1fr;
+				gap: 14px;
+			}
 		}
 
 		&__categoryLink {
 			margin: 0;
 			display: flex;
+			// Stagger the columns so the tags feel loosely scattered
+			&:nth-child(even) {
+				@media (min-width: 560px) {
+					transform: translateY(28px);
+				}
+			}
+
+			@media (max-width: 559px) {
+				--tilt: 0deg !important;
+			}
+		}
+	}
+
+	.ribbon {
+		position: relative;
+		z-index: 1;
+		margin: 1rem -2% 0;
+		padding: 14px 0;
+		overflow: hidden;
+		color: #fff;
+		background: var(--c-primary);
+		border-block: 2px solid var(--c-ink);
+		transform: rotate(-1.5deg);
+
+		&__track {
+			display: flex;
+			width: max-content;
+			animation: marquee 38s linear infinite;
+		}
+
+		&__group {
+			display: flex;
+			align-items: center;
+			gap: 28px;
+			padding-right: 28px;
+			font-family: var(--font-secondary);
+			font-size: clamp(1rem, 2vw, 1.35rem);
+			font-weight: 600;
+			letter-spacing: -0.01em;
+			white-space: nowrap;
+
+			svg {
+				flex-shrink: 0;
+				color: #ffd27a;
+			}
+		}
+	}
+
+	@keyframes marquee {
+		to {
+			transform: translateX(-50%);
+		}
+	}
+
+	@keyframes pulse {
+		50% {
+			box-shadow: 0 0 0 7px rgba(214, 54, 27, 0.12);
 		}
 	}
 </style>

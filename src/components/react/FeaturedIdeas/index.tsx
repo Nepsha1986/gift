@@ -14,6 +14,9 @@ import categoryTabs from "@i18n/translations/categoryTabs.ts";
 
 import styles from "./styles.module.scss";
 
+// Two even rows on desktop; the full list lives on the gift pages
+const MAX_VISIBLE = 6;
+
 interface Idea {
   slug: string;
   title: string;
@@ -35,7 +38,9 @@ const FeaturedIdeas: React.FC<FeaturedIdeasProps> = ({
   locale,
 }) => {
   const [activeCategory, setActiveCategory] = useState<Category>("for-women");
-  const visible = featured.filter((i) => i.category === activeCategory);
+  const visible = featured
+    .filter((i) => i.category === activeCategory)
+    .slice(0, MAX_VISIBLE);
 
   const translatePath = useTranslatedPath(locale);
   const t = useTranslations(lang, categoryTabs);
@@ -67,7 +72,7 @@ const FeaturedIdeas: React.FC<FeaturedIdeasProps> = ({
         onClickCategory={setActiveCategory}
       />
 
-      <div className={styles.featuredIdeas}>
+      <div className={styles.featuredIdeas} key={activeCategory}>
         {!!visible.length &&
           visible.map((i) => (
             <div className={styles.featuredIdeas__item} key={i.slug}>
@@ -75,6 +80,8 @@ const FeaturedIdeas: React.FC<FeaturedIdeasProps> = ({
                 key={i.slug}
                 title={i.title}
                 description={i.description}
+                category={i.category}
+                variant="tile"
                 link={translatePath(
                   `/gifts/${i.category}/${getCleanSlug(i.slug)}`,
                 )}

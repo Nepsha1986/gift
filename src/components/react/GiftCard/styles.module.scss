@@ -3,34 +3,23 @@
 
   position: relative;
   display: flex;
-  align-items: center;
-  gap: 14px;
-  min-height: 88px;
-  height: 100%;
-  padding: 10px 14px 10px 10px;
-  margin-bottom: 8px;
   background: var(--c-surface);
   border: 1px solid var(--c-border);
-  border-radius: var(--radius-md);
   transition:
     border-color 0.2s var(--ease),
-    box-shadow 0.2s var(--ease),
+    box-shadow 0.25s var(--ease),
+    transform 0.3s var(--ease-bounce),
     background-color 0.2s var(--ease);
 
   &__imgWrap {
+    position: relative;
     flex-shrink: 0;
-    width: 68px;
-    height: 68px;
     overflow: hidden;
-    border-radius: var(--radius-sm);
-    background: var(--c-grey-lightest);
-  }
+    background: var(--cat, var(--c-primary-lightest));
 
-  &__img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center center;
+    img {
+      transition: transform 0.5s var(--ease);
+    }
   }
 
   &__body {
@@ -38,40 +27,147 @@
   }
 
   &__heading {
-    font-size: 1rem;
-    line-height: 1.3;
-    margin-bottom: 4px;
+    font-family: var(--font-primary);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: var(--c-ink);
     transition: color 0.2s var(--ease);
   }
 
   &__desc {
     color: var(--c-grey);
     margin-bottom: 0;
-    line-height: 1.4;
-    font-size: 0.85rem;
     overflow: hidden;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
   }
 
-  &:hover:not(#{$this}_active) {
-    border-color: var(--c-grey-light);
-    box-shadow: var(--shadow-md);
+  &__label {
+    position: absolute;
+    left: 12px;
+    top: 12px;
+    padding: 4px 10px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--cat-ink, var(--c-primary-dark));
+    background: var(--cat, var(--c-primary-lightest));
+    border-radius: var(--radius-full);
+    box-shadow: 0 0 0 2px var(--c-surface);
+
+    &:first-letter {
+      text-transform: uppercase;
+    }
+  }
+
+  // Compact list item used in the gift page sidebar
+  &_row {
+    align-items: center;
+    gap: 14px;
+    min-height: 84px;
+    height: 100%;
+    padding: 8px 14px 8px 8px;
+    margin-bottom: 8px;
+    border-radius: var(--radius-md);
+
+    #{$this}__imgWrap {
+      width: 66px;
+      height: 66px;
+      border-radius: var(--radius-sm);
+    }
 
     #{$this}__heading {
-      color: var(--c-primary-dark);
+      font-size: 0.975rem;
+      line-height: 1.3;
+      margin-bottom: 3px;
+    }
+
+    #{$this}__desc {
+      line-height: 1.4;
+      font-size: 0.85rem;
+    }
+
+    &:hover:not(#{$this}_active) {
+      border-color: var(--c-grey-light);
+      box-shadow: var(--shadow-md);
+      transform: translateX(-2px);
+
+      #{$this}__heading {
+        color: var(--c-primary-dark);
+      }
+    }
+  }
+
+  // Large card used in the homepage grid
+  &_tile {
+    flex-direction: column;
+    width: 100%;
+    padding: 8px;
+    border-radius: var(--radius-lg);
+
+    #{$this}__imgWrap {
+      aspect-ratio: 4 / 3;
+      border-radius: calc(var(--radius-lg) - 6px);
+    }
+
+    #{$this}__body {
+      padding: 14px 10px 10px;
+    }
+
+    #{$this}__heading {
+      font-size: 1.1rem;
+      line-height: 1.3;
+      margin-bottom: 6px;
+    }
+
+    #{$this}__desc {
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    &:hover {
+      border-color: var(--c-ink);
+      box-shadow: var(--shadow-pop);
+      transform: translate(-2px, -2px);
+
+      #{$this}__heading {
+        color: var(--c-primary-dark);
+      }
+
+      img {
+        transform: scale(1.05);
+      }
+    }
+
+    @media (max-width: 599px) {
+      padding: 6px;
+      border-radius: var(--radius-md);
+
+      #{$this}__imgWrap {
+        aspect-ratio: 1 / 1;
+        border-radius: calc(var(--radius-md) - 4px);
+      }
+
+      #{$this}__body {
+        padding: 10px 6px 6px;
+      }
+
+      #{$this}__heading {
+        font-size: 0.925rem;
+        margin-bottom: 0;
+      }
+
+      #{$this}__desc {
+        display: none;
+      }
     }
   }
 
   &_active {
     cursor: default;
-    background: var(--c-primary-lightest);
-    border-color: var(--c-primary-light);
-
-    #{$this}__heading {
-      color: var(--c-primary-darkest);
-    }
+    background: var(--cat, var(--c-primary-lightest));
+    border-color: var(--c-ink);
+    box-shadow: 3px 3px 0 var(--c-ink);
 
     #{$this}__desc {
       color: var(--c-grey-dark);

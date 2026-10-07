@@ -40,8 +40,9 @@ const { page } = Astro.props;
   <Section heading={t('page.heading')} as="h1">
     <p slot="subheading" set:html={t("page.subheading")} />
     <div class="posts-page__posts">
-      {page.data.map(i => (
+      {page.data.map((i, index) => (
         <PostItem
+          variant={page.currentPage === 1 && index === 0 ? "featured" : "default"}
           thumbnail={i.data?.thumbnail}
           title={i.data.title}
           description={i.data.description}
@@ -70,8 +71,21 @@ const { page } = Astro.props;
 		&__posts {
 			margin: 0 auto;
 			display: grid;
-			gap: 24px;
+			gap: 20px;
 			grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
+
+			@media (max-width: 599px) {
+				gap: 12px;
+			}
+
+			@media (min-width: 960px) {
+				grid-template-columns: repeat(3, 1fr);
+
+				> :global(.post-item_featured) {
+					grid-column: span 2;
+					grid-row: span 2;
+				}
+			}
 		}
 
     &__pagination {

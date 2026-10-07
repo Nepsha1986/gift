@@ -1,51 +1,90 @@
 :root {
-  --c-primary-lightest: #e3f6f8;
-  --c-primary-light: #72d4e5;
-  --c-primary: #1793a9;
-  --c-primary-dark: #0b6f81;
-  --c-primary-darkest: #014b59;
+  // Brand: "ribbon red" — the colour of a bow on a wrapped present
+  --c-primary-lightest: #ffe9e2;
+  --c-primary-light: #ff9a7f;
+  --c-primary: #d6361b;
+  --c-primary-dark: #b42a12;
+  --c-primary-darkest: #6e1806;
 
-  --c-secondary-lightest: #fdebe7;
-  --c-secondary-light: #e58271;
-  --c-secondary: #c2442c;
-  --c-secondary-dark: #7e1c0a;
-  --c-secondary-darkest: #520d01;
+  // Supporting: evergreen
+  --c-secondary-lightest: #e1f2ea;
+  --c-secondary-light: #8fcbb3;
+  --c-secondary: #1e6b52;
+  --c-secondary-dark: #134a38;
+  --c-secondary-darkest: #0a2c21;
 
-  --c-info: var(--c-primary-light);
+  --c-info: #2f6fd6;
   --c-danger: #c42b2b;
   --c-success: #1c8a3a;
 
-  --c-grey-lightest: #f1f3f5;
-  --c-grey-light: #c9ced6;
-  --c-grey: #687082;
-  --c-grey-dark: #3b4252;
-  --c-grey-darkest: #161b26;
+  // Warm greys, tuned to sit on wrapping-paper cream
+  --c-grey-lightest: #f3ece2;
+  --c-grey-light: #d4cbc0;
+  --c-grey: #6a6372;
+  --c-grey-dark: #3d3846;
+  --c-grey-darkest: #1d1a24;
 
-  --c-bg: #f7f8fa;
-  --c-surface: #ffffff;
-  --c-border: #e6e9ee;
+  --c-bg: #fbf6ef;
+  --c-surface: #fffdf9;
+  --c-border: #ebe2d5;
   --c-text: var(--c-grey-darkest);
   --c-text-muted: var(--c-grey);
+  --c-ink: #1d1a24;
 
-  --font-primary: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+  // Every recipient category has its own colour pair (tint + readable ink)
+  --cat-women: #ffd3dd;
+  --cat-women-ink: #a3224a;
+  --cat-men: #cfe2ff;
+  --cat-men-ink: #1f4fa3;
+  --cat-teens: #e6f590;
+  --cat-teens-ink: #4a5e00;
+  --cat-kids: #ffdcb3;
+  --cat-kids-ink: #9a4708;
+
+  --font-primary: "Onest", -apple-system, BlinkMacSystemFont, "Segoe UI",
     "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji",
     "Segoe UI Emoji";
-  --font-secondary: "Manrope", "Inter", sans-serif;
+  --font-secondary: "Unbounded", "Onest", sans-serif;
 
-  --radius-sm: 8px;
-  --radius-md: 12px;
-  --radius-lg: 20px;
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 36px;
   --radius-full: 999px;
 
-  --shadow-sm: 0 1px 2px rgba(16, 24, 40, 0.06);
-  --shadow-md: 0 1px 2px rgba(16, 24, 40, 0.04),
-    0 4px 16px -4px rgba(16, 24, 40, 0.1);
-  --shadow-lg: 0 2px 4px rgba(16, 24, 40, 0.04),
-    0 16px 32px -8px rgba(16, 24, 40, 0.16);
+  --shadow-sm: 0 1px 2px rgba(45, 30, 20, 0.06);
+  --shadow-md: 0 1px 2px rgba(45, 30, 20, 0.04),
+    0 6px 18px -6px rgba(45, 30, 20, 0.14);
+  --shadow-lg: 0 2px 4px rgba(45, 30, 20, 0.04),
+    0 22px 40px -14px rgba(45, 30, 20, 0.28);
+  // Flat offset "sticker" shadow used on playful elements
+  --shadow-pop: 4px 4px 0 var(--c-ink);
 
-  --container: 1240px;
+  --container: 1280px;
   --gutter: 20px;
-  --header-height: 68px;
+  --header-height: 72px;
 
   --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+// Sets --cat / --cat-ink for an element from a recipient category slug
+[data-category="for-women"] {
+  --cat: var(--cat-women);
+  --cat-ink: var(--cat-women-ink);
+}
+
+[data-category="for-men"] {
+  --cat: var(--cat-men);
+  --cat-ink: var(--cat-men-ink);
+}
+
+[data-category="for-teens"] {
+  --cat: var(--cat-teens);
+  --cat-ink: var(--cat-teens-ink);
+}
+
+[data-category="for-kids"] {
+  --cat: var(--cat-kids);
+  --cat-ink: var(--cat-kids-ink);
 }

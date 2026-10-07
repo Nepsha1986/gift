@@ -43,8 +43,10 @@ const seoTitle = `${t("s.gift_idea")} ${t(entry.data.category)} - ${entry.data.t
 
 <Layout title={seoTitle}>
   <GiftPage
-    title={`${entry.data.title}: ${entry.data.description}`}
+    title={entry.data.title}
+    subtitle={entry.data.description}
     category={t(entry.data.category)}
+    categorySlug={entry.data.category}
     meta={entry.data?.meta}
     author={entry.data?.author}
     date={entry.data?.date}
