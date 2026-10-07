@@ -46,9 +46,6 @@ const year = new Date().getFullYear();
       </div>
     </div>
   </div>
-
-  <!-- Oversized wordmark peeking from the bottom edge -->
-  <div class="footer__giant" aria-hidden="true">giftidea</div>
 </footer>
 
 <style lang="scss">
@@ -57,7 +54,10 @@ const year = new Date().getFullYear();
 		overflow: hidden;
 		margin: clamp(4rem, 8vw, 6.5rem) 10px 10px;
 		color: rgba(251, 246, 239, 0.7);
-		background: var(--c-ink);
+		background:
+			radial-gradient(600px 300px at 90% 0%, rgba(232, 67, 42, 0.28), transparent 70%),
+			radial-gradient(500px 260px at 0% 100%, rgba(232, 93, 143, 0.16), transparent 70%),
+			var(--c-ink);
 		border-radius: var(--radius-xl);
 
 		&__container {
@@ -65,7 +65,7 @@ const year = new Date().getFullYear();
 			z-index: 1;
 			max-width: var(--container);
 			margin: 0 auto;
-			padding: clamp(2rem, 5vw, 3.5rem) var(--gutter) 1.5rem;
+			padding: clamp(2rem, 5vw, 3.5rem) var(--gutter) 1.75rem;
 		}
 
 		&__cta {
@@ -84,8 +84,8 @@ const year = new Date().getFullYear();
 			margin: 0;
 			font-family: var(--font-secondary);
 			font-size: clamp(1.5rem, 3.6vw, 2.5rem);
-			font-weight: 600;
-			letter-spacing: -0.04em;
+			font-weight: 800;
+			letter-spacing: -0.035em;
 			line-height: 1.1;
 			color: var(--c-bg);
 			text-wrap: balance;
@@ -99,17 +99,17 @@ const year = new Date().getFullYear();
 			padding: 0 28px;
 			font-weight: 600;
 			color: var(--c-ink);
-			background: #ffd27a;
+			background: #fff;
 			border-radius: var(--radius-full);
-			box-shadow: 4px 4px 0 var(--c-primary);
+			box-shadow: var(--shadow-lg);
 			transition:
 				transform 0.25s var(--ease-bounce),
 				box-shadow 0.25s var(--ease-bounce);
 
 			&:hover {
 				color: var(--c-ink);
-				transform: translate(-2px, -2px);
-				box-shadow: 6px 6px 0 var(--c-primary);
+				transform: translateY(-4px);
+				box-shadow: var(--shadow-lg);
 			}
 		}
 
@@ -173,19 +173,5 @@ const year = new Date().getFullYear();
 			border-radius: var(--radius-full);
 		}
 
-		&__giant {
-			margin: -1rem 0 -0.24em;
-			font-family: var(--font-secondary);
-			font-size: clamp(4rem, 17vw, 15rem);
-			font-weight: 800;
-			letter-spacing: -0.06em;
-			line-height: 1;
-			text-align: center;
-			white-space: nowrap;
-			color: transparent;
-			-webkit-text-stroke: 1px rgba(251, 246, 239, 0.18);
-			user-select: none;
-			pointer-events: none;
-		}
 	}
 </style>

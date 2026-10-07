@@ -28,7 +28,7 @@ const className = classNames("linkButton", {
 		font-size: 1rem;
 		font-weight: 600;
 		color: #fff;
-		border: 2px solid var(--c-ink);
+		border: 1px solid var(--c-border);
 		border-radius: var(--radius-full);
 		box-shadow: var(--shadow-pop);
 		transition:
@@ -46,8 +46,8 @@ const className = classNames("linkButton", {
 		}
 
 		&:hover {
-			transform: translate(-2px, -2px);
-			box-shadow: 6px 6px 0 var(--c-ink);
+			transform: translateY(-4px);
+			box-shadow: var(--shadow-lg);
 		}
 
 		&:hover &__arrow {
@@ -55,12 +55,14 @@ const className = classNames("linkButton", {
 		}
 
 		&:active {
-			transform: translate(2px, 2px);
-			box-shadow: 1px 1px 0 var(--c-ink);
+			transform: translateY(0);
+			box-shadow: var(--shadow-lg);
 		}
 
 		&_primary {
 			background: var(--c-primary);
+			border-color: transparent;
+			box-shadow: var(--shadow-primary);
 
 			&:hover {
 				color: #fff;
@@ -83,7 +85,7 @@ const className = classNames("linkButton", {
 
 			&:hover {
 				color: var(--c-ink);
-				background: #ffd27a;
+				border-color: var(--c-grey-light);
 			}
 		}
 	}

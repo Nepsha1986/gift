@@ -38,9 +38,9 @@ const { href, color = "currentColor", ...props }: Props = Astro.props;
 
 		&:hover {
 			color: var(--c-ink);
-			border-color: var(--c-ink);
-			transform: translate(-2px, -2px);
-			box-shadow: 3px 3px 0 var(--brand);
+			border-color: transparent;
+			transform: translateY(-4px);
+			box-shadow: var(--shadow-lg);
 		}
 	}
 </style>

@@ -25,12 +25,6 @@ body {
   min-height: 100vh;
   color: var(--c-text);
   background-color: var(--c-bg);
-  // Faint dotted texture, like the grain of kraft wrapping paper
-  background-image: radial-gradient(
-    rgba(29, 26, 36, 0.045) 1px,
-    transparent 1px
-  );
-  background-size: 22px 22px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -71,8 +65,8 @@ h6 {
   text-wrap: balance;
   font-family: var(--font-secondary);
   color: var(--c-grey-darkest);
-  font-weight: 600;
-  letter-spacing: -0.025em;
+  font-weight: 800;
+  letter-spacing: -0.03em;
   line-height: 1.15;
   margin-top: 0;
   margin-bottom: 0.5rem;
@@ -166,14 +160,10 @@ input {
   }
 
   hr {
-    height: 14px;
-    margin: 2.5rem 0;
+    height: 1px;
+    margin: 2.75rem 0;
     border: 0;
-    // A row of little ribbon-red dots instead of a plain rule
-    background: radial-gradient(circle, var(--c-primary) 3px, transparent 3.5px)
-      center / 22px 14px repeat-x;
-    mask: linear-gradient(90deg, transparent, #000 35%, #000 65%, transparent);
-    opacity: 0.7;
+    background: linear-gradient(90deg, transparent, var(--c-grey-light), transparent);
   }
 
   ul,
@@ -214,8 +204,8 @@ input {
       content: "“";
       position: absolute;
       left: 1rem;
-      top: 0.35rem;
-      font-family: var(--font-secondary);
+      top: 0.5rem;
+      font-family: Georgia, serif;
       font-size: 3rem;
       line-height: 1;
       color: var(--c-primary);
@@ -274,13 +264,12 @@ input {
   }
 }
 
-// Shared hand-drawn underline for highlighted words in headings.
-// A background (not a pseudo-element) so it follows the text when it wraps.
+// Highlighted words in headings: warm gradient text
 .scribble {
-  color: var(--c-primary);
-  padding-bottom: 0.08em;
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 20' preserveAspectRatio='none'%3E%3Cpath d='M3 14C40 5 90 4 197 9M20 17c50-6 110-7 160-4' fill='none' stroke='%23d6361b' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E")
-    left bottom / 100% 0.3em no-repeat;
+  background: var(--gradient-accent);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
 }

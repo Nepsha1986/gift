@@ -10,139 +10,162 @@ interface Props {
 const { link, category, title } = Astro.props;
 ---
 
-<!-- Styled as a gift tag: tinted card, punched hole, slight tilt -->
-<a class="tag" href={link} data-category={category}>
-  <span class="tag__hole" aria-hidden="true"></span>
-
-  <div class="tag__imgWrap">
+<!-- Photo card: full-bleed image, text on a soft dark fade -->
+<a class="card" href={link} data-category={category}>
+  <div class="card__imgWrap">
     <slot name="img" />
   </div>
 
-  <div class="tag__body">
-    <span class="tag__title">{title}</span>
-    <span class="tag__desc"><slot /></span>
+  <div class="card__body">
+    <span class="card__title">{title}</span>
+    <span class="card__desc"><slot /></span>
   </div>
 
-  <span class="tag__arrow" aria-hidden="true">
-    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10m0 0L8.5 3.5M13 8l-4.5 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  <span class="card__arrow" aria-hidden="true">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4.5 11.5 11.5 4.5m0 0H5.5m6 0v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
   </span>
 </a>
 
 <style lang="scss">
-	.tag {
+	.card {
 		position: relative;
 		display: flex;
 		flex-direction: column;
+		justify-content: flex-end;
 		width: 100%;
-		padding: 10px;
-		color: var(--c-ink);
+		min-height: 300px;
+		overflow: hidden;
+		isolation: isolate;
+		color: #fff;
 		background: var(--cat);
-		border: 2px solid var(--c-ink);
 		border-radius: var(--radius-lg);
-		box-shadow: var(--shadow-pop);
-		transform: rotate(var(--tilt, 0deg));
+		box-shadow: var(--shadow-md);
 		transition:
-			transform 0.35s var(--ease-bounce),
-			box-shadow 0.35s var(--ease-bounce);
+			transform 0.4s var(--ease),
+			box-shadow 0.4s var(--ease);
 
 		&:hover,
 		&:focus-visible {
-			color: var(--c-ink);
-			transform: rotate(0deg) translate(-3px, -3px);
-			box-shadow: 8px 8px 0 var(--c-ink);
+			color: #fff;
+			transform: translateY(-6px);
+			box-shadow: var(--shadow-lg);
 
-			.tag__arrow {
-				background: var(--c-primary);
-				transform: rotate(-45deg);
+			.card__arrow {
+				color: var(--c-ink);
+				background: #fff;
 			}
 
-			.tag__imgWrap :global(img) {
+			.card__imgWrap :global(img) {
 				transform: scale(1.06);
 			}
 		}
 
-		&__hole {
-			position: absolute;
-			z-index: 2;
-			top: 18px;
-			left: 18px;
-			width: 14px;
-			height: 14px;
-			border-radius: 50%;
-			background: var(--c-bg);
-			border: 2px solid var(--c-ink);
-		}
-
 		&__imgWrap {
-			aspect-ratio: 5 / 4;
-			overflow: hidden;
-			border-radius: calc(var(--radius-lg) - 8px);
-			border: 2px solid var(--c-ink);
-			background: var(--c-surface);
+			position: absolute;
+			inset: 0;
+			z-index: -1;
 
 			:global(img) {
-				transition: transform 0.5s var(--ease);
+				transition: transform 0.7s var(--ease);
+			}
+
+			&::after {
+				content: "";
+				position: absolute;
+				inset: 0;
+				background: linear-gradient(180deg, rgba(29, 26, 36, 0) 40%, rgba(29, 26, 36, 0.78) 100%);
 			}
 		}
 
 		&__body {
 			display: flex;
 			flex-direction: column;
-			gap: 2px;
-			padding: 12px 52px 4px 6px;
+			gap: 4px;
+			padding: 20px;
 		}
 
 		&__title {
 			font-family: var(--font-secondary);
-			font-size: 1.15rem;
-			font-weight: 700;
+			font-size: 1.3rem;
+			font-weight: 800;
 			letter-spacing: -0.02em;
 			line-height: 1.2;
 		}
 
 		&__desc {
 			font-size: 0.875rem;
-			line-height: 1.4;
-			color: var(--c-grey-dark);
+			line-height: 1.45;
+			color: rgba(255, 255, 255, 0.85);
 		}
 
 		&__arrow {
 			position: absolute;
+			top: 14px;
 			right: 14px;
-			bottom: 14px;
 			display: grid;
 			place-items: center;
-			width: 36px;
-			height: 36px;
+			width: 38px;
+			height: 38px;
 			color: #fff;
-			background: var(--c-ink);
+			background: rgba(255, 255, 255, 0.22);
+			border: 1px solid rgba(255, 255, 255, 0.35);
 			border-radius: 50%;
+			backdrop-filter: blur(8px);
+			-webkit-backdrop-filter: blur(8px);
 			transition:
-				transform 0.3s var(--ease-bounce),
+				color 0.2s var(--ease),
 				background-color 0.2s var(--ease);
 		}
 
+		// Phones: compact row on the category tint
 		@media (max-width: 559px) {
 			flex-direction: row;
 			align-items: center;
-			gap: 4px;
+			min-height: 0;
+			padding: 8px;
+			color: var(--c-ink);
+			box-shadow: none;
 
-			&__hole {
-				display: none;
+			&:hover,
+			&:focus-visible {
+				color: var(--c-ink);
+				transform: none;
 			}
 
 			&__imgWrap {
+				position: relative;
+				inset: auto;
+				z-index: 0;
 				flex-shrink: 0;
-				width: 76px;
-				aspect-ratio: 1 / 1;
+				width: 72px;
+				height: 72px;
+				overflow: hidden;
+				border-radius: var(--radius-md);
+
+				&::after {
+					display: none;
+				}
 			}
 
 			&__body {
-				padding: 0 48px 0 10px;
+				padding: 0 52px 0 14px;
 			}
 
 			&__title {
 				font-size: 1.05rem;
+			}
+
+			&__desc {
+				color: var(--c-grey-dark);
+			}
+
+			&__arrow {
+				top: 50%;
+				right: 16px;
+				transform: translateY(-50%);
+				color: #fff;
+				background: var(--cat-ink);
+				border: none;
 			}
 		}
 	}

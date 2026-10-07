@@ -90,7 +90,7 @@
     &:hover:not(#{$this}_active) {
       border-color: var(--c-grey-light);
       box-shadow: var(--shadow-md);
-      transform: translateX(-2px);
+      
 
       #{$this}__heading {
         color: var(--c-primary-dark);
@@ -126,9 +126,9 @@
     }
 
     &:hover {
-      border-color: var(--c-ink);
+      border-color: transparent;
       box-shadow: var(--shadow-pop);
-      transform: translate(-2px, -2px);
+      transform: translateY(-4px);
 
       #{$this}__heading {
         color: var(--c-primary-dark);
@@ -166,8 +166,8 @@
   &_active {
     cursor: default;
     background: var(--cat, var(--c-primary-lightest));
-    border-color: var(--c-ink);
-    box-shadow: 3px 3px 0 var(--c-ink);
+    border-color: transparent;
+    box-shadow: var(--shadow-lg);
 
     #{$this}__desc {
       color: var(--c-grey-dark);
