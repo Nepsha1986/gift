@@ -125,7 +125,7 @@ const occasions = t("intro.occasions").split("|");
 			height: 560px;
 			top: -260px;
 			right: -140px;
-			background: rgba(255, 154, 127, 0.4);
+			background: rgba(245, 138, 166, 0.38);
 		}
 
 		&::after {
@@ -133,7 +133,7 @@ const occasions = t("intro.occasions").split("|");
 			height: 460px;
 			top: 220px;
 			left: -260px;
-			background: rgba(253, 214, 226, 0.6);
+			background: rgba(255, 214, 170, 0.5);
 		}
 
 		&__container {
@@ -178,10 +178,10 @@ const occasions = t("intro.occasions").split("|");
 		}
 
 		&__heading {
-			font-size: clamp(2.3rem, 6.4vw, 4.6rem);
-			font-weight: 800;
-			letter-spacing: -0.045em;
-			line-height: 1.04;
+			font-size: clamp(2.5rem, 6.6vw, 5rem);
+			font-weight: 600;
+			letter-spacing: -0.02em;
+			line-height: 1.02;
 			margin-bottom: 1.5rem;
 		}
 
@@ -222,7 +222,7 @@ const occasions = t("intro.occasions").split("|");
 				color: #fff;
 				background: var(--c-primary-dark);
 				transform: translateY(-2px);
-				box-shadow: 0 14px 30px -10px rgba(214, 54, 27, 0.6);
+				box-shadow: 0 14px 30px -10px rgba(199, 37, 78, 0.6);
 			}
 		}
 
@@ -312,10 +312,8 @@ const occasions = t("intro.occasions").split("|");
 		z-index: 1;
 		padding: 18px 0;
 		overflow: hidden;
-		color: var(--c-grey-dark);
-		background: var(--c-surface);
-		border-block: 1px solid var(--c-border);
-		mask: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+		color: rgba(251, 244, 238, 0.92);
+		background: var(--c-ink);
 
 		&__track {
 			display: flex;
@@ -326,21 +324,21 @@ const occasions = t("intro.occasions").split("|");
 		&__group {
 			display: flex;
 			align-items: center;
-			gap: 32px;
-			padding-right: 32px;
+			gap: 36px;
+			padding-right: 36px;
 			font-family: var(--font-secondary);
-			font-size: clamp(1rem, 1.8vw, 1.25rem);
-			font-weight: 700;
-			letter-spacing: -0.01em;
+			font-size: clamp(1.1rem, 2vw, 1.45rem);
+			font-style: italic;
+			font-weight: 500;
 			white-space: nowrap;
 		}
 
 		&__dot {
-			width: 6px;
-			height: 6px;
+			width: 7px;
+			height: 7px;
 			flex-shrink: 0;
 			border-radius: 50%;
-			background: var(--gradient-accent);
+			background: var(--c-secondary-light);
 		}
 	}
 
@@ -352,7 +350,7 @@ const occasions = t("intro.occasions").split("|");
 
 	@keyframes pulse {
 		50% {
-			box-shadow: 0 0 0 7px rgba(214, 54, 27, 0.12);
+			box-shadow: 0 0 0 7px rgba(199, 37, 78, 0.12);
 		}
 	}
 </style>

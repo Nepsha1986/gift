@@ -4,12 +4,14 @@ interface Props {
   eyebrow?: string;
   as?: "h1" | "h2";
   id?: string;
+  // "tinted" sets the section on a soft blush-to-peach panel
+  tone?: "default" | "tinted";
 }
 
-const { heading, eyebrow, as: Heading = "h2", id } = Astro.props;
+const { heading, eyebrow, as: Heading = "h2", id, tone = "default" } = Astro.props;
 ---
 
-<section class="section" id={id}>
+<section class:list={["section", `section_${tone}`]} id={id}>
   <div class="section__container">
     <header class="section__header">
       <div class="section__titles">
@@ -55,6 +57,15 @@ const { heading, eyebrow, as: Heading = "h2", id } = Astro.props;
 	.section {
 		scroll-margin-top: var(--header-height);
 
+		&_tinted {
+			margin: clamp(3rem, 7vw, 5.5rem) 10px 0;
+			padding-bottom: clamp(3rem, 6vw, 4.5rem);
+			background:
+				radial-gradient(700px 400px at 100% 0%, rgba(255, 214, 170, 0.55), transparent 70%),
+				linear-gradient(160deg, #fde3ea 0%, #fdf0ea 100%);
+			border-radius: var(--radius-xl);
+		}
+
 		&__container {
 			max-width: var(--container);
 			height: 100%;
@@ -81,7 +92,7 @@ const { heading, eyebrow, as: Heading = "h2", id } = Astro.props;
 			gap: 8px;
 			margin-bottom: 0.9rem;
 			font-size: 0.8rem;
-			font-weight: 800;
+			font-weight: 600;
 			letter-spacing: 0.1em;
 			text-transform: uppercase;
 			color: var(--c-primary-dark);
@@ -97,8 +108,8 @@ const { heading, eyebrow, as: Heading = "h2", id } = Astro.props;
 
 		&__heading {
 			font-size: clamp(1.85rem, 4.4vw, 3rem);
-			font-weight: 800;
-			letter-spacing: -0.045em;
+			font-weight: 600;
+			letter-spacing: -0.015em;
 			line-height: 1.05;
 			margin-bottom: 0.75rem;
 

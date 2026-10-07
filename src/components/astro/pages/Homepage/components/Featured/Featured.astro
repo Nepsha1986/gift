@@ -18,7 +18,7 @@ const featured = giftsEntries.filter(i => getLocaleFromSlug(i.slug) === locale).
 const t = useTranslations(lang, translations);
 ---
 
-<Section id="ideas" eyebrow={t("section.eyebrow")} heading={t("section.heading")}>
+<Section id="ideas" tone="tinted" eyebrow={t("section.eyebrow")} heading={t("section.heading")}>
   <p slot="subheading" set:html={t("section.subheading")} />
 
   <FeaturedIdeas  client:load lang={lang} locale={locale} featured={featured.map(i => ({

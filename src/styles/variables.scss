@@ -1,50 +1,50 @@
 :root {
-  // Brand: "ribbon red" — the colour of a bow on a wrapped present
-  --c-primary-lightest: #ffe9e2;
-  --c-primary-light: #ff9a7f;
-  --c-primary: #d6361b;
-  --c-primary-dark: #b42a12;
-  --c-primary-darkest: #6e1806;
+  // Brand: raspberry — rich and festive, like a velvet gift ribbon
+  --c-primary-lightest: #fde6ec;
+  --c-primary-light: #f58aa6;
+  --c-primary: #c7254e;
+  --c-primary-dark: #a3173d;
+  --c-primary-darkest: #6b0d27;
 
-  // Supporting: evergreen
-  --c-secondary-lightest: #e1f2ea;
-  --c-secondary-light: #8fcbb3;
-  --c-secondary: #1e6b52;
-  --c-secondary-dark: #134a38;
-  --c-secondary-darkest: #0a2c21;
+  // Supporting: champagne gold for small elegant details
+  --c-secondary-lightest: #f8efdc;
+  --c-secondary-light: #e8cf98;
+  --c-secondary: #b8893a;
+  --c-secondary-dark: #8a6424;
+  --c-secondary-darkest: #5a3f12;
 
   --c-info: #2f6fd6;
   --c-danger: #c42b2b;
   --c-success: #1c8a3a;
 
   // Warm greys, tuned to sit on the cream background
-  --c-grey-lightest: #f3ece2;
-  --c-grey-light: #d4cbc0;
-  --c-grey: #6a6372;
-  --c-grey-dark: #3d3846;
-  --c-grey-darkest: #1d1a24;
+  --c-grey-lightest: #f4ece6;
+  --c-grey-light: #d8cbc6;
+  --c-grey: #6c6070;
+  --c-grey-dark: #413446;
+  --c-grey-darkest: #24112b;
 
-  --c-bg: #faf7f2;
+  --c-bg: #fbf6f2;
   --c-surface: #ffffff;
-  --c-border: #eee7dd;
+  --c-border: #f0e4de;
   --c-text: var(--c-grey-darkest);
   --c-text-muted: var(--c-grey);
-  --c-ink: #1d1a24;
+  --c-ink: #24112b;
 
   // Every recipient category has its own colour pair (tint + readable ink)
-  --cat-women: #fde4ea;
+  --cat-women: #fcd9e3;
   --cat-women-ink: #a3224a;
-  --cat-men: #e3edff;
+  --cat-men: #d9e7ff;
   --cat-men-ink: #1f4fa3;
-  --cat-teens: #edf5cf;
+  --cat-teens: #e6f2bd;
   --cat-teens-ink: #4a5e00;
-  --cat-kids: #ffe9d2;
+  --cat-kids: #ffe0c2;
   --cat-kids-ink: #9a4708;
 
   --font-primary: "Onest", -apple-system, BlinkMacSystemFont, "Segoe UI",
     "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji",
     "Segoe UI Emoji";
-  --font-secondary: "Manrope", "Onest", sans-serif;
+  --font-secondary: "Playfair Display", Georgia, "Times New Roman", serif;
 
   --radius-sm: 10px;
   --radius-md: 16px;
@@ -53,17 +53,17 @@
   --radius-full: 999px;
 
   // Soft, layered shadows — depth without hard outlines
-  --shadow-sm: 0 1px 2px rgba(60, 35, 20, 0.05);
-  --shadow-md: 0 1px 2px rgba(60, 35, 20, 0.04),
-    0 8px 24px -8px rgba(60, 35, 20, 0.12);
-  --shadow-lg: 0 2px 6px rgba(60, 35, 20, 0.04),
-    0 24px 48px -16px rgba(60, 35, 20, 0.22);
-  --shadow-pop: 0 1px 2px rgba(60, 35, 20, 0.04),
-    0 12px 32px -12px rgba(60, 35, 20, 0.18);
+  --shadow-sm: 0 1px 2px rgba(60, 20, 40, 0.05);
+  --shadow-md: 0 1px 2px rgba(60, 20, 40, 0.04),
+    0 8px 24px -8px rgba(60, 20, 40, 0.12);
+  --shadow-lg: 0 2px 6px rgba(60, 20, 40, 0.04),
+    0 24px 48px -16px rgba(60, 20, 40, 0.22);
+  --shadow-pop: 0 1px 2px rgba(60, 20, 40, 0.04),
+    0 12px 32px -12px rgba(60, 20, 40, 0.18);
   // Coloured glow for primary buttons
-  --shadow-primary: 0 10px 24px -8px rgba(214, 54, 27, 0.5);
+  --shadow-primary: 0 12px 28px -10px rgba(199, 37, 78, 0.55);
 
-  --gradient-accent: linear-gradient(100deg, #e8432a 0%, #f2715a 45%, #e85d8f 100%);
+  --gradient-accent: linear-gradient(100deg, #c7254e 0%, #e5485e 45%, #f08a4b 100%);
 
   --container: 1280px;
   --gutter: 20px;

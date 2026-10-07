@@ -171,7 +171,7 @@ const isFeatured = variant === "featured";
 					content: "";
 					position: absolute;
 					inset: 0;
-					background: linear-gradient(180deg, rgba(29, 26, 36, 0) 30%, rgba(29, 26, 36, 0.92) 100%);
+					background: linear-gradient(180deg, rgba(36, 17, 43, 0) 30%, rgba(36, 17, 43, 0.92) 100%);
 				}
 			}
 
@@ -183,14 +183,14 @@ const isFeatured = variant === "featured";
 
 			#{$this}__date {
 				color: var(--c-ink);
-				background: #ffd27a;
+				background: var(--c-secondary-light);
 			}
 
 			#{$this}__title {
 				font-family: var(--font-secondary);
 				font-size: clamp(1.4rem, 2.8vw, 2.1rem);
-				font-weight: 800;
-				letter-spacing: -0.035em;
+				font-weight: 600;
+				letter-spacing: -0.015em;
 				line-height: 1.12;
 				color: #fff;
 				-webkit-line-clamp: 3;

@@ -65,8 +65,8 @@ h6 {
   text-wrap: balance;
   font-family: var(--font-secondary);
   color: var(--c-grey-darkest);
-  font-weight: 800;
-  letter-spacing: -0.03em;
+  font-weight: 600;
+  letter-spacing: -0.015em;
   line-height: 1.15;
   margin-top: 0;
   margin-bottom: 0.5rem;
@@ -255,7 +255,7 @@ input {
   h1 {
     font-size: clamp(2rem, 5vw, 3.25rem);
     font-weight: 700;
-    letter-spacing: -0.04em;
+    letter-spacing: -0.015em;
     margin-bottom: 1.5rem;
   }
 
@@ -264,8 +264,11 @@ input {
   }
 }
 
-// Highlighted words in headings: warm gradient text
+// Highlighted words in headings: serif italic in a warm gradient
 .scribble {
+  font-style: italic;
+  font-weight: 500;
+  padding-right: 0.06em;
   background: var(--gradient-accent);
   -webkit-background-clip: text;
   background-clip: text;
