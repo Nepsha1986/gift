@@ -17,12 +17,14 @@ const Switcher: React.FC<{
     <button
       type="button"
       role="tab"
+      data-category={category}
       aria-selected={active}
       className={className}
       onClick={() => {
         onClick(category);
       }}
     >
+      <span className={styles.switcher__dot} aria-hidden="true" />
       {label}
     </button>
   );

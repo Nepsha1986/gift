@@ -24,6 +24,7 @@ const getLink = (slug: string, category?: Category): string => translatePath(`/g
       description={i.data.description}
       link={getLink(i.slug, category)}
       active={getCleanSlug(i.slug) === activeGiftSlug}
+      category={category}
     >
       <Image src={i.data.thumbnail} alt={i.data.title} class="img-cover" width="100" height="100" />
     </GiftCard>

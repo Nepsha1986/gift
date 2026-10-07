@@ -1,79 +1,172 @@
 ---
-const { link } = Astro.props;
+import type { Category } from "@src/types/category";
+
+interface Props {
+  link: string;
+  category: Category;
+  title: string;
+}
+
+const { link, category, title } = Astro.props;
 ---
-<a class="category" href={link}>
-  <div class="category__imgWrap">
+
+<!-- Photo card: full-bleed image, text on a soft dark fade -->
+<a class="card" href={link} data-category={category}>
+  <div class="card__imgWrap">
     <slot name="img" />
   </div>
 
-  <div class="category__text">
-    <slot />
-    <span class="category__arrow" aria-hidden="true">→</span>
+  <div class="card__body">
+    <span class="card__title">{title}</span>
+    <span class="card__desc"><slot /></span>
   </div>
+
+  <span class="card__arrow" aria-hidden="true">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4.5 11.5 11.5 4.5m0 0H5.5m6 0v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </span>
 </a>
 
-<style is:global>
-	.category__text strong {
-		color: var(--c-primary-dark);
-	}
-</style>
-
 <style lang="scss">
-	.category {
+	.card {
+		position: relative;
 		display: flex;
 		flex-direction: column;
+		justify-content: flex-end;
 		width: 100%;
-		background: var(--c-surface);
-		border: 1px solid var(--c-border);
-		border-radius: var(--radius-lg);
+		min-height: 300px;
 		overflow: hidden;
-		box-shadow: var(--shadow-sm);
-		transition: box-shadow 0.25s var(--ease), transform 0.25s var(--ease), border-color 0.25s var(--ease);
+		isolation: isolate;
+		color: #fff;
+		background: var(--cat);
+		border-radius: var(--radius-lg);
+		box-shadow: var(--shadow-md);
+		transition:
+			transform 0.4s var(--ease),
+			box-shadow 0.4s var(--ease);
 
-		&:hover {
-			transform: translateY(-3px);
+		&:hover,
+		&:focus-visible {
+			color: #fff;
+			transform: translateY(-6px);
 			box-shadow: var(--shadow-lg);
-			border-color: transparent;
 
-			.category__arrow {
-				transform: translateX(3px);
-				color: var(--c-primary);
+			.card__arrow {
+				color: var(--c-ink);
+				background: #fff;
+			}
+
+			.card__imgWrap :global(img) {
+				transform: scale(1.06);
 			}
 		}
 
 		&__imgWrap {
-			aspect-ratio: 4 / 3;
-			overflow: hidden;
-			background: var(--c-grey-lightest);
-		}
+			position: absolute;
+			inset: 0;
+			z-index: -1;
 
-		@media (max-width: 559px) {
-			flex-direction: row;
-			align-items: center;
+			:global(img) {
+				transition: transform 0.7s var(--ease);
+			}
 
-			&__imgWrap {
-				flex-shrink: 0;
-				width: 96px;
-				aspect-ratio: 1 / 1;
+			&::after {
+				content: "";
+				position: absolute;
+				inset: 0;
+				background: linear-gradient(180deg, rgba(36, 17, 43, 0) 40%, rgba(36, 17, 43, 0.78) 100%);
 			}
 		}
 
-		&__text {
-			position: relative;
-			flex-grow: 1;
-			padding: 1rem 2.75rem 1.1rem 1.1rem;
-			font-size: 0.95rem;
-			line-height: 1.5;
-			color: var(--c-grey-dark);
+		&__body {
+			display: flex;
+			flex-direction: column;
+			gap: 4px;
+			padding: 20px;
+		}
+
+		&__title {
+			font-family: var(--font-secondary);
+			font-size: 1.3rem;
+			font-weight: 600;
+			letter-spacing: -0.02em;
+			line-height: 1.2;
+		}
+
+		&__desc {
+			font-size: 0.875rem;
+			line-height: 1.45;
+			color: rgba(255, 255, 255, 0.85);
 		}
 
 		&__arrow {
 			position: absolute;
-			right: 1.1rem;
-			bottom: 1rem;
-			font-size: 1.1rem;
-			color: var(--c-grey-light);
-			transition: transform 0.2s var(--ease), color 0.2s var(--ease);
+			top: 14px;
+			right: 14px;
+			display: grid;
+			place-items: center;
+			width: 38px;
+			height: 38px;
+			color: #fff;
+			background: rgba(255, 255, 255, 0.22);
+			border: 1px solid rgba(255, 255, 255, 0.35);
+			border-radius: 50%;
+			backdrop-filter: blur(8px);
+			-webkit-backdrop-filter: blur(8px);
+			transition:
+				color 0.2s var(--ease),
+				background-color 0.2s var(--ease);
+		}
+
+		// Phones: compact row on the category tint
+		@media (max-width: 559px) {
+			flex-direction: row;
+			align-items: center;
+			min-height: 0;
+			padding: 8px;
+			color: var(--c-ink);
+			box-shadow: none;
+
+			&:hover,
+			&:focus-visible {
+				color: var(--c-ink);
+				transform: none;
+			}
+
+			&__imgWrap {
+				position: relative;
+				inset: auto;
+				z-index: 0;
+				flex-shrink: 0;
+				width: 72px;
+				height: 72px;
+				overflow: hidden;
+				border-radius: var(--radius-md);
+
+				&::after {
+					display: none;
+				}
+			}
+
+			&__body {
+				padding: 0 52px 0 14px;
+			}
+
+			&__title {
+				font-size: 1.05rem;
+			}
+
+			&__desc {
+				color: var(--c-grey-dark);
+			}
+
+			&__arrow {
+				top: 50%;
+				right: 16px;
+				transform: translateY(-50%);
+				color: #fff;
+				background: var(--cat-ink);
+				border: none;
+			}
 		}
 	}
 </style>

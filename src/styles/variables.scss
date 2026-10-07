@@ -1,51 +1,95 @@
 :root {
-  --c-primary-lightest: #e3f6f8;
-  --c-primary-light: #72d4e5;
-  --c-primary: #1793a9;
-  --c-primary-dark: #0b6f81;
-  --c-primary-darkest: #014b59;
+  // Brand: raspberry — rich and festive, like a velvet gift ribbon
+  --c-primary-lightest: #fde6ec;
+  --c-primary-light: #f58aa6;
+  --c-primary: #c7254e;
+  --c-primary-dark: #a3173d;
+  --c-primary-darkest: #6b0d27;
 
-  --c-secondary-lightest: #fdebe7;
-  --c-secondary-light: #e58271;
-  --c-secondary: #c2442c;
-  --c-secondary-dark: #7e1c0a;
-  --c-secondary-darkest: #520d01;
+  // Supporting: champagne gold for small elegant details
+  --c-secondary-lightest: #f8efdc;
+  --c-secondary-light: #e8cf98;
+  --c-secondary: #b8893a;
+  --c-secondary-dark: #8a6424;
+  --c-secondary-darkest: #5a3f12;
 
-  --c-info: var(--c-primary-light);
+  --c-info: #2f6fd6;
   --c-danger: #c42b2b;
   --c-success: #1c8a3a;
 
-  --c-grey-lightest: #f1f3f5;
-  --c-grey-light: #c9ced6;
-  --c-grey: #687082;
-  --c-grey-dark: #3b4252;
-  --c-grey-darkest: #161b26;
+  // Warm greys, tuned to sit on the cream background
+  --c-grey-lightest: #f4ece6;
+  --c-grey-light: #d8cbc6;
+  --c-grey: #6c6070;
+  --c-grey-dark: #413446;
+  --c-grey-darkest: #24112b;
 
-  --c-bg: #f7f8fa;
+  --c-bg: #fbf6f2;
   --c-surface: #ffffff;
-  --c-border: #e6e9ee;
+  --c-border: #f0e4de;
   --c-text: var(--c-grey-darkest);
   --c-text-muted: var(--c-grey);
+  --c-ink: #24112b;
 
-  --font-primary: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+  // Every recipient category has its own colour pair (tint + readable ink)
+  --cat-women: #fcd9e3;
+  --cat-women-ink: #a3224a;
+  --cat-men: #d9e7ff;
+  --cat-men-ink: #1f4fa3;
+  --cat-teens: #e6f2bd;
+  --cat-teens-ink: #4a5e00;
+  --cat-kids: #ffe0c2;
+  --cat-kids-ink: #9a4708;
+
+  --font-primary: "Onest", -apple-system, BlinkMacSystemFont, "Segoe UI",
     "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji",
     "Segoe UI Emoji";
-  --font-secondary: "Manrope", "Inter", sans-serif;
+  --font-secondary: "Playfair Display", Georgia, "Times New Roman", serif;
 
-  --radius-sm: 8px;
-  --radius-md: 12px;
-  --radius-lg: 20px;
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 36px;
   --radius-full: 999px;
 
-  --shadow-sm: 0 1px 2px rgba(16, 24, 40, 0.06);
-  --shadow-md: 0 1px 2px rgba(16, 24, 40, 0.04),
-    0 4px 16px -4px rgba(16, 24, 40, 0.1);
-  --shadow-lg: 0 2px 4px rgba(16, 24, 40, 0.04),
-    0 16px 32px -8px rgba(16, 24, 40, 0.16);
+  // Soft, layered shadows — depth without hard outlines
+  --shadow-sm: 0 1px 2px rgba(60, 20, 40, 0.05);
+  --shadow-md: 0 1px 2px rgba(60, 20, 40, 0.04),
+    0 8px 24px -8px rgba(60, 20, 40, 0.12);
+  --shadow-lg: 0 2px 6px rgba(60, 20, 40, 0.04),
+    0 24px 48px -16px rgba(60, 20, 40, 0.22);
+  --shadow-pop: 0 1px 2px rgba(60, 20, 40, 0.04),
+    0 12px 32px -12px rgba(60, 20, 40, 0.18);
+  // Coloured glow for primary buttons
+  --shadow-primary: 0 12px 28px -10px rgba(199, 37, 78, 0.55);
 
-  --container: 1240px;
+  --gradient-accent: linear-gradient(100deg, #c7254e 0%, #e5485e 45%, #f08a4b 100%);
+
+  --container: 1280px;
   --gutter: 20px;
-  --header-height: 68px;
+  --header-height: 72px;
 
   --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --ease-bounce: cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+// Sets --cat / --cat-ink for an element from a recipient category slug
+[data-category="for-women"] {
+  --cat: var(--cat-women);
+  --cat-ink: var(--cat-women-ink);
+}
+
+[data-category="for-men"] {
+  --cat: var(--cat-men);
+  --cat-ink: var(--cat-men-ink);
+}
+
+[data-category="for-teens"] {
+  --cat: var(--cat-teens);
+  --cat-ink: var(--cat-teens-ink);
+}
+
+[data-category="for-kids"] {
+  --cat: var(--cat-kids);
+  --cat-ink: var(--cat-kids-ink);
 }

@@ -6,7 +6,10 @@ export type SharedStrings =
   | "s.rights"
   | "s.share_with"
   | "s.by"
-  | "s.view_all_ideas";
+  | "s.view_all_ideas"
+  | "s.footer_cta_title"
+  | "s.footer_cta_btn"
+  | "s.footer_nav";
 
 const shared: Translations<SharedStrings> = {
   en: {
@@ -18,6 +21,9 @@ const shared: Translations<SharedStrings> = {
     "s.share_with": "Share with",
     "s.by": "By",
     "s.view_all_ideas": "All ideas",
+    "s.footer_cta_title": "Know a gift that never fails? Tell us about it",
+    "s.footer_cta_btn": "Share an idea",
+    "s.footer_nav": "Explore",
   },
   ru: {
     "s.gift_idea": "Идея подарка",
@@ -28,6 +34,10 @@ const shared: Translations<SharedStrings> = {
     "s.share_with": "Поделиться",
     "s.by": "Автор:",
     "s.view_all_ideas": "Все идеи",
+    "s.footer_cta_title":
+      "Знаете подарок, который всегда радует? Расскажите нам",
+    "s.footer_cta_btn": "Поделиться идеей",
+    "s.footer_nav": "Навигация",
   },
   uk: {
     "s.gift_idea": "Ідея подарунка",
@@ -38,6 +48,9 @@ const shared: Translations<SharedStrings> = {
     "s.share_with": "Поділитися",
     "s.by": "Автор:",
     "s.view_all_ideas": "Усі ідеї",
+    "s.footer_cta_title": "Знаєте подарунок, який завжди тішить? Розкажіть нам",
+    "s.footer_cta_btn": "Поділитися ідеєю",
+    "s.footer_nav": "Навігація",
   },
 };
 

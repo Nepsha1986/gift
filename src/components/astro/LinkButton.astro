@@ -22,15 +22,20 @@ const className = classNames("linkButton", {
 	.linkButton {
 		display: inline-flex;
 		align-items: center;
-		gap: 8px;
-		height: 46px;
-		padding: 0 24px;
-		font-size: 0.95rem;
+		gap: 10px;
+		height: 52px;
+		padding: 0 26px;
+		font-size: 1rem;
 		font-weight: 600;
 		color: #fff;
-		border: 1px solid transparent;
+		border: 1px solid var(--c-border);
 		border-radius: var(--radius-full);
-		transition: background-color 0.2s var(--ease), border-color 0.2s var(--ease), color 0.2s var(--ease);
+		box-shadow: var(--shadow-pop);
+		transition:
+			transform 0.25s var(--ease-bounce),
+			box-shadow 0.25s var(--ease-bounce),
+			background-color 0.2s var(--ease),
+			color 0.2s var(--ease);
 
 		&:first-letter {
 			text-transform: uppercase;
@@ -40,12 +45,24 @@ const className = classNames("linkButton", {
 			transition: transform 0.2s var(--ease);
 		}
 
+		&:hover {
+			transform: translateY(-4px);
+			box-shadow: var(--shadow-lg);
+		}
+
 		&:hover &__arrow {
-			transform: translateX(3px);
+			transform: translateX(4px);
+		}
+
+		&:active {
+			transform: translateY(0);
+			box-shadow: var(--shadow-lg);
 		}
 
 		&_primary {
 			background: var(--c-primary);
+			border-color: transparent;
+			box-shadow: var(--shadow-primary);
 
 			&:hover {
 				color: #fff;
@@ -63,12 +80,11 @@ const className = classNames("linkButton", {
 		}
 
 		&_outline {
-			color: var(--c-grey-darkest);
+			color: var(--c-ink);
 			background: var(--c-surface);
-			border-color: var(--c-border);
 
 			&:hover {
-				color: var(--c-grey-darkest);
+				color: var(--c-ink);
 				border-color: var(--c-grey-light);
 			}
 		}

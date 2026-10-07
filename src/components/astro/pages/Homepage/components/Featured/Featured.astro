@@ -18,7 +18,7 @@ const featured = giftsEntries.filter(i => getLocaleFromSlug(i.slug) === locale).
 const t = useTranslations(lang, translations);
 ---
 
-<Section heading={t("section.heading")}>
+<Section id="ideas" tone="tinted" eyebrow={t("section.eyebrow")} heading={t("section.heading")}>
   <p slot="subheading" set:html={t("section.subheading")} />
 
   <FeaturedIdeas  client:load lang={lang} locale={locale} featured={featured.map(i => ({
@@ -31,7 +31,7 @@ const t = useTranslations(lang, translations);
   }))} />
 
   <div class="btn-container">
-    <LinkButton text={t("section.btn_text")} color="primary" link={translatePath('/gifts/for-women/adventure-experience-for-women')} />
+    <LinkButton text={t("section.btn_text")} color="outline" link={translatePath('/gifts/for-women/adventure-experience-for-women')} />
   </div>
 </Section>
 

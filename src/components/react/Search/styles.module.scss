@@ -17,7 +17,8 @@
     box-shadow 0.2s var(--ease);
 
   &:hover {
-    border-color: var(--c-grey-light);
-    box-shadow: var(--shadow-sm);
+    color: var(--c-ink);
+    border-color: transparent;
+    box-shadow: var(--shadow-lg);
   }
 }

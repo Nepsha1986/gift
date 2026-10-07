@@ -59,6 +59,7 @@ const CategorySwitcher: React.FC<CategorySwitcherProps> = ({
     >
       {indicator && (
         <div
+          data-category={activeCategory}
           className={styles.categorySwitcher__activeIndicator}
           style={{
             width: indicator.width,

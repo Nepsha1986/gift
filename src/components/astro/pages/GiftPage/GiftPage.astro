@@ -22,26 +22,34 @@ interface Props {
   title: string;
   subtitle: string;
   content: any;
-  category?: Category;
+  category?: string;
+  categorySlug?: Category;
   meta?: MetaInfo;
   author?: Author;
   date?: string;
   hasRelatedProducts?: boolean;
 }
 
-const { thumbnail, title, content, category, meta, author, date, hasRelatedProducts = false } = Astro.props;
+const { thumbnail, title, subtitle, content, category, categorySlug, meta, author, date, hasRelatedProducts = false } = Astro.props;
 ---
 
 <article class="article" data-pagefind-body>
-  <header class="article__header">
+  <header class="article__header" data-category={categorySlug}>
     <div class="article__imgWrap">
       <slot name="thumbnail" class="article__img" />
     </div>
 
     <div class="article__headerInfo">
       <div>
-        {category && <span class="article__category">{category}</span>}
-        <h1 class="article__title">{title}</h1>
+        {category && (
+          <span class="article__category">
+            <span class="article__categoryDot" aria-hidden="true"></span>
+            {t("s.gift_idea")} · {category}
+          </span>
+        )}
+        <h1 class="article__title">
+          {title}{subtitle && <span class="article__subtitle"><span class="visually-hidden">: </span>{subtitle}</span>}
+        </h1>
         {author &&
           <div class="article__authorBlock">
             <address class="article__author">{t("s.by")} <a rel="author" href={authors[author].link}>{authors[author].fullName}</a></address>
@@ -74,34 +82,31 @@ const { thumbnail, title, content, category, meta, author, date, hasRelatedProdu
 	.article {
 		max-width: 820px;
 
+		// Editorial header: photo + headline straight on the page, no panel
 		&__header {
-			display: flex;
-			flex-direction: column;
-			gap: 1.5rem;
-			margin-bottom: 2.5rem;
-			padding: 12px;
-			background: var(--c-surface);
-			border: 1px solid var(--c-border);
-			border-radius: var(--radius-lg);
-			box-shadow: var(--shadow-sm);
+			display: grid;
+			gap: 1.75rem;
+			margin-bottom: 2.75rem;
+			padding-bottom: 2.25rem;
+			border-bottom: 1px solid var(--c-border);
 
 			@media (min-width: 640px) {
-				flex-direction: row;
-				align-items: stretch;
+				grid-template-columns: 280px 1fr;
+				align-items: center;
+				gap: 2.25rem;
 			}
 		}
 
 		&__imgWrap {
-			flex-shrink: 0;
 			aspect-ratio: 1 / 1;
-			max-height: 40vh;
+			max-height: 42vh;
 			width: 100%;
-			border-radius: var(--radius-md);
 			overflow: hidden;
+			border-radius: var(--radius-lg);
 			background: var(--c-grey-lightest);
+			box-shadow: var(--shadow-lg);
 
 			@media (min-width: 640px) {
-				width: 260px;
 				max-height: none;
 			}
 		}
@@ -109,36 +114,47 @@ const { thumbnail, title, content, category, meta, author, date, hasRelatedProdu
 		&__headerInfo {
 			display: flex;
 			flex-direction: column;
-			justify-content: space-between;
-			gap: 1.25rem;
-			padding: 0.5rem 0.75rem 0.75rem;
-
-			@media (min-width: 640px) {
-				padding: 0.75rem 0.75rem 0.75rem 0;
-			}
+			gap: 1.5rem;
+			min-width: 0;
 		}
 
 		&__category {
-			display: inline-block;
-			margin-bottom: 0.75rem;
-			padding: 4px 12px;
-			font-size: 0.8rem;
-			font-weight: 600;
-			color: var(--c-secondary);
-			background: var(--c-secondary-lightest);
-			border-radius: var(--radius-full);
+			display: inline-flex;
+			align-items: center;
+			gap: 8px;
+			margin-bottom: 1rem;
+			font-size: 0.78rem;
+			font-weight: 700;
+			letter-spacing: 0.1em;
+			text-transform: uppercase;
+			color: var(--c-grey);
+		}
 
-			&:first-letter {
-				text-transform: uppercase;
-			}
+		&__categoryDot {
+			width: 8px;
+			height: 8px;
+			border-radius: 50%;
+			background: var(--cat-ink, var(--c-primary));
 		}
 
 		&__title {
-			font-size: clamp(1.5rem, 3vw, 2rem);
-			font-weight: 800;
-			letter-spacing: -0.025em;
-			line-height: 1.2;
-			margin-bottom: 0.75rem;
+			font-size: clamp(2rem, 4.2vw, 3rem);
+			font-weight: 600;
+			letter-spacing: -0.015em;
+			line-height: 1.05;
+			margin-bottom: 1.25rem;
+		}
+
+		&__subtitle {
+			display: block;
+			margin-top: 0.75rem;
+			font-family: var(--font-primary);
+			font-size: clamp(1.05rem, 1.8vw, 1.25rem);
+			font-weight: 400;
+			letter-spacing: 0;
+			line-height: 1.45;
+			color: var(--c-grey);
+			text-wrap: pretty;
 		}
 
 		&__authorBlock {
@@ -147,6 +163,15 @@ const { thumbnail, title, content, category, meta, author, date, hasRelatedProdu
 			gap: 6px;
 			font-size: 0.9rem;
 			color: var(--c-grey);
+
+			a {
+				font-weight: 600;
+				color: var(--c-ink);
+
+				&:hover {
+					color: var(--c-primary-dark);
+				}
+			}
 		}
 
 		&__author {
@@ -156,28 +181,29 @@ const { thumbnail, title, content, category, meta, author, date, hasRelatedProdu
 		}
 
 		&__related {
-			padding: 0.85rem 1rem;
+			padding: 0.9rem 1.1rem;
 			font-size: 0.9rem;
-			background: var(--c-primary-lightest);
-			border-radius: var(--radius-md);
+			background: var(--c-surface);
+			border: 1px solid var(--c-border);
+			border-left: 3px solid var(--c-primary);
+			border-radius: var(--radius-sm);
 
 			:global(p) {
 				margin: 0 !important;
 				font-family: var(--font-primary) !important;
-				color: var(--c-primary-darkest);
+				color: var(--c-grey-dark);
 			}
 
 			:global(a) {
 				font-weight: 600;
+				color: var(--c-primary-dark);
 				text-decoration: underline;
 				text-underline-offset: 3px;
 			}
 		}
 
 		&__aside {
-			border-top: 1px solid var(--c-border);
 			margin: 3rem 0 0;
-			padding: 1.5rem 0 0;
 		}
 	}
 </style>

@@ -1,16 +1,39 @@
 .featuredIdeas {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 380px), 1fr));
-  gap: 12px;
-  max-width: 1000px;
-  margin: 0 auto;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
+  gap: 20px;
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  // Two compact columns on phones keep the section short
+  @media (max-width: 599px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
 
   &__item {
     display: flex;
+    // Cards fade up one after another when the tab changes
+    animation: rise 0.45s var(--ease) both;
+
+    @for $i from 1 through 8 {
+      &:nth-child(#{$i}) {
+        animation-delay: #{($i - 1) * 50}ms;
+      }
+    }
 
     > a {
       width: 100%;
       margin-bottom: 0;
     }
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
   }
 }

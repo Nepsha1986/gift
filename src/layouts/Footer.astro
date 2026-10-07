@@ -1,9 +1,9 @@
 ---
 import LangSwitcher from "@reactComponents/LangSwitcher";
 import Navigation from "@reactComponents/Navigation";
-import LogoDark from "@reactComponents/LogoDark";
+import LogoLight from "@reactComponents/LogoLight";
 import { removeTrailingSlash } from "@utils/removeTrailingSlash";
-import { getLangFromUrl, getLocaleFromUrl, useTranslations } from "@i18n/utils";
+import { getLangFromUrl, getLocaleFromUrl, useTranslations, useTranslatedPath } from "@i18n/utils";
 import { ui } from "@i18n/ui";
 
 const URL = Astro.url.pathname;
@@ -11,39 +11,106 @@ const pathname = removeTrailingSlash(URL);
 const lang = getLangFromUrl(URL);
 const locale = getLocaleFromUrl(URL);
 const t = useTranslations(lang, ui);
+const translatePath = useTranslatedPath(locale);
 const year = new Date().getFullYear();
 ---
 
 <footer class="footer">
   <div class="footer__container">
+    <div class="footer__cta">
+      <p class="footer__ctaTitle">{t("s.footer_cta_title")}</p>
+      <a class="footer__ctaBtn" href={translatePath("/contacts")}>
+        {t("s.footer_cta_btn")}
+        <span aria-hidden="true">→</span>
+      </a>
+    </div>
+
     <div class="footer__top">
       <div class="footer__brand">
         <a class="footer__logo" href={`/${locale}`} aria-label="Gift Idea">
-          <LogoDark />
+          <LogoLight />
         </a>
         <p class="footer__tagline">{t("s.tagline")}</p>
       </div>
 
-      <Navigation currentPage={pathname} type="footer" />
+      <div class="footer__navBlock">
+        <span class="footer__navTitle">{t("s.footer_nav")}</span>
+        <Navigation currentPage={pathname} type="footer" />
+      </div>
     </div>
 
     <div class="footer__bottom">
       <span>&copy; {year} GiftIdea. {t("s.rights")}</span>
-      <LangSwitcher pathname={pathname} direction="top" />
+      <div class="footer__lang">
+        <LangSwitcher pathname={pathname} direction="top" />
+      </div>
     </div>
   </div>
 </footer>
 
 <style lang="scss">
 	.footer {
-		margin-top: 4rem;
-		background: var(--c-surface);
-		border-top: 1px solid var(--c-border);
+		position: relative;
+		overflow: hidden;
+		margin: clamp(4rem, 8vw, 6.5rem) 10px 10px;
+		color: rgba(251, 244, 238, 0.7);
+		background:
+			radial-gradient(600px 300px at 90% 0%, rgba(199, 37, 78, 0.28), transparent 70%),
+			radial-gradient(500px 260px at 0% 100%, rgba(240, 138, 75, 0.16), transparent 70%),
+			var(--c-ink);
+		border-radius: var(--radius-xl);
 
 		&__container {
+			position: relative;
+			z-index: 1;
 			max-width: var(--container);
 			margin: 0 auto;
-			padding: 2.5rem var(--gutter) 1.25rem;
+			padding: clamp(2rem, 5vw, 3.5rem) var(--gutter) 1.75rem;
+		}
+
+		&__cta {
+			display: flex;
+			flex-wrap: wrap;
+			align-items: center;
+			justify-content: space-between;
+			gap: 1.5rem 2rem;
+			padding-bottom: clamp(2rem, 5vw, 3rem);
+			margin-bottom: clamp(2rem, 5vw, 3rem);
+			border-bottom: 1px solid rgba(251, 244, 238, 0.12);
+		}
+
+		&__ctaTitle {
+			max-width: 680px;
+			margin: 0;
+			font-family: var(--font-secondary);
+			font-size: clamp(1.5rem, 3.6vw, 2.5rem);
+			font-weight: 600;
+			letter-spacing: -0.015em;
+			line-height: 1.1;
+			color: var(--c-bg);
+			text-wrap: balance;
+		}
+
+		&__ctaBtn {
+			display: inline-flex;
+			align-items: center;
+			gap: 10px;
+			height: 54px;
+			padding: 0 28px;
+			font-weight: 600;
+			color: var(--c-ink);
+			background: #fff;
+			border-radius: var(--radius-full);
+			box-shadow: var(--shadow-lg);
+			transition:
+				transform 0.25s var(--ease-bounce),
+				box-shadow 0.25s var(--ease-bounce);
+
+			&:hover {
+				color: var(--c-ink);
+				transform: translateY(-4px);
+				box-shadow: var(--shadow-lg);
+			}
 		}
 
 		&__top {
@@ -51,8 +118,8 @@ const year = new Date().getFullYear();
 			flex-wrap: wrap;
 			justify-content: space-between;
 			align-items: flex-start;
-			gap: 1.5rem 3rem;
-			padding-bottom: 2rem;
+			gap: 2rem 3rem;
+			padding-bottom: 2.5rem;
 		}
 
 		&__brand {
@@ -61,8 +128,8 @@ const year = new Date().getFullYear();
 
 		&__logo {
 			display: block;
-			width: 120px;
-			margin-bottom: 0.5rem;
+			width: 150px;
+			margin-bottom: 0.75rem;
 
 			:global(svg) {
 				display: block;
@@ -70,9 +137,23 @@ const year = new Date().getFullYear();
 		}
 
 		&__tagline {
-			font-size: 0.9rem;
-			color: var(--c-text-muted);
+			font-size: 0.95rem;
+			color: rgba(251, 244, 238, 0.6);
 			margin: 0;
+		}
+
+		&__navBlock {
+			min-width: 180px;
+		}
+
+		&__navTitle {
+			display: block;
+			margin-bottom: 0.9rem;
+			font-size: 0.75rem;
+			font-weight: 700;
+			letter-spacing: 0.12em;
+			text-transform: uppercase;
+			color: var(--c-primary-light);
 		}
 
 		&__bottom {
@@ -82,9 +163,15 @@ const year = new Date().getFullYear();
 			justify-content: space-between;
 			align-items: center;
 			padding-top: 1.25rem;
-			border-top: 1px solid var(--c-border);
+			border-top: 1px solid rgba(251, 244, 238, 0.12);
 			font-size: 0.85rem;
-			color: var(--c-text-muted);
+			color: rgba(251, 244, 238, 0.5);
 		}
+
+		&__lang {
+			background: var(--c-bg);
+			border-radius: var(--radius-full);
+		}
+
 	}
 </style>

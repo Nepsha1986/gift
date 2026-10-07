@@ -1,16 +1,25 @@
 import type { Translations } from "@i18n/ui.ts";
 
-export type LatestPostsTranslations = "section.heading";
+export type LatestPostsTranslations =
+  | "section.eyebrow"
+  | "section.heading"
+  | "section.all";
 
 const translations: Translations<LatestPostsTranslations> = {
   en: {
-    "section.heading": "Recent Posts",
+    "section.eyebrow": "Guides & stories",
+    "section.heading": "Fresh from the blog",
+    "section.all": "All posts",
   },
   ru: {
-    "section.heading": "Последние статьи",
+    "section.eyebrow": "Советы и истории",
+    "section.heading": "Свежее в блоге",
+    "section.all": "Все статьи",
   },
   uk: {
-    "section.heading": "Останні статті",
+    "section.eyebrow": "Поради та історії",
+    "section.heading": "Свіже в блозі",
+    "section.all": "Усі статті",
   },
 };
 
