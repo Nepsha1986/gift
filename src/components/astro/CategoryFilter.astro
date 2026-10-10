@@ -66,6 +66,67 @@ const links: Array<{ href: string; label: string; category?: Category; active: b
 				padding: 8px 16px;
 				border-radius: var(--radius-full);
 			}
+
+			// Phones: one swipeable row of separate chips instead of a pill wrapping onto two lines
+			@media (max-width: 639px) {
+				flex-wrap: nowrap;
+				gap: 8px;
+				width: auto;
+				max-width: none;
+				margin-inline: calc(var(--gutter) * -1);
+				padding: 2px var(--gutter);
+				overflow-x: auto;
+				overscroll-behavior-x: contain;
+				scroll-padding-inline: var(--gutter);
+				scrollbar-width: none;
+				background: none;
+				border: none;
+				border-radius: 0;
+				box-shadow: none;
+
+				&::-webkit-scrollbar {
+					display: none;
+				}
+
+				.categoryFilter__link {
+					flex: 0 0 auto;
+					padding: 9px 16px;
+					font-size: 0.9rem;
+					background: var(--c-surface);
+					border: 1px solid var(--c-border);
+
+					&:hover {
+						background: var(--c-surface);
+					}
+				}
+
+				.categoryFilter__link_active,
+				.categoryFilter__link_active:hover {
+					background: var(--c-ink);
+					border-color: var(--c-ink);
+				}
+			}
+		}
+
+		// Inside the mobile drawer the switcher stays on top while the list scrolls under it
+		&_grid {
+			// Offsets match the drawer padding (see Layout.astro) so it sticks flush to the top edge
+			@media (max-width: 1199px) {
+				position: sticky;
+				top: -1.25rem;
+				z-index: 1;
+
+				// Covers the strip above so cards don't peek out while scrolling
+				&::before {
+					content: "";
+					position: absolute;
+					left: -1rem;
+					right: -1rem;
+					bottom: 100%;
+					height: calc(1.25rem + 1px);
+					background: var(--c-bg);
+				}
+			}
 		}
 
 		&__link {
@@ -108,3 +169,18 @@ const links: Array<{ href: string; label: string; category?: Category; active: b
 		}
 	}
 </style>
+
+<script>
+  // Bring the active chip into view when the tab row is scrollable (phones)
+  const revealActiveTab = (): void => {
+    document.querySelectorAll<HTMLElement>(".categoryFilter_tabs").forEach((row) => {
+      const active = row.querySelector<HTMLElement>("[aria-current='page']");
+      if (!active || row.scrollWidth <= row.clientWidth) return;
+
+      const offset = active.getBoundingClientRect().left - row.getBoundingClientRect().left;
+      row.scrollLeft += offset - (row.clientWidth - active.clientWidth) / 2;
+    });
+  };
+
+  document.addEventListener("astro:page-load", revealActiveTab);
+</script>
