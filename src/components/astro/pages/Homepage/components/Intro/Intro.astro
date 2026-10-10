@@ -6,7 +6,7 @@ import CategoryLink from "./components/CategoryLink.astro";
 import { useTranslatedPath, getLocaleFromUrl, getLangFromUrl, getLocaleFromSlug, useTranslations } from "@i18n/utils";
 import translations from "./translations";
 
-import { categoryLinks } from "@utils/categoryLinks";
+import { giftCategoryPath } from "@utils/gifts";
 import { authors } from "@src/content/_authors";
 import type { Category } from "@src/types/category";
 
@@ -76,7 +76,7 @@ const occasions = t("intro.occasions").split("|");
       <ul class="intro__categoryLinks">
         {recipients.map((r) => (
           <li class="intro__categoryLink">
-            <CategoryLink link={translatePath(categoryLinks[r.category])} category={r.category} title={t(`cat.${r.key}.title`)}>
+            <CategoryLink link={translatePath(giftCategoryPath(r.category))} category={r.category} title={t(`cat.${r.key}.title`)}>
               {t(`cat.${r.key}`)}
               <Image class="img-cover" width={400} height={320} slot="img" src={r.img} alt="" loading="eager" />
             </CategoryLink>

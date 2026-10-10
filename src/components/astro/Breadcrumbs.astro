@@ -1,0 +1,89 @@
+---
+import { getLangFromUrl, useTranslations } from "@i18n/utils";
+import { ui } from "@i18n/ui";
+
+interface Crumb {
+  label: string;
+  href?: string;
+}
+
+interface Props {
+  items: Crumb[];
+}
+
+const { items } = Astro.props;
+const t = useTranslations(getLangFromUrl(Astro.url.pathname), ui);
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: items.map((i, index) => ({
+    "@type": "ListItem",
+    position: index + 1,
+    name: i.label,
+    ...(i.href ? { item: new URL(i.href, Astro.site).toString() } : {}),
+  })),
+};
+---
+
+<nav class="breadcrumbs" aria-label={t("s.breadcrumbs")} data-pagefind-ignore="all">
+  <ol class="breadcrumbs__list">
+    {items.map((i) => (
+      <li class="breadcrumbs__item">
+        {i.href ? <a href={i.href}>{i.label}</a> : <span aria-current="page">{i.label}</span>}
+      </li>
+    ))}
+  </ol>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+</nav>
+
+<style lang="scss">
+	.breadcrumbs {
+		margin-bottom: 1.5rem;
+		font-size: 0.875rem;
+
+		&__list {
+			display: flex;
+			flex-wrap: wrap;
+			align-items: center;
+			gap: 4px 8px;
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+
+		&__item {
+			display: inline-flex;
+			align-items: center;
+			gap: 8px;
+			min-width: 0;
+			color: var(--c-grey);
+
+			&::first-letter {
+				text-transform: uppercase;
+			}
+
+			& + &::before {
+				content: "›";
+				color: var(--c-grey-light);
+			}
+
+			a {
+				color: var(--c-grey-dark);
+
+				&:hover {
+					color: var(--c-primary-dark);
+					text-decoration: underline;
+					text-underline-offset: 3px;
+				}
+			}
+
+			span {
+				overflow: hidden;
+				white-space: nowrap;
+				text-overflow: ellipsis;
+				max-width: 40ch;
+			}
+		}
+	}
+</style>

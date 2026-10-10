@@ -1,0 +1,103 @@
+---
+import { locales } from "@i18n/ui.ts";
+import { ui } from "@i18n/ui";
+import Layout from "@layouts/Layout.astro";
+import Section from "@components/astro/Section/Section.astro";
+import CategoryFilter from "@astroComponents/CategoryFilter.astro";
+import GiftGrid from "@astroComponents/GiftGrid.astro";
+
+import { getLangFromUrl, getLocaleFromUrl, useTranslatedPath, useTranslations } from "@i18n/utils";
+import { getGifts, giftCategories, giftCategoryPath } from "@utils/gifts";
+
+// Ideas shown per category on the overview; the rest live on the category page
+const PREVIEW_SIZE = 4;
+
+export function getStaticPaths() {
+  return locales.map((lang) => ({ params: { lang } }));
+}
+
+const URL = Astro.url.pathname;
+const lang = getLangFromUrl(URL);
+const locale = getLocaleFromUrl(URL);
+const t = useTranslations(lang, ui);
+const translatePath = useTranslatedPath(locale);
+
+const groups = await Promise.all(
+  giftCategories.map(async (category) => {
+    const gifts = await getGifts(locale, category);
+    // Lead with featured ideas, they are the editors' picks
+    const preview = [...gifts.filter((i) => i.data.featured), ...gifts.filter((i) => !i.data.featured)].slice(0, PREVIEW_SIZE);
+    return { category, gifts, preview };
+  }),
+);
+---
+
+<Layout title={t("s.gift_ideas")} isLanding>
+  <Section heading={t("s.gift_ideas")} as="h1">
+    <p slot="subheading">{t("s.all_ideas_subheading")}</p>
+
+    <CategoryFilter variant="tabs" />
+
+    {groups.filter((g) => g.gifts.length).map((g) => (
+      <section class="giftsGroup" data-category={g.category}>
+        <header class="giftsGroup__header">
+          <h2 class="giftsGroup__heading">
+            <a href={translatePath(giftCategoryPath(g.category))}>{t("s.gift_ideas")} {t(g.category)}</a>
+          </h2>
+          <a class="giftsGroup__all" href={translatePath(giftCategoryPath(g.category))}>
+            {t("s.see_all")} ({g.gifts.length}) <span aria-hidden="true">→</span>
+          </a>
+        </header>
+
+        <GiftGrid gifts={g.preview} />
+      </section>
+    ))}
+  </Section>
+</Layout>
+
+<style lang="scss">
+	.giftsGroup {
+		& + & {
+			margin-top: clamp(2.5rem, 6vw, 4rem);
+		}
+
+		&__header {
+			display: flex;
+			flex-wrap: wrap;
+			align-items: baseline;
+			justify-content: space-between;
+			gap: 0.5rem 1.5rem;
+			margin-bottom: 1.25rem;
+		}
+
+		&__heading {
+			margin: 0;
+			font-size: clamp(1.4rem, 3vw, 1.9rem);
+			font-weight: 600;
+			letter-spacing: -0.01em;
+
+			&::first-letter {
+				text-transform: uppercase;
+			}
+
+			a {
+				color: var(--c-ink);
+
+				&:hover {
+					color: var(--cat-ink);
+				}
+			}
+		}
+
+		&__all {
+			font-weight: 600;
+			white-space: nowrap;
+			color: var(--cat-ink, var(--c-primary-dark));
+
+			&:hover {
+				text-decoration: underline;
+				text-underline-offset: 3px;
+			}
+		}
+	}
+</style>

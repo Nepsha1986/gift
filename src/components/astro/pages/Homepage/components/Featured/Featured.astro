@@ -5,6 +5,7 @@ import FeaturedIdeas from "@src/components/react/FeaturedIdeas";
 import Section from '../../../../Section/Section.astro';
 import translations from "./translations";
 import LinkButton from "@astroComponents/LinkButton.astro";
+import { giftsIndexPath } from "@utils/gifts";
 
 const URL = Astro.url.pathname;
 
@@ -31,7 +32,7 @@ const t = useTranslations(lang, translations);
   }))} />
 
   <div class="btn-container">
-    <LinkButton text={t("section.btn_text")} color="outline" link={translatePath('/gifts/for-women/adventure-experience-for-women')} />
+    <LinkButton text={t("section.btn_text")} color="outline" link={translatePath(giftsIndexPath())} />
   </div>
 </Section>
 

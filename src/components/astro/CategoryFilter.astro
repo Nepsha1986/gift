@@ -1,51 +1,44 @@
 ---
-import { getCollection } from "astro:content";
-import { getCleanSlug, useTranslatedPath, useTranslations, getLocaleFromUrl, getLangFromUrl } from "@i18n/utils.ts";
+import { useTranslatedPath, useTranslations, getLocaleFromUrl, getLangFromUrl } from "@i18n/utils.ts";
 import categoryTabs from "@i18n/translations/categoryTabs";
+import { ui } from "@i18n/ui";
 import { Category } from "@src/types/category";
+import { giftCategories, giftCategoryPath, giftsIndexPath } from "@utils/gifts";
 
-const gifts = await getCollection("gifts");
+interface Props {
+  activeCategory?: Category;
+  // "grid" — compact 2x2 block (sidebar), "tabs" — single row with an "All" tab (listing pages)
+  variant?: "grid" | "tabs";
+}
+
+const { activeCategory, variant = "grid" } = Astro.props;
+
 const lang = getLangFromUrl(Astro.url.pathname);
 const locale = getLocaleFromUrl(Astro.url.pathname);
-
-const categories: Category[] = ["for-women", "for-men", "for-teens", "for-kids"];
 const t = useTranslations(lang, categoryTabs);
+const tUi = useTranslations(lang, ui);
+const translatePath = useTranslatedPath(locale);
 
-const generateLinks = () => {
-  let links: [string, Category][] = [];
-
-  categories.forEach((category) => {
-    const firstItem = gifts.find((i) => i.data.category?.includes(category));
-
-    if (!!firstItem) {
-      const firstItemSlug = firstItem?.slug;
-      const translatePath = useTranslatedPath(locale);
-
-      const link = translatePath(`/gifts/${category}/${getCleanSlug(firstItemSlug)}`);
-
-      links.push([link, category]);
-    }
-  });
-
-  return links;
-};
-
-const categoryLinks = generateLinks();
-
-const { activeCategory } = Astro.props;
+const links: Array<{ href: string; label: string; category?: Category; active: boolean }> = [
+  ...(variant === "tabs"
+    ? [{ href: translatePath(giftsIndexPath()), label: tUi("s.all"), active: !activeCategory }]
+    : []),
+  ...giftCategories.map((category) => ({
+    href: translatePath(giftCategoryPath(category)),
+    label: t(category),
+    category,
+    active: activeCategory === category,
+  })),
+];
 ---
 
-<nav class="categoryFilter">
-  {categoryLinks.map((i) => {
-    const isActive = activeCategory === i[1];
-
-    return (
-      <a class:list={["categoryFilter__link", { categoryFilter__link_active: isActive }]} href={i[0]} data-category={i[1]} aria-current={isActive ? "page" : undefined}>
-        <span class="categoryFilter__dot" aria-hidden="true"></span>
-        {t(i[1])}
-      </a>
-    );
-  })}
+<nav class:list={["categoryFilter", `categoryFilter_${variant}`]}>
+  {links.map((i) => (
+    <a class:list={["categoryFilter__link", { categoryFilter__link_active: i.active }]} href={i.href} data-category={i.category} aria-current={i.active ? "page" : undefined}>
+      {i.category && <span class="categoryFilter__dot" aria-hidden="true"></span>}
+      {i.label}
+    </a>
+  ))}
 </nav>
 
 <style lang="scss">
@@ -58,6 +51,83 @@ const { activeCategory } = Astro.props;
 		border: 1px solid var(--c-border);
 		border-radius: var(--radius-md);
 		box-shadow: var(--shadow-lg);
+
+		&_tabs {
+			display: flex;
+			flex-wrap: wrap;
+			width: fit-content;
+			max-width: 100%;
+			margin-bottom: clamp(1.5rem, 4vw, 2.25rem);
+			border-radius: var(--radius-full);
+			box-shadow: var(--shadow-sm);
+
+			.categoryFilter__link {
+				flex: 0 1 auto;
+				padding: 8px 16px;
+				border-radius: var(--radius-full);
+			}
+
+			// Phones: one swipeable row of separate chips instead of a pill wrapping onto two lines
+			@media (max-width: 639px) {
+				flex-wrap: nowrap;
+				gap: 8px;
+				width: auto;
+				max-width: none;
+				margin-inline: calc(var(--gutter) * -1);
+				padding: 2px var(--gutter);
+				overflow-x: auto;
+				overscroll-behavior-x: contain;
+				scroll-padding-inline: var(--gutter);
+				scrollbar-width: none;
+				background: none;
+				border: none;
+				border-radius: 0;
+				box-shadow: none;
+
+				&::-webkit-scrollbar {
+					display: none;
+				}
+
+				.categoryFilter__link {
+					flex: 0 0 auto;
+					padding: 9px 16px;
+					font-size: 0.9rem;
+					background: var(--c-surface);
+					border: 1px solid var(--c-border);
+
+					&:hover {
+						background: var(--c-surface);
+					}
+				}
+
+				.categoryFilter__link_active,
+				.categoryFilter__link_active:hover {
+					background: var(--c-ink);
+					border-color: var(--c-ink);
+				}
+			}
+		}
+
+		// Inside the mobile drawer the switcher stays on top while the list scrolls under it
+		&_grid {
+			// Offsets match the drawer padding (see Layout.astro) so it sticks flush to the top edge
+			@media (max-width: 1199px) {
+				position: sticky;
+				top: -1.25rem;
+				z-index: 1;
+
+				// Covers the strip above so cards don't peek out while scrolling
+				&::before {
+					content: "";
+					position: absolute;
+					left: -1rem;
+					right: -1rem;
+					bottom: 100%;
+					height: calc(1.25rem + 1px);
+					background: var(--c-bg);
+				}
+			}
+		}
 
 		&__link {
 			flex: 1 0 auto;
@@ -99,3 +169,18 @@ const { activeCategory } = Astro.props;
 		}
 	}
 </style>
+
+<script>
+  // Bring the active chip into view when the tab row is scrollable (phones)
+  const revealActiveTab = (): void => {
+    document.querySelectorAll<HTMLElement>(".categoryFilter_tabs").forEach((row) => {
+      const active = row.querySelector<HTMLElement>("[aria-current='page']");
+      if (!active || row.scrollWidth <= row.clientWidth) return;
+
+      const offset = active.getBoundingClientRect().left - row.getBoundingClientRect().left;
+      row.scrollLeft += offset - (row.clientWidth - active.clientWidth) / 2;
+    });
+  };
+
+  document.addEventListener("astro:page-load", revealActiveTab);
+</script>

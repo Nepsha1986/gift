@@ -5,6 +5,8 @@ import Layout from "@layouts/Layout.astro";
 import GiftPage from "@astroComponents/pages/GiftPage/GiftPage.astro";
 import GiftList from "@astroComponents/GiftList.astro";
 import CategoryFilter from "@astroComponents/CategoryFilter.astro";
+import Breadcrumbs from "@astroComponents/Breadcrumbs.astro";
+import GiftNavigation from "@astroComponents/GiftNavigation.astro";
 
 import AIPostBanner from '@reactComponents/AIPostBanner';
 
@@ -12,10 +14,12 @@ import RelatedProducts from "src/features/RelatedProducts";
 import Ads from "src/features/Ads";
 
 import { Image } from "astro:assets";
-import { getLocaleFromUrl, getCleanSlug, getLangFromUrl, useTranslations, getLocaleFromSlug } from "@i18n/utils";
+import { getLocaleFromUrl, getCleanSlug, getLangFromUrl, useTranslations, getLocaleFromSlug, useTranslatedPath } from "@i18n/utils";
 import { ui } from "@i18n/ui";
+import categoryTabs from "@i18n/translations/categoryTabs";
 
 import { removeTrailingSlash } from "@utils/removeTrailingSlash";
+import { getGifts, giftCategoryPath, giftsIndexPath } from "@utils/gifts";
 
 const URL = Astro.url.pathname;
 const lang = getLangFromUrl(URL);
@@ -24,7 +28,6 @@ const t = useTranslations(lang, ui);
 
 const pathname = removeTrailingSlash(URL);
 const pathParts = pathname.split("/");
-const category = pathParts[3];
 const activeGiftSlug = pathParts[pathParts.length - 1];
 
 export async function getStaticPaths() {
@@ -39,9 +42,22 @@ export async function getStaticPaths() {
 const { entry } = Astro.props;
 const { Content } = await entry.render();
 const seoTitle = `${t("s.gift_idea")} ${t(entry.data.category)} - ${entry.data.title}`;
+
+const translatePath = useTranslatedPath(locale);
+const tCategory = useTranslations(lang, categoryTabs);
+const categoryGifts = await getGifts(locale, entry.data.category);
+
+const breadcrumbs = [
+  { label: t("s.home"), href: translatePath("/") },
+  { label: t("s.gift_ideas"), href: translatePath(giftsIndexPath()) },
+  { label: tCategory(entry.data.category), href: translatePath(giftCategoryPath(entry.data.category)) },
+  { label: entry.data.title },
+];
 ---
 
 <Layout title={seoTitle}>
+  <Breadcrumbs items={breadcrumbs} />
+
   <GiftPage
     title={entry.data.title}
     subtitle={entry.data.description}
@@ -67,9 +83,11 @@ const seoTitle = `${t("s.gift_idea")} ${t(entry.data.category)} - ${entry.data.t
     <Content slot="content" />
   </GiftPage>
 
+  <GiftNavigation gifts={categoryGifts} current={entry} />
+
   <div class="categoryItems" slot="sidebar">
-    <CategoryFilter activeCategory={category}/>
-    <GiftList category={category} activeGiftSlug={activeGiftSlug}/>
+    <CategoryFilter activeCategory={entry.data.category}/>
+    <GiftList gifts={categoryGifts} activeGiftSlug={activeGiftSlug}/>
   </div>
 
   { !entry.data?.author && <AIPostBanner lang={lang} />}
