@@ -1,0 +1,35 @@
+---
+import { locales } from "@i18n/ui.ts";
+import { ui } from "@i18n/ui";
+import Layout from "@layouts/Layout.astro";
+import Section from "@components/astro/Section/Section.astro";
+import CategoryFilter from "@astroComponents/CategoryFilter.astro";
+import GiftGrid from "@astroComponents/GiftGrid.astro";
+import type { Category } from "@src/types/category";
+
+import { getLangFromUrl, getLocaleFromUrl, useTranslations } from "@i18n/utils";
+import { getGifts, giftCategories } from "@utils/gifts";
+
+export function getStaticPaths() {
+  return locales.flatMap((lang) => giftCategories.map((category) => ({ params: { lang, category } })));
+}
+
+const URL = Astro.url.pathname;
+const lang = getLangFromUrl(URL);
+const locale = getLocaleFromUrl(URL);
+const t = useTranslations(lang, ui);
+
+const category = Astro.params.category as Category;
+const gifts = await getGifts(locale, category);
+const heading = `${t("s.gift_ideas")} ${t(category)}`;
+---
+
+<Layout title={heading} isLanding>
+  <Section heading={heading} as="h1">
+    <p slot="subheading">{t("s.category_subheading")}</p>
+
+    <CategoryFilter variant="tabs" activeCategory={category} />
+
+    <GiftGrid gifts={gifts} />
+  </Section>
+</Layout>

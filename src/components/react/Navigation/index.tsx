@@ -1,9 +1,7 @@
 import React from "react";
-import { getCollection } from "astro:content";
 import classNames from "classnames";
 
 import {
-  getCleanSlug,
   getLangFromUrl,
   getLocaleFromUrl,
   useTranslatedPath,
@@ -16,19 +14,9 @@ import type { NavTranslationStrings } from "@i18n/translations/navigation.ts";
 
 import styles from "./styles.module.scss";
 
-const giftsEntries = await getCollection("gifts");
-const firstGiftItem = giftsEntries.filter(
-  (i) => i.data.category === "for-women",
-);
-
 const navItems: Array<[string, NavTranslationStrings]> = [
   ["/", "nav.homepage"],
-  [
-    `/gifts/${firstGiftItem[0].data.category}/${getCleanSlug(
-      firstGiftItem[0].slug,
-    )}`,
-    "nav.gifts",
-  ],
+  ["/gifts", "nav.gifts"],
   ["/posts", "nav.posts"],
   ["/about", "nav.about"],
   ["/contacts", "nav.contacts"],

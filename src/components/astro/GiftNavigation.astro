@@ -1,0 +1,210 @@
+---
+import { Image } from "astro:assets";
+import { getLangFromUrl, getLocaleFromUrl, useTranslatedPath, useTranslations } from "@i18n/utils";
+import { ui } from "@i18n/ui";
+import GiftGrid from "@astroComponents/GiftGrid.astro";
+import { giftCategoryPath, giftPath, type GiftEntry } from "@utils/gifts";
+
+// Ideas suggested under the article, besides prev/next
+const MORE_SIZE = 4;
+
+interface Props {
+  // All gifts of the current category, in sidebar order
+  gifts: GiftEntry[];
+  current: GiftEntry;
+}
+
+const { gifts, current } = Astro.props;
+const lang = getLangFromUrl(Astro.url.pathname);
+const t = useTranslations(lang, ui);
+const translatePath = useTranslatedPath(getLocaleFromUrl(Astro.url.pathname));
+
+const index = gifts.findIndex((i) => i.slug === current.slug);
+const category = current.data.category!;
+
+// Wrap around so the first and last ideas also have neighbours
+const at = (offset: number): GiftEntry | undefined =>
+  gifts.length > 1 ? gifts[(index + offset + gifts.length) % gifts.length] : undefined;
+
+const prev = at(-1);
+const next = at(1);
+
+// Continue after "next" so suggestions don't repeat the prev/next cards
+const exclude = new Set([current.slug, prev?.slug, next?.slug]);
+const more = Array.from({ length: gifts.length }, (_, i) => at(i + 2))
+  .filter((i): i is GiftEntry => !!i && !exclude.has(i.slug))
+  .filter((i, pos, arr) => arr.findIndex((j) => j.slug === i.slug) === pos)
+  .slice(0, MORE_SIZE);
+
+const pager = [
+  { entry: prev, label: t("s.prev_idea"), dir: "prev" },
+  { entry: next, label: t("s.next_idea"), dir: "next" },
+].filter((i) => i.entry && i.entry.slug !== current.slug);
+---
+
+<div class="giftNav" data-category={category} data-pagefind-ignore="all">
+  {pager.length > 0 && (
+    <nav class="giftNav__pager">
+      {pager.map(({ entry, label, dir }) => (
+        <a class:list={["giftNav__pagerLink", `giftNav__pagerLink_${dir}`]} href={translatePath(giftPath(entry!))} rel={dir}>
+          <span class="giftNav__pagerImg">
+            <Image src={entry!.data.thumbnail} alt="" class="img-cover" width="96" height="96" />
+          </span>
+          <span class="giftNav__pagerText">
+            <span class="giftNav__pagerLabel">
+              {dir === "prev" && <span aria-hidden="true">← </span>}
+              {label}
+              {dir === "next" && <span aria-hidden="true"> →</span>}
+            </span>
+            <span class="giftNav__pagerTitle">{entry!.data.title}</span>
+          </span>
+        </a>
+      ))}
+    </nav>
+  )}
+
+  {more.length > 0 && (
+    <section class="giftNav__more">
+      <header class="giftNav__moreHeader">
+        <h2 class="giftNav__moreHeading">{t("s.more_ideas")} {t(category)}</h2>
+        <a class="giftNav__moreAll" href={translatePath(giftCategoryPath(category))}>
+          {t("s.see_all")} ({gifts.length}) <span aria-hidden="true">→</span>
+        </a>
+      </header>
+
+      <GiftGrid gifts={more} />
+    </section>
+  )}
+</div>
+
+<style lang="scss">
+	.giftNav {
+		max-width: 820px;
+		margin-top: 3rem;
+
+		&__pager {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			gap: 12px;
+
+			@media (max-width: 599px) {
+				grid-template-columns: 1fr;
+			}
+		}
+
+		&__pagerLink {
+			display: flex;
+			align-items: center;
+			gap: 14px;
+			min-width: 0;
+			padding: 10px;
+			background: var(--c-surface);
+			border: 1px solid var(--c-border);
+			border-radius: var(--radius-md);
+			transition:
+				border-color 0.2s var(--ease),
+				box-shadow 0.25s var(--ease);
+
+			&:hover {
+				border-color: var(--c-grey-light);
+				box-shadow: var(--shadow-md);
+
+				.giftNav__pagerTitle {
+					color: var(--cat-ink, var(--c-primary-dark));
+				}
+			}
+
+			&_next {
+				flex-direction: row-reverse;
+				text-align: right;
+
+				@media (max-width: 599px) {
+					flex-direction: row;
+					text-align: left;
+				}
+			}
+
+			// Single "next" link keeps its column on the right
+			&_next:only-child {
+				grid-column: 2;
+
+				@media (max-width: 599px) {
+					grid-column: auto;
+				}
+			}
+		}
+
+		&__pagerImg {
+			flex-shrink: 0;
+			width: 56px;
+			height: 56px;
+			overflow: hidden;
+			border-radius: var(--radius-sm);
+			background: var(--cat, var(--c-primary-lightest));
+		}
+
+		&__pagerText {
+			display: flex;
+			flex-direction: column;
+			gap: 2px;
+			min-width: 0;
+		}
+
+		&__pagerLabel {
+			font-size: 0.75rem;
+			font-weight: 700;
+			letter-spacing: 0.06em;
+			text-transform: uppercase;
+			color: var(--c-grey);
+		}
+
+		&__pagerTitle {
+			overflow: hidden;
+			font-weight: 700;
+			line-height: 1.3;
+			color: var(--c-ink);
+			white-space: nowrap;
+			text-overflow: ellipsis;
+			transition: color 0.2s var(--ease);
+		}
+
+		&__more {
+			margin-top: 3rem;
+
+			:global(.giftGrid) {
+				grid-template-columns: repeat(2, 1fr);
+
+				@media (min-width: 900px) {
+					grid-template-columns: repeat(4, 1fr);
+				}
+			}
+		}
+
+		&__moreHeader {
+			display: flex;
+			flex-wrap: wrap;
+			align-items: baseline;
+			justify-content: space-between;
+			gap: 0.5rem 1.5rem;
+			margin-bottom: 1.25rem;
+		}
+
+		&__moreHeading {
+			margin: 0;
+			font-size: clamp(1.4rem, 3vw, 1.75rem);
+			font-weight: 600;
+			letter-spacing: -0.01em;
+		}
+
+		&__moreAll {
+			font-weight: 600;
+			white-space: nowrap;
+			color: var(--cat-ink, var(--c-primary-dark));
+
+			&:hover {
+				text-decoration: underline;
+				text-underline-offset: 3px;
+			}
+		}
+	}
+</style>

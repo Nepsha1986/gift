@@ -1,0 +1,45 @@
+---
+import { Image } from "astro:assets";
+import GiftCard from "@reactComponents/GiftCard";
+import { getLocaleFromUrl, useTranslatedPath } from "@i18n/utils";
+import { giftPath, type GiftEntry } from "@utils/gifts";
+
+interface Props {
+  gifts: GiftEntry[];
+}
+
+const { gifts } = Astro.props;
+const translatePath = useTranslatedPath(getLocaleFromUrl(Astro.url.pathname));
+---
+
+<div class="giftGrid">
+  {gifts.map((i) => (
+    <GiftCard
+      title={i.data.title}
+      description={i.data.description}
+      link={translatePath(giftPath(i))}
+      category={i.data.category}
+      variant="tile"
+    >
+      <Image src={i.data.thumbnail} alt={i.data.title} class="img-cover" width="400" height="300" />
+    </GiftCard>
+  ))}
+</div>
+
+<style lang="scss">
+	.giftGrid {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(min(100%, 240px), 1fr));
+		gap: 20px;
+
+		// Two compact columns on phones keep long lists scannable
+		@media (max-width: 599px) {
+			grid-template-columns: repeat(2, 1fr);
+			gap: 12px;
+		}
+
+		> :global(a) {
+			margin-bottom: 0;
+		}
+	}
+</style>
