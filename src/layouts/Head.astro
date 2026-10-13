@@ -10,13 +10,13 @@ const lang = getLangFromUrl(url);
 const locale = getLocaleFromUrl(url);
 const t = useTranslations(lang, ui);
 
-const {title} = Astro.props;
+const {title, description} = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 
 <head>
   <meta charset="UTF-8"/>
-  <meta name="description" content={t("seo.description")}/>
+  <meta name="description" content={description || t("seo.description")}/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="theme-color" content="#fbf6f2"/>
   <meta name="keywords" content={t("seo.keywords")}>
